@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.Dependency.Unity</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.Dependency.Unity.UnityDependencyMapperFactory">
+            <summary>
+            Dependency mapper based on Unity framework.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDependencyMapperFactory.Create">
+            <summary>
+            Create new dependency mapper for default configuration.
+            </summary>
+            <returns>
+            The dependency mapper.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDependencyMapperFactory.Create(System.String)">
+            <summary>
+            Create new dependency mapper for <see cref="!:scope"/> configuration.
+            </summary>
+            <param name="scope">
+            The scope.
+            </param>
+            <returns>
+            The dependency mapper.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDependencyMapperFactory.NewUnityContainer(System.String)">
+            <summary>
+            Create new Unity container.
+            </summary>
+            <param name="scope">
+            The scope.
+            </param>
+            <returns>
+            New Unity container.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Dependency.Unity.UnityDependencyMapper">
+            <summary>
+            Dependency mapper based on Unity framework.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Dependency.Unity.UnityDependencyMapper.currentUnityContainer">
+            <summary>
+            Unity container.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDependencyMapper.#ctor(Microsoft.Practices.Unity.UnityContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDependencyMapper"/> class.
+            </summary>
+            <param name="unityContainer">
+            The Unity Container.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDependencyMapper.Resolve``1">
+            <summary>
+            Resolve an instance of the default requested type from the container. 
+            </summary>
+            <typeparam name="TSearchedType">
+            System.Type of object to get from the container.
+            </typeparam>
+            <returns>
+            The retrieved object.
+            </returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.Adapter.AutoMapper</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterFactory">
+            <summary>
+            Adapter factory for Automapper
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterFactory"/> class. 
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterFactory.Create">
+            <summary>
+            Create Automapper type adapter
+            </summary>
+            <returns>
+            Type adapter
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapter">
+            <summary>
+            Automapper type adapter implementation
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapter.Adapt``2(``0)">
+            <summary>
+            Adapt TSource to TTarget.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <typeparam name="TSource">
+            Source type.
+            </typeparam>
+            <typeparam name="TTarget">
+            Taget type.
+            </typeparam>
+            <returns>
+            Target object.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapter.Adapt``1(System.Object)">
+            <summary>
+            Adapt Source to TTarget.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <typeparam name="TTarget">
+            Taget type.
+            </typeparam>
+            <returns>
+            Target object.
+            </returns>
+        </member>
+    </members>
+</doc>
