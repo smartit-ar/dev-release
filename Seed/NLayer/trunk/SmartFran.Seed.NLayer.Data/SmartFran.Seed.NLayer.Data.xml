@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.NLayer.Data</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.NLayer.Data.Resources.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.Resources.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.Resources.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.Resources.Messages.info_CannotAddNullEntity">
+            <summary>
+              Looks up a localized string similar to Cannot add null entity into {0} repository.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.Resources.Messages.info_CannotModifyNullEntity">
+            <summary>
+              Looks up a localized string similar to Cannot modify null item into {0} repository.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.Resources.Messages.info_CannotRemoveNullEntity">
+            <summary>
+              Looks up a localized string similar to Cannot remove null entity into {0} repository.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.Resources.Messages.info_CannotTrackNullEntity">
+            <summary>
+              Looks up a localized string similar to Cannot track null item into {0} repository.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork">
+            <summary>
+            The UnitOfWork contract for EF implementation
+            <remarks>
+            This contract extend IUnitOfWork for use with EF code
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.ISql">
+            <summary>
+            Base contract for support 'dialect specific queries'.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteQuery``1(System.String,System.Object[])">
+            <summary>
+            Execute specific query with underliying persistence store
+            </summary>
+            <typeparam name="TEntity">Entity type to map query results</typeparam>
+            <param name="sqlQuery">
+            Dialect Query 
+            <example>
+            SELECT idCustomer,Name FROM dbo.[Customers] WHERE idCustomer > {0}
+            </example>
+            </param>
+            <param name="parameters">A vector of parameters values</param>
+            <returns>
+            Enumerable results 
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteCommand(System.String,System.Object[])">
+             <summary>
+             Execute arbitrary command into underliying persistence store
+             </summary>
+             <param name="sqlCommand">
+             Command to execute
+             <example>
+             SELECT idCustomer,Name FROM dbo.[Customers] WHERE idCustomer > {0}
+             </example>
+            </param>
+             <param name="parameters">A vector of parameters values</param>
+             <returns>The number of affected records</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork.CreateSet``1">
+            <summary>
+            Returns a IDbSet instance for access to entities of the given type in the context, 
+            the ObjectStateManager, and the underlying store. 
+            </summary>
+            <typeparam name="TValueObject"></typeparam>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork.Attach``1(``0)" -->
+        <member name="M:SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork.SetModified``1(``0)">
+            <summary>
+            Set object as modified
+            </summary>
+            <typeparam name="TValueObject">The type of entity</typeparam>
+            <param name="item">The entity item to set as modifed</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork.ApplyCurrentValues``1(``0,``0)">
+            <summary>
+            Apply current values in <paramref name="original"/>
+            </summary>
+            <typeparam name="TEntity">The type of entity</typeparam>
+            <param name="original">The original entity</param>
+            <param name="current">The current entity</param>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.Repository`1">
+            <summary>
+            Repository base class
+            </summary>
+            <typeparam name="TEntity">The type of underlying entity in this repository</typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.#ctor(SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork)">
+            <summary>
+            Create a new instance of repository
+            </summary>
+            <param name="unitOfWork">Associated Unit Of Work</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.Add(`0)">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/>
+            </summary>
+            <param name="item"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.Remove(`0)">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/>
+            </summary>
+            <param name="item"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.TrackItem(`0)">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/>
+            </summary>
+            <param name="item"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.Modify(`0)">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/>
+            </summary>
+            <param name="item"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.Get(System.Guid)">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/>
+            </summary>
+            <param name="id"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.GetAll">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/>
+            </summary>
+            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.AllMatching(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/>
+            </summary>
+            <param name="specification"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.GetPaged``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/>
+            </summary>
+            <typeparam name="S"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></typeparam>
+            <param name="pageIndex"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+            <param name="pageCount"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+            <param name="orderByExpression"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+            <param name="ascending"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.GetFiltered(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/>
+            </summary>
+            <param name="filter"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.Merge(`0,`0)">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/>
+            </summary>
+            <param name="persisted"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+            <param name="current"><see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/></param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.Dispose">
+            <summary>
+            <see cref="M:System.IDisposable.Dispose"/>
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.Repository`1.UnitOfWork">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.IRepository`1"/>
+            </summary>
+        </member>
+    </members>
+</doc>
