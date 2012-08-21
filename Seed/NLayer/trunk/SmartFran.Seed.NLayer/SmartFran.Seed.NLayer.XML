@@ -169,7 +169,7 @@
             Enables inspection or modification of a message before a request message is sent to a service.
             </summary>
             <returns>
-            The object that is returned as the <paramref name="correlationState"/>argument of the <see cref="M:System.ServiceModel.Dispatcher.IClientMessageInspector.AfterReceiveReply(System.ServiceModel.Channels.Message@,System.Object)"/> method. This is null if no correlation state is used.The best practice is to make this a <see cref="T:System.Guid"/> to ensure that no two <paramref name="correlationState"/> objects are the same.
+            The object that is returned as the argument of the method. This is null if no correlation state is used.The best practice is to make this a to ensure that no two objects are the same.
             </returns>
             <param name="request">
             The message to be sent to the service.
@@ -380,10 +380,10 @@
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException"/> class. 
             </summary>
-            <param name="message">
+            <param name="issueId">
             The issue Id.
             </param>
-            <param name="innerException">
+            <param name="message">
             The error message that explains the reason for the exception. 
             </param>
             <param name="innerException">
@@ -497,7 +497,7 @@
             The exception.
             </param>
             <returns>
-            A <see cref="!:FaultException"/>
+            A FaultException.
             </returns>
         </member>
         <member name="P:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.ExceptionType">

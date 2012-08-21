@@ -4,12 +4,6 @@
         <name>SmartFran.Seed.NLayer.Domain</name>
     </assembly>
     <members>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IdentityGenerator.NewSequentialGuid">
-            <summary>
-            This algorithm generates secuential GUIDs across system boundaries, ideal for databases 
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.Specification.ParameterRebinder">
             <summary>
             Helper for rebinder parameters without use Invoke method in expressions 
@@ -50,21 +44,21 @@
             </summary>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IUnitOfWork.Commit">
-             <summary>
-             Commit all changes made in a container.
-             </summary>
+            <summary>
+            Commit all changes made in a container.
+            </summary>
             <remarks>
-             If the entity have fixed properties and any optimistic concurrency problem exists,  
-             then an exception is thrown
+            If the entity have fixed properties and any optimistic concurrency problem exists,  
+            then an exception is thrown
             </remarks>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IUnitOfWork.CommitAndRefreshChanges">
-             <summary>
-             Commit all changes made in  a container.
-             </summary>
+            <summary>
+            Commit all changes made in  a container.
+            </summary>
             <remarks>
-             If the entity have fixed properties and any optimistic concurrency problem exists,
-             then 'client changes' are refreshed - Client wins
+            If the entity have fixed properties and any optimistic concurrency problem exists,
+            then 'client changes' are refreshed - Client wins
             </remarks>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IUnitOfWork.RollbackChanges">
@@ -104,11 +98,11 @@
             <param name="item">Item to modify</param>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.TrackItem(`0)">
-             <summary>
+            <summary>
             Track entity into this repository, really in UnitOfWork. 
             In EF this can be done with Attach and with Update in NH
-             </summary>
-             <param name="item">Item to attach</param>
+            </summary>
+            <param name="item">Item to attach</param>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.Merge(`0,`0)">
             <summary>
@@ -119,12 +113,12 @@
             <param name="persisted">The persisted item</param>
             <param name="current">The current item</param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.Get(System.Guid)">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.Get(System.Int32)">
             <summary>
             Get element by entity key
             </summary>
             <param name="id">Entity key value</param>
-            <returns></returns>
+            <returns>The entity.</returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.GetAll">
             <summary>
@@ -134,21 +128,37 @@
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.AllMatching(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
             <summary>
-            Get all elements of type TEntity that matching a
-            Specification <paramref name="specification"/>
+            The all matching.
             </summary>
-            <param name="specification">Specification that result meet</param>
-            <returns></returns>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.GetPaged``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
             <summary>
             Get all elements of type TEntity in repository
             </summary>
-            <param name="pageIndex">Page index</param>
-            <param name="pageCount">Number of elements in each page</param>
-            <param name="orderByExpression">Order by expression for this query</param>
-            <param name="ascending">Specify if order is ascending</param>
-            <returns>List of selected elements</returns>
+            <typeparam name="TKProperty">
+            Predicate of order by.
+            </typeparam>
+            <param name="pageIndex">
+            Page index
+            </param>
+            <param name="pageCount">
+            Number of elements in each page
+            </param>
+            <param name="orderByExpression">
+            Order by expression for this query
+            </param>
+            <param name="ascending">
+            Specify if order is ascending
+            </param>
+            <returns>
+            List of selected elements
+            </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.GetFiltered(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
@@ -159,7 +169,7 @@
         </member>
         <member name="P:SmartFran.Seed.NLayer.Domain.IRepository`1.UnitOfWork">
             <summary>
-            Get the unit of work in this repository
+            Gets the unit of work in this repository
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.Specification.CompositeSpecification`1">
@@ -179,7 +189,7 @@
             http://msdn.microsoft.com/en-us/library/aa691312(VS.71).aspx
             </remarks>
             </summary>
-            <typeparam name="TValueObject">Type of item in the criteria</typeparam>
+            <typeparam name="TEntity">Type of item in the criteria</typeparam>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1">
             <summary>
@@ -287,25 +297,57 @@
             </summary>
             <typeparam name="TValueObject">The type of this value object</typeparam>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.op_Equality(SmartFran.Seed.NLayer.Domain.ValueObject{`0},SmartFran.Seed.NLayer.Domain.ValueObject{`0})">
+            <summary>
+            The equality operator
+            </summary>
+            <param name="left">Left part.</param>
+            <param name="right">Right part.</param>
+            <returns>True if the values of its operands are equal.</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.op_Inequality(SmartFran.Seed.NLayer.Domain.ValueObject{`0},SmartFran.Seed.NLayer.Domain.ValueObject{`0})">
+            <summary>
+            The !=.
+            </summary>
+            <param name="left">
+            The left.
+            </param>
+            <param name="right">
+            The right.
+            </param>
+            <returns>
+            True if the values of its operands aren't equal.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.Equals(`0)">
             <summary>
-            <see cref="M:System.Object.IEquatable{TValueObject}"/>
+            The equals.
             </summary>
-            <param name="other"><see cref="M:System.Object.IEquatable{TValueObject}"/></param>
-            <returns><see cref="M:System.Object.IEquatable{TValueObject}"/></returns>
+            <param name="other">
+            The other.
+            </param>
+            <returns>
+            The System.Boolean.
+            </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.Equals(System.Object)">
             <summary>
-            <see cref="M:System.Object.Equals"/>
+            The equals.
             </summary>
-            <param name="obj"><see cref="M:System.Object.Equals"/></param>
-            <returns><see cref="M:System.Object.Equals"/></returns>
+            <param name="obj">
+            The obj.
+            </param>
+            <returns>
+            The System.Boolean.
+            </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.GetHashCode">
             <summary>
-            <see cref="M:System.Object.GetHashCode"/>
+            The get hash code.
             </summary>
-            <returns><see cref="M:System.Object.GetHashCode"/></returns>
+            <returns>
+            The System.Int32.
+            </returns>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1">
             <summary>
@@ -406,39 +448,73 @@
             Base class for entities
             </summary>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Entity.op_Equality(SmartFran.Seed.NLayer.Domain.Entity,SmartFran.Seed.NLayer.Domain.Entity)">
+            <summary>
+            The ==.
+            </summary>
+            <param name="left">
+            The left.
+            </param>
+            <param name="right">
+            The right.
+            </param>
+            <returns>
+            Equality of entities.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Entity.op_Inequality(SmartFran.Seed.NLayer.Domain.Entity,SmartFran.Seed.NLayer.Domain.Entity)">
+            <summary>
+            The !=.
+            </summary>
+            <param name="left">
+            The left.
+            </param>
+            <param name="right">
+            The right.
+            </param>
+            <returns>
+            Non equality comparation.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.Entity.IsTransient">
             <summary>
             Check if this entity is transient, ie, without identity at this moment
             </summary>
             <returns>True if entity is transient, else false</returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Entity.GenerateNewIdentity">
+        <member name="M:SmartFran.Seed.NLayer.Domain.Entity.GetHashCode">
             <summary>
-            Generate identity for this entity
+            The get hash code.
             </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Entity.ChangeCurrentIdentity(System.Guid)">
-            <summary>
-            Change current identity for a new non transient identity
-            </summary>
-            <param name="identity">the new identity</param>
+            <returns>
+            The System.Int32.
+            </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.Entity.Equals(System.Object)">
             <summary>
-            <see cref="M:System.Object.Equals"/>
+            The equals.
             </summary>
-            <param name="obj"><see cref="M:System.Object.Equals"/></param>
-            <returns><see cref="M:System.Object.Equals"/></returns>
+            <param name="obj">
+            The obj.
+            </param>
+            <returns>
+            The System.Boolean.
+            </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Entity.GetHashCode">
+        <member name="M:SmartFran.Seed.NLayer.Domain.Entity.Equals(SmartFran.Seed.NLayer.Domain.Entity)">
             <summary>
-            <see cref="M:System.Object.GetHashCode"/>
+            The equals.
             </summary>
-            <returns><see cref="M:System.Object.GetHashCode"/></returns>
+            <param name="other">
+            The other.
+            </param>
+            <returns>
+            The System.Boolean.
+            </returns>
         </member>
         <member name="P:SmartFran.Seed.NLayer.Domain.Entity.Id">
             <summary>
-            Get the persisten object identifier
+            Gets or sets the id.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.Specification.NotSpecification`1">
