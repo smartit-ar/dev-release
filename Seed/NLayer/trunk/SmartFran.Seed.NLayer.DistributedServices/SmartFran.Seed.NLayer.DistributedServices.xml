@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.NLayer.DistributedServices</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.EndpointBehaviors.SilverlightFaultMessageInspector">
+            <summary>
+            By default, WCF services return fault messages with an HTTP 500 response code.
+            Due to limitations in the browser networking stack, the bodies of these messages are inaccessible within Silverlight, 
+            and consequently the fault messages cannot be read by the client.
+            To send faults that will be accessible to a Silverlight client, a WCF service must modify the way it sends its fault messages.
+            The key change needed is for WCF to return fault messages with an HTTP 200 response code instead of the HTTP 500 response code.
+            This change enables Silverlight to read the body of the message and also enables WCF clients of the same service to continue
+            working using their normal fault-handling procedures.
+            </summary>
+            <remarks>
+            http://msdn.microsoft.com/en-us/library/ee844556%28VS.96%29.aspx
+            </remarks>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationServiceError">
+            <summary>
+            Default ServiceError
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationServiceError.ErrorMessage">
+            <summary>
+            Error message that flow to client services
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute">
+            <summary>
+            Service behavior for add DefaultErrorHandler to all dispatcher in
+            Windows Communication Foundation 
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute.AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)">
+             <summary>
+            Provides the ability to pass custom data to binding elements to support the contract implementation
+             </summary>
+             <param name="serviceDescription">The service description of the service.</param>
+             <param name="serviceHostBase">The host of the service.</param>
+             <param name="endpoints">The service endpoints.</param>
+             <param name="bindingParameters">The service endpoints.</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+            <summary>
+            Provides the ability to change run-time property values or insert custom
+            extension objects such as error handlers, message or parameter interceptors,
+            security extensions, and other custom extension objects.
+            </summary>
+            <param name="serviceDescription">The service description.</param>
+            <param name="serviceHostBase">The host that is currently being built.</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute.Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+            <summary>
+             Provides the ability to inspect the service host and the service description
+             to confirm that the service can run successfully.
+            </summary>
+            <param name="serviceDescription">The service description.</param>
+            <param name="serviceHostBase">The service host that is currently being constructed.</param>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.EndpointBehaviors.SilverlightFaultBehavior">
+            <summary>
+            By default, WCF services return fault messages with an HTTP 500 response code.
+            Due to limitations in the browser networking stack, the bodies of these messages are inaccessible within Silverlight, 
+            and consequently the fault messages cannot be read by the client.
+            To send faults that will be accessible to a Silverlight client, a WCF service must modify the way it sends its fault messages.
+            The key change needed is for WCF to return fault messages with an HTTP 200 response code instead of the HTTP 500 response code.
+            This change enables Silverlight to read the body of the message and also enables WCF clients of the same service to continue
+            working using their normal fault-handling procedures.
+            </summary>
+            <remarks>
+            http://msdn.microsoft.com/en-us/library/ee844556%28VS.96%29.aspx
+            </remarks>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandler">
+            <summary>
+            Default error handler for WCF Service Facade
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandler.HandleError(System.Exception)">
+            <summary>
+            Enables error-related processing and returns a value that indicates whether
+            the dispatcher aborts the session and the instance context in certain cases
+            </summary>
+            <remarks>
+            Trace error and handle this
+            </remarks>
+            <param name="error">The exception thrown during processing</param>
+            <returns>
+            true if should not abort the session (if there is one) and instance context
+            if the instance context is not System.ServiceModel.InstanceContextMode.Single;
+            otherwise, false. The default is false.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandler.ProvideFault(System.Exception,System.ServiceModel.Channels.MessageVersion,System.ServiceModel.Channels.Message@)">
+            <summary>
+            Enables the creation of a custom System.ServiceModel.FaultException{TDetail}
+            that is returned from an exception in the course of a service method.
+            </summary>
+            <param name="error">The System.Exception object thrown in the course of the service operation.</param>
+            <param name="version">The SOAP version of the message.</param>
+            <param name="fault">The System.ServiceModel.Channels.Message object that is returned to the client, or service in duplex case</param>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.error_unmanagederror">
+            <summary>
+              Looks up a localized string similar to Unmanaged error in aplication, the exception information is.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.message_DefaultErrorMessage">
+            <summary>
+              Looks up a localized string similar to Oooppps this operation can&apos;t be processed at this moment. Please try it later. If problem persist contact with your System Administrator.
+            </summary>
+        </member>
+    </members>
+</doc>
