@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.Adapter.ValueInjecter</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter">
+            <summary>
+            Automapper type adapter implementation
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.Adapt``2(``0)">
+            <summary>
+            Adapt TSource to TTarget.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <typeparam name="TSource">
+            Source type.
+            </typeparam>
+            <typeparam name="TTarget">
+            Taget type.
+            </typeparam>
+            <returns>
+            Target object.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.Adapt``1(System.Object)">
+            <summary>
+            Adapt Source to TTarget.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <typeparam name="TTarget">
+            Taget type.
+            </typeparam>
+            <returns>
+            Target object.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.CloneInjection">
+            <summary>
+            The clone injection.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.CloneInjection.Match(Omu.ValueInjecter.ConventionInfo)">
+            <summary>
+            The match.
+            </summary>
+            <param name="c">
+            The c.
+            </param>
+            <returns>
+            The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.CloneInjection.SetValue(Omu.ValueInjecter.ConventionInfo)">
+            <summary>
+            The set value.
+            </summary>
+            <param name="c">
+            The c.
+            </param>
+            <returns>
+            The System.Object.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapterProvider">
+            <summary>
+            ValueInjecter type adapter implementation
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapterProvider.Create">
+            <summary>
+            The create.
+            </summary>
+            <returns>
+            The SmartFran.Seed.Adapter.ITypeAdapter.
+            </returns>
+        </member>
+    </members>
+</doc>

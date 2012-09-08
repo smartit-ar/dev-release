@@ -4,60 +4,48 @@
         <name>SmartFran.Seed.Dependency.Unity</name>
     </assembly>
     <members>
-        <member name="T:SmartFran.Seed.Dependency.Unity.UnityDependencyMapperFactory">
+        <member name="T:SmartFran.Seed.Dependency.Unity.UnityDIContainerProvider">
+            <summary>
+            ValueInjecter type adapter implementation
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Dependency.Unity.UnityDIContainerProvider.unityContainer">
+            <summary>
+            The unity container.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDIContainerProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDIContainerProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDIContainerProvider.Create">
+            <summary>
+            The create.
+            </summary>
+            <returns>
+            The SmartFran.Seed.Adapter.ITypeAdapter.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Dependency.Unity.UnityDIContainer">
             <summary>
             Dependency mapper based on Unity framework.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDependencyMapperFactory.Create">
+        <member name="F:SmartFran.Seed.Dependency.Unity.UnityDIContainer.unityContainer">
             <summary>
-            Create new dependency mapper for default configuration.
-            </summary>
-            <returns>
-            The dependency mapper.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDependencyMapperFactory.Create(System.String)">
-            <summary>
-            Create new dependency mapper for <see cref="!:scope"/> configuration.
-            </summary>
-            <param name="scope">
-            The scope.
-            </param>
-            <returns>
-            The dependency mapper.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDependencyMapperFactory.NewUnityContainer(System.String)">
-            <summary>
-            Create new Unity container.
-            </summary>
-            <param name="scope">
-            The scope.
-            </param>
-            <returns>
-            New Unity container.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.Dependency.Unity.UnityDependencyMapper">
-            <summary>
-            Dependency mapper based on Unity framework.
+            The unity container.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Dependency.Unity.UnityDependencyMapper.currentUnityContainer">
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDIContainer.#ctor(Microsoft.Practices.Unity.UnityContainer)">
             <summary>
-            Unity container.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDependencyMapper.#ctor(Microsoft.Practices.Unity.UnityContainer)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDependencyMapper"/> class.
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDIContainer"/> class. 
             </summary>
             <param name="unityContainer">
-            The Unity Container.
+            The unity Container.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDependencyMapper.Resolve``1">
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDIContainer.Resolve``1">
             <summary>
             Resolve an instance of the default requested type from the container. 
             </summary>
@@ -67,6 +55,14 @@
             <returns>
             The retrieved object.
             </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDIContainer.AddScope(System.String)">
+            <summary>
+            The add scope.
+            </summary>
+            <param name="scope">
+            The scope.
+            </param>
         </member>
     </members>
 </doc>
