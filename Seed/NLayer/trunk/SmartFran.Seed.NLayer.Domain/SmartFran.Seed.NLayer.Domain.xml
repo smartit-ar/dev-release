@@ -145,35 +145,61 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.GetPaged``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
-            <summary>
-            Get all elements of type TEntity in repository
-            </summary>
-            <typeparam name="TKProperty">
-            Predicate of order by.
-            </typeparam>
-            <param name="pageIndex">
-            Page index
-            </param>
-            <param name="pageCount">
-            Number of elements in each page
-            </param>
-            <param name="orderByExpression">
-            Order by expression for this query
-            </param>
-            <param name="ascending">
-            Specify if order is ascending
-            </param>
-            <returns>
-            List of selected elements
-            </returns>
-        </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.GetFiltered(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             Get  elements of type TEntity in repository
             </summary>
             <param name="filter">Filter that each element do match</param>
             <returns>List of selected elements</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.Query``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageCount">
+            The page count.
+            </param>
+            <param name="orderByExpression">
+            The order by expression.
+            </param>
+            <param name="ascending">
+            The ascending.
+            </param>
+            <typeparam name="TKProperty">
+            Property type of OrderBy.
+            </typeparam>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.Query``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageCount">
+            The page count.
+            </param>
+            <param name="orderByExpression">
+            The order by expression.
+            </param>
+            <param name="ascending">
+            The ascending.
+            </param>
+            <param name="whereExpression">
+            The where expression.
+            </param>
+            <typeparam name="TKProperty">
+            Property type of OrderBy.
+            </typeparam>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
         </member>
         <member name="P:SmartFran.Seed.NLayer.Domain.IRepository`1.UnitOfWork">
             <summary>
@@ -427,17 +453,27 @@
             </summary>
             <typeparam name="TEntity">Type of entity that check this specification</typeparam>
         </member>
+        <member name="F:SmartFran.Seed.NLayer.Domain.Specification.DirectSpecification`1.matchingCriteria">
+            <summary>
+            The matching criteria.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.Specification.DirectSpecification`1.#ctor(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Domain.Specification.DirectSpecification`1"/> class. 
             Default constructor for Direct Specification
             </summary>
-            <param name="matchingCriteria">A Matching Criteria</param>
+            <param name="matchingCriteria">
+            A Matching Criteria
+            </param>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.Specification.DirectSpecification`1.SatisfiedBy">
             <summary>
-            
+            The satisfied by.
             </summary>
-            <returns></returns>
+            <returns>
+            The System.Linq.Expressions.Expression`1[TDelegate -&gt; System.Func`2[T -&gt; TEntity, TResult -&gt; System.Boolean]].
+            </returns>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.Specification.TrueSpecification`1">
             <summary>
