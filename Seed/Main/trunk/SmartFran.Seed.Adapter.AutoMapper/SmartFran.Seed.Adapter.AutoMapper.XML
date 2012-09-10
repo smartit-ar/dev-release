@@ -4,6 +4,24 @@
         <name>SmartFran.Seed.Adapter.AutoMapper</name>
     </assembly>
     <members>
+        <member name="T:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterProvider">
+            <summary>
+            AutoMapper type adapter implementation
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterProvider"/> class. 
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterProvider.Create">
+            <summary>
+            The create.
+            </summary>
+            <returns>
+            The SmartFran.Seed.Adapter.ITypeAdapter.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapter">
             <summary>
             Automapper type adapter implementation
@@ -38,24 +56,6 @@
             </typeparam>
             <returns>
             Target object.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterProvider">
-            <summary>
-            AutoMapper type adapter implementation
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterProvider.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterProvider"/> class. 
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterProvider.Create">
-            <summary>
-            The create.
-            </summary>
-            <returns>
-            The SmartFran.Seed.Adapter.ITypeAdapter.
             </returns>
         </member>
     </members>
