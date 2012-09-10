@@ -150,6 +150,14 @@
             The item.
             </param>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.Remove(System.Int32)">
+            <summary>
+            The remove.
+            </summary>
+            <param name="itemId">
+            The item Id.
+            </param>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.TrackItem(`0)">
             <summary>
             The track item.

@@ -32,7 +32,7 @@
         </member>
         <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.ProjectedAs``1(SmartFran.Seed.NLayer.Domain.Entity)">
             <summary>
-            Project a type using a DTO
+            Project a type using a Dto
             </summary>
             <typeparam name="TProjection">
             The dto projection
@@ -68,27 +68,11 @@
         </member>
         <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.AssignToCollection``1(System.Collections.Generic.IEnumerable{SmartFran.Seed.NLayer.Application.EntityDto})">
             <summary>
-            Adater DTO to Entity
+            Adater Dto to Entity
             </summary>
-            <param name="items">DTO entities</param>
+            <param name="items">Dto entities</param>
             <typeparam name="TEntity">Type of entity</typeparam>
             <returns>entity collections</returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException">
-            <summary>
-            The custom exception for validation errors
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException.#ctor(System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            Create new instance of Application validation errors exception
-            </summary>
-            <param name="validationErrors">The collection of validation errors</param>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException.ValidationErrors">
-            <summary>
-            Get or set the validation errors messages
-            </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Application.EntityDto">
             <summary>
@@ -162,6 +146,22 @@
         <member name="P:SmartFran.Seed.NLayer.Application.EntityDto.Id">
             <summary>
             Gets or sets the id.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException">
+            <summary>
+            The custom exception for validation errors
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Create new instance of Application validation errors exception
+            </summary>
+            <param name="validationErrors">The collection of validation errors</param>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException.ValidationErrors">
+            <summary>
+            Get or set the validation errors messages
             </summary>
         </member>
     </members>

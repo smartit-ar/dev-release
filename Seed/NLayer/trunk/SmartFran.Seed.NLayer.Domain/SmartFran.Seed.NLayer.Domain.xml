@@ -91,6 +91,14 @@
             </summary>
             <param name="item">Item to delete</param>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.Remove(System.Int32)">
+            <summary>
+            Delete item 
+            </summary>
+            <param name="itemId">
+            The item Id.
+            </param>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.Modify(`0)">
             <summary>
             Set item as modified
