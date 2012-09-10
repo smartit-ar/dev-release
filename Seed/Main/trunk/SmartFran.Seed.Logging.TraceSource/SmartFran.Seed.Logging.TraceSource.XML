@@ -161,6 +161,20 @@
             Logger provider implementation
             </summary>
         </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider.defaultLoggerName">
+            <summary>
+            The default logger name.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider"/> class. 
+            The set default logger name.
+            </summary>
+            <param name="defaultLoggerName">
+            The default Logger Name.
+            </param>
+        </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider.Create">
             <summary>
             The create.
