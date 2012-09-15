@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>SmartFran.Seed</name>
+        <name>SmartFran.Seed.Core</name>
     </assembly>
     <members>
-        <member name="T:SmartFran.Seed.Validator.IEntityValidatorProvider">
+        <member name="T:SmartFran.Seed.Adapter.ITypeAdapterProvider">
             <summary>
-            Base contract for entity validator abstract factory
+            Base contract for adapter factory
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Validator.IEntityValidatorProvider.Create">
+        <member name="M:SmartFran.Seed.Adapter.ITypeAdapterProvider.Create">
             <summary>
-            Create a new IEntityValidator
+            Create a type adater
             </summary>
-            <returns>New EntityValidator</returns>
+            <returns>The created ITypeAdapter</returns>
         </member>
         <member name="T:SmartFran.Seed.Dependency.DiContainerFactory">
             <summary>
@@ -62,146 +62,16 @@
             <param name="item">The instance with validation errors</param>
             <returns>A collection of validation errors</returns>
         </member>
-        <member name="T:SmartFran.Seed.Dependency.IDiContainer">
+        <member name="T:SmartFran.Seed.Validator.IEntityValidatorProvider">
             <summary>
-            Base contract for dependency mapper
-            <remarks>
-            This is a  contract for work with dependency managers like Unity or adhoc mappers
-            </remarks>
+            Base contract for entity validator abstract factory
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.IDiContainer.Resolve``1">
+        <member name="M:SmartFran.Seed.Validator.IEntityValidatorProvider.Create">
             <summary>
-            Resolve an instance of the default requested type from the container. 
+            Create a new IEntityValidator
             </summary>
-            <typeparam name="TSearchedType">
-            System.Type of object to get from the container.
-            </typeparam>
-            <returns>
-            The retrieved object.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.IDiContainer.AddScope(System.String)">
-            <summary>
-            The add scope.
-            </summary>
-            <param name="scope">
-            The scope.
-            </param>
-        </member>
-        <member name="T:SmartFran.Seed.Dependency.IDiContainerProvider">
-            <summary>
-            Base contract for adapter factory
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.IDiContainerProvider.Create">
-            <summary>
-            Create a type adater
-            </summary>
-            <returns>The created ITypeAdapter</returns>
-        </member>
-        <member name="T:SmartFran.Seed.Resources.Activator">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Create_Values_is_null">
-            <summary>
-              Looks up a localized string similar to Values is null..
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Fill_Source_is_null">
-            <summary>
-              Looks up a localized string similar to Source is null..
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Fill_Values_is_null">
-            <summary>
-              Looks up a localized string similar to Values is null.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.Adapter.TypeAdapterFactory">
-            <summary>
-            Type adapter factory.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Adapter.TypeAdapterFactory.provider">
-            <summary>
-            Adapter factory
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.TypeAdapterFactory.SetProvider(SmartFran.Seed.Adapter.ITypeAdapterProvider)">
-            <summary>
-            Set the current type adapter factory
-            </summary>
-            <param name="typeAdapterProvider">
-            The type Adapter Provider.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.TypeAdapterFactory.CreateTypeAdapter">
-            <summary>
-            Create a new type adapter from currect factory
-            </summary>
-            <returns>Created type adapter</returns>
-        </member>
-        <member name="T:SmartFran.Seed.Adapter.ITypeAdapterProvider">
-            <summary>
-            Base contract for adapter factory
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.ITypeAdapterProvider.Create">
-            <summary>
-            Create a type adater
-            </summary>
-            <returns>The created ITypeAdapter</returns>
-        </member>
-        <member name="T:SmartFran.Seed.Logging.LoggerFactory">
-            <summary>
-            Log Factory
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Logging.LoggerFactory.provider">
-            <summary>
-            Logging factory
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.LoggerFactory.SetProvider(SmartFran.Seed.Logging.ILoggerProvider)">
-            <summary>
-            Set the  log factory to use
-            </summary>
-            <param name="loggerProvider">
-            The logger Provider.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.LoggerFactory.CreateLogger">
-            <summary>
-            The create logger.
-            </summary>
-            <returns>
-            The SmartFran.Seed.Logging.ILogger.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.LoggerFactory.CreateLogger(System.String)">
-            <summary>
-            The create logger.
-            </summary>
-            <param name="loggerName">
-            The logger Name.
-            </param>
-            <returns>
-            The SmartFran.Seed.Logging.ILogger.
-            </returns>
+            <returns>New EntityValidator</returns>
         </member>
         <member name="T:SmartFran.Seed.Logging.ILogger">
             <summary>
@@ -281,54 +151,6 @@
             <param name="exception">The exception associated with this error</param>
             <param name="args">The arguments values</param>
         </member>
-        <member name="T:SmartFran.Seed.Validator.EntityValidatorFactory">
-            <summary>
-            Entity Validator Factory
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Validator.EntityValidatorFactory.provider">
-            <summary>
-            Factory of entity validator
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.EntityValidatorFactory.SetProvider(SmartFran.Seed.Validator.IEntityValidatorProvider)">
-            <summary>
-            Set the  log currentProvider to use
-            </summary>
-            <param name="entityValidatorProvider">
-            The entity Validator Provider.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.EntityValidatorFactory.CreateEntityValidator">
-            <summary>
-            Createt a new entity validator
-            </summary>
-            <returns>Created ILog</returns>
-        </member>
-        <member name="T:SmartFran.Seed.Logging.ILoggerProvider">
-            <summary>
-            Base contract for adapter factory
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.ILoggerProvider.Create">
-            <summary>
-            Create a type adater
-            </summary>
-            <returns>
-            The created ILogger
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.ILoggerProvider.Create(System.String)">
-            <summary>
-            Create a type adater
-            </summary>
-            <param name="loggerName">
-            The logger Name.
-            </param>
-            <returns>
-            The created ILogger
-            </returns>
-        </member>
         <member name="T:SmartFran.Seed.Adapter.ITypeAdapter">
             <summary>
             Base contract for map dto to aggregate or aggregate to dto.
@@ -355,6 +177,54 @@
             <param name="source">Instance to adapt</param>
             <returns><paramref name="source"/> mapped to <typeparamref name="TTarget"/></returns>
         </member>
+        <member name="T:SmartFran.Seed.Adapter.TypeAdapterFactory">
+            <summary>
+            Type adapter factory.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Adapter.TypeAdapterFactory.provider">
+            <summary>
+            Adapter factory
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.TypeAdapterFactory.SetProvider(SmartFran.Seed.Adapter.ITypeAdapterProvider)">
+            <summary>
+            Set the current type adapter factory
+            </summary>
+            <param name="typeAdapterProvider">
+            The type Adapter Provider.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.TypeAdapterFactory.CreateTypeAdapter">
+            <summary>
+            Create a new type adapter from currect factory
+            </summary>
+            <returns>Created type adapter</returns>
+        </member>
+        <member name="T:SmartFran.Seed.Logging.ILoggerProvider">
+            <summary>
+            Base contract for adapter factory
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.ILoggerProvider.Create">
+            <summary>
+            Create a type adater
+            </summary>
+            <returns>
+            The created ILogger
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.ILoggerProvider.Create(System.String)">
+            <summary>
+            Create a type adater
+            </summary>
+            <param name="loggerName">
+            The logger Name.
+            </param>
+            <returns>
+            The created ILogger
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Activator.Factory">
             <summary>
             Class to provide dynamic instance creation facilities
@@ -371,7 +241,7 @@
             </summary>
             <param name="type">The type to create.</param>
             <param name="bindingFlags">The binding flags to pass to Activator.CreateInstance</param>
-            <param name="binder">The binder obejct to pass to Activator.CreateInstance</param>
+            <param name="binder">The binder object to pass to Activator.CreateInstance</param>
             <param name="cultureInfo">The CultureInfo to pass to Activator.CreateInstance</param>
             <typeparam name="TReturnType">The type to return.</typeparam>
             <returns>The new created instance.</returns>
@@ -385,7 +255,7 @@
             from ContextBoundObject.</typeparam>
             <param name="values">A dictionary of values to initialize
             the object in place of a constructor.</param>
-            <param name="strict">If set to true (default value) an exceptino will be thrown if there are more
+            <param name="strict">If set to true (default value) an exception will be thrown if there are more
             parameters specified in values that the ones the class has or if the parameters are not assignables
             to the class fields or properties.</param>
             <returns>The newly created and instantiated object.</returns>
@@ -415,7 +285,7 @@
             Creates a new instance of T using the default constructor
             </summary>
             <param name="bindingFlags">The binding flags to pass to Activator.CreateInstance</param>
-            <param name="binder">The binder obejct to pass to Activator.CreateInstance</param>
+            <param name="binder">The binder object to pass to Activator.CreateInstance</param>
             <param name="cultureInfo">The CultureInfo to pass to Activator.CreateInstance</param>
             <typeparam name="TCreatableType">The type to create</typeparam>
             <typeparam name="TReturnType">The type to return</typeparam>
@@ -452,7 +322,7 @@
             Creates a new instance of T using the default constructor
             </summary>
             <param name="bindingFlags">The binding flags to pass to Activator.CreateInstance</param>
-            <param name="binder">The binder obejct to pass to Activator.CreateInstance</param>
+            <param name="binder">The binder object to pass to Activator.CreateInstance</param>
             <param name="cultureInfo">The CultureInfo to pass to Activator.CreateInstance</param>
             <typeparam name="TCreatableType">The type to create and return</typeparam>
             <returns>The new created instance</returns>
@@ -516,6 +386,136 @@
             <exception cref="T:System.ArgumentNullException">
             Null arguments.
             </exception>
+        </member>
+        <member name="T:SmartFran.Seed.Logging.LoggerFactory">
+            <summary>
+            Log Factory
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.LoggerFactory.provider">
+            <summary>
+            Logging factory
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LoggerFactory.SetProvider(SmartFran.Seed.Logging.ILoggerProvider)">
+            <summary>
+            Set the  log factory to use
+            </summary>
+            <param name="loggerProvider">
+            The logger Provider.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LoggerFactory.CreateLogger">
+            <summary>
+            The create logger.
+            </summary>
+            <returns>
+            The SmartFran.Seed.Logging.ILogger.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LoggerFactory.CreateLogger(System.String)">
+            <summary>
+            The create logger.
+            </summary>
+            <param name="loggerName">
+            The logger Name.
+            </param>
+            <returns>
+            The SmartFran.Seed.Logging.ILogger.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Dependency.IDiContainer">
+            <summary>
+            Base contract for dependency mapper
+            <remarks>
+            This is a  contract for work with dependency managers like Unity or adhoc mappers
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.IDiContainer.Resolve``1">
+            <summary>
+            Resolve an instance of the default requested type from the container. 
+            </summary>
+            <typeparam name="TSearchedType">
+            System.Type of object to get from the container.
+            </typeparam>
+            <returns>
+            The retrieved object.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.IDiContainer.AddScope(System.String)">
+            <summary>
+            The add scope.
+            </summary>
+            <param name="scope">
+            The scope.
+            </param>
+        </member>
+        <member name="T:SmartFran.Seed.Validator.EntityValidatorFactory">
+            <summary>
+            Entity Validator Factory
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Validator.EntityValidatorFactory.provider">
+            <summary>
+            Factory of entity validator
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Validator.EntityValidatorFactory.SetProvider(SmartFran.Seed.Validator.IEntityValidatorProvider)">
+            <summary>
+            Set the  log currentProvider to use
+            </summary>
+            <param name="entityValidatorProvider">
+            The entity Validator Provider.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Validator.EntityValidatorFactory.CreateEntityValidator">
+            <summary>
+            Createt a new entity validator
+            </summary>
+            <returns>Created ILog</returns>
+        </member>
+        <member name="T:SmartFran.Seed.Resources.Activator">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Activator.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Activator.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Activator.Create_Values_is_null">
+            <summary>
+              Looks up a localized string similar to Values is null..
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Activator.Fill_Source_is_null">
+            <summary>
+              Looks up a localized string similar to Source is null..
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Activator.Fill_Values_is_null">
+            <summary>
+              Looks up a localized string similar to Values is null.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.Dependency.IDiContainerProvider">
+            <summary>
+            Base contract for adapter factory
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.IDiContainerProvider.Create">
+            <summary>
+            Create a type adater
+            </summary>
+            <returns>The created ITypeAdapter</returns>
         </member>
     </members>
 </doc>

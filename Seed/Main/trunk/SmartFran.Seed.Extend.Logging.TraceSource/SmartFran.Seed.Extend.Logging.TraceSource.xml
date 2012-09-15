@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>SmartFran.Seed.Logging.TraceSource</name>
+        <name>SmartFran.Seed.Extend.Logging.TraceSource</name>
     </assembly>
     <members>
         <member name="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger">

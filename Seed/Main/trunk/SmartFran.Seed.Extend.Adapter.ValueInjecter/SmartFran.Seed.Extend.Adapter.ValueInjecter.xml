@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>SmartFran.Seed.Adapter.ValueInjecter</name>
+        <name>SmartFran.Seed.Extend.Adapter.ValueInjecter</name>
     </assembly>
     <members>
         <member name="T:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapterProvider">

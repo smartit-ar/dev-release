@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>SmartFran.Seed.Adapter.AutoMapper</name>
+        <name>SmartFran.Seed.Extend.Adapter.AutoMapper</name>
     </assembly>
     <members>
         <member name="T:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapterProvider">
@@ -24,7 +24,7 @@
         </member>
         <member name="T:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapter">
             <summary>
-            Automapper type adapter implementation
+            AutoMapper type adapter implementation
             </summary>
         </member>
         <member name="M:SmartFran.Seed.Adapter.AutoMapper.AutoMapperTypeAdapter.Adapt``2(``0)">
