@@ -262,6 +262,32 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.Query``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageCount">
+            The page count.
+            </param>
+            <param name="orderByExpression">
+            The order by expression.
+            </param>
+            <param name="ascending">
+            The ascending.
+            </param>
+            <param name="whereExpression">
+            The where specification expression.
+            </param>
+            <typeparam name="TKProperty">
+            Property type of OrderBy.
+            </typeparam>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
         <member name="P:SmartFran.Seed.NLayer.Domain.IRepository`1.Context">
             <summary>
             Gets the unit of work in this repository
@@ -407,6 +433,32 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.Query``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageCount">
+            The page count.
+            </param>
+            <param name="orderByExpression">
+            The order by expression.
+            </param>
+            <param name="ascending">
+            The ascending.
+            </param>
+            <param name="whereExpression">
+            The where expression.
+            </param>
+            <typeparam name="TKProperty">
+            Property type of OrderBy.
+            </typeparam>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.GetFiltered(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             The get filtered.
@@ -487,7 +539,7 @@
             Check if this specification is satisfied by a 
             specific expression lambda
             </summary>
-            <returns></returns>
+            <returns>Where expression</returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.SatisfiedBy">
             <summary>
@@ -1161,6 +1213,104 @@
             </summary>
             <param name="p">A Parameter expression</param>
             <returns>New visited expression</returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.BaseContext">
+            <summary>
+            The base context.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.ApplyCurrentValues``1(``0,``0)">
+            <summary>
+            The apply current values.
+            </summary>
+            <param name="original">
+            The original.
+            </param>
+            <param name="current">
+            The current.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.Attach``1(``0)">
+            <summary>
+            The attach.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.CreateSet``1">
+            <summary>
+            The create set.
+            </summary>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The System.Data.Entity.DbSet`1[TEntity -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.SetModified``1(``0)">
+            <summary>
+            The set modified.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.ExecuteCommand(System.String,System.Object[])">
+            <summary>
+            The execute command.
+            </summary>
+            <param name="sqlCommand">
+            The sql command.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.ExecuteQuery``1(System.String,System.Object[])">
+            <summary>
+            The execute query.
+            </summary>
+            <param name="sqlQuery">
+            The sql query.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.Commit">
+            <summary>
+            The commit.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.CommitAndRefreshChanges">
+            <summary>
+            The commit and refresh changes.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.RollbackChanges">
+            <summary>
+            The rollback changes.
+            </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.Specification.DirectSpecification`1">
             <summary>
@@ -1994,104 +2144,6 @@
             <see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/>
             </summary>
             <returns><see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/></returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.BaseContext">
-            <summary>
-            The base context.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.ApplyCurrentValues``1(``0,``0)">
-            <summary>
-            The apply current values.
-            </summary>
-            <param name="original">
-            The original.
-            </param>
-            <param name="current">
-            The current.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.Attach``1(``0)">
-            <summary>
-            The attach.
-            </summary>
-            <param name="item">
-            The item.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.CreateSet``1">
-            <summary>
-            The create set.
-            </summary>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-            <returns>
-            The System.Data.Entity.DbSet`1[TEntity -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.SetModified``1(``0)">
-            <summary>
-            The set modified.
-            </summary>
-            <param name="item">
-            The item.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.ExecuteCommand(System.String,System.Object[])">
-            <summary>
-            The execute command.
-            </summary>
-            <param name="sqlCommand">
-            The sql command.
-            </param>
-            <param name="parameters">
-            The parameters.
-            </param>
-            <returns>
-            The System.Int32.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.ExecuteQuery``1(System.String,System.Object[])">
-            <summary>
-            The execute query.
-            </summary>
-            <param name="sqlQuery">
-            The sql query.
-            </param>
-            <param name="parameters">
-            The parameters.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-            <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.Commit">
-            <summary>
-            The commit.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.CommitAndRefreshChanges">
-            <summary>
-            The commit and refresh changes.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.BaseContext.RollbackChanges">
-            <summary>
-            The rollback changes.
-            </summary>
         </member>
     </members>
 </doc>
