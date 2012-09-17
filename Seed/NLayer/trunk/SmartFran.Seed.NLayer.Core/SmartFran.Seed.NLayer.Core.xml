@@ -298,7 +298,7 @@
             The unit of work.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.#ctor(SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork)">
+        <member name="M:SmartFran.Seed.NLayer.Data.Repository`1.#ctor(SmartFran.Seed.NLayer.Data.IQueryableDataContext)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.Repository`1"/> class. 
             </summary>
@@ -691,40 +691,6 @@
             Gets or sets the id.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.IUnitOfWork">
-            <summary>
-            Contract for ‘context pattern’. For more
-            related info see http://martinfowler.com/eaaCatalog/context.html or
-            http://msdn.microsoft.com/en-us/magazine/dd882510.aspx
-            In this solution, the Unit Of Work is implemented using the out-of-box 
-            Entity Framework Context (EF 4.1 DbContext) persistence engine. But in order to
-            comply the PI (Persistence Ignorant) principle in our Domain, we implement this interface/contract. 
-            This interface/contract should be complied by any UoW implementation to be used with this Domain.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IUnitOfWork.Commit">
-            <summary>
-            Commit all changes made in a container.
-            </summary>
-            <remarks>
-            If the entity have fixed properties and any optimistic concurrency problem exists,  
-            then an exception is thrown
-            </remarks>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IUnitOfWork.CommitAndRefreshChanges">
-            <summary>
-            Commit all changes made in  a container.
-            </summary>
-            <remarks>
-            If the entity have fixed properties and any optimistic concurrency problem exists,
-            then 'client changes' are refreshed - Client wins
-            </remarks>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IUnitOfWork.RollbackChanges">
-            <summary>
-            Rollback tracked changes. See references of context pattern
-            </summary>
-        </member>
         <member name="T:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationServiceError">
             <summary>
             Default ServiceError
@@ -810,24 +776,46 @@
             <param name="serviceDescription">The service description.</param>
             <param name="serviceHostBase">The service host that is currently being constructed.</param>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription">
+        <member name="T:SmartFran.Seed.NLayer.Data.IQueryableDataContext">
             <summary>
-            Generic base contract to normalize the subscription and unsubscription to callbacks in WCF/Web services.
+            The context contract for EF implementation
+            <remarks>
+            This contract extend IDataContext for use with EF code
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.IDataContext">
+            <summary>
+            Contract for ‘context pattern’. For more
+            related info see http://martinfowler.com/eaaCatalog/context.html or
+            http://msdn.microsoft.com/en-us/magazine/dd882510.aspx
+            In this solution, the Unit Of Work is implemented using the out-of-box 
+            Entity Framework Context (EF 4.1 DbContext) persistence engine. But in order to
+            comply the PI (Persistence Ignorant) principle in our Domain, we implement this interface/contract. 
+            This interface/contract should be complied by any UoW implementation to be used with this Domain.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.Commit">
+            <summary>
+            Commit all changes made in a container.
             </summary>
             <remarks>
-            Inherit your service's callback subscription contract from this interface and decorate it with the ServiceContract attribute
-            with your custom callbacks interface. Example: 
-              [ServiceContract(CallbackContract = typeof(IMyServiceCallbacks), SessionMode = SessionMode.Required)]
+            If the entity have fixed properties and any optimistic concurrency problem exists,  
+            then an exception is thrown
             </remarks>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription.Subscribe">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.CommitAndRefreshChanges">
             <summary>
-            Adds the underlying service's callback client to the subscription list.
+            Commit all changes made in  a container.
             </summary>
+            <remarks>
+            If the entity have fixed properties and any optimistic concurrency problem exists,
+            then 'client changes' are refreshed - Client wins
+            </remarks>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription.Unsubscribe">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.RollbackChanges">
             <summary>
-            Removes the underlying service's callback client from the subscription list.
+            Rollback tracked changes. See references of context pattern
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Data.ISql">
@@ -863,6 +851,59 @@
             </param>
             <param name="parameters">A vector of parameters values</param>
             <returns>The number of affected records</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.IQueryableDataContext.CreateSet``1">
+            <summary>
+            The create set.
+            </summary>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The System.Data.Entity.DbSet`1[TEntity -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.IQueryableDataContext.Attach``1(``0)">
+            <summary>
+            Attach this item into "ObjectStateManager"
+            </summary>
+            <typeparam name="TEntity">The type of entity.</typeparam>
+            <param name="item">The item. </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.IQueryableDataContext.SetModified``1(``0)">
+            <summary>
+            Set object as modified
+            </summary>
+            <typeparam name="TEntity">The type of entity</typeparam>
+            <param name="item">The entity item to set as modifed</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.IQueryableDataContext.ApplyCurrentValues``1(``0,``0)">
+            <summary>
+            Apply current values in <paramref name="original"/>
+            </summary>
+            <typeparam name="TEntity">The type of entity</typeparam>
+            <param name="original">The original entity</param>
+            <param name="current">The current entity</param>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription">
+            <summary>
+            Generic base contract to normalize the subscription and unsubscription to callbacks in WCF/Web services.
+            </summary>
+            <remarks>
+            Inherit your service's callback subscription contract from this interface and decorate it with the ServiceContract attribute
+            with your custom callbacks interface. Example: 
+              [ServiceContract(CallbackContract = typeof(IMyServiceCallbacks), SessionMode = SessionMode.Required)]
+            </remarks>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription.Subscribe">
+            <summary>
+            Adds the underlying service's callback client to the subscription list.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription.Unsubscribe">
+            <summary>
+            Removes the underlying service's callback client from the subscription list.
+            </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException">
             <summary>
@@ -1123,47 +1164,6 @@
             <exception cref="T:System.Runtime.Serialization.SerializationException">
             The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0). 
             </exception>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork">
-            <summary>
-            The context contract for EF implementation
-            <remarks>
-            This contract extend IUnitOfWork for use with EF code
-            </remarks>
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork.CreateSet``1">
-            <summary>
-            The create set.
-            </summary>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-            <returns>
-            The System.Data.Entity.DbSet`1[TEntity -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork.Attach``1(``0)">
-            <summary>
-            Attach this item into "ObjectStateManager"
-            </summary>
-            <typeparam name="TEntity">The type of entity.</typeparam>
-            <param name="item">The item. </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork.SetModified``1(``0)">
-            <summary>
-            Set object as modified
-            </summary>
-            <typeparam name="TEntity">The type of entity</typeparam>
-            <param name="item">The entity item to set as modifed</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.IQueryableUnitOfWork.ApplyCurrentValues``1(``0,``0)">
-            <summary>
-            Apply current values in <paramref name="original"/>
-            </summary>
-            <typeparam name="TEntity">The type of entity</typeparam>
-            <param name="original">The original entity</param>
-            <param name="current">The current entity</param>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Resources.Application.Messages">
             <summary>
