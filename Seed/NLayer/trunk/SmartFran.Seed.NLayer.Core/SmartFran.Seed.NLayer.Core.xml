@@ -584,40 +584,6 @@
             Removes the underlying service's callback client from the subscription list.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.ISql">
-            <summary>
-            Base contract for support 'dialect specific queries'.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteQuery``1(System.String,System.Object[])">
-            <summary>
-            Execute specific query with underliying persistence store
-            </summary>
-            <typeparam name="TEntity">Entity type to map query results</typeparam>
-            <param name="sqlQuery">
-            Dialect Query 
-            <example>
-            SELECT idCustomer,Name FROM dbo.[Customers] WHERE idCustomer > {0}
-            </example>
-            </param>
-            <param name="parameters">A vector of parameters values</param>
-            <returns>
-            Enumerable results 
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteCommand(System.String,System.Object[])">
-            <summary>
-            Execute arbitrary command into underliying persistence store
-            </summary>
-            <param name="sqlCommand">
-            Command to execute
-            <example>
-            SELECT idCustomer,Name FROM dbo.[Customers] WHERE idCustomer > {0}
-            </example>
-            </param>
-            <param name="parameters">A vector of parameters values</param>
-            <returns>The number of affected records</returns>
-        </member>
         <member name="T:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException">
             <summary>
             The custom exception for validation errors
