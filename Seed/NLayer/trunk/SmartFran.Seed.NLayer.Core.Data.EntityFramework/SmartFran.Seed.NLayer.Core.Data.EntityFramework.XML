@@ -360,7 +360,7 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.GetFiltered(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             The get filtered.
             </summary>
