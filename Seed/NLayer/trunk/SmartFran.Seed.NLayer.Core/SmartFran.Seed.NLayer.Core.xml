@@ -434,7 +434,7 @@
             The System.Int32.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.AllMatching(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.Query(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
             <summary>
             The all matching.
             </summary>
@@ -827,6 +827,27 @@
             <exception cref="T:System.Runtime.Serialization.SerializationException">
             The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0). 
             </exception>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Application.Resources.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Application.Resources.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Application.Resources.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Application.Resources.Messages.exception_ApplicationValidationExceptionDefaultMessage">
+            <summary>
+              Looks up a localized string similar to Validation exception, check ValidationErrors for more information.
+            </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.Specification.ParameterRebinder">
             <summary>
@@ -1296,6 +1317,32 @@
             The runtime.
             </param>
         </member>
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.error_unmanagederror">
+            <summary>
+              Looks up a localized string similar to Unmanaged error in aplication, the exception information is.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.message_DefaultErrorMessage">
+            <summary>
+              Looks up a localized string similar to Oooppps this operation can&apos;t be processed at this moment. Please try it later. If problem persist contact with your System Administrator.
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.NLayer.ServiceModel.Faults">
             <summary>
             Implements facilities to handle N2-Labo well known exception and convert them to faults, at server side, and back to original exception once in the client side.
@@ -1660,53 +1707,6 @@
             <see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/>
             </summary>
             <returns><see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/></returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Application.Resources.Messages">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Application.Resources.Messages.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Application.Resources.Messages.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Application.Resources.Messages.exception_ApplicationValidationExceptionDefaultMessage">
-            <summary>
-              Looks up a localized string similar to Validation exception, check ValidationErrors for more information.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.error_unmanagederror">
-            <summary>
-              Looks up a localized string similar to Unmanaged error in aplication, the exception information is.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.message_DefaultErrorMessage">
-            <summary>
-              Looks up a localized string similar to Oooppps this operation can&apos;t be processed at this moment. Please try it later. If problem persist contact with your System Administrator.
-            </summary>
         </member>
     </members>
 </doc>
