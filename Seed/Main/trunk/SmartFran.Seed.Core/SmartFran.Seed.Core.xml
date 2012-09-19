@@ -4,42 +4,43 @@
         <name>SmartFran.Seed.Core</name>
     </assembly>
     <members>
-        <member name="T:SmartFran.Seed.Adapter.ITypeAdapterProvider">
+        <member name="T:SmartFran.Seed.Dependency.IDiContainer">
             <summary>
-            Base contract for adapter factory
+            Base contract for dependency mapper
+            <remarks>
+            This is a  contract for work with dependency managers like Unity or adhoc mappers
+            </remarks>
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Adapter.ITypeAdapterProvider.Create">
+        <member name="M:SmartFran.Seed.Dependency.IDiContainer.Resolve``1">
             <summary>
-            Create a type adater
+            Resolve an instance of the default requested type from the container. 
             </summary>
-            <returns>The created ITypeAdapter</returns>
+            <typeparam name="TSearchedType">
+            System.Type of object to get from the container.
+            </typeparam>
+            <returns>
+            The retrieved object.
+            </returns>
         </member>
-        <member name="T:SmartFran.Seed.Dependency.DiContainerFactory">
+        <member name="M:SmartFran.Seed.Dependency.IDiContainer.AddScope(System.String)">
             <summary>
-            Type dependency mapper factory.
+            The add scope.
             </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Dependency.DiContainerFactory.provider">
-            <summary>
-            Dependency mapper factory
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.SetProvider(SmartFran.Seed.Dependency.IDiContainerProvider)">
-            <summary>
-            Set the current type dependency mapper factory
-            </summary>
-            <param name="diContainerProvider">
-            The di Container Provider.
+            <param name="scope">
+            The scope.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.CreateDIContainer">
+        <member name="T:SmartFran.Seed.Validator.IEntityValidatorProvider">
             <summary>
-            The create di container.
+            Base contract for entity validator abstract factory
             </summary>
-            <returns>
-            The SmartFran.Seed.Dependency.IDiContainer.
-            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Validator.IEntityValidatorProvider.Create">
+            <summary>
+            Create a new IEntityValidator
+            </summary>
+            <returns>New EntityValidator</returns>
         </member>
         <member name="T:SmartFran.Seed.Validator.IEntityValidator">
             <summary>
@@ -62,16 +63,71 @@
             <param name="item">The instance with validation errors</param>
             <returns>A collection of validation errors</returns>
         </member>
-        <member name="T:SmartFran.Seed.Validator.IEntityValidatorProvider">
+        <member name="T:SmartFran.Seed.Dependency.IDiContainerProvider">
             <summary>
-            Base contract for entity validator abstract factory
+            Base contract for adapter factory
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Validator.IEntityValidatorProvider.Create">
+        <member name="M:SmartFran.Seed.Dependency.IDiContainerProvider.Create">
             <summary>
-            Create a new IEntityValidator
+            Create a type adater
             </summary>
-            <returns>New EntityValidator</returns>
+            <returns>The created ITypeAdapter</returns>
+        </member>
+        <member name="T:SmartFran.Seed.Adapter.TypeAdapterFactory">
+            <summary>
+            Type adapter factory.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Adapter.TypeAdapterFactory.provider">
+            <summary>
+            Adapter factory
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.TypeAdapterFactory.SetProvider(SmartFran.Seed.Adapter.ITypeAdapterProvider)">
+            <summary>
+            Set the current type adapter factory
+            </summary>
+            <param name="typeAdapterProvider">
+            The type Adapter Provider.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.TypeAdapterFactory.CreateTypeAdapter">
+            <summary>
+            Create a new type adapter from currect factory
+            </summary>
+            <returns>Created type adapter</returns>
+        </member>
+        <member name="T:SmartFran.Seed.Resources.Activator">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Activator.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Activator.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Activator.Create_Values_is_null">
+            <summary>
+              Looks up a localized string similar to Values is null..
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Activator.Fill_Source_is_null">
+            <summary>
+              Looks up a localized string similar to Source is null..
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Activator.Fill_Values_is_null">
+            <summary>
+              Looks up a localized string similar to Values is null.
+            </summary>
         </member>
         <member name="T:SmartFran.Seed.Logging.ILogger">
             <summary>
@@ -150,80 +206,6 @@
             <param name="message">The error message to write</param>
             <param name="exception">The exception associated with this error</param>
             <param name="args">The arguments values</param>
-        </member>
-        <member name="T:SmartFran.Seed.Adapter.ITypeAdapter">
-            <summary>
-            Base contract for map dto to aggregate or aggregate to dto.
-            <remarks>
-            This is a  contract for work with "auto" mappers ( automapper,emitmapper,valueinjecter...)
-            or adhoc mappers
-            </remarks>
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.ITypeAdapter.Adapt``2(``0)">
-            <summary>
-            Adapt a source object to an instance of type TTarget
-            </summary>
-            <typeparam name="TSource">Type of source item</typeparam>
-            <typeparam name="TTarget">Type of target item</typeparam>
-            <param name="source">Instance to adapt</param>
-            <returns><paramref name="source"/> mapped to <typeparamref name="TTarget"/></returns>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.ITypeAdapter.Adapt``1(System.Object)">
-            <summary>
-            Adapt a source object to an instnace of type TTarget
-            </summary>
-            <typeparam name="TTarget">Type of target item</typeparam>
-            <param name="source">Instance to adapt</param>
-            <returns><paramref name="source"/> mapped to <typeparamref name="TTarget"/></returns>
-        </member>
-        <member name="T:SmartFran.Seed.Adapter.TypeAdapterFactory">
-            <summary>
-            Type adapter factory.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Adapter.TypeAdapterFactory.provider">
-            <summary>
-            Adapter factory
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.TypeAdapterFactory.SetProvider(SmartFran.Seed.Adapter.ITypeAdapterProvider)">
-            <summary>
-            Set the current type adapter factory
-            </summary>
-            <param name="typeAdapterProvider">
-            The type Adapter Provider.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.TypeAdapterFactory.CreateTypeAdapter">
-            <summary>
-            Create a new type adapter from currect factory
-            </summary>
-            <returns>Created type adapter</returns>
-        </member>
-        <member name="T:SmartFran.Seed.Logging.ILoggerProvider">
-            <summary>
-            Base contract for adapter factory
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.ILoggerProvider.Create">
-            <summary>
-            Create a type adater
-            </summary>
-            <returns>
-            The created ILogger
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.ILoggerProvider.Create(System.String)">
-            <summary>
-            Create a type adater
-            </summary>
-            <param name="loggerName">
-            The logger Name.
-            </param>
-            <returns>
-            The created ILogger
-            </returns>
         </member>
         <member name="T:SmartFran.Seed.Activator.Factory">
             <summary>
@@ -387,6 +369,69 @@
             Null arguments.
             </exception>
         </member>
+        <member name="T:SmartFran.Seed.Dependency.DiContainerFactory">
+            <summary>
+            Type dependency mapper factory.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Dependency.DiContainerFactory.provider">
+            <summary>
+            Dependency mapper factory
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.SetProvider(SmartFran.Seed.Dependency.IDiContainerProvider)">
+            <summary>
+            Set the current type dependency mapper factory
+            </summary>
+            <param name="diContainerProvider">
+            The di Container Provider.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.CreateDIContainer">
+            <summary>
+            The create di container.
+            </summary>
+            <returns>
+            The SmartFran.Seed.Dependency.IDiContainer.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Adapter.ITypeAdapterProvider">
+            <summary>
+            Base contract for adapter factory
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ITypeAdapterProvider.Create">
+            <summary>
+            Create a type adater
+            </summary>
+            <returns>The created ITypeAdapter</returns>
+        </member>
+        <member name="T:SmartFran.Seed.Adapter.ITypeAdapter">
+            <summary>
+            Base contract for map dto to aggregate or aggregate to dto.
+            <remarks>
+            This is a  contract for work with "auto" mappers ( automapper,emitmapper,valueinjecter...)
+            or adhoc mappers
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ITypeAdapter.Adapt``2(``0)">
+            <summary>
+            Adapt a source object to an instance of type TTarget
+            </summary>
+            <typeparam name="TSource">Type of source item</typeparam>
+            <typeparam name="TTarget">Type of target item</typeparam>
+            <param name="source">Instance to adapt</param>
+            <returns><paramref name="source"/> mapped to <typeparamref name="TTarget"/></returns>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ITypeAdapter.Adapt``1(System.Object)">
+            <summary>
+            Adapt a source object to an instnace of type TTarget
+            </summary>
+            <typeparam name="TTarget">Type of target item</typeparam>
+            <param name="source">Instance to adapt</param>
+            <returns><paramref name="source"/> mapped to <typeparamref name="TTarget"/></returns>
+        </member>
         <member name="T:SmartFran.Seed.Logging.LoggerFactory">
             <summary>
             Log Factory
@@ -424,32 +469,29 @@
             The SmartFran.Seed.Logging.ILogger.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Dependency.IDiContainer">
+        <member name="T:SmartFran.Seed.Logging.ILoggerProvider">
             <summary>
-            Base contract for dependency mapper
-            <remarks>
-            This is a  contract for work with dependency managers like Unity or adhoc mappers
-            </remarks>
+            Base contract for adapter factory
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.IDiContainer.Resolve``1">
+        <member name="M:SmartFran.Seed.Logging.ILoggerProvider.Create">
             <summary>
-            Resolve an instance of the default requested type from the container. 
+            Create a type adater
             </summary>
-            <typeparam name="TSearchedType">
-            System.Type of object to get from the container.
-            </typeparam>
             <returns>
-            The retrieved object.
+            The created ILogger
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.IDiContainer.AddScope(System.String)">
+        <member name="M:SmartFran.Seed.Logging.ILoggerProvider.Create(System.String)">
             <summary>
-            The add scope.
+            Create a type adater
             </summary>
-            <param name="scope">
-            The scope.
+            <param name="loggerName">
+            The logger Name.
             </param>
+            <returns>
+            The created ILogger
+            </returns>
         </member>
         <member name="T:SmartFran.Seed.Validator.EntityValidatorFactory">
             <summary>
@@ -474,48 +516,6 @@
             Createt a new entity validator
             </summary>
             <returns>Created ILog</returns>
-        </member>
-        <member name="T:SmartFran.Seed.Resources.Activator">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Create_Values_is_null">
-            <summary>
-              Looks up a localized string similar to Values is null..
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Fill_Source_is_null">
-            <summary>
-              Looks up a localized string similar to Source is null..
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Fill_Values_is_null">
-            <summary>
-              Looks up a localized string similar to Values is null.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.Dependency.IDiContainerProvider">
-            <summary>
-            Base contract for adapter factory
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.IDiContainerProvider.Create">
-            <summary>
-            Create a type adater
-            </summary>
-            <returns>The created ITypeAdapter</returns>
         </member>
     </members>
 </doc>
