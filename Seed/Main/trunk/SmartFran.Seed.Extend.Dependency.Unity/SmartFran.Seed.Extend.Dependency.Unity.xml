@@ -33,14 +33,6 @@
             The retrieved object.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.AddScope(System.String)">
-            <summary>
-            The add scope.
-            </summary>
-            <param name="scope">
-            The scope.
-            </param>
-        </member>
         <member name="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider">
             <summary>
             ValueInjecter type adapter implementation
@@ -55,6 +47,14 @@
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider"/> class.
             </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.#ctor(SmartFran.Seed.Dependency.ICallbackConfigDiContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider"/> class.
+            </summary>
+            <param name="callbackConfig">
+            The callback Config.
+            </param>
         </member>
         <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.Create">
             <summary>
