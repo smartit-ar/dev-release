@@ -509,21 +509,5 @@
             <param name="exception">The exception associated with this error</param>
             <param name="args">The arguments values</param>
         </member>
-        <member name="T:SmartFran.Seed.Dependency.ICallbackConfigDiContainer`1">
-            <summary>
-            The CallbackConfigDiContainer interface.
-            </summary>
-            <typeparam name="TContainer">
-            Type of container.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.ICallbackConfigDiContainer`1.Configure(`0)">
-            <summary>
-            The configure.
-            </summary>
-            <param name="container">
-            The container.
-            </param>
-        </member>
     </members>
 </doc>
