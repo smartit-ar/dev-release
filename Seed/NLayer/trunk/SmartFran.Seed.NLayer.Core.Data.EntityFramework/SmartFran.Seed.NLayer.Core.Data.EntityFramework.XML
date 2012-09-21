@@ -79,120 +79,6 @@
             <param name="original">The original entity</param>
             <param name="current">The current entity</param>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.DataInitializer">
-            <summary>
-            Data initializer tools.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.DataInitializer.Set``1(System.Data.Entity.IDatabaseInitializer{``0})">
-            <summary>
-            The set.
-            </summary>
-            <param name="strategy">
-            The strategy.
-            </param>
-            <typeparam name="TContext">
-            DbContext type.
-            </typeparam>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext">
-            <summary>
-            The base context.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ApplyCurrentValues``1(``0,``0)">
-            <summary>
-            The apply current values.
-            </summary>
-            <param name="original">
-            The original.
-            </param>
-            <param name="current">
-            The current.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Attach``1(``0)">
-            <summary>
-            The attach.
-            </summary>
-            <param name="item">
-            The item.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CreateSet``1">
-            <summary>
-            The create set.
-            </summary>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-            <returns>
-            The System.Data.Entity.DbSet`1[TEntity -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.SetModified``1(``0)">
-            <summary>
-            The set modified.
-            </summary>
-            <param name="item">
-            The item.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ExecuteCommand(System.String,System.Object[])">
-            <summary>
-            The execute command.
-            </summary>
-            <param name="sqlCommand">
-            The sql command.
-            </param>
-            <param name="parameters">
-            The parameters.
-            </param>
-            <returns>
-            The System.Int32.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ExecuteQuery``1(System.String,System.Object[])">
-            <summary>
-            The execute query.
-            </summary>
-            <param name="sqlQuery">
-            The sql query.
-            </param>
-            <param name="parameters">
-            The parameters.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-            <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Commit">
-            <summary>
-            The commit.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CommitAndRefreshChanges">
-            <summary>
-            The commit and refresh changes.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.RollbackChanges">
-            <summary>
-            The rollback changes.
-            </summary>
-        </member>
         <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -496,6 +382,104 @@
         <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Context">
             <summary>
             Gets the unit of work.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext">
+            <summary>
+            The base context.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ApplyCurrentValues``1(``0,``0)">
+            <summary>
+            The apply current values.
+            </summary>
+            <param name="original">
+            The original.
+            </param>
+            <param name="current">
+            The current.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Attach``1(``0)">
+            <summary>
+            The attach.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CreateSet``1">
+            <summary>
+            The create set.
+            </summary>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The System.Data.Entity.DbSet`1[TEntity -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.SetModified``1(``0)">
+            <summary>
+            The set modified.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ExecuteCommand(System.String,System.Object[])">
+            <summary>
+            The execute command.
+            </summary>
+            <param name="sqlCommand">
+            The sql command.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ExecuteQuery``1(System.String,System.Object[])">
+            <summary>
+            The execute query.
+            </summary>
+            <param name="sqlQuery">
+            The sql query.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Commit">
+            <summary>
+            The commit.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CommitAndRefreshChanges">
+            <summary>
+            The commit and refresh changes.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.RollbackChanges">
+            <summary>
+            The rollback changes.
             </summary>
         </member>
     </members>
