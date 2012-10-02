@@ -4,12 +4,12 @@
         <name>SmartFran.Seed.Core.Web</name>
     </assembly>
     <members>
-        <member name="T:SmartFran.Seed.Diagnostics.JsonExceptionFilterAttribute">
+        <member name="T:SmartFran.Seed.Diagnostics.ThrowJsonException">
             <summary>
             The json exception filter attribute.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Diagnostics.JsonExceptionFilterAttribute.OnException(System.Web.Mvc.ExceptionContext)">
+        <member name="M:SmartFran.Seed.Diagnostics.ThrowJsonException.OnException(System.Web.Mvc.ExceptionContext)">
             <summary>
             The on exception.
             </summary>

@@ -4,6 +4,29 @@
         <name>SmartFran.Seed.Extend.Dependency.Unity</name>
     </assembly>
     <members>
+        <member name="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider">
+            <summary>
+            ValueInjecter type adapter implementation
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.unityContainer">
+            <summary>
+            The unity container.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.Create">
+            <summary>
+            The create.
+            </summary>
+            <returns>
+            The SmartFran.Seed.Adapter.ITypeAdapter.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Dependency.Unity.UnityDiContainer">
             <summary>
             Dependency mapper based on Unity framework.
@@ -31,29 +54,6 @@
             </typeparam>
             <returns>
             The retrieved object.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider">
-            <summary>
-            ValueInjecter type adapter implementation
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.unityContainer">
-            <summary>
-            The unity container.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider"/> class.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.Create">
-            <summary>
-            The create.
-            </summary>
-            <returns>
-            The SmartFran.Seed.Adapter.ITypeAdapter.
             </returns>
         </member>
     </members>
