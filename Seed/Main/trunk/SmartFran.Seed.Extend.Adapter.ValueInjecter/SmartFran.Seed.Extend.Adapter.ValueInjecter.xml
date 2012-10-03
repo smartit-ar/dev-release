@@ -4,6 +4,22 @@
         <name>SmartFran.Seed.Extend.Adapter.ValueInjecter</name>
     </assembly>
     <members>
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.TypeExtensions">
+            <summary>
+            The type extensions.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.TypeExtensions.IsEnumerable(System.Type)">
+            <summary>
+            Returns true if type is IEnumerable or ICollection, IList ...
+            </summary>
+            <param name="type">
+            The type.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapterProvider">
             <summary>
             ValueInjecter type adapter implementation
@@ -17,41 +33,91 @@
             The SmartFran.Seed.Adapter.ITypeAdapter.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter">
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.TypeMapper`2">
             <summary>
-            Automapper type adapter implementation
+            The type mapper.
             </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.Adapt``2(``0)">
-            <summary>
-            Adapt TSource to TTarget.
-            </summary>
-            <param name="source">
-            The source.
-            </param>
             <typeparam name="TSource">
             Source type.
             </typeparam>
             <typeparam name="TTarget">
-            Taget type.
+            Target type.
             </typeparam>
-            <returns>
-            Target object.
-            </returns>
         </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.Adapt``1(System.Object)">
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.ITypeMapper`2">
             <summary>
-            Adapt Source to TTarget.
+            The TypeMapper interface.
+            </summary>
+            <typeparam name="TSource">
+            Source type.
+            </typeparam>
+            <typeparam name="TTarget">
+            Target type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.ITypeMapper`2.Map(`0,`1)">
+            <summary>
+            The map.
             </summary>
             <param name="source">
             The source.
             </param>
-            <typeparam name="TTarget">
-            Taget type.
-            </typeparam>
+            <param name="target">
+            The target.
+            </param>
             <returns>
-            Target object.
+            The <see cref="!:TTarget"/>.
             </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.TypeMapper`2.Map(`0,`1)">
+            <summary>
+            The map.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <param name="target">
+            The target.
+            </param>
+            <returns>
+            The <see cref="!:TTarget"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.NormalToNullables">
+            <summary>
+            The normal to nullables.
+            e.g. int -> int?
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.NormalToNullables.Match(Omu.ValueInjecter.ConventionInfo)">
+            <summary>
+            The match.
+            </summary>
+            <param name="c">
+            The c.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.Creator">
+            <summary>
+            The creator.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.Creator.Create(System.Type)">
+            <summary>
+            The create.
+            </summary>
+            <param name="type">
+            The type.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+            <exception cref="T:System.Exception">
+            Not implementation for parameter type.
+            </exception>
         </member>
         <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.Mapper">
             <summary>
@@ -129,9 +195,45 @@
             The <see cref="T:System.Object"/>.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.TypeMapper`2">
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter">
             <summary>
-            The type mapper.
+            Automapper type adapter implementation
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.Adapt``2(``0)">
+            <summary>
+            Adapt TSource to TTarget.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <typeparam name="TSource">
+            Source type.
+            </typeparam>
+            <typeparam name="TTarget">
+            Taget type.
+            </typeparam>
+            <returns>
+            Target object.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.Adapt``1(System.Object)">
+            <summary>
+            Adapt Source to TTarget.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <typeparam name="TTarget">
+            Taget type.
+            </typeparam>
+            <returns>
+            Target object.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.EnumerableTypeMapper`2">
+            <summary>
+            The enumerable type mapper.
             </summary>
             <typeparam name="TSource">
             Source type.
@@ -140,18 +242,7 @@
             Target type.
             </typeparam>
         </member>
-        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.ITypeMapper`2">
-            <summary>
-            The TypeMapper interface.
-            </summary>
-            <typeparam name="TSource">
-            Source type.
-            </typeparam>
-            <typeparam name="TTarget">
-            Target type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.ITypeMapper`2.Map(`0,`1)">
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.EnumerableTypeMapper`2.Map(`0,`1)">
             <summary>
             The map.
             </summary>
@@ -165,27 +256,29 @@
             The <see cref="!:TTarget"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.TypeMapper`2.Map(`0,`1)">
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.NullablesToNormal">
             <summary>
-            The map.
+            The nullables to normal.
+            e.g. int? -> int
             </summary>
-            <param name="source">
-            The source.
-            </param>
-            <param name="target">
-            The target.
+        </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.NullablesToNormal.Match(Omu.ValueInjecter.ConventionInfo)">
+            <summary>
+            The match.
+            </summary>
+            <param name="c">
+            The c.
             </param>
             <returns>
-            The <see cref="!:TTarget"/>.
+            The <see cref="T:System.Boolean"/>.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.NormalToNullables">
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.IntToEnum">
             <summary>
-            The normal to nullables.
-            e.g. int -> int?
+            The int to enum.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.NormalToNullables.Match(Omu.ValueInjecter.ConventionInfo)">
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.IntToEnum.Match(Omu.ValueInjecter.ConventionInfo)">
             <summary>
             The match.
             </summary>
@@ -221,57 +314,6 @@
             </param>
             <returns>
             The <see cref="T:System.Object"/>.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.Creator">
-            <summary>
-            The creator.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.Creator.Create(System.Type)">
-            <summary>
-            The create.
-            </summary>
-            <param name="type">
-            The type.
-            </param>
-            <returns>
-            The <see cref="T:System.Object"/>.
-            </returns>
-            <exception cref="T:System.Exception">
-            Not implementation for parameter type.
-            </exception>
-        </member>
-        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.TypeExtensions">
-            <summary>
-            The type extensions.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.TypeExtensions.IsEnumerable(System.Type)">
-            <summary>
-            Returns true if type is IEnumerable or ICollection, IList ...
-            </summary>
-            <param name="type">
-            The type.
-            </param>
-            <returns>
-            The <see cref="T:System.Boolean"/>.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.IntToEnum">
-            <summary>
-            The int to enum.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.IntToEnum.Match(Omu.ValueInjecter.ConventionInfo)">
-            <summary>
-            The match.
-            </summary>
-            <param name="c">
-            The c.
-            </param>
-            <returns>
-            The <see cref="T:System.Boolean"/>.
             </returns>
         </member>
         <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.MapperFactory">
@@ -316,48 +358,6 @@
             <summary>
             The clear mappers.
             </summary>
-        </member>
-        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.NullablesToNormal">
-            <summary>
-            The nullables to normal.
-            e.g. int? -> int
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.NullablesToNormal.Match(Omu.ValueInjecter.ConventionInfo)">
-            <summary>
-            The match.
-            </summary>
-            <param name="c">
-            The c.
-            </param>
-            <returns>
-            The <see cref="T:System.Boolean"/>.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.EnumerableTypeMapper`2">
-            <summary>
-            The enumerable type mapper.
-            </summary>
-            <typeparam name="TSource">
-            Source type.
-            </typeparam>
-            <typeparam name="TTarget">
-            Target type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.EnumerableTypeMapper`2.Map(`0,`1)">
-            <summary>
-            The map.
-            </summary>
-            <param name="source">
-            The source.
-            </param>
-            <param name="target">
-            The target.
-            </param>
-            <returns>
-            The <see cref="!:TTarget"/>.
-            </returns>
         </member>
         <member name="T:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.EnumToInt">
             <summary>
