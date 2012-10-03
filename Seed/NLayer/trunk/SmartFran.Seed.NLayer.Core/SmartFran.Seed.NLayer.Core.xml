@@ -33,6 +33,31 @@
             <param name="version">The SOAP version of the message.</param>
             <param name="fault">The System.ServiceModel.Channels.Message object that is returned to the client, or service in duplex case</param>
         </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.PagedDataRequest">
+            <summary>
+            The paged data request.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.PagedDataRequest.PageIndex">
+            <summary>
+            Gets or sets the page index.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.PagedDataRequest.PageSize">
+            <summary>
+            Gets or sets the page size.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.PagedDataRequest.Sortinfo">
+            <summary>
+            Gets or sets the sortinfo.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.PagedDataRequest.FilterInfo">
+            <summary>
+            Gets or sets the filter info.
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.NLayer.Application.EntityDto">
             <summary>
             Base class for entities
@@ -783,6 +808,21 @@
             Gets or sets Error message that flow to client services
             </summary>
         </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.FilterInfo">
+            <summary>
+            The filter info.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.FilterInfo.Spec">
+            <summary>
+            Gets or sets the spec.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.FilterInfo.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute">
             <summary>
             Extends a service behavior to add a custom error handler
@@ -1074,6 +1114,36 @@
         <member name="P:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1.RightSideSpecification">
             <summary>
             Righ side specification
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.OrderDirection">
+            <summary>
+            The order direction.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.NLayer.Data.OrderDirection.Asc">
+            <summary>
+            The asc.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.NLayer.Data.OrderDirection.Desc">
+            <summary>
+            The desc.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.SortInfo">
+            <summary>
+            The sort info.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.SortInfo.Field">
+            <summary>
+            Gets or sets the field.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.SortInfo.Direction">
+            <summary>
+            Gets or sets the direction.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.Specification.TrueSpecification`1">
