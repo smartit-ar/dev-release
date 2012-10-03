@@ -17,55 +17,5 @@
             The filter context.
             </param>
         </member>
-        <member name="T:SmartFran.Seed.Binding.DynamicJsonAttribute">
-            <summary>
-            The dynamic json attribute.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Binding.DynamicJsonAttribute.GetBinder">
-            <summary>
-            The get binder.
-            </summary>
-            <returns>
-            The <see cref="T:System.Web.Mvc.IModelBinder"/>.
-            </returns>
-        </member>
-        <member name="P:SmartFran.Seed.Binding.DynamicJsonAttribute.MatchName">
-            <summary>
-            Gets or sets a value indicating whether match name.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.Binding.DynamicJsonBinder">
-            <summary>
-            The dynamic json binder.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Binding.DynamicJsonBinder.matchName">
-            <summary>
-            The match name.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Binding.DynamicJsonBinder.#ctor(System.Boolean)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Binding.DynamicJsonBinder"/> class.
-            </summary>
-            <param name="matchName">
-            The match name.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Binding.DynamicJsonBinder.BindModel(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext)">
-            <summary>
-            The bind model.
-            </summary>
-            <param name="controllerContext">
-            The controller context.
-            </param>
-            <param name="bindingContext">
-            The binding context.
-            </param>
-            <returns>
-            The <see cref="T:System.Object"/>.
-            </returns>
-        </member>
     </members>
 </doc>
