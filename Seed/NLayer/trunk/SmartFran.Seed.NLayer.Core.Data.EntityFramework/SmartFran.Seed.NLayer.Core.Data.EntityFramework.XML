@@ -212,147 +212,142 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
             <summary>
             The query.
             </summary>
-            <param name="orderByExpression">
-            The order by expression.
+            <param name="pageIndex">
+            The page Index.
             </param>
-            <param name="ascending">
-            The ascending.
+            <param name="pageSize">
+            The page Size.
             </param>
-            <typeparam name="TKProperty">
-            Property type or OrderBy. 
-            </typeparam>
-            <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
-            <summary>
-            The query.
-            </summary>
-            <param name="orderByExpression">
-            The order by expression.
-            </param>
-            <param name="ascending">
-            The ascending.
+            <param name="orderBy">
+            The order By.
             </param>
             <param name="specification">
             The specification.
             </param>
-            <typeparam name="TKProperty">
-            Property type or OrderBy. 
-            </typeparam>
             <returns>
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
             <summary>
             The query.
             </summary>
-            <param name="orderByExpression">
-            The order by expression.
+            <param name="orderBy">
+            The order by.
             </param>
-            <param name="ascending">
-            The ascending.
-            </param>
-            <param name="whereExpression">
-            The where Expression.
-            </param>
-            <typeparam name="TKProperty">
-            Property type or OrderBy. 
-            </typeparam>
             <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
             <summary>
             The query.
             </summary>
-            <param name="pageIndex">
-            The page index.
+            <param name="orderBy">
+            The order by.
             </param>
-            <param name="pageCount">
-            The page count.
+            <param name="specification">
+            The specification.
             </param>
-            <param name="orderByExpression">
-            The order by expression.
-            </param>
-            <param name="ascending">
-            The ascending.
-            </param>
-            <typeparam name="TKProperty">
-            Property type or OrderBy. 
-            </typeparam>
             <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             The query.
             </summary>
-            <param name="pageIndex">
-            The page index.
-            </param>
-            <param name="pageCount">
-            The page count.
-            </param>
-            <param name="orderByExpression">
-            The order by expression.
-            </param>
-            <param name="ascending">
-            The ascending.
+            <param name="orderBy">
+            The order by.
             </param>
             <param name="whereExpression">
             The where expression.
             </param>
-            <typeparam name="TKProperty">
-            Property type of OrderBy.
-            </typeparam>
             <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
-            <summary>
-            The query.
-            </summary>
-            <param name="pageIndex">
-            The page index.
-            </param>
-            <param name="pageCount">
-            The page count.
-            </param>
-            <param name="orderByExpression">
-            The order by expression.
-            </param>
-            <param name="ascending">
-            The ascending.
-            </param>
-            <param name="whereExpression">
-            The where expression.
-            </param>
-            <typeparam name="TKProperty">
-            Property type of OrderBy.
-            </typeparam>
-            <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
-            The get filtered.
+            The query.
             </summary>
-            <param name="filter">
-            The filter.
+            <param name="whereExpression">
+            The where expression.
             </param>
             <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageSize">
+            The page size.
+            </param>
+            <param name="orderBy">
+            The order by.
+            </param>
+            <returns>
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageSize">
+            The page size.
+            </param>
+            <param name="orderBy">
+            The order by.
+            </param>
+            <param name="whereExpression">
+            The where expression.
+            </param>
+            <returns>
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageSize">
+            The page size.
+            </param>
+            <param name="whereExpression">
+            The where expression.
+            </param>
+            <returns>
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Merge(`0,`0)">
