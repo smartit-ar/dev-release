@@ -1630,31 +1630,14 @@
             <param name="pageIndex">
             The page index.
             </param>
-            <param name="pageCount">
-            The page count.
+            <param name="pageSize">
+            The page Size.
             </param>
             <param name="orderBy">
             The order By.
             </param>
             <param name="whereExpression">
             The where specification expression.
-            </param>
-            <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`1.Query(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
-            <summary>
-            The query.
-            </summary>
-            <param name="pageIndex">
-            The page index.
-            </param>
-            <param name="pageSize">
-            The page Size.
-            </param>
-            <param name="whereExpression">
-            The where expression.
             </param>
             <returns>
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
