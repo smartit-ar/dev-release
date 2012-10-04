@@ -206,6 +206,28 @@
             The System.Int32.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Count(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The count.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The count.
+            </summary>
+            <param name="whereExpression">
+            The where expression.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1.Query(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
             <summary>
             The all matching.
