@@ -33,31 +33,6 @@
             <param name="version">The SOAP version of the message.</param>
             <param name="fault">The System.ServiceModel.Channels.Message object that is returned to the client, or service in duplex case</param>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.PagedDataRequest">
-            <summary>
-            The paged data request.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.PagedDataRequest.PageIndex">
-            <summary>
-            Gets or sets the page index.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.PagedDataRequest.PageSize">
-            <summary>
-            Gets or sets the page size.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.PagedDataRequest.Sortinfo">
-            <summary>
-            Gets or sets the sortinfo.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.PagedDataRequest.FilterInfo">
-            <summary>
-            Gets or sets the filter info.
-            </summary>
-        </member>
         <member name="T:SmartFran.Seed.NLayer.Application.EntityDto">
             <summary>
             Base class for entities
