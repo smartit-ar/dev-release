@@ -4,34 +4,29 @@
         <name>SmartFran.Seed.NLayer.Core</name>
     </assembly>
     <members>
-        <member name="T:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandler">
+        <member name="T:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException">
             <summary>
-            Default error handler for WCF Service Facade
+            The custom exception for validation errors
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandler.HandleError(System.Exception)">
+        <member name="F:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException.validationErrors">
             <summary>
-            Enables error-related processing and returns a value that indicates whether
-            the dispatcher aborts the session and the instance context in certain cases
+            The _validation errors.
             </summary>
-            <remarks>
-            Trace error and handle this
-            </remarks>
-            <param name="error">The exception thrown during processing</param>
-            <returns>
-            true if should not abort the session (if there is one) and instance context
-            if the instance context is not System.ServiceModel.InstanceContextMode.Single;
-            otherwise, false. The default is false.
-            </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandler.ProvideFault(System.Exception,System.ServiceModel.Channels.MessageVersion,System.ServiceModel.Channels.Message@)">
+        <member name="M:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException.#ctor(System.Collections.Generic.IEnumerable{System.String})">
             <summary>
-            Enables the creation of a custom System.ServiceModel.FaultException{TDetail}
-            that is returned from an exception in the course of a service method.
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException"/> class. 
+            Create new instance of Application validation errors exception
             </summary>
-            <param name="error">The System.Exception object thrown in the course of the service operation.</param>
-            <param name="version">The SOAP version of the message.</param>
-            <param name="fault">The System.ServiceModel.Channels.Message object that is returned to the client, or service in duplex case</param>
+            <param name="validationErrors">
+            The collection of validation errors
+            </param>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException.ValidationErrors">
+            <summary>
+            Gets the validation errors messages
+            </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Application.EntityDto">
             <summary>
@@ -107,171 +102,153 @@
             Gets or sets the id.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.ValueObject`1">
+        <member name="T:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods">
             <summary>
-            Base class for value objects in domain.
-            Value
+            Entities projections
             </summary>
-            <typeparam name="TValueObject">The type of this value object</typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.op_Equality(SmartFran.Seed.NLayer.Domain.ValueObject{`0},SmartFran.Seed.NLayer.Domain.ValueObject{`0})">
+        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.ToDto``1(SmartFran.Seed.NLayer.Domain.Entity,SmartFran.Seed.Adapter.AdaptMode)">
             <summary>
-            The equality operator
+            Project a type using a Dto
             </summary>
-            <param name="left">Left part.</param>
-            <param name="right">Right part.</param>
-            <returns>True if the values of its operands are equal.</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.op_Inequality(SmartFran.Seed.NLayer.Domain.ValueObject{`0},SmartFran.Seed.NLayer.Domain.ValueObject{`0})">
-            <summary>
-            The !=.
-            </summary>
-            <param name="left">
-            The left.
+            <typeparam name="TProjection">
+            The dto projection
+            </typeparam>
+            <param name="item">
+            The source entity to project
             </param>
-            <param name="right">
-            The right.
+            <param name="adaptMode">
+            The adapt Mode.
             </param>
             <returns>
-            True if the values of its operands aren't equal.
+            The projected type
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.Equals(`0)">
+        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.ToDto``1(System.Collections.Generic.IEnumerable{SmartFran.Seed.NLayer.Domain.Entity},SmartFran.Seed.Adapter.AdaptMode)">
             <summary>
-            The equals.
+            projected a enumerable collection of items
             </summary>
-            <param name="other">
-            The other.
+            <typeparam name="TEntityDto">
+            Dto type.
+            </typeparam>
+            <param name="items">
+            the collection of entity items
+            </param>
+            <param name="adaptMode">
+            The adapt Mode.
             </param>
             <returns>
-            The System.Boolean.
+            Projected collection
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.Equals(System.Object)">
+        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.ToEntity``1(SmartFran.Seed.NLayer.Application.EntityDto,SmartFran.Seed.Adapter.AdaptMode)">
             <summary>
-            The equals.
+            The adapter to.
             </summary>
-            <param name="obj">
-            The obj.
+            <param name="item">
+            The item.
             </param>
+            <param name="adaptMode">
+            The adapt Mode.
+            </param>
+            <typeparam name="TEntity">
+            Entity dto type.
+            </typeparam>
             <returns>
-            The System.Boolean.
+            The TEntity.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.GetHashCode">
+        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.ToEntity``1(System.Collections.Generic.IEnumerable{SmartFran.Seed.NLayer.Application.EntityDto},SmartFran.Seed.Adapter.AdaptMode)">
             <summary>
-            The get hash code.
+            Adater Dto to Entity
             </summary>
+            <param name="items">
+            Dto entities
+            </param>
+            <param name="adaptMode">
+            The adapt Mode.
+            </param>
+            <typeparam name="TEntity">
+            Type of entity
+            </typeparam>
             <returns>
-            The System.Int32.
+            entity collections
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages">
+        <member name="T:SmartFran.Seed.NLayer.Resources.Application.Messages">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.ResourceManager">
+        <member name="P:SmartFran.Seed.NLayer.Resources.Application.Messages.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.Culture">
+        <member name="P:SmartFran.Seed.NLayer.Resources.Application.Messages.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.error_unmanagederror">
+        <member name="P:SmartFran.Seed.NLayer.Resources.Application.Messages.exception_AdapterModeNotApplicable">
             <summary>
-              Looks up a localized string similar to Unmanaged error in aplication, the exception information is.
+              Looks up a localized string similar to AdapterMode: {0}, Not applicable..
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.message_DefaultErrorMessage">
+        <member name="P:SmartFran.Seed.NLayer.Resources.Application.Messages.exception_ApplicationValidationExceptionDefaultMessage">
             <summary>
-              Looks up a localized string similar to Oooppps this operation can&apos;t be processed at this moment. Please try it later. If problem persist contact with your System Administrator.
+              Looks up a localized string similar to Validation exception, check ValidationErrors for more information.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.ServiceModel.CallbacksSubscriptionBase">
+        <member name="T:SmartFran.Seed.NLayer.Data.FilterInfo">
             <summary>
-            Base class for callback subscription service classes. Implements basic functionality such as handling channel closing and faults events.
+            The filter info.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.CallbacksSubscriptionBase.ChannelClosing(System.Object,System.EventArgs)">
+        <member name="P:SmartFran.Seed.NLayer.Data.FilterInfo.Spec">
             <summary>
-            Handles the <see cref="E:System.ServiceModel.ICommunicationObject.Closing"/> event
-            </summary>
-            <param name="sender">
-            The sender. The <see cref="T:System.ServiceModel.IContextChannel"/> closing.
-            </param>
-            <param name="eventArgs">
-            The eventArgs.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.CallbacksSubscriptionBase.ChannelFaulted(System.Object,System.EventArgs)">
-            <summary>
-            Handles the <see cref="E:System.ServiceModel.ICommunicationObject.Faulted"/> event.
-            </summary>
-            <param name="sender">
-            The sender. The <see cref="T:System.ServiceModel.IContextChannel"/> faulted.
-            </param>
-            <param name="eventArgs">
-            The eventArgs.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.CallbacksSubscriptionBase.Disconnect(System.ServiceModel.IContextChannel)">
-            <summary>
-            Disconnects the channel. Method invoked when the channel is either normally or abnormally closed. 
-            </summary>
-            <param name="contextChannel">
-            The context channel.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.CallbacksSubscriptionBase.SetupChannelEvents(System.ServiceModel.IContextChannel)">
-            <summary>
-            Connects events handlers to the <see cref="E:System.ServiceModel.ICommunicationObject.Closing"/> and <see cref="E:System.ServiceModel.ICommunicationObject.Faulted"/> events to handle them properly.
-            </summary>
-            <param name="contextChannel">
-            The context channel.
-            </param>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.IDataContext">
-            <summary>
-            Contract for ‘context pattern’. For more
-            related info see http://martinfowler.com/eaaCatalog/context.html or
-            http://msdn.microsoft.com/en-us/magazine/dd882510.aspx
-            In this solution, the Unit Of Work is implemented using the out-of-box 
-            Entity Framework Context (EF 4.1 DbContext) persistence engine. But in order to
-            comply the PI (Persistence Ignorant) principle in our Domain, we implement this interface/contract. 
-            This interface/contract should be complied by any UoW implementation to be used with this Domain.
+            Gets or sets the spec.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.Commit">
+        <member name="P:SmartFran.Seed.NLayer.Data.FilterInfo.Value">
             <summary>
-            Commit all changes made in a container.
-            </summary>
-            <remarks>
-            If the entity have fixed properties and any optimistic concurrency problem exists,  
-            then an exception is thrown
-            </remarks>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.CommitAndRefreshChanges">
-            <summary>
-            Commit all changes made in  a container.
-            </summary>
-            <remarks>
-            If the entity have fixed properties and any optimistic concurrency problem exists,
-            then 'client changes' are refreshed - Client wins
-            </remarks>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.RollbackChanges">
-            <summary>
-            Rollback tracked changes. See references of context pattern
+            Gets or sets the value.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException">
+        <member name="T:SmartFran.Seed.NLayer.Data.OrderDirection">
             <summary>
-            Exception raised by the business logic when it detects / diagnoses a violation of business rules and can provide information about the rule(s) violated and possible solution.
+            The order direction.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.NLayer.Data.OrderDirection.Asc">
+            <summary>
+            The asc.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.NLayer.Data.OrderDirection.Desc">
+            <summary>
+            The desc.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.SortInfo">
+            <summary>
+            The sort info.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.SortInfo.Field">
+            <summary>
+            Gets or sets the field.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.SortInfo.Direction">
+            <summary>
+            Gets or sets the direction.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException">
+            <summary>
+            Exception raised when a conflict between cached data and stored data is detected when attempting to update, tipically apply changes, to the underlying data store.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException">
@@ -336,9 +313,9 @@
             Gets IssueId that identifies the instance of the error described in the exception.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException.#ctor(System.String,System.String)">
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException.#ctor(System.String,System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException"/> class. 
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException"/> class. 
             </summary>
             <param name="issueId">
             The issue Id.
@@ -347,9 +324,9 @@
             The message that describes the error. 
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException.#ctor(System.String,System.String,System.Exception)">
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException.#ctor(System.String,System.String,System.Exception)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException"/> class. 
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException"/> class. 
             </summary>
             <param name="issueId">
             The issue Id.
@@ -361,9 +338,9 @@
             The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. 
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException"/> class. 
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException"/> class. 
             </summary>
             <param name="info">
             The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown. 
@@ -377,268 +354,6 @@
             <exception cref="T:System.Runtime.Serialization.SerializationException">
             The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0). 
             </exception>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.ServiceModel.ErrorHandler">
-            <summary>
-            Error handler implementation to handle erros almost silently in services
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandler.HandleError(System.Exception)">
-            <summary>
-            Enables error-related processing and returns a value that indicates whether the dispatcher aborts the session and the instance context in certain cases. 
-            </summary>
-            <returns>
-            true if  should not abort the session (if there is one) and instance context if the instance context is not <see cref="F:System.ServiceModel.InstanceContextMode.Single"/>; otherwise, false. The default is false.
-            </returns>
-            <param name="error">
-            The exception thrown during processing.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandler.ProvideFault(System.Exception,System.ServiceModel.Channels.MessageVersion,System.ServiceModel.Channels.Message@)">
-            <summary>
-            Enables the creation of a custom <see cref="T:System.ServiceModel.FaultException`1"/> that is returned from an exception in the course of a service method.
-            </summary>
-            <param name="error">
-            The <see cref="T:System.Exception"/> object thrown in the course of the service operation.
-            </param>
-            <param name="version">
-            The SOAP version of the message.
-            </param>
-            <param name="fault">
-            The <see cref="T:System.ServiceModel.Channels.Message"/> object that is returned to the client, or service, in the duplex case.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandler.GetFaultDetail(System.Reflection.MethodInfo,System.ServiceModel.Description.FaultDescriptionCollection,System.Exception)">
-            <summary>
-            Looks up a fault details type and create is by means of a fault mapper (<see cref="T:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute"/>) or defaults.
-            </summary>
-            <param name="method">
-            The method where the error was trap
-            </param>
-            <param name="faultContracts">
-            The collection of faultContracts declared in the given method
-            </param>
-            <param name="error">
-            The actual error to convert into a fault
-            </param>
-            <returns>
-            An object being the detail of a fault that represents the given error.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.NotSpecification`1">
-            <summary>
-            NotEspecification convert a original
-            specification with NOT logic operator
-            </summary>
-            <typeparam name="TEntity">Type of element for this specificaiton</typeparam>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.Specification`1">
-            <summary>
-            Represent a Expression Specification
-            <remarks>
-            Specification overload operators for create AND,OR or NOT specifications.
-            Additionally overload AND and OR operators with the same sense of ( binary And and binary Or ).
-            C# couldn’t overload the AND and OR operators directly since the framework doesn’t allow such craziness. But
-            with overloading false and true operators this is posible. For explain this behavior please read
-            http://msdn.microsoft.com/en-us/library/aa691312(VS.71).aspx
-            </remarks>
-            </summary>
-            <typeparam name="TEntity">Type of item in the criteria</typeparam>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1">
-            <summary>
-            Base contract for Specification pattern, for more information
-            about this pattern see http://martinfowler.com/apsupp/spec.pdf
-            or http://en.wikipedia.org/wiki/Specification_pattern.
-            This is really a variant implementation where we have added Linq and
-            lambda expression into this pattern.
-            </summary>
-            <typeparam name="TEntity">Type of entity</typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1.SatisfiedBy">
-            <summary>
-            Check if this specification is satisfied by a 
-            specific expression lambda
-            </summary>
-            <returns>Where expression</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.SatisfiedBy">
-            <summary>
-            IsSatisFied Specification pattern method,
-            </summary>
-            <returns>Expression that satisfy this specification</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.op_BitwiseAnd(SmartFran.Seed.NLayer.Domain.Specification.Specification{`0},SmartFran.Seed.NLayer.Domain.Specification.Specification{`0})">
-            <summary>
-             And operator
-            </summary>
-            <param name="leftSideSpecification">left operand in this AND operation</param>
-            <param name="rightSideSpecification">right operand in this AND operation</param>
-            <returns>New specification</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.op_BitwiseOr(SmartFran.Seed.NLayer.Domain.Specification.Specification{`0},SmartFran.Seed.NLayer.Domain.Specification.Specification{`0})">
-            <summary>
-            Or operator
-            </summary>
-            <param name="leftSideSpecification">left operand in this OR operation</param>
-            <param name="rightSideSpecification">left operand in this OR operation</param>
-            <returns>New specification </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.op_LogicalNot(SmartFran.Seed.NLayer.Domain.Specification.Specification{`0})">
-            <summary>
-            Not specification
-            </summary>
-            <param name="specification">Specification to negate</param>
-            <returns>New specification</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.op_False(SmartFran.Seed.NLayer.Domain.Specification.Specification{`0})">
-            <summary>
-            Override operator false, only for support AND OR operators
-            </summary>
-            <param name="specification">Specification instance</param>
-            <returns>See False operator in C#</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.op_True(SmartFran.Seed.NLayer.Domain.Specification.Specification{`0})">
-            <summary>
-            Override operator True, only for support AND OR operators
-            </summary>
-            <param name="specification">Specification instance</param>
-            <returns>See True operator in C#</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.NotSpecification`1.#ctor(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
-            <summary>
-            Constructor for NotSpecificaiton
-            </summary>
-            <param name="originalSpecification">Original specification</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.NotSpecification`1.#ctor(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
-            <summary>
-            Constructor for NotSpecification
-            </summary>
-            <param name="originalSpecification">Original specificaiton</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.NotSpecification`1.SatisfiedBy">
-            <summary>
-            <see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/>
-            </summary>
-            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/></returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute">
-            <summary>
-            Service behavior for add DefaultErrorHandler to all dispatcher in
-            Windows Communication Foundation 
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute.AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)">
-            <summary>
-            Provides the ability to pass custom data to binding elements to support the contract implementation
-            </summary>
-            <param name="serviceDescription">The service description of the service.</param>
-            <param name="serviceHostBase">The host of the service.</param>
-            <param name="endpoints">The service endpoints.</param>
-            <param name="bindingParameters">Binding parameters.</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
-            <summary>
-            Provides the ability to change run-time property values or insert custom
-            extension objects such as error handlers, message or parameter interceptors,
-            security extensions, and other custom extension objects.
-            </summary>
-            <param name="serviceDescription">The service description.</param>
-            <param name="serviceHostBase">The host that is currently being built.</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute.Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
-            <summary>
-             Provides the ability to inspect the service host and the service description
-             to confirm that the service can run successfully.
-            </summary>
-            <param name="serviceDescription">The service description.</param>
-            <param name="serviceHostBase">The service host that is currently being constructed.</param>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlerClientInspector">
-            <summary>
-            Inspects messages received from the server detecting faults and raising the corresponding original exception produced on server side when possible.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlerClientInspector.BeforeSendRequest(System.ServiceModel.Channels.Message@,System.ServiceModel.IClientChannel)">
-            <summary>
-            Enables inspection or modification of a message before a request message is sent to a service.
-            </summary>
-            <returns>
-            The object that is returned as the argument of the method. This is null if no correlation state is used.The best practice is to make this a to ensure that no two objects are the same.
-            </returns>
-            <param name="request">
-            The message to be sent to the service.
-            </param>
-            <param name="channel">
-            The  client object channel.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlerClientInspector.AfterReceiveReply(System.ServiceModel.Channels.Message@,System.Object)">
-            <summary>
-            Enables inspection or modification of a message after a reply message is received but prior to passing it back to the client application.
-            </summary>
-            <param name="reply">
-            The message to be transformed into types and handed back to the client application.
-            </param>
-            <param name="correlationState">
-            Correlation state data.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlerClientInspector.ReadFaultDetail(System.ServiceModel.Channels.Message)">
-            <summary>
-            Restores a fault contract detail found in the given message.
-            </summary>
-            <param name="replyWithFault">
-            The reply With Fault.
-            </param>
-            <returns>
-            An object that represents the fault detail if found, or null otherwise.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression`1">
-            <summary>
-            The OrderByExpression interface.
-            </summary>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression`1.ApplyOrderBy(System.Linq.IQueryable{`0})">
-            <summary>
-            The apply order by.
-            </summary>
-            <param name="query">
-            The query.
-            </param>
-            <returns>
-            The <see cref="T:System.Linq.IOrderedQueryable"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression`1.ApplyThenBy(System.Linq.IOrderedQueryable{`0})">
-            <summary>
-            The apply then by.
-            </summary>
-            <param name="query">
-            The query.
-            </param>
-            <returns>
-            The <see cref="T:System.Linq.IOrderedQueryable"/>.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.DistributedServices.EndpointBehaviors.SilverlightFaultMessageInspector">
-            <summary>
-            By default, WCF services return fault messages with an HTTP 500 response code.
-            Due to limitations in the browser networking stack, the bodies of these messages are inaccessible within Silverlight, 
-            and consequently the fault messages cannot be read by the client.
-            To send faults that will be accessible to a Silverlight client, a WCF service must modify the way it sends its fault messages.
-            The key change needed is for WCF to return fault messages with an HTTP 200 response code instead of the HTTP 500 response code.
-            This change enables Silverlight to read the body of the message and also enables WCF clients of the same service to continue
-            working using their normal fault-handling procedures.
-            </summary>
-            <remarks>
-            http://msdn.microsoft.com/en-us/library/ee844556%28VS.96%29.aspx
-            </remarks>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessOperabilityException">
             <summary>
@@ -691,171 +406,291 @@
             The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0). 
             </exception>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.ServiceModel.Faults">
+        <member name="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException">
             <summary>
-            Implements facilities to handle N2-Labo well known exception and convert them to faults, at server side, and back to original exception once in the client side.
+            Exception raised by the business logic when it detects / diagnoses a violation of business rules and can provide information about the rule(s) violated and possible solution.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.Faults.UnknownOrUnhandledError(System.Exception)">
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException.#ctor(System.String,System.String)">
             <summary>
-            Creates a default fault detail to communicate to client side an unhandled server side error.
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException"/> class. 
+            </summary>
+            <param name="issueId">
+            The issue Id.
+            </param>
+            <param name="message">
+            The message that describes the error. 
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException"/> class. 
+            </summary>
+            <param name="issueId">
+            The issue Id.
+            </param>
+            <param name="message">
+            The error message that explains the reason for the exception. 
+            </param>
+            <param name="innerException">
+            The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. 
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException"/> class. 
+            </summary>
+            <param name="info">
+            The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown. 
+            </param>
+            <param name="context">
+            The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination. 
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="info"/> parameter is null. 
+            </exception>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">
+            The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0). 
+            </exception>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Diagnostics.Failures">
+            <summary>
+            A class where system exceptions are customized and decorated hiding its
+            sensitive information before throwing it to the client
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.BusinessConcurrencyConflict(System.Object,System.Object)">
+            <summary>
+            General error raised by the business rule engine when it detects conflict in an 
+            entity changed in its cache against the already stored entity in its underlying repository.
+            </summary>
+            <param name="clientTarget">
+            The client target.
+            </param>
+            <param name="storeTarget">
+            The store target.
+            </param>
+            <returns>
+            A <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException"/> describing the error and identifying the issue.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.BusinessOperationFailed">
+            <summary>
+            General error raised by the business rule engine when it cannot operate normally due to error that it cannot handle.
+            </summary>
+            <remarks>
+            This kind of errors can be temporally or can persist after retries, in this las case it requires a system administrator to solve the problem.
+            </remarks>
+            <returns>
+            A <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessOperabilityException"/> describing the error and identifying the issue.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.BusinessRuleBreached(System.Object)">
+            <summary>
+            General error raised by the business rule enforcement engine when it detects a breach when applying the rules.
+            </summary>
+            <param name="target">
+            The target object failing the business rule validation.
+            </param>
+            <returns>
+            A <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException"/> describing the error and identifying the issue.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.CreateIssuedException``1(System.String)">
+            <summary>
+            Creates an exception and identifies the problem with an issue id that attaches to just created exception.
+            </summary>
+            <param name="exceptionMessage">
+            The exceptionMessage.
+            </param>
+            <typeparam name="TException">
+            The type of exception to create. It must be a successor of<see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException"/>
+            </typeparam>
+            <returns>
+            An exception of the<see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException"/>hierarchy containing an issue id.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.CreateIssuedException``1(System.String,System.Exception,System.Boolean,System.Boolean)">
+            <summary>
+            Creates an exception of the given type and attachs to it an issue identification to facilitate the traceability of the error.
+            </summary>
+            <param name="exceptionMessage">
+            The exception message.
+            </param>
+            <param name="innerException">
+            The inner exception.
+            </param>
+            <param name="attachInnerException">
+            The attach Inner Exception. Use with caution to avoid pass sensitive information to the client side.
+            </param>
+            <param name="logException">
+            The log exception.
+            </param>
+            <typeparam name="TException">
+            The type of exception to create.
+            </typeparam>
+            <returns>
+            An exception of type <typeparamref name="TException"/> containing the inner exception and an unique issue id.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.UnknownOrUnhandledError(System.Exception)">
+            <summary>
+            Error raised when the system traps an unexpected error not handled properly.
             </summary>
             <param name="exception">
             The exception.
             </param>
             <returns>
-            A <see cref="T:SmartFran.Seed.NLayer.ServiceModel.NLayerFault"/> describing the error but hidding sensitive information.
+            A <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException"/> describing the error and identifying the issue.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.Faults.FaultDeserializationFailed(System.ServiceModel.Channels.Message,System.Exception)">
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.DependencyMapMissingOrInvalidType``1(System.Exception,System.Boolean)">
             <summary>
-            Error raised when a client, tipically client message inspector interface implementor, fails to deserialize the detail of a fault thrown by a server.
+            Error raised by a dependency mapper when it fails to get a type requested by a client. 
+            The inner exception is the actual cause of the error and it belongs to the actual underlying mapper that can vary.
             </summary>
-            <param name="messageReply">
-            	The messageReply.
-            </param>
-            <param name="deserializationException">
-            The deserialization Exception.
-            </param>
-            <returns>
-            An exception describing the problem.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.Faults.UnknownFaultDetailFromServer(System.Object)">
-            <summary>
-            Error raised when a client detect an unknown fault detail from the server. The fault was successfully deserialized error handling mechanims at the client side cannot recreate the original exception.
-            </summary>
-            <param name="faultDetail">
-            The fault detail.
-            </param>
-            <returns>
-            An exception describing the problem.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2">
-            <summary>
-            The order by expression.
-            </summary>
-            <typeparam name="TEntity">
-            Entity type.
+            <typeparam name="TSearchedType">
+            The type to be resolved by dependency map.
             </typeparam>
-            <typeparam name="TOrderBy">
-            Order by type.
-            </typeparam>
-        </member>
-        <member name="F:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2.expression">
-            <summary>
-            The _expression.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2.direction">
-            <summary>
-            The _descending.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0,`1}},SmartFran.Seed.NLayer.Data.OrderDirection)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2"/> class.
-            </summary>
-            <param name="expression">
-            The expression.
+            <param name="innerException">
+            The inner Exception.
             </param>
-            <param name="direction">
-            The direction.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2.ApplyOrderBy(System.Linq.IQueryable{`0})">
-            <summary>
-            The apply order by.
-            </summary>
-            <param name="query">
-            The query.
+            <param name="logInnerException">
+            The log Inner Exception.
             </param>
             <returns>
-            The <see cref="T:System.Linq.IOrderedQueryable"/>.
+            An  <see cref="T:System.InvalidOperationException"/> describing the error.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2.ApplyThenBy(System.Linq.IOrderedQueryable{`0})">
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.DependencyMapConfigurationError(System.String,System.Exception,System.Boolean)">
             <summary>
-            The apply then by.
+            Error raised by a dependency map when it fails to load or apply a configuration to its underlying dependency container.
             </summary>
-            <param name="query">
-            The query.
+            <param name="containerConfigurationName">
+            The container Configuration Name.
+            </param>
+            <param name="innerException">
+            The inner Exception.
+            </param>
+            <param name="logInnerException">
+            The log Inner Exception.
             </param>
             <returns>
-            The <see cref="T:System.Linq.IOrderedQueryable"/>.
+            An  <see cref="T:System.InvalidOperationException"/> describing the error.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException">
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.CheckLogException``1(System.Boolean,System.Exception,System.String)">
             <summary>
-            The custom exception for validation errors
+            Writes an exception raised to the log and the corresponding <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException"/> used to replace it.
             </summary>
-        </member>
-        <member name="F:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException.validationErrors">
-            <summary>
-            The _validation errors.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException.#ctor(System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException"/> class. 
-            Create new instance of Application validation errors exception
-            </summary>
-            <param name="validationErrors">
-            The collection of validation errors
+            <param name="logException">
+            The log Exception.
             </param>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Application.ApplicationValidationErrorsException.ValidationErrors">
-            <summary>
-            Gets the validation errors messages
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute">
-            <summary>
-            Maps a type of <see cref="T:System.Exception"/> to a custom fault.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.faultConstructor">
-            <summary>
-            The fault constructor.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.faultConstructorIsParameterless">
-            <summary>
-            The fault constructor is parameterless.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.#ctor(System.Type,System.Type)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute"/> class. 
-            </summary>
-            <param name="exceptionType">
-            The exception Type.
-            </param>
-            <param name="faultType">
-            The fault Type.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.Map(System.Exception)">
-            <summary>
-            Maps the given input <paramref name="exception"/> to its corresponding fault.
-            </summary>
             <param name="exception">
             The exception.
             </param>
+            <param name="issueId">
+            The issue Id.
+            </param>
+            <typeparam name="TException">
+            The type of <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException"/> that replaces de system exception.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.CreateIssue">
+            <summary>
+            The create issue.
+            </summary>
             <returns>
-            A FaultException.
             </returns>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.ExceptionType">
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.EndpointBehaviors.SilverlightFaultBehavior">
             <summary>
-            Gets ExceptionType.
+            By default, WCF services return fault messages with an HTTP 500 response code.
+            Due to limitations in the browser networking stack, the bodies of these messages are inaccessible within Silverlight, 
+            and consequently the fault messages cannot be read by the client.
+            To send faults that will be accessible to a Silverlight client, a WCF service must modify the way it sends its fault messages.
+            The key change needed is for WCF to return fault messages with an HTTP 200 response code instead of the HTTP 500 response code.
+            This change enables Silverlight to read the body of the message and also enables WCF clients of the same service to continue
+            working using their normal fault-handling procedures.
+            </summary>
+            <remarks>
+            http://msdn.microsoft.com/en-us/library/ee844556%28VS.96%29.aspx
+            </remarks>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.EndpointBehaviors.SilverlightFaultMessageInspector">
+            <summary>
+            By default, WCF services return fault messages with an HTTP 500 response code.
+            Due to limitations in the browser networking stack, the bodies of these messages are inaccessible within Silverlight, 
+            and consequently the fault messages cannot be read by the client.
+            To send faults that will be accessible to a Silverlight client, a WCF service must modify the way it sends its fault messages.
+            The key change needed is for WCF to return fault messages with an HTTP 200 response code instead of the HTTP 500 response code.
+            This change enables Silverlight to read the body of the message and also enables WCF clients of the same service to continue
+            working using their normal fault-handling procedures.
+            </summary>
+            <remarks>
+            http://msdn.microsoft.com/en-us/library/ee844556%28VS.96%29.aspx
+            </remarks>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandler">
+            <summary>
+            Default error handler for WCF Service Facade
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.FaultType">
+        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandler.HandleError(System.Exception)">
             <summary>
-            Gets FaultType.
+            Enables error-related processing and returns a value that indicates whether
+            the dispatcher aborts the session and the instance context in certain cases
             </summary>
+            <remarks>
+            Trace error and handle this
+            </remarks>
+            <param name="error">The exception thrown during processing</param>
+            <returns>
+            true if should not abort the session (if there is one) and instance context
+            if the instance context is not System.ServiceModel.InstanceContextMode.Single;
+            otherwise, false. The default is false.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandler.ProvideFault(System.Exception,System.ServiceModel.Channels.MessageVersion,System.ServiceModel.Channels.Message@)">
+            <summary>
+            Enables the creation of a custom System.ServiceModel.FaultException{TDetail}
+            that is returned from an exception in the course of a service method.
+            </summary>
+            <param name="error">The System.Exception object thrown in the course of the service operation.</param>
+            <param name="version">The SOAP version of the message.</param>
+            <param name="fault">The System.ServiceModel.Channels.Message object that is returned to the client, or service in duplex case</param>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute">
+            <summary>
+            Service behavior for add DefaultErrorHandler to all dispatcher in
+            Windows Communication Foundation 
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute.AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)">
+            <summary>
+            Provides the ability to pass custom data to binding elements to support the contract implementation
+            </summary>
+            <param name="serviceDescription">The service description of the service.</param>
+            <param name="serviceHostBase">The host of the service.</param>
+            <param name="endpoints">The service endpoints.</param>
+            <param name="bindingParameters">Binding parameters.</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+            <summary>
+            Provides the ability to change run-time property values or insert custom
+            extension objects such as error handlers, message or parameter interceptors,
+            security extensions, and other custom extension objects.
+            </summary>
+            <param name="serviceDescription">The service description.</param>
+            <param name="serviceHostBase">The host that is currently being built.</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationErrorHandlerAttribute.Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+            <summary>
+             Provides the ability to inspect the service host and the service description
+             to confirm that the service can run successfully.
+            </summary>
+            <param name="serviceDescription">The service description.</param>
+            <param name="serviceHostBase">The service host that is currently being constructed.</param>
         </member>
         <member name="T:SmartFran.Seed.NLayer.DistributedServices.ErrorHandlers.ApplicationServiceError">
             <summary>
@@ -867,174 +702,31 @@
             Gets or sets Error message that flow to client services
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.FilterInfo">
+        <member name="T:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages">
             <summary>
-            The filter info.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.FilterInfo.Spec">
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.ResourceManager">
             <summary>
-            Gets or sets the spec.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.FilterInfo.Value">
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.Culture">
             <summary>
-            Gets or sets the value.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute">
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.error_unmanagederror">
             <summary>
-            Extends a service behavior to add a custom error handler
+              Looks up a localized string similar to Unmanaged error in aplication, the exception information is.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IContractBehavior#Validate(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint)">
+        <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.message_DefaultErrorMessage">
             <summary>
-            Implement to confirm that the contract and endpoint can support the contract behavior.
+              Looks up a localized string similar to Oooppps this operation can&apos;t be processed at this moment. Please try it later. If problem persist contact with your System Administrator.
             </summary>
-            <param name="contractDescription">
-            The contract to validate.
-            </param>
-            <param name="endpoint">
-            The endpoint to validate.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IContractBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.DispatchRuntime)">
-            <summary>
-            Implements a modification or extension of the client across a contract.
-            </summary>
-            <param name="contractDescription">
-            The contract description to be modified.
-            </param>
-            <param name="endpoint">
-            The endpoint that exposes the contract.
-            </param>
-            <param name="dispatchRuntime">
-            The dispatch runtime that controls service execution.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IContractBehavior#ApplyClientBehavior(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
-            <summary>
-            Implements a modification or extension of the client across a contract.
-            </summary>
-            <param name="contractDescription">
-            The contract description for which the extension is intended.
-            </param>
-            <param name="endpoint">
-            The endpoint.
-            </param>
-            <param name="clientRuntime">
-            The client runtime.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IContractBehavior#AddBindingParameters(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
-            <summary>
-            Configures any binding elements to support the contract behavior.
-            </summary>
-            <param name="contractDescription">
-            The contract description to modify.
-            </param>
-            <param name="endpoint">
-            The endpoint to modify.
-            </param>
-            <param name="bindingParameters">
-            The objects that binding elements require to support the behavior.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
-            <summary>
-            Implement to pass data at runtime to bindings to support custom behavior.
-            </summary>
-            <param name="endpoint">
-            The endpoint to modify.
-            </param>
-            <param name="bindingParameters">
-            The objects that binding elements require to support the behavior.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
-            <summary>
-            Implements a modification or extension of the client across an endpoint.
-            </summary>
-            <param name="endpoint">
-            The endpoint that is to be customized.
-            </param>
-            <param name="clientRuntime">
-            The client runtime to be customized.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)">
-            <summary>
-            Implements a modification or extension of the service across an endpoint.
-            </summary>
-            <param name="endpoint">
-            The endpoint that exposes the contract.
-            </param>
-            <param name="endpointDispatcher">
-            The endpoint dispatcher to be modified or extended.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#Validate(System.ServiceModel.Description.ServiceEndpoint)">
-            <summary>
-            Implement to confirm that the endpoint meets some intended criteria.
-            </summary>
-            <param name="endpoint">
-            The endpoint to validate.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IServiceBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)">
-            <summary>
-            Provides the ability to pass custom data to binding elements to support the contract implementation.
-            </summary>
-            <param name="serviceDescription">
-            The service description of the service.
-            </param>
-            <param name="serviceHostBase">
-            The host of the service.
-            </param>
-            <param name="endpoints">
-            The service endpoints.
-            </param>
-            <param name="bindingParameters">
-            Custom objects to which binding elements have access.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IServiceBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
-            <summary>
-            Provides the ability to change run-time property values or insert custom extension objects such as error handlers, message or parameter interceptors, security extensions, and other custom extension objects.
-            </summary>
-            <param name="serviceDescription">
-            The service description.
-            </param>
-            <param name="serviceHostBase">
-            The host that is currently being built.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IServiceBehavior#Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
-            <summary>
-            Provides the ability to inspect the service host and the service description to confirm that the service can run successfully.
-            </summary>
-            <param name="serviceDescription">
-            The service description.
-            </param>
-            <param name="serviceHostBase">
-            The service host that is currently being constructed.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.ApplyDispatchBehavior(System.ServiceModel.Dispatcher.ChannelDispatcher)">
-            <summary>
-            The apply dispatch behavior.
-            </summary>
-            <param name="dispatcher">
-            The dispatcher.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.AppyClientBehavior(System.ServiceModel.Dispatcher.ClientRuntime)">
-            <summary>
-            The appy client behavior.
-            </summary>
-            <param name="runtime">
-            The runtime.
-            </param>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.Entity">
             <summary>
@@ -1108,326 +800,6 @@
         <member name="P:SmartFran.Seed.NLayer.Domain.Entity.Id">
             <summary>
             Gets or sets the id.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription">
-            <summary>
-            Generic base contract to normalize the subscription and unsubscription to callbacks in WCF/Web services.
-            </summary>
-            <remarks>
-            Inherit your service's callback subscription contract from this interface and decorate it with the ServiceContract attribute
-            with your custom callbacks interface. Example: 
-              [ServiceContract(CallbackContract = typeof(IMyServiceCallbacks), SessionMode = SessionMode.Required)]
-            </remarks>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription.Subscribe">
-            <summary>
-            Adds the underlying service's callback client to the subscription list.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription.Unsubscribe">
-            <summary>
-            Removes the underlying service's callback client from the subscription list.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.Ordering.OrderByGenerator">
-            <summary>
-            The order by generator.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.OrderByGenerator.Apply``1(System.Linq.IQueryable{``0},SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{``0}[])">
-            <summary>
-            The apply.
-            </summary>
-            <param name="query">
-            The query.
-            </param>
-            <param name="orderByExpressions">
-            The order by expressions.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-            <returns>
-            The <see cref="T:System.Linq.IQueryable"/>.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1">
-            <summary>
-            A Logic OR Specification
-            </summary>
-            <typeparam name="T">Type of entity that check this specification</typeparam>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.CompositeSpecification`1">
-            <summary>
-            Base class for composite specifications
-            </summary>
-            <typeparam name="TEntity">Type of entity that check this specification</typeparam>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.CompositeSpecification`1.LeftSideSpecification">
-            <summary>
-            Left side specification for this composite element
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.CompositeSpecification`1.RightSideSpecification">
-            <summary>
-            Right side specification for this composite element
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1.#ctor(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0},SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
-            <summary>
-            Default constructor for AndSpecification
-            </summary>
-            <param name="leftSide">Left side specification</param>
-            <param name="rightSide">Right side specification</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1.SatisfiedBy">
-            <summary>
-            <see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/>
-            </summary>
-            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/></returns>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1.LeftSideSpecification">
-            <summary>
-            Left side specification
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1.RightSideSpecification">
-            <summary>
-            Righ side specification
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.OrderDirection">
-            <summary>
-            The order direction.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.NLayer.Data.OrderDirection.Asc">
-            <summary>
-            The asc.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.NLayer.Data.OrderDirection.Desc">
-            <summary>
-            The desc.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.SortInfo">
-            <summary>
-            The sort info.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.SortInfo.Field">
-            <summary>
-            Gets or sets the field.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.SortInfo.Direction">
-            <summary>
-            Gets or sets the direction.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.TrueSpecification`1">
-            <summary>
-            True specification
-            </summary>
-            <typeparam name="TEntity">Type of entity in this specification</typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.TrueSpecification`1.SatisfiedBy">
-            <summary>
-            <see cref="T:SmartFran.Seed.NLayer.Domain.Specification.Specification`1"/>
-            </summary>
-            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.Specification.Specification`1"/></returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.ExpressionBuilder">
-            <summary>
-            Extension methods for adding AND and OR with parameters rebinder
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ExpressionBuilder.Compose``1(System.Linq.Expressions.Expression{``0},System.Linq.Expressions.Expression{``0},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,System.Linq.Expressions.Expression})">
-            <summary>
-            Compose two expressions and merge all in a new expression
-            </summary>
-            <typeparam name="T">Type of params in expression</typeparam>
-            <param name="first">Expression instance</param>
-            <param name="second">Expression to merge</param>
-            <param name="merge">Function to merge</param>
-            <returns>New merged expression</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ExpressionBuilder.And``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            And operator
-            </summary>
-            <typeparam name="T">Type of params in expression</typeparam>
-            <param name="first">Right Expression in AND operation</param>
-            <param name="second">Left Expression in And operation</param>
-            <returns>New AND expression</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ExpressionBuilder.Or``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            Or operator
-            </summary>
-            <typeparam name="T">Type of param in expression</typeparam>
-            <param name="first">Right expression in OR operation</param>
-            <param name="second">Left expression in OR operation</param>
-            <returns>New Or expressions</returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.AndSpecification`1">
-            <summary>
-            A logic AND Specification
-            </summary>
-            <typeparam name="T">Type of entity that check this specification</typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.AndSpecification`1.#ctor(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0},SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
-            <summary>
-            Default constructor for AndSpecification
-            </summary>
-            <param name="leftSide">Left side specification</param>
-            <param name="rightSide">Right side specification</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.AndSpecification`1.SatisfiedBy">
-            <summary>
-            <see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/>
-            </summary>
-            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/></returns>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.AndSpecification`1.LeftSideSpecification">
-            <summary>
-            Left side specification
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.AndSpecification`1.RightSideSpecification">
-            <summary>
-            Right side specification
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.DistributedServices.EndpointBehaviors.SilverlightFaultBehavior">
-            <summary>
-            By default, WCF services return fault messages with an HTTP 500 response code.
-            Due to limitations in the browser networking stack, the bodies of these messages are inaccessible within Silverlight, 
-            and consequently the fault messages cannot be read by the client.
-            To send faults that will be accessible to a Silverlight client, a WCF service must modify the way it sends its fault messages.
-            The key change needed is for WCF to return fault messages with an HTTP 200 response code instead of the HTTP 500 response code.
-            This change enables Silverlight to read the body of the message and also enables WCF clients of the same service to continue
-            working using their normal fault-handling procedures.
-            </summary>
-            <remarks>
-            http://msdn.microsoft.com/en-us/library/ee844556%28VS.96%29.aspx
-            </remarks>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Application.Resources.Messages">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Application.Resources.Messages.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Application.Resources.Messages.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Application.Resources.Messages.exception_ApplicationValidationExceptionDefaultMessage">
-            <summary>
-              Looks up a localized string similar to Validation exception, check ValidationErrors for more information.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods">
-            <summary>
-            Entities projections
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.ProjectedAs``1(SmartFran.Seed.NLayer.Domain.Entity)">
-            <summary>
-            Project a type using a Dto
-            </summary>
-            <typeparam name="TProjection">
-            The dto projection
-            </typeparam>
-            <param name="item">
-            The source entity to project
-            </param>
-            <returns>
-            The projected type
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.ProjectedAsCollection``1(System.Collections.Generic.IEnumerable{SmartFran.Seed.NLayer.Domain.Entity})">
-            <summary>
-            projected a enumerable collection of items
-            </summary>
-            <typeparam name="TProjection">The dtop projection type</typeparam>
-            <param name="items">the collection of entity items</param>
-            <returns>Projected collection</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.AssignTo``1(SmartFran.Seed.NLayer.Application.EntityDto)">
-            <summary>
-            The adapter to.
-            </summary>
-            <param name="item">
-            The item.
-            </param>
-            <typeparam name="TEntity">
-            Entity dto type.
-            </typeparam>
-            <returns>
-            The TEntity.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.AssignToCollection``1(System.Collections.Generic.IEnumerable{SmartFran.Seed.NLayer.Application.EntityDto})">
-            <summary>
-            Adater Dto to Entity
-            </summary>
-            <param name="items">Dto entities</param>
-            <typeparam name="TEntity">Type of entity</typeparam>
-            <returns>entity collections</returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.ServiceModel.NLayerFault">
-            <summary>
-            Base class of faults generated by any N2-Labo WCF services
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.#ctor(SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ServiceModel.NLayerFault"/> class.
-            </summary>
-            <param name="laboException">
-            The labo exception.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.ToString">
-            <summary>
-            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
-            </summary>
-            <returns>
-            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
-            </returns>
-            <filterpriority>2</filterpriority>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.AsException">
-            <summary>
-            Creates an exception that represents the fault contract
-            </summary>
-            <returns>
-            An exception that maps the fault detail
-            </returns>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.IssueId">
-            <summary>
-            Gets IssueId.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.Message">
-            <summary>
-            Gets Message.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.ExceptionType">
-            <summary>
-            Gets ExceptionType.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.IRepository`1">
@@ -1645,80 +1017,263 @@
             Gets the unit of work in this repository
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.ParameterRebinder">
+        <member name="T:SmartFran.Seed.NLayer.Domain.IDataContext">
             <summary>
-            Helper for rebinder parameters without use Invoke method in expressions 
-            ( this methods is not supported in all linq query providers, 
-            for example in Linq2Entities is not supported)
+            Contract for ‘context pattern’. For more
+            related info see http://martinfowler.com/eaaCatalog/context.html or
+            http://msdn.microsoft.com/en-us/magazine/dd882510.aspx
+            In this solution, the Unit Of Work is implemented using the out-of-box 
+            Entity Framework Context (EF 4.1 DbContext) persistence engine. But in order to
+            comply the PI (Persistence Ignorant) principle in our Domain, we implement this interface/contract. 
+            This interface/contract should be complied by any UoW implementation to be used with this Domain.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ParameterRebinder.#ctor(System.Collections.Generic.Dictionary{System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression})">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.Commit">
             <summary>
-            Default construcotr
+            Commit all changes made in a container.
             </summary>
-            <param name="map">Map specification</param>
+            <remarks>
+            If the entity have fixed properties and any optimistic concurrency problem exists,  
+            then an exception is thrown
+            </remarks>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ParameterRebinder.ReplaceParameters(System.Collections.Generic.Dictionary{System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression},System.Linq.Expressions.Expression)">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.CommitAndRefreshChanges">
             <summary>
-            Replate parameters in expression with a Map information
+            Commit all changes made in  a container.
             </summary>
-            <param name="map">Map information</param>
-            <param name="exp">Expression to replace parameters</param>
-            <returns>Expression with parameters replaced</returns>
+            <remarks>
+            If the entity have fixed properties and any optimistic concurrency problem exists,
+            then 'client changes' are refreshed - Client wins
+            </remarks>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ParameterRebinder.VisitParameter(System.Linq.Expressions.ParameterExpression)">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.RollbackChanges">
             <summary>
-            Visit pattern method
-            </summary>
-            <param name="p">A Parameter expression</param>
-            <returns>New visited expression</returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException">
-            <summary>
-            Exception raised when a conflict between cached data and stored data is detected when attempting to update, tipically apply changes, to the underlying data store.
+            Rollback tracked changes. See references of context pattern
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException.#ctor(System.String,System.String)">
+        <member name="T:SmartFran.Seed.NLayer.Data.Ordering.OrderByGenerator">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException"/> class. 
+            The order by generator.
             </summary>
-            <param name="issueId">
-            The issue Id.
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.OrderByGenerator.Apply``1(System.Linq.IQueryable{``0},SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{``0}[])">
+            <summary>
+            The apply.
+            </summary>
+            <param name="query">
+            The query.
             </param>
-            <param name="message">
-            The message that describes the error. 
+            <param name="orderByExpressions">
+            The order by expressions.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Linq.IQueryable"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression`1">
+            <summary>
+            The OrderByExpression interface.
+            </summary>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression`1.ApplyOrderBy(System.Linq.IQueryable{`0})">
+            <summary>
+            The apply order by.
+            </summary>
+            <param name="query">
+            The query.
+            </param>
+            <returns>
+            The <see cref="T:System.Linq.IOrderedQueryable"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression`1.ApplyThenBy(System.Linq.IOrderedQueryable{`0})">
+            <summary>
+            The apply then by.
+            </summary>
+            <param name="query">
+            The query.
+            </param>
+            <returns>
+            The <see cref="T:System.Linq.IOrderedQueryable"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2">
+            <summary>
+            The order by expression.
+            </summary>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <typeparam name="TOrderBy">
+            Order by type.
+            </typeparam>
+        </member>
+        <member name="F:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2.expression">
+            <summary>
+            The _expression.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2.direction">
+            <summary>
+            The _descending.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0,`1}},SmartFran.Seed.NLayer.Data.OrderDirection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2"/> class.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <param name="direction">
+            The direction.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException.#ctor(System.String,System.String,System.Exception)">
+        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2.ApplyOrderBy(System.Linq.IQueryable{`0})">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException"/> class. 
+            The apply order by.
             </summary>
-            <param name="issueId">
-            The issue Id.
+            <param name="query">
+            The query.
             </param>
-            <param name="message">
-            The error message that explains the reason for the exception. 
-            </param>
-            <param name="innerException">
-            The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. 
-            </param>
+            <returns>
+            The <see cref="T:System.Linq.IOrderedQueryable"/>.
+            </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+        <member name="M:SmartFran.Seed.NLayer.Data.Ordering.OrderByExpression`2.ApplyThenBy(System.Linq.IOrderedQueryable{`0})">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException"/> class. 
+            The apply then by.
             </summary>
-            <param name="info">
-            The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object data about the exception being thrown. 
+            <param name="query">
+            The query.
             </param>
-            <param name="context">
-            The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination. 
-            </param>
-            <exception cref="T:System.ArgumentNullException">
-            The <paramref name="info"/> parameter is null. 
-            </exception>
-            <exception cref="T:System.Runtime.Serialization.SerializationException">
-            The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0). 
-            </exception>
+            <returns>
+            The <see cref="T:System.Linq.IOrderedQueryable"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.AndSpecification`1">
+            <summary>
+            A logic AND Specification
+            </summary>
+            <typeparam name="T">Type of entity that check this specification</typeparam>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.CompositeSpecification`1">
+            <summary>
+            Base class for composite specifications
+            </summary>
+            <typeparam name="TEntity">Type of entity that check this specification</typeparam>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.Specification`1">
+            <summary>
+            Represent a Expression Specification
+            <remarks>
+            Specification overload operators for create AND,OR or NOT specifications.
+            Additionally overload AND and OR operators with the same sense of ( binary And and binary Or ).
+            C# couldn’t overload the AND and OR operators directly since the framework doesn’t allow such craziness. But
+            with overloading false and true operators this is posible. For explain this behavior please read
+            http://msdn.microsoft.com/en-us/library/aa691312(VS.71).aspx
+            </remarks>
+            </summary>
+            <typeparam name="TEntity">Type of item in the criteria</typeparam>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1">
+            <summary>
+            Base contract for Specification pattern, for more information
+            about this pattern see http://martinfowler.com/apsupp/spec.pdf
+            or http://en.wikipedia.org/wiki/Specification_pattern.
+            This is really a variant implementation where we have added Linq and
+            lambda expression into this pattern.
+            </summary>
+            <typeparam name="TEntity">Type of entity</typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1.SatisfiedBy">
+            <summary>
+            Check if this specification is satisfied by a 
+            specific expression lambda
+            </summary>
+            <returns>Where expression</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.SatisfiedBy">
+            <summary>
+            IsSatisFied Specification pattern method,
+            </summary>
+            <returns>Expression that satisfy this specification</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.op_BitwiseAnd(SmartFran.Seed.NLayer.Domain.Specification.Specification{`0},SmartFran.Seed.NLayer.Domain.Specification.Specification{`0})">
+            <summary>
+             And operator
+            </summary>
+            <param name="leftSideSpecification">left operand in this AND operation</param>
+            <param name="rightSideSpecification">right operand in this AND operation</param>
+            <returns>New specification</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.op_BitwiseOr(SmartFran.Seed.NLayer.Domain.Specification.Specification{`0},SmartFran.Seed.NLayer.Domain.Specification.Specification{`0})">
+            <summary>
+            Or operator
+            </summary>
+            <param name="leftSideSpecification">left operand in this OR operation</param>
+            <param name="rightSideSpecification">left operand in this OR operation</param>
+            <returns>New specification </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.op_LogicalNot(SmartFran.Seed.NLayer.Domain.Specification.Specification{`0})">
+            <summary>
+            Not specification
+            </summary>
+            <param name="specification">Specification to negate</param>
+            <returns>New specification</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.op_False(SmartFran.Seed.NLayer.Domain.Specification.Specification{`0})">
+            <summary>
+            Override operator false, only for support AND OR operators
+            </summary>
+            <param name="specification">Specification instance</param>
+            <returns>See False operator in C#</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.Specification`1.op_True(SmartFran.Seed.NLayer.Domain.Specification.Specification{`0})">
+            <summary>
+            Override operator True, only for support AND OR operators
+            </summary>
+            <param name="specification">Specification instance</param>
+            <returns>See True operator in C#</returns>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.CompositeSpecification`1.LeftSideSpecification">
+            <summary>
+            Left side specification for this composite element
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.CompositeSpecification`1.RightSideSpecification">
+            <summary>
+            Right side specification for this composite element
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.AndSpecification`1.#ctor(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0},SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            Default constructor for AndSpecification
+            </summary>
+            <param name="leftSide">Left side specification</param>
+            <param name="rightSide">Right side specification</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.AndSpecification`1.SatisfiedBy">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/>
+            </summary>
+            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/></returns>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.AndSpecification`1.LeftSideSpecification">
+            <summary>
+            Left side specification
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.AndSpecification`1.RightSideSpecification">
+            <summary>
+            Right side specification
+            </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.Specification.DirectSpecification`1">
             <summary>
@@ -1750,155 +1305,629 @@
             The System.Linq.Expressions.Expression`1[TDelegate -&gt; System.Func`2[T -&gt; TEntity, TResult -&gt; System.Boolean]].
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Diagnostics.Failures">
+        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.ExpressionBuilder">
             <summary>
-            A class where system exceptions are customized and decorated hiding its
-            sensitive information before throwing it to the client
+            Extension methods for adding AND and OR with parameters rebinder
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.BusinessConcurrencyConflict(System.Object,System.Object)">
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ExpressionBuilder.Compose``1(System.Linq.Expressions.Expression{``0},System.Linq.Expressions.Expression{``0},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,System.Linq.Expressions.Expression})">
             <summary>
-            General error raised by the business rule engine when it detects conflict in an 
-            entity changed in its cache against the already stored entity in its underlying repository.
+            Compose two expressions and merge all in a new expression
             </summary>
-            <param name="clientTarget">
-            The client target.
+            <typeparam name="T">Type of params in expression</typeparam>
+            <param name="first">Expression instance</param>
+            <param name="second">Expression to merge</param>
+            <param name="merge">Function to merge</param>
+            <returns>New merged expression</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ExpressionBuilder.And``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            And operator
+            </summary>
+            <typeparam name="T">Type of params in expression</typeparam>
+            <param name="first">Right Expression in AND operation</param>
+            <param name="second">Left Expression in And operation</param>
+            <returns>New AND expression</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ExpressionBuilder.Or``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Or operator
+            </summary>
+            <typeparam name="T">Type of param in expression</typeparam>
+            <param name="first">Right expression in OR operation</param>
+            <param name="second">Left expression in OR operation</param>
+            <returns>New Or expressions</returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.NotSpecification`1">
+            <summary>
+            NotEspecification convert a original
+            specification with NOT logic operator
+            </summary>
+            <typeparam name="TEntity">Type of element for this specificaiton</typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.NotSpecification`1.#ctor(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            Constructor for NotSpecificaiton
+            </summary>
+            <param name="originalSpecification">Original specification</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.NotSpecification`1.#ctor(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Constructor for NotSpecification
+            </summary>
+            <param name="originalSpecification">Original specificaiton</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.NotSpecification`1.SatisfiedBy">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/>
+            </summary>
+            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/></returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1">
+            <summary>
+            A Logic OR Specification
+            </summary>
+            <typeparam name="T">Type of entity that check this specification</typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1.#ctor(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0},SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            Default constructor for AndSpecification
+            </summary>
+            <param name="leftSide">Left side specification</param>
+            <param name="rightSide">Right side specification</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1.SatisfiedBy">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/>
+            </summary>
+            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.Specification.ISpecification`1"/></returns>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1.LeftSideSpecification">
+            <summary>
+            Left side specification
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Domain.Specification.OrSpecification`1.RightSideSpecification">
+            <summary>
+            Righ side specification
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.ParameterRebinder">
+            <summary>
+            Helper for rebinder parameters without use Invoke method in expressions 
+            ( this methods is not supported in all linq query providers, 
+            for example in Linq2Entities is not supported)
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ParameterRebinder.#ctor(System.Collections.Generic.Dictionary{System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression})">
+            <summary>
+            Default construcotr
+            </summary>
+            <param name="map">Map specification</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ParameterRebinder.ReplaceParameters(System.Collections.Generic.Dictionary{System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression},System.Linq.Expressions.Expression)">
+            <summary>
+            Replate parameters in expression with a Map information
+            </summary>
+            <param name="map">Map information</param>
+            <param name="exp">Expression to replace parameters</param>
+            <returns>Expression with parameters replaced</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.ParameterRebinder.VisitParameter(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Visit pattern method
+            </summary>
+            <param name="p">A Parameter expression</param>
+            <returns>New visited expression</returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.Specification.TrueSpecification`1">
+            <summary>
+            True specification
+            </summary>
+            <typeparam name="TEntity">Type of entity in this specification</typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.Specification.TrueSpecification`1.SatisfiedBy">
+            <summary>
+            <see cref="T:SmartFran.Seed.NLayer.Domain.Specification.Specification`1"/>
+            </summary>
+            <returns><see cref="T:SmartFran.Seed.NLayer.Domain.Specification.Specification`1"/></returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.ValueObject`1">
+            <summary>
+            Base class for value objects in domain.
+            Value
+            </summary>
+            <typeparam name="TValueObject">The type of this value object</typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.op_Equality(SmartFran.Seed.NLayer.Domain.ValueObject{`0},SmartFran.Seed.NLayer.Domain.ValueObject{`0})">
+            <summary>
+            The equality operator
+            </summary>
+            <param name="left">Left part.</param>
+            <param name="right">Right part.</param>
+            <returns>True if the values of its operands are equal.</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.op_Inequality(SmartFran.Seed.NLayer.Domain.ValueObject{`0},SmartFran.Seed.NLayer.Domain.ValueObject{`0})">
+            <summary>
+            The !=.
+            </summary>
+            <param name="left">
+            The left.
             </param>
-            <param name="storeTarget">
-            The store target.
+            <param name="right">
+            The right.
             </param>
             <returns>
-            A <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessConcurrencyException"/> describing the error and identifying the issue.
+            True if the values of its operands aren't equal.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.BusinessOperationFailed">
+        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.Equals(`0)">
             <summary>
-            General error raised by the business rule engine when it cannot operate normally due to error that it cannot handle.
+            The equals.
+            </summary>
+            <param name="other">
+            The other.
+            </param>
+            <returns>
+            The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.Equals(System.Object)">
+            <summary>
+            The equals.
+            </summary>
+            <param name="obj">
+            The obj.
+            </param>
+            <returns>
+            The System.Boolean.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.ValueObject`1.GetHashCode">
+            <summary>
+            The get hash code.
+            </summary>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.ServiceModel.CallbacksSubscriptionBase">
+            <summary>
+            Base class for callback subscription service classes. Implements basic functionality such as handling channel closing and faults events.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.CallbacksSubscriptionBase.ChannelClosing(System.Object,System.EventArgs)">
+            <summary>
+            Handles the <see cref="E:System.ServiceModel.ICommunicationObject.Closing"/> event
+            </summary>
+            <param name="sender">
+            The sender. The <see cref="T:System.ServiceModel.IContextChannel"/> closing.
+            </param>
+            <param name="eventArgs">
+            The eventArgs.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.CallbacksSubscriptionBase.ChannelFaulted(System.Object,System.EventArgs)">
+            <summary>
+            Handles the <see cref="E:System.ServiceModel.ICommunicationObject.Faulted"/> event.
+            </summary>
+            <param name="sender">
+            The sender. The <see cref="T:System.ServiceModel.IContextChannel"/> faulted.
+            </param>
+            <param name="eventArgs">
+            The eventArgs.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.CallbacksSubscriptionBase.Disconnect(System.ServiceModel.IContextChannel)">
+            <summary>
+            Disconnects the channel. Method invoked when the channel is either normally or abnormally closed. 
+            </summary>
+            <param name="contextChannel">
+            The context channel.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.CallbacksSubscriptionBase.SetupChannelEvents(System.ServiceModel.IContextChannel)">
+            <summary>
+            Connects events handlers to the <see cref="E:System.ServiceModel.ICommunicationObject.Closing"/> and <see cref="E:System.ServiceModel.ICommunicationObject.Faulted"/> events to handle them properly.
+            </summary>
+            <param name="contextChannel">
+            The context channel.
+            </param>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.ServiceModel.ErrorHandler">
+            <summary>
+            Error handler implementation to handle erros almost silently in services
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandler.HandleError(System.Exception)">
+            <summary>
+            Enables error-related processing and returns a value that indicates whether the dispatcher aborts the session and the instance context in certain cases. 
+            </summary>
+            <returns>
+            true if  should not abort the session (if there is one) and instance context if the instance context is not <see cref="F:System.ServiceModel.InstanceContextMode.Single"/>; otherwise, false. The default is false.
+            </returns>
+            <param name="error">
+            The exception thrown during processing.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandler.ProvideFault(System.Exception,System.ServiceModel.Channels.MessageVersion,System.ServiceModel.Channels.Message@)">
+            <summary>
+            Enables the creation of a custom <see cref="T:System.ServiceModel.FaultException`1"/> that is returned from an exception in the course of a service method.
+            </summary>
+            <param name="error">
+            The <see cref="T:System.Exception"/> object thrown in the course of the service operation.
+            </param>
+            <param name="version">
+            The SOAP version of the message.
+            </param>
+            <param name="fault">
+            The <see cref="T:System.ServiceModel.Channels.Message"/> object that is returned to the client, or service, in the duplex case.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandler.GetFaultDetail(System.Reflection.MethodInfo,System.ServiceModel.Description.FaultDescriptionCollection,System.Exception)">
+            <summary>
+            Looks up a fault details type and create is by means of a fault mapper (<see cref="T:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute"/>) or defaults.
+            </summary>
+            <param name="method">
+            The method where the error was trap
+            </param>
+            <param name="faultContracts">
+            The collection of faultContracts declared in the given method
+            </param>
+            <param name="error">
+            The actual error to convert into a fault
+            </param>
+            <returns>
+            An object being the detail of a fault that represents the given error.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlerClientInspector">
+            <summary>
+            Inspects messages received from the server detecting faults and raising the corresponding original exception produced on server side when possible.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlerClientInspector.BeforeSendRequest(System.ServiceModel.Channels.Message@,System.ServiceModel.IClientChannel)">
+            <summary>
+            Enables inspection or modification of a message before a request message is sent to a service.
+            </summary>
+            <returns>
+            The object that is returned as the argument of the method. This is null if no correlation state is used.The best practice is to make this a to ensure that no two objects are the same.
+            </returns>
+            <param name="request">
+            The message to be sent to the service.
+            </param>
+            <param name="channel">
+            The  client object channel.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlerClientInspector.AfterReceiveReply(System.ServiceModel.Channels.Message@,System.Object)">
+            <summary>
+            Enables inspection or modification of a message after a reply message is received but prior to passing it back to the client application.
+            </summary>
+            <param name="reply">
+            The message to be transformed into types and handed back to the client application.
+            </param>
+            <param name="correlationState">
+            Correlation state data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlerClientInspector.ReadFaultDetail(System.ServiceModel.Channels.Message)">
+            <summary>
+            Restores a fault contract detail found in the given message.
+            </summary>
+            <param name="replyWithFault">
+            The reply With Fault.
+            </param>
+            <returns>
+            An object that represents the fault detail if found, or null otherwise.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute">
+            <summary>
+            Extends a service behavior to add a custom error handler
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IContractBehavior#Validate(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint)">
+            <summary>
+            Implement to confirm that the contract and endpoint can support the contract behavior.
+            </summary>
+            <param name="contractDescription">
+            The contract to validate.
+            </param>
+            <param name="endpoint">
+            The endpoint to validate.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IContractBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.DispatchRuntime)">
+            <summary>
+            Implements a modification or extension of the client across a contract.
+            </summary>
+            <param name="contractDescription">
+            The contract description to be modified.
+            </param>
+            <param name="endpoint">
+            The endpoint that exposes the contract.
+            </param>
+            <param name="dispatchRuntime">
+            The dispatch runtime that controls service execution.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IContractBehavior#ApplyClientBehavior(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
+            <summary>
+            Implements a modification or extension of the client across a contract.
+            </summary>
+            <param name="contractDescription">
+            The contract description for which the extension is intended.
+            </param>
+            <param name="endpoint">
+            The endpoint.
+            </param>
+            <param name="clientRuntime">
+            The client runtime.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IContractBehavior#AddBindingParameters(System.ServiceModel.Description.ContractDescription,System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
+            <summary>
+            Configures any binding elements to support the contract behavior.
+            </summary>
+            <param name="contractDescription">
+            The contract description to modify.
+            </param>
+            <param name="endpoint">
+            The endpoint to modify.
+            </param>
+            <param name="bindingParameters">
+            The objects that binding elements require to support the behavior.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
+            <summary>
+            Implement to pass data at runtime to bindings to support custom behavior.
+            </summary>
+            <param name="endpoint">
+            The endpoint to modify.
+            </param>
+            <param name="bindingParameters">
+            The objects that binding elements require to support the behavior.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
+            <summary>
+            Implements a modification or extension of the client across an endpoint.
+            </summary>
+            <param name="endpoint">
+            The endpoint that is to be customized.
+            </param>
+            <param name="clientRuntime">
+            The client runtime to be customized.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)">
+            <summary>
+            Implements a modification or extension of the service across an endpoint.
+            </summary>
+            <param name="endpoint">
+            The endpoint that exposes the contract.
+            </param>
+            <param name="endpointDispatcher">
+            The endpoint dispatcher to be modified or extended.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#Validate(System.ServiceModel.Description.ServiceEndpoint)">
+            <summary>
+            Implement to confirm that the endpoint meets some intended criteria.
+            </summary>
+            <param name="endpoint">
+            The endpoint to validate.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IServiceBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)">
+            <summary>
+            Provides the ability to pass custom data to binding elements to support the contract implementation.
+            </summary>
+            <param name="serviceDescription">
+            The service description of the service.
+            </param>
+            <param name="serviceHostBase">
+            The host of the service.
+            </param>
+            <param name="endpoints">
+            The service endpoints.
+            </param>
+            <param name="bindingParameters">
+            Custom objects to which binding elements have access.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IServiceBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+            <summary>
+            Provides the ability to change run-time property values or insert custom extension objects such as error handlers, message or parameter interceptors, security extensions, and other custom extension objects.
+            </summary>
+            <param name="serviceDescription">
+            The service description.
+            </param>
+            <param name="serviceHostBase">
+            The host that is currently being built.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.System#ServiceModel#Description#IServiceBehavior#Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+            <summary>
+            Provides the ability to inspect the service host and the service description to confirm that the service can run successfully.
+            </summary>
+            <param name="serviceDescription">
+            The service description.
+            </param>
+            <param name="serviceHostBase">
+            The service host that is currently being constructed.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.ApplyDispatchBehavior(System.ServiceModel.Dispatcher.ChannelDispatcher)">
+            <summary>
+            The apply dispatch behavior.
+            </summary>
+            <param name="dispatcher">
+            The dispatcher.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ErrorHandlingBehaviorAttribute.AppyClientBehavior(System.ServiceModel.Dispatcher.ClientRuntime)">
+            <summary>
+            The appy client behavior.
+            </summary>
+            <param name="runtime">
+            The runtime.
+            </param>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute">
+            <summary>
+            Maps a type of <see cref="T:System.Exception"/> to a custom fault.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.faultConstructor">
+            <summary>
+            The fault constructor.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.faultConstructorIsParameterless">
+            <summary>
+            The fault constructor is parameterless.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.#ctor(System.Type,System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute"/> class. 
+            </summary>
+            <param name="exceptionType">
+            The exception Type.
+            </param>
+            <param name="faultType">
+            The fault Type.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.Map(System.Exception)">
+            <summary>
+            Maps the given input <paramref name="exception"/> to its corresponding fault.
+            </summary>
+            <param name="exception">
+            The exception.
+            </param>
+            <returns>
+            A FaultException.
+            </returns>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.ExceptionType">
+            <summary>
+            Gets ExceptionType.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.ServiceModel.FaultMapAttribute.FaultType">
+            <summary>
+            Gets FaultType.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.ServiceModel.Faults">
+            <summary>
+            Implements facilities to handle N2-Labo well known exception and convert them to faults, at server side, and back to original exception once in the client side.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.Faults.UnknownOrUnhandledError(System.Exception)">
+            <summary>
+            Creates a default fault detail to communicate to client side an unhandled server side error.
+            </summary>
+            <param name="exception">
+            The exception.
+            </param>
+            <returns>
+            A <see cref="T:SmartFran.Seed.NLayer.ServiceModel.NLayerFault"/> describing the error but hidding sensitive information.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.Faults.FaultDeserializationFailed(System.ServiceModel.Channels.Message,System.Exception)">
+            <summary>
+            Error raised when a client, tipically client message inspector interface implementor, fails to deserialize the detail of a fault thrown by a server.
+            </summary>
+            <param name="messageReply">
+            	The messageReply.
+            </param>
+            <param name="deserializationException">
+            The deserialization Exception.
+            </param>
+            <returns>
+            An exception describing the problem.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.Faults.UnknownFaultDetailFromServer(System.Object)">
+            <summary>
+            Error raised when a client detect an unknown fault detail from the server. The fault was successfully deserialized error handling mechanims at the client side cannot recreate the original exception.
+            </summary>
+            <param name="faultDetail">
+            The fault detail.
+            </param>
+            <returns>
+            An exception describing the problem.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription">
+            <summary>
+            Generic base contract to normalize the subscription and unsubscription to callbacks in WCF/Web services.
             </summary>
             <remarks>
-            This kind of errors can be temporally or can persist after retries, in this las case it requires a system administrator to solve the problem.
+            Inherit your service's callback subscription contract from this interface and decorate it with the ServiceContract attribute
+            with your custom callbacks interface. Example: 
+              [ServiceContract(CallbackContract = typeof(IMyServiceCallbacks), SessionMode = SessionMode.Required)]
             </remarks>
-            <returns>
-            A <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessOperabilityException"/> describing the error and identifying the issue.
-            </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.BusinessRuleBreached(System.Object)">
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription.Subscribe">
             <summary>
-            General error raised by the business rule enforcement engine when it detects a breach when applying the rules.
+            Adds the underlying service's callback client to the subscription list.
             </summary>
-            <param name="target">
-            The target object failing the business rule validation.
-            </param>
-            <returns>
-            A <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.BusinessRuleException"/> describing the error and identifying the issue.
-            </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.CreateIssuedException``1(System.String)">
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.ICallbacksSubscription.Unsubscribe">
             <summary>
-            Creates an exception and identifies the problem with an issue id that attaches to just created exception.
+            Removes the underlying service's callback client from the subscription list.
             </summary>
-            <param name="exceptionMessage">
-            The exceptionMessage.
-            </param>
-            <typeparam name="TException">
-            The type of exception to create. It must be a successor of<see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException"/>
-            </typeparam>
-            <returns>
-            An exception of the<see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException"/>hierarchy containing an issue id.
-            </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.CreateIssuedException``1(System.String,System.Exception,System.Boolean,System.Boolean)">
+        <member name="T:SmartFran.Seed.NLayer.ServiceModel.NLayerFault">
             <summary>
-            Creates an exception of the given type and attachs to it an issue identification to facilitate the traceability of the error.
+            Base class of faults generated by any N2-Labo WCF services
             </summary>
-            <param name="exceptionMessage">
-            The exception message.
-            </param>
-            <param name="innerException">
-            The inner exception.
-            </param>
-            <param name="attachInnerException">
-            The attach Inner Exception. Use with caution to avoid pass sensitive information to the client side.
-            </param>
-            <param name="logException">
-            The log exception.
-            </param>
-            <typeparam name="TException">
-            The type of exception to create.
-            </typeparam>
-            <returns>
-            An exception of type <typeparamref name="TException"/> containing the inner exception and an unique issue id.
-            </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.UnknownOrUnhandledError(System.Exception)">
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.#ctor(SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException)">
             <summary>
-            Error raised when the system traps an unexpected error not handled properly.
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ServiceModel.NLayerFault"/> class.
             </summary>
-            <param name="exception">
-            The exception.
+            <param name="laboException">
+            The labo exception.
             </param>
-            <returns>
-            A <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException"/> describing the error and identifying the issue.
-            </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.DependencyMapMissingOrInvalidType``1(System.Exception,System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.ToString">
             <summary>
-            Error raised by a dependency mapper when it fails to get a type requested by a client. 
-            The inner exception is the actual cause of the error and it belongs to the actual underlying mapper that can vary.
-            </summary>
-            <typeparam name="TSearchedType">
-            The type to be resolved by dependency map.
-            </typeparam>
-            <param name="innerException">
-            The inner Exception.
-            </param>
-            <param name="logInnerException">
-            The log Inner Exception.
-            </param>
-            <returns>
-            An  <see cref="T:System.InvalidOperationException"/> describing the error.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.DependencyMapConfigurationError(System.String,System.Exception,System.Boolean)">
-            <summary>
-            Error raised by a dependency map when it fails to load or apply a configuration to its underlying dependency container.
-            </summary>
-            <param name="containerConfigurationName">
-            The container Configuration Name.
-            </param>
-            <param name="innerException">
-            The inner Exception.
-            </param>
-            <param name="logInnerException">
-            The log Inner Exception.
-            </param>
-            <returns>
-            An  <see cref="T:System.InvalidOperationException"/> describing the error.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.CheckLogException``1(System.Boolean,System.Exception,System.String)">
-            <summary>
-            Writes an exception raised to the log and the corresponding <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException"/> used to replace it.
-            </summary>
-            <param name="logException">
-            The log Exception.
-            </param>
-            <param name="exception">
-            The exception.
-            </param>
-            <param name="issueId">
-            The issue Id.
-            </param>
-            <typeparam name="TException">
-            The type of <see cref="T:SmartFran.Seed.NLayer.Diagnostics.Exceptions.NLayerException"/> that replaces de system exception.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Diagnostics.Failures.CreateIssue">
-            <summary>
-            The create issue.
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
             </summary>
             <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
             </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.AsException">
+            <summary>
+            Creates an exception that represents the fault contract
+            </summary>
+            <returns>
+            An exception that maps the fault detail
+            </returns>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.IssueId">
+            <summary>
+            Gets IssueId.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.Message">
+            <summary>
+            Gets Message.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.ServiceModel.NLayerFault.ExceptionType">
+            <summary>
+            Gets ExceptionType.
+            </summary>
         </member>
     </members>
 </doc>

@@ -4,6 +4,11 @@
         <name>SmartFran.Seed.NLayer.Core.Data.EntityFramework</name>
     </assembly>
     <members>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext">
+            <summary>
+            The base context.
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.IQueryableDataContext">
             <summary>
             The context contract for EF implementation
@@ -79,45 +84,97 @@
             <param name="original">The original entity</param>
             <param name="current">The current entity</param>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ApplyCurrentValues``1(``0,``0)">
             <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
+            The apply current values.
+            </summary>
+            <param name="original">
+            The original.
+            </param>
+            <param name="current">
+            The current.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Attach``1(``0)">
+            <summary>
+            The attach.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CreateSet``1">
+            <summary>
+            The create set.
+            </summary>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The System.Data.Entity.DbSet`1[TEntity -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.SetModified``1(``0)">
+            <summary>
+            The set modified.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ExecuteCommand(System.String,System.Object[])">
+            <summary>
+            The execute command.
+            </summary>
+            <param name="sqlCommand">
+            The sql command.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ExecuteQuery``1(System.String,System.Object[])">
+            <summary>
+            The execute query.
+            </summary>
+            <param name="sqlQuery">
+            The sql query.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Commit">
+            <summary>
+            The commit.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.ResourceManager">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CommitAndRefreshChanges">
             <summary>
-              Returns the cached ResourceManager instance used by this class.
+            The commit and refresh changes.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.Culture">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.RollbackChanges">
             <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotAddNullEntity">
-            <summary>
-              Looks up a localized string similar to Cannot add null entity into {0} repository.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotModifyNullEntity">
-            <summary>
-              Looks up a localized string similar to Cannot modify null item into {0} repository.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotRemoveNullEntity">
-            <summary>
-              Looks up a localized string similar to Cannot remove null entity into {0} repository.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotTrackNullEntity">
-            <summary>
-              Looks up a localized string similar to Cannot track null item into {0} repository.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.OrderByCantBeNull">
-            <summary>
-              Looks up a localized string similar to OrderBy can&apos;t be null..
+            The rollback changes.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`1">
@@ -389,7 +446,7 @@
             <param name="pageIndex">
             The page index.
             </param>
-            <param name="pageCount">
+            <param name="pageSize">
             The page count.
             </param>
             <returns>
@@ -401,102 +458,45 @@
             Gets the unit of work.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext">
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages">
             <summary>
-            The base context.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ApplyCurrentValues``1(``0,``0)">
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.ResourceManager">
             <summary>
-            The apply current values.
-            </summary>
-            <param name="original">
-            The original.
-            </param>
-            <param name="current">
-            The current.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Attach``1(``0)">
-            <summary>
-            The attach.
-            </summary>
-            <param name="item">
-            The item.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CreateSet``1">
-            <summary>
-            The create set.
-            </summary>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-            <returns>
-            The System.Data.Entity.DbSet`1[TEntity -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.SetModified``1(``0)">
-            <summary>
-            The set modified.
-            </summary>
-            <param name="item">
-            The item.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ExecuteCommand(System.String,System.Object[])">
-            <summary>
-            The execute command.
-            </summary>
-            <param name="sqlCommand">
-            The sql command.
-            </param>
-            <param name="parameters">
-            The parameters.
-            </param>
-            <returns>
-            The System.Int32.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ExecuteQuery``1(System.String,System.Object[])">
-            <summary>
-            The execute query.
-            </summary>
-            <param name="sqlQuery">
-            The sql query.
-            </param>
-            <param name="parameters">
-            The parameters.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-            <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Commit">
-            <summary>
-            The commit.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CommitAndRefreshChanges">
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.Culture">
             <summary>
-            The commit and refresh changes.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.RollbackChanges">
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotAddNullEntity">
             <summary>
-            The rollback changes.
+              Looks up a localized string similar to Cannot add null entity into {0} repository.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotModifyNullEntity">
+            <summary>
+              Looks up a localized string similar to Cannot modify null item into {0} repository.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotRemoveNullEntity">
+            <summary>
+              Looks up a localized string similar to Cannot remove null entity into {0} repository.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotTrackNullEntity">
+            <summary>
+              Looks up a localized string similar to Cannot track null item into {0} repository.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.OrderByCantBeNull">
+            <summary>
+              Looks up a localized string similar to OrderBy can&apos;t be null..
             </summary>
         </member>
     </members>
