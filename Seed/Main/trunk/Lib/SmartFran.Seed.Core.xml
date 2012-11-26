@@ -181,9 +181,9 @@
             The adapt mode flattening.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Adapter.AdaptMode.AdaptModeUnflatteening">
+        <member name="F:SmartFran.Seed.Adapter.AdaptMode.AdaptModeUnflattening">
             <summary>
-            The adapt mode unflatteening.
+            The adapt mode unflattening.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.Adapter.ITypeAdapter">
