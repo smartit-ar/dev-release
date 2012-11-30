@@ -171,17 +171,17 @@
             The adapt mode.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Adapter.AdaptMode.AdaptModeProject">
+        <member name="F:SmartFran.Seed.Adapter.AdaptMode.Project">
             <summary>
             The adapt mode project.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Adapter.AdaptMode.AdaptModeFlattening">
+        <member name="F:SmartFran.Seed.Adapter.AdaptMode.Flatten">
             <summary>
             The adapt mode flattening.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Adapter.AdaptMode.AdaptModeUnflattening">
+        <member name="F:SmartFran.Seed.Adapter.AdaptMode.Unflatten">
             <summary>
             The adapt mode unflattening.
             </summary>
