@@ -119,6 +119,252 @@
             entity collections
             </returns>
         </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.IRepositoryGuid`1">
+            <summary>
+            Base interface for implement a "Repository Pattern"
+            </summary>
+            <remarks>
+            Indeed, one might think that IDbSet already a generic repository and therefore
+            would not need this item. Using this interface allows us to ensure PI principle
+            within our domain model
+            </remarks>
+            <typeparam name="TEntity">
+            Type of entity for this repository 
+            </typeparam>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.IRepository`2">
+            <summary>
+            Base interface for implement a "Repository Pattern"
+            </summary>
+            <remarks>
+            Indeed, one might think that IDbSet already a generic repository and therefore
+            would not need this item. Using this interface allows us to ensure PI principle
+            within our domain model
+            </remarks>
+            <typeparam name="TEntity">
+            Type of entity for this repository 
+            </typeparam>
+            <typeparam name="T">
+            Type of entity identify.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Add(`0)">
+            <summary>
+            Add item into repository
+            </summary>
+            <param name="item">Item to add to repository</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Remove(`0)">
+            <summary>
+            Delete item 
+            </summary>
+            <param name="item">Item to delete</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Remove(`1)">
+            <summary>
+            Delete item 
+            </summary>
+            <param name="itemId">
+            The item Id.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Modify(`0)">
+            <summary>
+            Set item as modified
+            </summary>
+            <param name="item">Item to modify</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.TrackItem(`0)">
+            <summary>
+            Track entity into this repository, really in context. 
+            In EF this can be done with Attach and with Update in NH
+            </summary>
+            <param name="item">Item to attach</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Merge(`0,`0)">
+            <summary>
+            Sets modified entity into the repository. 
+            When calling Commit() method in context 
+            these changes will be saved into the storage
+            </summary>
+            <param name="persisted">The persisted item</param>
+            <param name="current">The current item</param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Get(`1)">
+            <summary>
+            Get element by entity key
+            </summary>
+            <param name="id">Entity key value</param>
+            <returns>The entity.</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.GetAll">
+            <summary>
+            Get all elements of type TEntity in repository
+            </summary>
+            <returns>List of selected elements</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Count">
+            <summary>
+            The count.
+            </summary>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Count(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The count.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The count.
+            </summary>
+            <param name="whereExpression">
+            The where Expression.
+            </param>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The all matching.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
+            <summary>
+            The query.
+            </summary>
+            <param name="orderBy">
+            The order By.
+            </param>
+            <returns>
+            IEnumerable of entities.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The query.
+            </summary>
+            <param name="orderBy">
+            The order By.
+            </param>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            IEnumerable of entities.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The query.
+            </summary>
+            <param name="orderBy">
+            The order By.
+            </param>
+            <param name="whereExpression">
+            The where expression.
+            </param>
+            <returns>
+            IEnumerable of entities.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Get  elements of type TEntity in repository
+            </summary>
+            <param name="whereExpression">Filter that each element do match</param>
+            <returns>List of selected elements</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageSize">
+            The page Size.
+            </param>
+            <param name="orderBy">
+            The order By.
+            </param>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageSize">
+            The page Size.
+            </param>
+            <param name="orderBy">
+            The order By.
+            </param>
+            <param name="whereExpression">
+            The where expression.
+            </param>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageSize">
+            The page Size.
+            </param>
+            <param name="orderBy">
+            The order By.
+            </param>
+            <param name="whereExpression">
+            The where specification expression.
+            </param>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Domain.IRepository`2.Context">
+            <summary>
+            Gets the unit of work in this repository
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Domain.IRepositoryAutoInc`1">
+            <summary>
+            Base interface for implement a "Repository Pattern"
+            </summary>
+            <remarks>
+            Indeed, one might think that IDbSet already a generic repository and therefore
+            would not need this item. Using this interface allows us to ensure PI principle
+            within our domain model
+            </remarks>
+            <typeparam name="TEntity">
+            Type of entity for this repository 
+            </typeparam>
+        </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.EntityBase">
             <summary>
             Base class for entities
@@ -816,226 +1062,6 @@
         <member name="P:SmartFran.Seed.NLayer.DistributedServices.Resources.Messages.message_DefaultErrorMessage">
             <summary>
               Looks up a localized string similar to Oooppps this operation can&apos;t be processed at this moment. Please try it later. If problem persist contact with your System Administrator.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Domain.IRepository`2">
-            <summary>
-            Base interface for implement a "Repository Pattern"
-            </summary>
-            <remarks>
-            Indeed, one might think that IDbSet already a generic repository and therefore
-            would not need this item. Using this interface allows us to ensure PI principle
-            within our domain model
-            </remarks>
-            <typeparam name="TEntity">
-            Type of entity for this repository 
-            </typeparam>
-            <typeparam name="T">
-            Type of entity identify.
-            </typeparam>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Add(`0)">
-            <summary>
-            Add item into repository
-            </summary>
-            <param name="item">Item to add to repository</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Remove(`0)">
-            <summary>
-            Delete item 
-            </summary>
-            <param name="item">Item to delete</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Remove(`1)">
-            <summary>
-            Delete item 
-            </summary>
-            <param name="itemId">
-            The item Id.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Modify(`0)">
-            <summary>
-            Set item as modified
-            </summary>
-            <param name="item">Item to modify</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.TrackItem(`0)">
-            <summary>
-            Track entity into this repository, really in context. 
-            In EF this can be done with Attach and with Update in NH
-            </summary>
-            <param name="item">Item to attach</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Merge(`0,`0)">
-            <summary>
-            Sets modified entity into the repository. 
-            When calling Commit() method in context 
-            these changes will be saved into the storage
-            </summary>
-            <param name="persisted">The persisted item</param>
-            <param name="current">The current item</param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Get(`1)">
-            <summary>
-            Get element by entity key
-            </summary>
-            <param name="id">Entity key value</param>
-            <returns>The entity.</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.GetAll">
-            <summary>
-            Get all elements of type TEntity in repository
-            </summary>
-            <returns>List of selected elements</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Count">
-            <summary>
-            The count.
-            </summary>
-            <returns>
-            The System.Int32.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Count(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
-            <summary>
-            The count.
-            </summary>
-            <param name="specification">
-            The specification.
-            </param>
-            <returns>
-            The System.Int32.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
-            <summary>
-            The count.
-            </summary>
-            <param name="whereExpression">
-            The where Expression.
-            </param>
-            <returns>
-            The System.Int32.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
-            <summary>
-            The all matching.
-            </summary>
-            <param name="specification">
-            The specification.
-            </param>
-            <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
-            <summary>
-            The query.
-            </summary>
-            <param name="orderBy">
-            The order By.
-            </param>
-            <returns>
-            IEnumerable of entities.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
-            <summary>
-            The query.
-            </summary>
-            <param name="orderBy">
-            The order By.
-            </param>
-            <param name="specification">
-            The specification.
-            </param>
-            <returns>
-            IEnumerable of entities.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
-            <summary>
-            The query.
-            </summary>
-            <param name="orderBy">
-            The order By.
-            </param>
-            <param name="whereExpression">
-            The where expression.
-            </param>
-            <returns>
-            IEnumerable of entities.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
-            <summary>
-            Get  elements of type TEntity in repository
-            </summary>
-            <param name="whereExpression">Filter that each element do match</param>
-            <returns>List of selected elements</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
-            <summary>
-            The query.
-            </summary>
-            <param name="pageIndex">
-            The page index.
-            </param>
-            <param name="pageSize">
-            The page Size.
-            </param>
-            <param name="orderBy">
-            The order By.
-            </param>
-            <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
-            <summary>
-            The query.
-            </summary>
-            <param name="pageIndex">
-            The page index.
-            </param>
-            <param name="pageSize">
-            The page Size.
-            </param>
-            <param name="orderBy">
-            The order By.
-            </param>
-            <param name="whereExpression">
-            The where expression.
-            </param>
-            <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
-            <summary>
-            The query.
-            </summary>
-            <param name="pageIndex">
-            The page index.
-            </param>
-            <param name="pageSize">
-            The page Size.
-            </param>
-            <param name="orderBy">
-            The order By.
-            </param>
-            <param name="whereExpression">
-            The where specification expression.
-            </param>
-            <returns>
-            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
-            </returns>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Domain.IRepository`2.Context">
-            <summary>
-            Gets the unit of work in this repository
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.IDataContext">
