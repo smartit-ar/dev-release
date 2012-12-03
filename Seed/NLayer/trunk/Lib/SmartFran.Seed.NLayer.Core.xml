@@ -200,7 +200,7 @@
             The requested hash code.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.Entity`1.IsValidId(`0)">
+        <member name="M:SmartFran.Seed.NLayer.Domain.Entity`1.IsValidId(System.Object)">
             <summary>
             The is valid identify.
             </summary>
@@ -241,17 +241,6 @@
             Gets or sets the id.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.EntityGuid.IsValidId(System.Guid)">
-            <summary>
-            The is valid id.
-            </summary>
-            <param name="id">
-            The id.
-            </param>
-            <returns>
-            The <see cref="T:System.Boolean"/>.
-            </returns>
-        </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.EntityGuid.GenerateNewIdentity">
             <summary>
             Generate identity for this entity
@@ -275,17 +264,6 @@
             <summary>
             Base class for entities
             </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.EntityAutoInc.IsValidId(System.Int32)">
-            <summary>
-            The is valid id.
-            </summary>
-            <param name="id">
-            The id.
-            </param>
-            <returns>
-            The <see cref="T:System.Boolean"/>.
-            </returns>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Resources.Application.Messages">
             <summary>
