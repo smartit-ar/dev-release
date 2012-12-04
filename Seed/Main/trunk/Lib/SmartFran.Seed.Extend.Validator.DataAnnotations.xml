@@ -20,23 +20,6 @@
             <param name="item">Entity value.</param>
             <returns>Is valid?</returns>
         </member>
-        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.IsValid``1(``0,System.Collections.Generic.List{System.String})">
-            <summary>
-            Evaluate entity.
-            </summary>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-            <param name="item">
-            Entity value.
-            </param>
-            <param name="invalidMessages">
-            The invalid Messages.
-            </param>
-            <returns>
-            Is valid?
-            </returns>
-        </member>
         <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.GetInvalidMessages``1(``0)">
             <summary>
             Return the collection of errors if entity state is not valid
