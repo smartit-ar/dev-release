@@ -442,35 +442,56 @@
             The SmartFran.Seed.Logging.ILogger.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Resources.Activator">
+        <member name="T:SmartFran.Seed.Resources.Activator.Messages">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.ResourceManager">
+        <member name="P:SmartFran.Seed.Resources.Activator.Messages.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Culture">
+        <member name="P:SmartFran.Seed.Resources.Activator.Messages.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Create_Values_is_null">
+        <member name="P:SmartFran.Seed.Resources.Activator.Messages.Create_Values_is_null">
             <summary>
               Looks up a localized string similar to Values is null..
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Fill_Source_is_null">
+        <member name="P:SmartFran.Seed.Resources.Activator.Messages.Fill_Source_is_null">
             <summary>
               Looks up a localized string similar to Source is null..
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.Resources.Activator.Fill_Values_is_null">
+        <member name="P:SmartFran.Seed.Resources.Activator.Messages.Fill_Values_is_null">
             <summary>
               Looks up a localized string similar to Values is null.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.Resources.Validator.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Validator.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Validator.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.Validator.Messages.exception_ApplicationValidationExceptionDefaultMessage">
+            <summary>
+              Looks up a localized string similar to Validation exception, check ValidationErrors for more information.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.Validator.EntityValidatorFactory">
@@ -548,6 +569,29 @@
         <member name="P:SmartFran.Seed.Validator.InvalidItem.Attributes">
             <summary>
             Gets or sets the attributes.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.Validator.ValidationException">
+            <summary>
+            The custom exception for validation errors
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Validator.ValidationException.validationReport">
+            <summary>
+            The _validation errors.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Validator.ValidationException.#ctor(System.Collections.Generic.IEnumerable{SmartFran.Seed.Validator.InvalidItem})">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Validator.ValidationException"/> class. 
+            </summary>
+            <param name="validationReport">
+            The validation errors.
+            </param>
+        </member>
+        <member name="P:SmartFran.Seed.Validator.ValidationException.ValidationReport">
+            <summary>
+            Gets the validation errors messages
             </summary>
         </member>
     </members>
