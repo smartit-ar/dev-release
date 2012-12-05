@@ -12,31 +12,15 @@
             perform validation
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.IsValid``1(``0)">
+        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.IsValid``1(``0,System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem}@)">
             <summary>
-            Evaluate entity.
-            </summary>
-            <typeparam name="TEntity">Entity type.</typeparam>
-            <param name="item">Entity value.</param>
-            <returns>Is valid?</returns>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.GetInvalidMessages``1(``0)">
-            <summary>
-            Return the collection of errors if entity state is not valid
-            </summary>
-            <typeparam name="TEntity">The type of entity</typeparam>
-            <param name="item">The instance with validation errors</param>
-            <returns>A collection of validation errors</returns>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.Validate``1(``0,System.Collections.Generic.List{System.String})">
-            <summary>
-            The validate.
+            The is valid.
             </summary>
             <param name="item">
             The item.
             </param>
-            <param name="invalidMessages">
-            The invalid messages.
+            <param name="report">
+            The report.
             </param>
             <typeparam name="TEntity">
             Entity type.
@@ -45,7 +29,7 @@
             The <see cref="T:System.Boolean"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.SetValidatableObjectErrors``1(``0,System.Collections.Generic.List{System.String})">
+        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.SetValidatableObjectErrors``1(``0,System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem})">
             <summary>
             Get erros if object implement IValidatableObject
             </summary>
@@ -53,7 +37,7 @@
             <param name="item">The item to validate</param>
             <param name="errors">A collection of current errors</param>
         </member>
-        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.SetValidationAttributeErrors``1(``0,System.Collections.Generic.List{System.String})">
+        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.SetValidationAttributeErrors``1(``0,System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem})">
             <summary>
             Get errors on ValidationAttribute
             </summary>
