@@ -331,6 +331,12 @@
             <param name="exception">Exception to write in debug message</param>
             <param name="args">Args param</param>
         </member>
+        <member name="M:SmartFran.Seed.Logging.ILogger.Debug(System.Exception)">
+            <summary>
+            Log debug message
+            </summary>
+            <param name="exception">Exception to write in debug message</param>
+        </member>
         <member name="M:SmartFran.Seed.Logging.ILogger.Debug(System.Object)">
             <summary>
             Log debug message 
@@ -351,6 +357,12 @@
             <param name="message">The message of fatal error</param>
             <param name="exception">The exception to write in this fatal message</param>
             <param name="args">Args param.</param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.ILogger.Fatal(System.Exception)">
+            <summary>
+            Log fatal message
+            </summary>
+            <param name="exception">Exception to write in debug message</param>
         </member>
         <member name="M:SmartFran.Seed.Logging.ILogger.LogInfo(System.String,System.Object[])">
             <summary>
@@ -380,6 +392,12 @@
             <param name="message">The error message to write</param>
             <param name="exception">The exception associated with this error</param>
             <param name="args">The arguments values</param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.ILogger.LogError(System.Exception)">
+            <summary>
+            Log error message
+            </summary>
+            <param name="exception">The exception associated with this error</param>
         </member>
         <member name="T:SmartFran.Seed.Logging.ILoggerProvider">
             <summary>

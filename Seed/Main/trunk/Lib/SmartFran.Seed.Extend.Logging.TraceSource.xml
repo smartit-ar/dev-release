@@ -91,6 +91,14 @@
             The args.
             </param>
         </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.LogError(System.Exception)">
+            <summary>
+            Error message.
+            </summary>
+            <param name="exception">
+            The exception.
+            </param>
+        </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Debug(System.String,System.Object[])">
             <summary>
             Debug message.
@@ -114,6 +122,14 @@
             </param>
             <param name="args">
             The args.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Debug(System.Exception)">
+            <summary>
+            Debug message.
+            </summary>
+            <param name="exception">
+            The exception.
             </param>
         </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Debug(System.Object)">
@@ -147,6 +163,14 @@
             </param>
             <param name="args">
             The args.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Fatal(System.Exception)">
+            <summary>
+            Fatal message.
+            </summary>
+            <param name="exception">
+            The exception.
             </param>
         </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.TraceInternal(System.Diagnostics.TraceEventType,System.String)">
