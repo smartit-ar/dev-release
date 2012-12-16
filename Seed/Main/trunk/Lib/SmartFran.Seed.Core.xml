@@ -212,6 +212,20 @@
             The cloned object.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Adapter.ITypeAdapter.Adapt(System.Object,System.Object@,SmartFran.Seed.Adapter.AdaptMode)">
+            <summary>
+            The adapt.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <param name="target">
+            The target.
+            </param>
+            <param name="adaptMode">
+            The adapt mode.
+            </param>
+        </member>
         <member name="T:SmartFran.Seed.Adapter.ITypeAdapterProvider">
             <summary>
             Base contract for adapter factory
