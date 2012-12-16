@@ -491,6 +491,27 @@
               Looks up a localized string similar to Values is null.
             </summary>
         </member>
+        <member name="T:SmartFran.Seed.Resources.ExceptionHandling.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.ExceptionHandling.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.ExceptionHandling.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Resources.ExceptionHandling.Messages.DefaultAppExceptionMessage">
+            <summary>
+              Looks up a localized string similar to No detail application message..
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.Resources.Validator.Messages">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -512,131 +533,86 @@
               Looks up a localized string similar to Validation exception, check ValidationErrors for more information.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.ExceptionHandling.ExceptionContent">
-            <summary>
-            The base content.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.ExceptionHandling.ExceptionContent.ConstructException(SmartFran.Seed.Validator.FaultDetail)">
-            <summary>
-            The contruct exception.
-            </summary>
-            <param name="faultDetail">
-            The detail Fault.
-            </param>
-            <returns>
-            The <see cref="T:SmartFran.Seed.ExceptionHandling.BaseException"/>.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.ExceptionHandling.BaseException">
+        <member name="T:SmartFran.Seed.ExceptionHandling.AppException">
             <summary>
             The base exception.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.ExceptionHandling.BaseException.#ctor">
+        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.BaseException"/> class.
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.AppException"/> class.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.ExceptionHandling.BaseException.#ctor(System.String)">
+        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.BaseException"/> class.
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.AppException"/> class.
             </summary>
             <param name="message">
             The message.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.ExceptionHandling.BaseException.#ctor(SmartFran.Seed.Validator.FaultDetail)">
+        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.#ctor(System.Guid,System.String,System.Exception)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.BaseException"/> class.
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.AppException"/> class. 
             </summary>
-            <param name="faultDetail">
-            The detail Fault.
+            <param name="issueId">
+            The issue Id.
+            </param>
+            <param name="message">
+            The error message that explains the reason for the exception. 
+            </param>
+            <param name="innerException">
+            The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. 
             </param>
         </member>
-        <member name="M:SmartFran.Seed.ExceptionHandling.BaseException.ConstructFault">
+        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.#ctor(System.String,System.Exception)">
             <summary>
-            The contruct fault.
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.AppException"/> class. 
+            </summary>
+            <param name="message">
+            The error message that explains the reason for the exception. 
+            </param>
+            <param name="innerException">
+            The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. 
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
             </summary>
             <returns>
-            The <see cref="T:System.ServiceModel.FaultException"/>.
+            A string representation of the current exception.
             </returns>
         </member>
-        <member name="P:SmartFran.Seed.ExceptionHandling.BaseException.IssueId">
+        <member name="P:SmartFran.Seed.ExceptionHandling.AppException.IssueId">
             <summary>
             Gets or sets the issue id.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.ExceptionHandling.BaseException.Content">
+        <member name="T:SmartFran.Seed.Validator.InvalidItemAttribute">
             <summary>
-            Gets or sets the content.
+            The invalid item attribute.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.Validator.FaultDetail">
+        <member name="M:SmartFran.Seed.Validator.InvalidItemAttribute.#ctor(System.String,System.Object)">
             <summary>
-            The base fault.
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Validator.InvalidItemAttribute"/> class.
             </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.FaultDetail.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Validator.FaultDetail"/> class. 
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.FaultDetail.#ctor(SmartFran.Seed.ExceptionHandling.BaseException)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Validator.FaultDetail"/> class. 
-            </summary>
-            <param name="ex">
-            The ex.
+            <param name="key">
+            The key.
+            </param>
+            <param name="value">
+            The value.
             </param>
         </member>
-        <member name="P:SmartFran.Seed.Validator.FaultDetail.Message">
+        <member name="P:SmartFran.Seed.Validator.InvalidItemAttribute.Key">
             <summary>
-            Gets or sets the message.
+            Gets or sets the key.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.Validator.FaultDetail.IssueId">
+        <member name="P:SmartFran.Seed.Validator.InvalidItemAttribute.Value">
             <summary>
-            Gets or sets the issue id.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Validator.FaultDetail.Content">
-            <summary>
-            Gets or sets the content.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.Validator.ValidationReport">
-            <summary>
-            The custom exception for validation errors
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.ValidationReport.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Validator.ValidationReport"/> class.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.ValidationReport.#ctor(System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem})">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Validator.ValidationReport"/> class. 
-            </summary>
-            <param name="validationReport">
-            The validation errors.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.ValidationReport.ConstructException(SmartFran.Seed.Validator.FaultDetail)">
-            <summary>
-            The construct exception.
-            </summary>
-            <param name="faultDetail">
-            The detail Fault.
-            </param>
-            <returns>
-            The <see cref="T:SmartFran.Seed.ExceptionHandling.BaseException"/>.
-            </returns>
-        </member>
-        <member name="P:SmartFran.Seed.Validator.ValidationReport.Report">
-            <summary>
-            Gets or sets the report.
+            Gets or sets the value.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.Validator.EntityValidatorFactory">
@@ -715,36 +691,6 @@
             <summary>
             Gets or sets the attributes.
             </summary>
-        </member>
-        <member name="T:SmartFran.Seed.Validator.ValidationReportException">
-            <summary>
-            The custom exception for validation errors
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.ValidationReportException.#ctor(System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem})">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Validator.ValidationReportException"/> class. 
-            </summary>
-            <param name="validationReport">
-            The validation errors.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.ValidationReportException.#ctor(SmartFran.Seed.Validator.FaultDetail)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Validator.ValidationReportException"/> class. 
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.BaseException"/> class.
-            </summary>
-            <param name="faultDetail">
-            The detail Fault.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.ValidationReportException.ConstructFault">
-            <summary>
-            The contruct fault.
-            </summary>
-            <returns>
-            The <see cref="T:System.ServiceModel.FaultException"/>.
-            </returns>
         </member>
     </members>
 </doc>
