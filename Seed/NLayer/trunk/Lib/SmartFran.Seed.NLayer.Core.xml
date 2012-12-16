@@ -176,7 +176,7 @@
         </member>
         <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.Report">
             <summary>
-            Gets the report.
+            Gets or sets the report.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesFaultDetail">
