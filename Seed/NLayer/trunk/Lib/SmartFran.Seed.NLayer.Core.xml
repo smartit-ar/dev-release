@@ -137,7 +137,7 @@
             The <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.CreateFaultDetail``1">
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.CreateFaultException``1">
             <summary>
             The create fault detail.
             </summary>
@@ -173,17 +173,6 @@
             <param name="report">
             The report.
             </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.FromFaultDetail(SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail)">
-            <summary>
-            The from fault detail.
-            </summary>
-            <param name="faultDetail">
-            The fault detail.
-            </param>
-            <returns>
-            The <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/>.
-            </returns>
         </member>
         <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.Report">
             <summary>
@@ -257,17 +246,6 @@
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesFaultDetail"/> class.
             </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesFaultDetail.FromException(SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException)">
-            <summary>
-            The from exception.
-            </summary>
-            <param name="exception">
-            The exception.
-            </param>
-            <returns>
-            The <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail"/>.
-            </returns>
         </member>
         <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesFaultDetail.Report">
             <summary>
