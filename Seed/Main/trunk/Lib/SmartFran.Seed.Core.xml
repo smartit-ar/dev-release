@@ -212,10 +212,13 @@
             The cloned object.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Adapter.ITypeAdapter.Adapt(System.Object,System.Object@,SmartFran.Seed.Adapter.AdaptMode)">
+        <member name="M:SmartFran.Seed.Adapter.ITypeAdapter.Adapt``1(System.Object,``0,SmartFran.Seed.Adapter.AdaptMode)">
             <summary>
             The adapt.
             </summary>
+            <typeparam name="TTarget">
+            The type.
+            </typeparam>
             <param name="source">
             The source.
             </param>
@@ -225,6 +228,9 @@
             <param name="adaptMode">
             The adapt mode.
             </param>
+            <returns>
+            The <see cref="!:TTarget"/>.
+            </returns>
         </member>
         <member name="T:SmartFran.Seed.Adapter.ITypeAdapterProvider">
             <summary>

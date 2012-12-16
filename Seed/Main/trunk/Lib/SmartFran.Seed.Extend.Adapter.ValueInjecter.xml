@@ -361,10 +361,13 @@
             The cloned object.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.Adapt(System.Object,System.Object@,SmartFran.Seed.Adapter.AdaptMode)">
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.Adapt``1(System.Object,``0,SmartFran.Seed.Adapter.AdaptMode)">
             <summary>
             The adapt.
             </summary>
+            <typeparam name="TTarget">
+            The type.
+            </typeparam>
             <param name="source">
             The source.
             </param>
@@ -374,11 +377,17 @@
             <param name="adaptMode">
             The adapt Mode.
             </param>
+            <returns>
+            The <see cref="!:TTarget"/>.
+            </returns>
         </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.Adapter(System.Object,System.Object@,SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.FlattenMethod)">
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.Adapter``1(System.Object,``0,SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.FlattenMethod{``0})">
             <summary>
             The adapter.
             </summary>
+            <typeparam name="TTarget">
+            The type.
+            </typeparam>
             <param name="source">
             The source.
             </param>
@@ -392,10 +401,13 @@
             The <see cref="T:System.Object"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.AdaptFlatten(System.Object,System.Object@)">
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.AdaptFlatten``1(System.Object,``0)">
             <summary>
             The adapt flatten.
             </summary>
+            <typeparam name="TTarget">
+            The type.
+            </typeparam>
             <param name="source">
             The source.
             </param>
@@ -406,10 +418,13 @@
             The <see cref="T:System.Object"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.AdaptUnflatten(System.Object,System.Object@)">
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.AdaptUnflatten``1(System.Object,``0)">
             <summary>
             The adapt unflatten.
             </summary>
+            <typeparam name="TTarget">
+            The type.
+            </typeparam>
             <param name="source">
             The source.
             </param>
@@ -420,10 +435,13 @@
             The <see cref="T:System.Object"/>.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.FlattenMethod">
+        <member name="T:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.FlattenMethod`1">
             <summary>
             The sample delegate.
             </summary>
+            <typeparam name="TTarget">
+            The type.
+            </typeparam>
             <param name="source">
             The source.
             </param>
