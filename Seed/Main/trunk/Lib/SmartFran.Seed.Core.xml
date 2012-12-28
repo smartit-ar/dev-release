@@ -588,32 +588,6 @@
             Gets or sets the issue id.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.Validator.InvalidItemAttribute">
-            <summary>
-            The invalid item attribute.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Validator.InvalidItemAttribute.#ctor(System.String,System.Object)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Validator.InvalidItemAttribute"/> class.
-            </summary>
-            <param name="key">
-            The key.
-            </param>
-            <param name="value">
-            The value.
-            </param>
-        </member>
-        <member name="P:SmartFran.Seed.Validator.InvalidItemAttribute.Key">
-            <summary>
-            Gets or sets the key.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Validator.InvalidItemAttribute.Value">
-            <summary>
-            Gets or sets the value.
-            </summary>
-        </member>
         <member name="T:SmartFran.Seed.Validator.EntityValidatorFactory">
             <summary>
             Entity Validator Factory
@@ -697,11 +671,6 @@
         <member name="P:SmartFran.Seed.Validator.InvalidItem.ObjectType">
             <summary>
             Gets or sets the item type.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Validator.InvalidItem.Attributes">
-            <summary>
-            Gets or sets the attributes.
             </summary>
         </member>
     </members>
