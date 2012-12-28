@@ -694,6 +694,11 @@
             Gets or sets the message.
             </summary>
         </member>
+        <member name="P:SmartFran.Seed.Validator.InvalidItem.ObjectType">
+            <summary>
+            Gets or sets the item type.
+            </summary>
+        </member>
         <member name="P:SmartFran.Seed.Validator.InvalidItem.Attributes">
             <summary>
             Gets or sets the attributes.
