@@ -29,6 +29,17 @@
             The <see cref="T:System.Boolean"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.ReportFromDataException(System.Data.DataException)">
+            <summary>
+            The report from data exception.
+            </summary>
+            <param name="ex">
+            The ex.
+            </param>
+            <returns>
+            The report.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.SetValidatableObjectErrors``1(``0,System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem})">
             <summary>
             Get erros if object implement IValidatableObject
@@ -55,6 +66,27 @@
             Create a entity validator
             </summary>
             <returns>Entity validator</returns>
+        </member>
+        <member name="T:SmartFran.Seed.Validator.DataAnnotations.Resources.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Validator.DataAnnotations.Resources.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Validator.DataAnnotations.Resources.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Validator.DataAnnotations.Resources.Messages.InvalidEntityNoReport">
+            <summary>
+              Looks up a localized string similar to Entidad inválida. No es posible generar un reporte detallado  de la validación. {0}.
+            </summary>
         </member>
     </members>
 </doc>
