@@ -40,6 +40,20 @@
             The report.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.SetValidatable``1(``0,System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem}@)">
+            <summary>
+            The set validatable.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <param name="report">
+            The report.
+            </param>
+            <typeparam name="TEntity">
+            Entity type
+            </typeparam>
+        </member>
         <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.SetValidatableObjectErrors``1(``0,System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem})">
             <summary>
             Get erros if object implement IValidatableObject
