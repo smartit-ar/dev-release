@@ -99,7 +99,7 @@
         </member>
         <member name="P:SmartFran.Seed.Validator.DataAnnotations.Resources.Messages.InvalidEntityNoReport">
             <summary>
-              Looks up a localized string similar to Entidad inválida. No es posible generar un reporte detallado  de la validación. {0}.
+              Looks up a localized string similar to Entidad inválida. No es posible generar un reporte detallado de la validación. {0}.
             </summary>
         </member>
     </members>

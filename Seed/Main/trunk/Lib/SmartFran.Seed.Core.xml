@@ -658,6 +658,39 @@
             Invalid item for report 
             </summary>
         </member>
+        <member name="M:SmartFran.Seed.Validator.InvalidItem.#ctor(System.String,System.String,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Validator.InvalidItem"/> class.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="code">
+            The code.
+            </param>
+            <param name="objectRef">
+            The object ref.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Validator.InvalidItem.DeserializeObjectReference(System.Type)">
+            <summary>
+            The deserialize object reference.
+            </summary>
+            <param name="typeObjectReference">
+            The type Object Reference.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Validator.InvalidItem.DeserializeObjectReference">
+            <summary>
+            The deserialize object reference.
+            </summary>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
         <member name="P:SmartFran.Seed.Validator.InvalidItem.Code">
             <summary>
             Gets or sets the code.
@@ -671,6 +704,11 @@
         <member name="P:SmartFran.Seed.Validator.InvalidItem.ObjectType">
             <summary>
             Gets or sets the item type.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Validator.InvalidItem.ObjectReference">
+            <summary>
+            Gets or sets the object reference.
             </summary>
         </member>
     </members>
