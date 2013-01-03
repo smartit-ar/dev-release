@@ -691,6 +691,17 @@
             The <see cref="T:System.Object"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Validator.InvalidItem.SerializeObjectReference(System.Object)">
+            <summary>
+            The serialize object reference.
+            </summary>
+            <param name="objectRef">
+            The object ref.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
         <member name="P:SmartFran.Seed.Validator.InvalidItem.Code">
             <summary>
             Gets or sets the code.
