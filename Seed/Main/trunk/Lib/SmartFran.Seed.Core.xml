@@ -672,12 +672,23 @@
             The object ref.
             </param>
         </member>
+        <member name="M:SmartFran.Seed.Validator.InvalidItem.DeserializeObjectReference``1">
+            <summary>
+            The deserialize object reference.
+            </summary>
+            <typeparam name="TType">
+            Type to return.
+            </typeparam>
+            <returns>
+            The <see cref="!:TType"/>.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.Validator.InvalidItem.DeserializeObjectReference(System.Type)">
             <summary>
             The deserialize object reference.
             </summary>
-            <param name="typeObjectReference">
-            The type Object Reference.
+            <param name="typeRef">
+            The type ref.
             </param>
             <returns>
             The <see cref="T:System.Object"/>.
