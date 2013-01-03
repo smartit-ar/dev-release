@@ -588,6 +588,100 @@
             Gets or sets the issue id.
             </summary>
         </member>
+        <member name="T:SmartFran.Seed.Serialize.ISerializer">
+            <summary>
+            The Serialize interface.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Serialize.ISerializer.SerializeObject(System.Object)">
+            <summary>
+            The serialize object.
+            </summary>
+            <param name="obj">
+            The obj.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Serialize.ISerializer.DeserializeObject(System.String)">
+            <summary>
+            The deserialize object.
+            </summary>
+            <param name="serObj">
+            The ser obj.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Serialize.ISerializer.DeserializeObject``1(System.String)">
+            <summary>
+            The deserialize object.
+            </summary>
+            <param name="serObj">
+            The ser obj.
+            </param>
+            <typeparam name="TType">
+            Type object.
+            </typeparam>
+            <returns>
+            The <see cref="!:TType"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Serialize.ISerializer.DeserializeObject(System.String,System.Type)">
+            <summary>
+            The deserialize object.
+            </summary>
+            <param name="serObj">
+            The ser obj.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Serialize.ISerializerProvider">
+            <summary>
+            The SerializerProvider interface.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Serialize.ISerializerProvider.Create">
+            <summary>
+            The create.
+            </summary>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Serialize.ISerializer"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Serialize.SerializerFactory">
+            <summary>
+            The serializer factory.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Serialize.SerializerFactory.provider">
+            <summary>
+            The provider.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Serialize.SerializerFactory.SetProvider(SmartFran.Seed.Serialize.ISerializerProvider)">
+            <summary>
+            The set provider.
+            </summary>
+            <param name="serializerProvider">
+            The serializer provider.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Serialize.SerializerFactory.CreateSerializer">
+            <summary>
+            The create serializer.
+            </summary>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Serialize.ISerializer"/>.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Validator.EntityValidatorFactory">
             <summary>
             Entity Validator Factory
@@ -702,17 +796,6 @@
             The <see cref="T:System.Object"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Validator.InvalidItem.SerializeObjectReference(System.Object)">
-            <summary>
-            The serialize object reference.
-            </summary>
-            <param name="objectRef">
-            The object ref.
-            </param>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
         <member name="P:SmartFran.Seed.Validator.InvalidItem.Code">
             <summary>
             Gets or sets the code.
@@ -731,6 +814,11 @@
         <member name="P:SmartFran.Seed.Validator.InvalidItem.ObjectReference">
             <summary>
             Gets or sets the object reference.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Validator.InvalidItem.ObjectSerializer">
+            <summary>
+            Gets or sets the object serializer.
             </summary>
         </member>
     </members>
