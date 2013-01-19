@@ -229,7 +229,7 @@
             The adapt mode.
             </param>
             <returns>
-            The <see cref="!:TTarget"/>.
+            The target object.
             </returns>
         </member>
         <member name="T:SmartFran.Seed.Adapter.ITypeAdapterProvider">
@@ -626,7 +626,7 @@
             Type object.
             </typeparam>
             <returns>
-            The <see cref="!:TType"/>.
+            The deserealized object.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.Serialize.ISerializer.DeserializeObject(System.String,System.Type)">
@@ -711,7 +711,7 @@
             The entity validator base contract
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Validator.IEntityValidator.IsValid(System.Object,System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem}@)">
+        <member name="M:SmartFran.Seed.Validator.IEntityValidator.IsValid(System.Object,System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem})">
             <summary>
             Perform validation and return if the entity state is valid
             </summary>
@@ -787,7 +787,7 @@
             Type to return.
             </typeparam>
             <returns>
-            The <see cref="!:TType"/>.
+            The desearized object reference.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.Validator.InvalidItem.DeserializeObjectReference(System.Type)">

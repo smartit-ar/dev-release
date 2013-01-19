@@ -378,7 +378,7 @@
             The adapt Mode.
             </param>
             <returns>
-            The <see cref="!:TTarget"/>.
+            The target object.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.Adapter``1(System.Object,``0,SmartFran.Seed.Adapter.ValueInjecter.ValueInjecterTypeAdapter.FlattenMethod{``0})">
