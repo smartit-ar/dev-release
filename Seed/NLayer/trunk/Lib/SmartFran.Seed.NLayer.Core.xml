@@ -166,7 +166,7 @@
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException"/> class.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.#ctor(System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem})">
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.#ctor(System.Collections.Generic.IEnumerable{SmartFran.Seed.Validator.InvalidItem})">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException"/> class.
             </summary>
