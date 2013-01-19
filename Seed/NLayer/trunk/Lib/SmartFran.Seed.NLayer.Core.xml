@@ -174,6 +174,14 @@
             The report.
             </param>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.#ctor(System.Data.DataException)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException"/> class.
+            </summary>
+            <param name="dataException">
+            The data exception.
+            </param>
+        </member>
         <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.Report">
             <summary>
             Gets or sets the report.
