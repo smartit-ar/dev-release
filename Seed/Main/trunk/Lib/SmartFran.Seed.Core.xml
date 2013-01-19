@@ -733,7 +733,7 @@
             The item.
             </param>
             <returns>
-            The <see cref="!:List"/>.
+            The report.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.Validator.IEntityValidator.ReportFromDataException(System.Data.DataException)">
