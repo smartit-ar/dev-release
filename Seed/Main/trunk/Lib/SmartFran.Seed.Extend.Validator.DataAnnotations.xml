@@ -26,6 +26,17 @@
             The <see cref="T:System.Boolean"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.GetValidationReport(System.Object)">
+            <summary>
+            The get validation report.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <returns>
+            The report.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.ReportFromDataException(System.Data.DataException)">
             <summary>
             The report from data exception.
