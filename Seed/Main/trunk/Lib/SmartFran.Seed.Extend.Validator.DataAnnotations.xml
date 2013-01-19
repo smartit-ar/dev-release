@@ -108,9 +108,9 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.Validator.DataAnnotations.Resources.Messages.InvalidEntityNoReport">
+        <member name="P:SmartFran.Seed.Validator.DataAnnotations.Resources.Messages.NoDetailedReport">
             <summary>
-              Looks up a localized string similar to Entidad inválida. No es posible generar un reporte detallado de la validación. {0}.
+              Looks up a localized string similar to No es posible generar un reporte detallado de la validación. Detalle: {0}..
             </summary>
         </member>
     </members>
