@@ -105,6 +105,11 @@
             The distributed service exception.
             </summary>
         </member>
+        <member name="F:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.nestedExceptionInfo">
+            <summary>
+            The nested exception info.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor(System.Exception)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/> class.
@@ -165,20 +170,14 @@
             The fault detail.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.GetInnerException(SmartFran.Seed.NLayer.ExceptionHandling.InnerExceptionDetail,System.Exception@)">
-            <summary>
-            The get inner exception.
-            </summary>
-            <param name="innerExceptionDetail">
-            The inner exception detail.
-            </param>
-            <param name="innerException">
-            The inner exception.
-            </param>
-        </member>
         <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.Message">
             <summary>
             Gets or sets the message.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.NestedExceptionInfo">
+            <summary>
+            Gets or sets the nested exception.
             </summary>
         </member>
         <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.#ctor">
@@ -271,17 +270,6 @@
             The exception.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail.GetInnerExceptionInfo(System.Exception,SmartFran.Seed.NLayer.ExceptionHandling.InnerExceptionDetail@)">
-            <summary>
-            The get inner exception info.
-            </summary>
-            <param name="innerException">
-            The inner exception.
-            </param>
-            <param name="innerExceptionDetail">
-            The inner exception detail.
-            </param>
-        </member>
         <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail.IssueId">
             <summary>
             Gets or sets the issue id.
@@ -292,7 +280,7 @@
             Gets or sets the message.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail.InnerExceptionInfo">
+        <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail.NestedExceptionInfo">
             <summary>
             Gets or sets the inner exception.
             </summary>
@@ -742,9 +730,30 @@
             Base class for entities
             </summary>
         </member>
+        <member name="T:SmartFran.Seed.NLayer.ExceptionHandling.Helper.NestedExceptionInfoGenerator">
+            <summary>
+            The nested exception info generator.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.Helper.NestedExceptionInfoGenerator.Do(System.Exception,SmartFran.Seed.NLayer.ExceptionHandling.InnerExceptionDetail@)">
+            <summary>
+            The get nested exception info.
+            </summary>
+            <param name="innerException">
+            The inner exception.
+            </param>
+            <param name="nestedExceptioninfo">
+            The nested exceptioninfo.
+            </param>
+        </member>
         <member name="T:SmartFran.Seed.NLayer.ExceptionHandling.InnerExceptionDetail">
             <summary>
             The inner exception detail.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.InnerExceptionDetail.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.InnerExceptionDetail"/> class.
             </summary>
         </member>
         <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.InnerExceptionDetail.ExceptionClassType">
@@ -762,7 +771,7 @@
             Gets or sets the data.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.InnerExceptionDetail.InnerExceptionInfo">
+        <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.InnerExceptionDetail.NestedExceptionInfo">
             <summary>
             Gets or sets the inner exception information.
             </summary>
