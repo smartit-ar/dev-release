@@ -113,5 +113,21 @@
               Looks up a localized string similar to No es posible generar un reporte detallado de la validación..
             </summary>
         </member>
+        <member name="T:SmartFran.Seed.Validator.DataAnnotations.ValueGreaterZeroAttribute">
+            <summary>
+            The value greater zero attribute.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Validator.DataAnnotations.ValueGreaterZeroAttribute.IsValid(System.Object)">
+            <summary>
+            The is valid.
+            </summary>
+            <param name="value">
+            The value.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
     </members>
 </doc>
