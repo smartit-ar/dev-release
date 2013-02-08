@@ -512,6 +512,31 @@
             The current.
             </param>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.ApplyChange``1(`0)">
+            <summary>
+            The apply change.
+            </summary>
+            <param name="entity">
+            The entity.
+            </param>
+            <typeparam name="TDto">
+            Dto type.
+            </typeparam>
+            <returns>
+            The <see cref="!:TDto"/>.
+            </returns>
+            <exception cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException">
+            Business rules exception.
+            </exception>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.ApplyChange">
+            <summary>
+            The apply change.
+            </summary>
+            <exception cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException">
+            Business rules exception.
+            </exception>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Dispose">
             <summary>
             The dispose.
