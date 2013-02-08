@@ -207,6 +207,14 @@
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException"/> class.
             </summary>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException"/> class.
+            </summary>
+            <param name="exceptionMessage">
+            The exception message.
+            </param>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.#ctor(System.Exception)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException"/> class.
