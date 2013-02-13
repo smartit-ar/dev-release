@@ -648,6 +648,11 @@
             Non equality comparation.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.EntityBase.GenerateNewIdentity">
+            <summary>
+            Generate identity for this entity
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.EntityBase.GetHashCode">
             <summary>
             The get hash code.
@@ -780,6 +785,11 @@
         <member name="T:SmartFran.Seed.NLayer.Domain.EntityAutoInc">
             <summary>
             Base class for entities
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.EntityAutoInc.GenerateNewIdentity">
+            <summary>
+            The generate new identity.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.ExceptionHandling.Helper.NestedExceptionInfoGenerator">
