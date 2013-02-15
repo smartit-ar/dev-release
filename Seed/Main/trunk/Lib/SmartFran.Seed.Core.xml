@@ -272,6 +272,11 @@
             The cryptography.
             </summary>
         </member>
+        <member name="F:SmartFran.Seed.Cryptography.Crypto.FillChar">
+            <summary>
+            The fill char.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.Cryptography.Crypto.GetHash(System.String)">
             <summary>
             The get hash.
@@ -283,34 +288,29 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Cryptography.SecureSystemHelper">
-            <summary>
-            The crypto helper.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Cryptography.SecureSystemHelper.GetCryptoKey(System.String,System.String)">
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.GetCryptoKey(System.String,System.String)">
             <summary>
             The get crypto key.
             </summary>
-            <param name="userName">
-            The user Name.
-            </param>
-            <param name="userPassword">
+            <param name="privateKey">
             The user Password.
+            </param>
+            <param name="publicKey">
+            The user Name.
             </param>
             <returns>
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.SecureSystemHelper.GetMergedUserNameAndPassword(System.String,System.String)">
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.GetMergedKeys(System.String,System.String)">
             <summary>
             The get merged user name and password.
             </summary>
-            <param name="userName">
-            The user name.
-            </param>
-            <param name="userPassword">
+            <param name="privateKey">
             The user password.
+            </param>
+            <param name="publicKey">
+            The user name.
             </param>
             <returns>
             The <see cref="T:System.String"/>.
