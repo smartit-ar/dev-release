@@ -243,7 +243,7 @@
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EntityTypeConfigurationBase`1.#ctor(System.Data.Entity.DbContext)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.EntityFramework.EntityTypeConfigurationBase`1"/> class.
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.EntityFramework.EntityTypeConfigurationBase`1"/> class. 
             </summary>
             <param name="context">
             The context.
