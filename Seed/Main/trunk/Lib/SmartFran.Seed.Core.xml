@@ -543,6 +543,25 @@
             The SmartFran.Seed.Logging.ILogger.
             </returns>
         </member>
+        <member name="T:SmartFran.Seed.Helper.Member">
+            <summary>
+            The set property helper.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Helper.Member.Name``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            The property name.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <typeparam name="T">
+            The type.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Resources.Activator.Messages">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
