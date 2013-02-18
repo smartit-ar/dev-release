@@ -367,7 +367,7 @@
             The di Container Provider.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.CreateDIContainer">
+        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.CreateDiContainer">
             <summary>
             The create di container.
             </summary>
