@@ -4,6 +4,22 @@
         <name>SmartFran.Seed.Extend.Validator.DataAnnotations</name>
     </assembly>
     <members>
+        <member name="T:SmartFran.Seed.Validator.DataAnnotations.EMailValidAttribute">
+            <summary>
+            The value greater zero attribute.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Validator.DataAnnotations.EMailValidAttribute.IsValid(System.Object)">
+            <summary>
+            The is valid.
+            </summary>
+            <param name="value">
+            The value.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator">
             <summary>
             Validator based on Data Annotations. 
@@ -48,7 +64,7 @@
             The report.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.SetValidatable(System.Object,System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem})">
+        <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.SetValidatable(System.Object,System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem},System.Collections.Generic.List{System.Object})">
             <summary>
             The set validatable.
             </summary>
@@ -57,6 +73,9 @@
             </param>
             <param name="report">
             The report.
+            </param>
+            <param name="validating">
+            The validating.
             </param>
         </member>
         <member name="M:SmartFran.Seed.Validator.DataAnnotations.DataAnnotationsEntityValidator.SetValidatableObjectErrors(System.Object,System.Collections.Generic.List{SmartFran.Seed.Validator.InvalidItem})">
