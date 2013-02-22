@@ -568,10 +568,13 @@
             The current.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.ApplyChange">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.ApplyChange(System.Boolean)">
             <summary>
             The apply change.
             </summary>
+            <param name="rollback">
+            The rollback.
+            </param>
             <exception cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException">
             Business rules exception.
             </exception>
