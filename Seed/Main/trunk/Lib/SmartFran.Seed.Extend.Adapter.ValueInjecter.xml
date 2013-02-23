@@ -9,12 +9,15 @@
             The creator.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.Creator.Create(System.Type)">
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.Creator.Create(System.Type,System.Object)">
             <summary>
             The create.
             </summary>
             <param name="type">
             The type.
+            </param>
+            <param name="sourceValue">
+            Target value. Needed for strings (inmutable type).
             </param>
             <returns>
             The <see cref="T:System.Object"/>.
