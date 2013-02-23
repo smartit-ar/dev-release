@@ -4,12 +4,12 @@
         <name>SmartFran.Seed.NLayer.Core.Data.EntityFramework</name>
     </assembly>
     <members>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext">
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase">
             <summary>
             The base context.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.IQueryableDataContext">
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataContext">
             <summary>
             The context contract for EF implementation
             <remarks>
@@ -17,41 +17,7 @@
             </remarks>
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.ISql">
-            <summary>
-            Base contract for support 'dialect specific queries'.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.ISql.ExecuteQuery``1(System.String,System.Object[])">
-            <summary>
-            Execute specific query with underliying persistence store
-            </summary>
-            <typeparam name="TEntity">Entity type to map query results</typeparam>
-            <param name="sqlQuery">
-            Dialect Query 
-            <example>
-            SELECT idCustomer,Name FROM dbo.[Customers] WHERE idCustomer > {0}
-            </example>
-            </param>
-            <param name="parameters">A vector of parameters values</param>
-            <returns>
-            Enumerable results 
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.ISql.ExecuteCommand(System.String,System.Object[])">
-            <summary>
-            Execute arbitrary command into underliying persistence store
-            </summary>
-            <param name="sqlCommand">
-            Command to execute
-            <example>
-            SELECT idCustomer,Name FROM dbo.[Customers] WHERE idCustomer > {0}
-            </example>
-            </param>
-            <param name="parameters">A vector of parameters values</param>
-            <returns>The number of affected records</returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IQueryableDataContext.CreateSet``1">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataContext.CreateSet``1">
             <summary>
             The create set.
             </summary>
@@ -62,14 +28,14 @@
             The System.Data.Entity.DbSet`1[TEntity -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IQueryableDataContext.Attach``1(``0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataContext.Attach``1(``0)">
             <summary>
             Attach this item into "ObjectStateManager"
             </summary>
             <typeparam name="TEntity">The type of entity.</typeparam>
             <param name="item">The item. </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IQueryableDataContext.Detach``1(``0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataContext.Detach``1(``0)">
             <summary>
             The Deattach.
             </summary>
@@ -80,14 +46,14 @@
             Entity type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IQueryableDataContext.SetModified``1(``0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataContext.SetModified``1(``0)">
             <summary>
             Set object as modified
             </summary>
             <typeparam name="TEntity">The type of entity</typeparam>
             <param name="item">The entity item to set as modifed</param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IQueryableDataContext.Reload``1(``0,System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataContext.Reload``1(``0,System.Boolean)">
             <summary>
             The reload.
             </summary>
@@ -104,7 +70,7 @@
             The <see cref="!:TEntity"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IQueryableDataContext.SetCurrentValues``1(``0,``0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataContext.SetCurrentValues``1(``0,``0)">
             <summary>
             Apply current values in <paramref name="original"/>
             </summary>
@@ -112,7 +78,7 @@
             <param name="original">The original entity</param>
             <param name="current">The current entity</param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.SetCurrentValues``1(``0,``0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.SetCurrentValues``1(``0,``0)">
             <summary>
             The apply current values.
             If it is not attached, attach original and set current values.
@@ -127,7 +93,7 @@
             Entity type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Attach``1(``0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.Attach``1(``0)">
             <summary>
             The attach.
             </summary>
@@ -138,7 +104,7 @@
             Entity type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Detach``1(``0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.Detach``1(``0)">
             <summary>
             The Deattach.
             </summary>
@@ -149,7 +115,7 @@
             Entity type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CreateSet``1">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.CreateSet``1">
             <summary>
             The create set.
             </summary>
@@ -160,7 +126,7 @@
             The System.Data.Entity.DbSet`1[TEntity -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.SetModified``1(``0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.SetModified``1(``0)">
             <summary>
             The set modified.
             This operation also attach item in object state manager.
@@ -172,7 +138,7 @@
             Entity type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Reload``1(``0,System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.Reload``1(``0,System.Boolean)">
             <summary>
             The reload.
             </summary>
@@ -189,7 +155,7 @@
             The <see cref="!:TEntity"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ExecuteCommand(System.String,System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand(System.String,System.Object[])">
             <summary>
             The execute command.
             </summary>
@@ -203,7 +169,7 @@
             The System.Int32.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ExecuteQuery``1(System.String,System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(System.String,System.Object[])">
             <summary>
             The execute query.
             </summary>
@@ -220,17 +186,17 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ApplyChanges">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ApplyChanges">
             <summary>
             The commit.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.RevertChanges">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.RevertChanges">
             <summary>
             The rollback changes.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CreateIndex``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.CreateIndex``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Boolean)">
             <summary>
             The create index.
             </summary>
@@ -244,7 +210,7 @@
             Entity type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CreateIndex``1(System.String[],System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.CreateIndex``1(System.String[],System.Boolean)">
             <summary>
             The create index.
             </summary>
@@ -258,7 +224,7 @@
             Entity type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CreateIndex(System.String,System.String[],System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.CreateIndex(System.String,System.String[],System.Boolean)">
             <summary>
             The create index.
             </summary>
@@ -272,7 +238,7 @@
             The unique.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.CreateIndex(System.String,System.String,System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.CreateIndex(System.String,System.String,System.Boolean)">
             <summary>
             The create index.
             </summary>
@@ -286,17 +252,17 @@
             The unique.
             </param>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.RepositoryGuid`1">
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataViewGuid`1">
             <summary>
-            Repository base class
+            EfDataView base class
             </summary>
             <typeparam name="TEntity">
             The type of underlying entity in this repository
             </typeparam>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2">
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2">
             <summary>
-            Repository base class
+            EfDataView base class
             </summary>
             <typeparam name="TEntity">
             The type of underlying entity in this repository
@@ -305,20 +271,20 @@
             Type of identity.
             </typeparam>
         </member>
-        <member name="F:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.context">
+        <member name="F:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.context">
             <summary>
             The unit of work.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.#ctor(SmartFran.Seed.NLayer.Data.EntityFramework.IQueryableDataContext)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.#ctor(SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataContext)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2"/> class. 
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2"/> class. 
             </summary>
             <param name="context">
             Associated Unit Of Work
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Add(`0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Add(`0)">
             <summary>
             The add.
             </summary>
@@ -326,7 +292,7 @@
             The item.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Remove(`0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Remove(`0)">
             <summary>
             The remove.
             </summary>
@@ -334,7 +300,7 @@
             The item.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Remove(`1)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Remove(`1)">
             <summary>
             The remove.
             </summary>
@@ -342,7 +308,7 @@
             The item Id.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Reload(`0,System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Reload(`0,System.Boolean)">
             <summary>
             The reload entity.
             </summary>
@@ -356,7 +322,7 @@
             The <see cref="!:TEntity"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.TrackEntity(`0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.TrackEntity(`0)">
             <summary>
             The track item.
             </summary>
@@ -364,7 +330,7 @@
             The item.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.NoTrackEntity(`0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.NoTrackEntity(`0)">
             <summary>
             No track item.
             </summary>
@@ -372,7 +338,7 @@
             The item.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Modify(`0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Modify(`0)">
             <summary>
             The modify.
             </summary>
@@ -380,7 +346,7 @@
             The item.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Get(`1)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Get(`1)">
             <summary>
             The get.
             </summary>
@@ -391,7 +357,7 @@
             The TEntity.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.GetAll">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.GetAll">
             <summary>
             The get all.
             </summary>
@@ -399,7 +365,7 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Count">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Count">
             <summary>
             The count.
             </summary>
@@ -407,7 +373,7 @@
             The System.Int32.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Count(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Count(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
             <summary>
             The count.
             </summary>
@@ -418,7 +384,7 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             The count.
             </summary>
@@ -429,7 +395,7 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Query(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
             <summary>
             The all matching.
             </summary>
@@ -440,7 +406,7 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
             <summary>
             The query.
             </summary>
@@ -460,7 +426,7 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
             <summary>
             The query.
             </summary>
@@ -473,7 +439,7 @@
                 </see> .
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
             <summary>
             The query.
             </summary>
@@ -489,7 +455,7 @@
                 </see> .
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             The query.
             </summary>
@@ -505,7 +471,7 @@
                 </see> .
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             The query.
             </summary>
@@ -518,7 +484,7 @@
                 </see> .
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
             <summary>
             The query.
             </summary>
@@ -537,7 +503,7 @@
                 </see> .
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             The query.
             </summary>
@@ -559,7 +525,7 @@
                 </see> .
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Merge(`0,`0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Merge(`0,`0)">
             <summary>
             The merge.
             </summary>
@@ -570,7 +536,7 @@
             The current.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.ApplyChanges(System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.ApplyChanges(System.Boolean)">
             <summary>
             The apply change.
             </summary>
@@ -581,17 +547,12 @@
             Business rules exception.
             </exception>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.RevertChanges">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.RevertChanges">
             <summary>
             The revert changes.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Dispose">
-            <summary>
-            The dispose.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.GetSet">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.GetSet">
             <summary>
             The get set.
             </summary>
@@ -599,7 +560,7 @@
             The System.Data.Entity.IDbSet`1[TEntity -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.SkipTo(System.Int32,System.Int32)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.SkipTo(System.Int32,System.Int32)">
             <summary>
             The skip to.
             </summary>
@@ -613,25 +574,25 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.RepositoryGuid`1.#ctor(SmartFran.Seed.NLayer.Data.EntityFramework.IQueryableDataContext)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataViewGuid`1.#ctor(SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataContext)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.EntityFramework.RepositoryGuid`1"/> class.
+            Initializes a new instance of the <see cref="!:EfEfRepositoryGuid&lt;TEntity&gt;"/> class.
             </summary>
             <param name="context">
             The context.
             </param>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.RepositoryAutoInc`1">
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataViewAutoInc`1">
             <summary>
-            Repository base class
+            EfDataView base class
             </summary>
             <typeparam name="TEntity">
             The type of underlying entity in this repository
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.RepositoryAutoInc`1.#ctor(SmartFran.Seed.NLayer.Data.EntityFramework.IQueryableDataContext)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataViewAutoInc`1.#ctor(SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataContext)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.EntityFramework.RepositoryAutoInc`1"/> class.
+            Initializes a new instance of the <see cref="!:EfEfRepositoryAutoInc&lt;TEntity&gt;"/> class.
             </summary>
             <param name="context">
             The context.
