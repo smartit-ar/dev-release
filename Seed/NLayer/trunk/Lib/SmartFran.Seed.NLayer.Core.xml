@@ -397,14 +397,14 @@
             </summary>
             <param name="item">Item to modify</param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.TrackItem(`0)">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.TrackEntity(`0)">
             <summary>
             Track entity into this repository, really in context. 
             In EF this can be done with Attach and with Update in NH
             </summary>
             <param name="item">Item to attach</param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.NoTrackItem(`0)">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.NoTrackEntity(`0)">
             <summary>
             No track item.
             </summary>
@@ -582,14 +582,9 @@
             <summary>
             The apply change.
             </summary>
-            <param name="rollback">
-            The rollback.
+            <param name="rollbackIfFail">
+            The rollbackIfFail.
             </param>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Domain.IRepository`2.Context">
-            <summary>
-            Gets the unit of work in this repository
-            </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.IRepositoryAutoInc`1">
             <summary>
@@ -939,9 +934,9 @@
             then an exception is thrown
             </remarks>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.Rollback">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.RevertChanges">
             <summary>
-            Rollback tracked changes. See references of context pattern
+            RevertChanges tracked changes. See references of context pattern
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Data.Ordering.OrderByGenerator">
