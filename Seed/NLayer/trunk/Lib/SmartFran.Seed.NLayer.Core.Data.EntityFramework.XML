@@ -220,7 +220,7 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.Commit">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.BaseContext.ApplyChanges">
             <summary>
             The commit.
             </summary>
@@ -570,7 +570,7 @@
             The current.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.ApplyChange(System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.ApplyChanges(System.Boolean)">
             <summary>
             The apply change.
             </summary>
@@ -580,6 +580,11 @@
             <exception cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException">
             Business rules exception.
             </exception>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.RevertChanges">
+            <summary>
+            The revert changes.
+            </summary>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Repository`2.Dispose">
             <summary>

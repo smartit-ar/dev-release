@@ -415,7 +415,7 @@
         <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.Merge(`0,`0)">
             <summary>
             Sets modified entity into the repository. 
-            When calling Commit() method in context 
+            When calling ApplyChanges() method in context 
             these changes will be saved into the storage
             </summary>
             <param name="persisted">The persisted item</param>
@@ -578,13 +578,18 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.ApplyChange(System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.ApplyChanges(System.Boolean)">
             <summary>
             The apply change.
             </summary>
             <param name="rollbackIfFail">
             The rollbackIfFail.
             </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IRepository`2.RevertChanges">
+            <summary>
+            The revert changes.
+            </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.IRepositoryAutoInc`1">
             <summary>
@@ -925,9 +930,9 @@
             This interface/contract should be complied by any UoW implementation to be used with this Domain.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.Commit">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataContext.ApplyChanges">
             <summary>
-            Commit all changes made in a container.
+            ApplyChanges all changes made in a container.
             </summary>
             <remarks>
             If the entity have fixed properties and any optimistic concurrency problem exists,  
