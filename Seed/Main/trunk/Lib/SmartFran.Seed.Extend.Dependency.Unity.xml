@@ -47,6 +47,14 @@
             The <see cref="!:TSearchedType"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.Release(System.Object)">
+            <summary>
+            The release.
+            </summary>
+            <param name="instance">
+            The instance.
+            </param>
+        </member>
         <member name="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider">
             <summary>
             ValueInjecter type adapter implementation
