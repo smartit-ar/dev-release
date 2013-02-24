@@ -117,10 +117,13 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ApplyChanges">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ApplyChanges(System.Boolean)">
             <summary>
             The commit.
             </summary>
+            <param name="rollbackIfFail">
+            The rollback If Fail.
+            </param>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.RevertChanges">
             <summary>

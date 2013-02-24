@@ -927,10 +927,13 @@
             The DataContext interface.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.IDataContext.ApplyChanges">
+        <member name="M:SmartFran.Seed.NLayer.Data.IDataContext.ApplyChanges(System.Boolean)">
             <summary>
             ApplyChanges all changes made in a container.
             </summary>
+            <param name="rollbackIfFail">
+            The rollback If Fail.
+            </param>
             <remarks>
             If the entity have fixed properties and any optimistic concurrency problem exists,  
             then an exception is thrown
