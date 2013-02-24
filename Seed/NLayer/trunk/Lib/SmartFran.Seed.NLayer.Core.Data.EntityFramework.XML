@@ -505,7 +505,7 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataViewGuid`1.#ctor(SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataViewGuid`1.#ctor(SmartFran.Seed.NLayer.Data.IDataContext)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataViewGuid`1"/> class.
             </summary>
@@ -521,7 +521,7 @@
             The type of underlying entity in this repository
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataViewAutoInc`1.#ctor(SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataViewAutoInc`1.#ctor(SmartFran.Seed.NLayer.Data.IDataContext)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataViewAutoInc`1"/> class.
             </summary>
