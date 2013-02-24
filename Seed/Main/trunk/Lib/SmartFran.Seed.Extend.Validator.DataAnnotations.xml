@@ -4,12 +4,12 @@
         <name>SmartFran.Seed.Extend.Validator.DataAnnotations</name>
     </assembly>
     <members>
-        <member name="T:SmartFran.Seed.Validator.DataAnnotations.EMailValidAttribute">
+        <member name="T:SmartFran.Seed.Validator.DataAnnotations.EmailValidAttribute">
             <summary>
-            The value greater zero attribute.
+            The email valid attribute.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Validator.DataAnnotations.EMailValidAttribute.IsValid(System.Object)">
+        <member name="M:SmartFran.Seed.Validator.DataAnnotations.EmailValidAttribute.IsValid(System.Object)">
             <summary>
             The is valid.
             </summary>
