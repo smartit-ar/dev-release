@@ -909,19 +909,6 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.ApplyChanges(System.Boolean)">
-            <summary>
-            The apply change.
-            </summary>
-            <param name="rollbackIfFail">
-            The rollbackIfFail.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.RevertChanges">
-            <summary>
-            The revert changes.
-            </summary>
-        </member>
         <member name="T:SmartFran.Seed.NLayer.Data.IDataContext">
             <summary>
             The DataContext interface.
