@@ -367,9 +367,6 @@
             <typeparam name="TSearchedType">
             The type.
             </typeparam>
-            <returns>
-            The <see cref="!:TSearchedType"/>.
-            </returns>
         </member>
         <member name="T:SmartFran.Seed.Dependency.DiContainerFactory">
             <summary>
