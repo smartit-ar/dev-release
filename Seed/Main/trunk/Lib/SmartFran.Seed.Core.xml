@@ -349,25 +349,6 @@
             The <see cref="!:TSearchedType"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.IDiContainer.Release(System.Object)">
-            <summary>
-            The release.
-            </summary>
-            <param name="instance">
-            The instance.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.IDiContainer.Register``1(``0)">
-            <summary>
-            The register.
-            </summary>
-            <param name="instance">
-            The instance.
-            </param>
-            <typeparam name="TSearchedType">
-            The type.
-            </typeparam>
-        </member>
         <member name="T:SmartFran.Seed.Dependency.DiContainerFactory">
             <summary>
             Type dependency mapper factory.
