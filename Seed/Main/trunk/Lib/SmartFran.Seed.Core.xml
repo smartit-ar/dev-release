@@ -638,15 +638,18 @@
             Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.AppException"/> class.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.#ctor(System.String)">
+        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.#ctor(System.String,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.AppException"/> class.
             </summary>
             <param name="message">
             The message.
             </param>
+            <param name="code">
+            The code.
+            </param>
         </member>
-        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.#ctor(System.Guid,System.String,System.Exception)">
+        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.#ctor(System.Guid,System.String,System.String,System.Exception)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.AppException"/> class. 
             </summary>
@@ -656,16 +659,22 @@
             <param name="message">
             The error message that explains the reason for the exception. 
             </param>
+            <param name="code">
+            The code.
+            </param>
             <param name="innerException">
             The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. 
             </param>
         </member>
-        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.#ctor(System.String,System.Exception)">
+        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.#ctor(System.String,System.String,System.Exception)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.ExceptionHandling.AppException"/> class. 
             </summary>
             <param name="message">
             The error message that explains the reason for the exception. 
+            </param>
+            <param name="code">
+            The code.
             </param>
             <param name="innerException">
             The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. 
@@ -682,6 +691,11 @@
         <member name="P:SmartFran.Seed.ExceptionHandling.AppException.IssueId">
             <summary>
             Gets or sets the issue id.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.ExceptionHandling.AppException.Code">
+            <summary>
+            Gets or sets the code.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.Serialize.ISerializer">
