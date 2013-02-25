@@ -166,6 +166,11 @@
             The nested exception info.
             </summary>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/> class.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor(System.Exception)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/> class.
@@ -174,23 +179,29 @@
             The inner Exception.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor(System.String,System.Exception)">
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor(System.String,System.String,System.Exception)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/> class.
             </summary>
             <param name="message">
             The message.
             </param>
+            <param name="code">
+            The code.
+            </param>
             <param name="innerException">
             The inner Exception.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor(SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail,System.Exception)">
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor(SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail,System.String,System.Exception)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/> class. 
             </summary>
             <param name="faultDetail">
             The detail Fault.
+            </param>
+            <param name="code">
+            The code.
             </param>
             <param name="innerException">
             The inner Exception.
@@ -352,6 +363,11 @@
             Gets or sets the inner exception.
             </summary>
         </member>
+        <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesFaultDetail.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesFaultDetail"/> class.
@@ -360,6 +376,64 @@
         <member name="P:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesFaultDetail.Report">
             <summary>
             Gets or sets the report.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException">
+            <summary>
+            Exception raised when a severe error is detected by a business logic, that prevent them to execute normally. 
+            This kind of exceptions shows a problem preventing the application of the business logic, if the problem persist after retries then there is requiered the intervention of system administrators.
+            </summary>
+            <remarks>
+            Such an error can be a database related connection error, or an metadata inconsistency, timeouts at the business-store layers, etc.
+            </remarks>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException"/> class.
+            </summary>
+            <param name="exceptionMessage">
+            The exception message.
+            </param>
+            <param name="code">
+            The code.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException"/> class.
+            </summary>
+            <param name="innerException">
+            The inner Exception.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException"/> class.
+            </summary>
+            <param name="code">
+            The code.
+            </param>
+            <param name="innerException">
+            The inner Exception.
+            </param>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.ExceptionHandling.OperativityFaultDetail">
+            <summary>
+            Exception raised when a severe error is detected by a business logic, that prevent them to execute normally. 
+            This kind of exceptions shows a problem preventing the application of the business logic, if the problem persist after retries then there is requiered the intervention of system administrators.
+            </summary>
+            <remarks>
+            Such an error can be a database related connection error, or an metadata inconsistency, timeouts at the business-store layers, etc.
+            </remarks>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.OperativityFaultDetail.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.OperativityFaultDetail"/> class.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.EntityBase">
@@ -675,6 +749,11 @@
         <member name="P:SmartFran.Seed.NLayer.Resources.ExceptionHandling.Messages.DefaulDistributedServiceException">
             <summary>
               Looks up a localized string similar to No detail distributed service exception message..
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Resources.ExceptionHandling.Messages.OperativityException">
+            <summary>
+              Looks up a localized string similar to Operativity exception. Severe error is detected by a business logic, that prevent them to execute normally..
             </summary>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Domain.IDataView`2">
