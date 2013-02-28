@@ -171,14 +171,6 @@
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/> class.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor(System.Exception)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/> class.
-            </summary>
-            <param name="innerException">
-            The inner Exception.
-            </param>
-        </member>
         <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor(System.String,System.String,System.Exception)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/> class.
@@ -193,18 +185,29 @@
             The inner Exception.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor(SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail,System.String,System.Exception)">
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor(System.Guid,System.String,System.String,System.Exception)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/> class. 
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/> class.
             </summary>
-            <param name="faultDetail">
-            The detail Fault.
+            <param name="issueId">
+            The issue id.
+            </param>
+            <param name="message">
+            The message.
             </param>
             <param name="code">
             The code.
             </param>
             <param name="innerException">
-            The inner Exception.
+            The inner exception.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.#ctor(SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException"/> class. 
+            </summary>
+            <param name="faultDetail">
+            The detail Fault.
             </param>
         </member>
         <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.FromFaultDetail(SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail)">
@@ -256,19 +259,11 @@
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException"/> class.
             </summary>
-            <param name="exceptionMessage">
-            The exception message.
+            <param name="message">
+            The message.
             </param>
             <param name="code">
             The code.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.#ctor(System.Exception)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException"/> class.
-            </summary>
-            <param name="innerException">
-            The inner Exception.
             </param>
         </member>
         <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.#ctor(System.Collections.Generic.IEnumerable{SmartFran.Seed.Validator.InvalidItem},System.Exception)">
@@ -396,30 +391,11 @@
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException"/> class.
             </summary>
-            <param name="exceptionMessage">
+            <param name="message">
             The exception message.
             </param>
             <param name="code">
             The code.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException.#ctor(System.Exception)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException"/> class.
-            </summary>
-            <param name="innerException">
-            The inner Exception.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException.#ctor(System.String,System.Exception)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.OperativityException"/> class.
-            </summary>
-            <param name="code">
-            The code.
-            </param>
-            <param name="innerException">
-            The inner Exception.
             </param>
         </member>
         <member name="T:SmartFran.Seed.NLayer.ExceptionHandling.OperativityFaultDetail">
