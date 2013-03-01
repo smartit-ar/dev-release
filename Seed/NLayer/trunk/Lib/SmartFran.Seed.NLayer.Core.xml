@@ -117,6 +117,16 @@
             entity collections
             </returns>
         </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.IDataInitializer">
+            <summary>
+            The DataInitializer interface.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.IDataInitializer.Configure">
+            <summary>
+            The configure.
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.NLayer.Data.ISql">
             <summary>
             Base contract for support 'dialect specific queries'.
