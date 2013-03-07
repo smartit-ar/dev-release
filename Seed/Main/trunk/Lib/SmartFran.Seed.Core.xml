@@ -346,7 +346,7 @@
             System.Type of object to get from the container.
             </typeparam>
             <returns>
-            The <see cref="!:TSearchedType"/>.
+            The instance.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.Dependency.IDiContainer.IsRegistered``1">
