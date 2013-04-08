@@ -60,5 +60,41 @@ namespace('SmartFran.Seed.JS').ViewModel = {
         self.loadingCall(false);
       }
     });
+  },
+  submitGet: function (params) {
+    var url = params.url;
+    var data = params.data;
+    var separator = '?';
+    if ($.isArray(data)) {
+      data.forEach(function(elem) {
+        url = url + separator + elem.name.toString() + '=' + escape(elem.value.toString());
+        separator = '&';
+      });
+    }
+    window.location.href = url;
+    return;
+  },
+  submitPost: function (params) {
+    var form = document.createElement("form");
+    var url = params.url;
+    var data = params.data;
+    if ($.isArray(data)) {
+      data.forEach(function (elem) {
+        var opt = document.createElement("textarea");
+        opt.name = elem.name.toString();
+        opt.value = elem.value.toString();
+        form.appendChild(opt);
+      });
+    }
+    form.action = url;
+    form.method = "POST";
+    form.style.display = "none";
+    document.body.appendChild(form);
+    form.submit();
+    return;
+  },
+  redirect: function (url) {
+    window.location.href = url;
+    return;
   }
 }
