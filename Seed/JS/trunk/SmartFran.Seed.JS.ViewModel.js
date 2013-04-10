@@ -12,6 +12,7 @@ namespace('SmartFran.Seed.JS').ViewModel = {
   initialize: function (params) {
     this._errorMessageCall = params.errorMessageCall;
     this._loadingCall = params.loadingCall;
+    this._loadingModal = params.loadingModal;
     this._countLoading = 0;
   },
   loadingCall: function (startLoading) {
@@ -39,6 +40,7 @@ namespace('SmartFran.Seed.JS').ViewModel = {
   asyncCallToModel: function (params) {
     var self = this;
     this.loadingCall(true);
+    this._loadingModal(params.loadingModal);
     $.ajax(params.url, {
       data: JSON.stringify(params.data),
       type: "post",
