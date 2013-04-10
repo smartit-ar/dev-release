@@ -15,9 +15,12 @@ namespace('SmartFran.Seed.JS').ViewModel = {
     this._loadingModal = params.loadingModal;
     this._countLoading = 0;
   },
-  loadingCall: function (startLoading) {
+  loadingCall: function (startLoading, loadingModal) {
     if (this._loadingCall) {
       if (startLoading) {
+        if (this._loadingModal) {
+          this._loadingModal(loadingModal || (this._loadingModal() && this._loadingCall()));
+        }
         ++this._countLoading;
         this._loadingCall(true);
       }
@@ -39,8 +42,7 @@ namespace('SmartFran.Seed.JS').ViewModel = {
   },
   asyncCallToModel: function (params) {
     var self = this;
-    this.loadingCall(true);
-    this._loadingModal(params.loadingModal);
+    this.loadingCall(true, params.loadingModal);
     $.ajax(params.url, {
       data: JSON.stringify(params.data),
       type: "post",
