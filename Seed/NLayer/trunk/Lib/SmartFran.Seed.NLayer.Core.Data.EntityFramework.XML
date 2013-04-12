@@ -130,6 +130,11 @@
             The configure.
             </summary>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigrateDatabaseToLatestVersion`2.Migrate">
+            <summary>
+            The migrate.
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase">
             <summary>
             The base context.
