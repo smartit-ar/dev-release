@@ -267,6 +267,62 @@
             </summary>
             <returns>Created type adapter</returns>
         </member>
+        <member name="T:SmartFran.Seed.CodeTable.CodeName">
+            <summary>
+            The code name.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.CodeTable.CodeName.description">
+            <summary>
+            The description.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.CodeTable.CodeName.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.CodeTable.CodeName.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.CodeTable.CodeName.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.CodeTable.CodeNameAttribute`1">
+            <summary>
+            The code const attribute.
+            </summary>
+            <typeparam name="TValueType">
+            Values type
+            </typeparam>
+        </member>
+        <member name="F:SmartFran.Seed.CodeTable.CodeNameAttribute`1.values">
+            <summary>
+            The values.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.CodeTable.CodeNameAttribute`1.Values">
+            <summary>
+            Gets values.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.CodeTable.CodeTable">
+            <summary>
+            The code table.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.CodeTable.CodeTable.Values">
+            <summary>
+            The values.
+            </summary>
+            <returns>
+            Return the values.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Cryptography.Crypto">
             <summary>
             The cryptography.
