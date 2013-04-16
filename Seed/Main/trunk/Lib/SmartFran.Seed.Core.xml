@@ -267,32 +267,32 @@
             </summary>
             <returns>Created type adapter</returns>
         </member>
-        <member name="T:SmartFran.Seed.CodeTable.CodeName">
+        <member name="T:SmartFran.Seed.CodeTable.CodeItem">
             <summary>
             The code name.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.CodeTable.CodeName.description">
+        <member name="F:SmartFran.Seed.CodeTable.CodeItem.description">
             <summary>
             The description.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.CodeTable.CodeName.Code">
+        <member name="P:SmartFran.Seed.CodeTable.CodeItem.Code">
             <summary>
             Gets or sets the code.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.CodeTable.CodeName.Name">
+        <member name="P:SmartFran.Seed.CodeTable.CodeItem.Name">
             <summary>
             Gets or sets the name.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.CodeTable.CodeName.Description">
+        <member name="P:SmartFran.Seed.CodeTable.CodeItem.Description">
             <summary>
             Gets or sets the description.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.CodeTable.CodeNameAttribute`1">
+        <member name="T:SmartFran.Seed.CodeTable.CodeItemAttribute`1">
             <summary>
             The code const attribute.
             </summary>
@@ -300,12 +300,12 @@
             Values type
             </typeparam>
         </member>
-        <member name="F:SmartFran.Seed.CodeTable.CodeNameAttribute`1.values">
+        <member name="F:SmartFran.Seed.CodeTable.CodeItemAttribute`1.values">
             <summary>
             The values.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.CodeTable.CodeNameAttribute`1.Values">
+        <member name="P:SmartFran.Seed.CodeTable.CodeItemAttribute`1.Values">
             <summary>
             Gets values.
             </summary>
