@@ -9,6 +9,91 @@
             The ef migration.
             </summary>
         </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations">
+            <summary>
+            The EfDataInitializations interface.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.CreateIndexEx``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.CreateIndexEx``1(System.String[],System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="fields">
+            The fields.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.CreateIndexEx(System.String,System.String[],System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="tableName">
+            The table Name.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.DropIndexEx``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.DropIndexEx``1(System.String[])">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="fields">
+            The fields.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.DropIndexEx(System.String,System.String[])">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="tableName">
+            The table Name.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.DropAllIndexesEx">
+            <summary>
+            The drop all indexes.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration.CreateIndexEx``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Boolean)">
             <summary>
             The create index.
