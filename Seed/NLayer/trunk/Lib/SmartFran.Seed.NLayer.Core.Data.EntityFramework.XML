@@ -602,6 +602,28 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Exists(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The count.
+            </summary>
+            <param name="whereExpression">
+            The where Expression.
+            </param>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Exists(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The count.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             The count.

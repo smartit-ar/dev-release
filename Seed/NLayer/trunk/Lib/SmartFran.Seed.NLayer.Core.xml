@@ -759,6 +759,28 @@
             </summary>
             <param name="item">Item to add to repository</param>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Exists(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The count.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The if exists.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Exists(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The count.
+            </summary>
+            <param name="whereExpression">
+            The where Expression.
+            </param>
+            <returns>
+            The if exists.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Remove(`0)">
             <summary>
             Delete item 
