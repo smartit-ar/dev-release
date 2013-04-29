@@ -43,9 +43,14 @@ namespace('SmartFran.Seed.JS').ViewModel = {
   asyncCallToModel: function (params) {
     var self = this;
     this.loadingCall(true, params.loadingModal);
+    params.type = params.type || 'post';
+    var data = params.data;
+    if (params.type.toLowerCase() == 'post') {
+      data = JSON.stringify(data);
+    }
     $.ajax(params.url, {
-      data: JSON.stringify(params.data),
-      type: "post",
+      data: data,
+      type: params.type,
       contentType: "application/json",
       success: function (result) {
         try {
