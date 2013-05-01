@@ -26,7 +26,7 @@
             The list.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Application.EntityDtoCandidateKey`1">
+        <member name="T:SmartFran.Seed.NLayer.Application.EntityDtoCustomKey`1">
             <summary>
             Base class for entities
             </summary>
@@ -39,7 +39,7 @@
             Base class for entities
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Application.EntityDtoCandidateKey`1.CandidateKey">
+        <member name="M:SmartFran.Seed.NLayer.Application.EntityDtoCustomKey`1.CustomKey">
             <summary>
             The candidate key.
             </summary>
