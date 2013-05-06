@@ -60,20 +60,21 @@
   
   //custom binding handler for datepicker
   ko.bindingHandlers.datepicker = {
-    init: function (element, valueAccessor, allBindingsAccessor) {
-      var options = allBindingsAccessor().datepickerOptions || {};
+    init: function(element, valueAccessor, allBindingsAccessor) {
+      var options = allBindingsAccessor().datepickerOptions;
+      options.monthNames = options.monthNames || ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+      options.dateFormat = options.dateFormat || 'dd/mm/yy';
 
       $(element)
         .datepicker(options)
-        .bind("change", function () {
+        .bind("change", function() {
           ko.bindingHandlers.datepicker.updateValue(element, valueAccessor, allBindingsAccessor);
         });
-
-      ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
+      ko.utils.domNodeDisposal.addDisposeCallback(element, function() {
         $(element).datepicker("destroy");
       });
     },
-    update: function (element, valueAccessor, allBindingsAccessor) {
+    update: function(element, valueAccessor, allBindingsAccessor) {
       var value = ko.utils.unwrapObservable(valueAccessor());
 
       // If the date is coming from a Microsoft webservice.
@@ -87,9 +88,9 @@
         $(element).datepicker("setDate", value);
       }
     },
-    updateValue: function (element, valueAccessor, allBindingsAccessor) {
+    updateValue: function(element, valueAccessor, allBindingsAccessor) {
       var observable = valueAccessor(),
-          dateValue = $(element).datepicker("getDate");
+        dateValue = $(element).datepicker("getDate");
 
       // Two-way-binding means a writeable observable.
       if (ko.isWriteableObservable(observable)) {
