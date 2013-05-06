@@ -19,7 +19,7 @@ namespace('SmartFran.Seed.JS').ViewModel = {
     if (this._loadingCall) {
       if (startLoading) {
         if (this._loadingModal) {
-          this._loadingModal(loadingModal || (this._loadingModal._latestValue && this._loadingCall()));
+          this._loadingModal(loadingModal || (this._loadingModal.peek() && this._loadingCall()));
         }
         ++this._countLoading;
         this._loadingCall(true);
