@@ -39,6 +39,34 @@
     }
   };
   
+  ko.bindingHandlers.treeSingleSelection = {
+    init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+      $.ui.dynatree.nodedatadefaults["icon"] = false;
+      setTimeout(function () {
+        $(element).dynatree({
+          checkbox: true,
+          selectMode: 1,
+          classNames: { checkbox: "dynatree-radio" },
+          onSelect: function (select, node) {
+            var selected = select ? node.data.key : 0;
+            if (allBindingsAccessor().selected) {
+              allBindingsAccessor().selected(selected);
+            }
+          }
+        });
+      }, 0);
+      if (allBindingsAccessor().selected) {
+        allBindingsAccessor().selected.subscribe(function (val) {
+          var strVal = val.toString();
+          var node = $(element).dynatree('getTree').getNodeByKey(strVal);
+          if (node && !node.isSelected()) {
+            node.select(strVal);
+          }
+        });
+      }
+    }
+  };
+
   //custom binding handler for datepicker
   ko.bindingHandlers.datepicker = {
     init: function(element, valueAccessor, allBindingsAccessor) {
