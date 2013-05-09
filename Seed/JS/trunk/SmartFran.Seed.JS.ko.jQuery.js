@@ -1,23 +1,4 @@
-﻿//
-// Custom handler para integrar dialogo modal y buttons jQuery.UI
-// bindeando con Knockout. 
-// Requiere: jQuery, jQuery UI, jQuery-templ, Knockout
-//
-// Html sample
-// <div id="editDialog" title="Edit" data-bind="jqDialog: { autoOpen: false, resizable: false, modal: true }, template: { name: 'editDialogTmpl', data: selectedItem }, openDialog: selectedItem">
-// </div>
-// <script id="editDialogTmpl" type="text/html">
-//   <label>
-//     Name:</label>
-//   <input data-bind="value: editName" /><br />
-//   <label>
-//     Code:</label>
-//   <input data-bind="value: editCode" /><br />
-//   <button data-bind="buttonEdit: {}, click: $root.accept">Accept</button>
-//   <button data-bind="buttonEdit: {}, click: $root.cancel">Cancel</button>
-// </script>
-//
-(namespace('SmartFran.Seed.JS.ko').jQuery = function() {
+﻿(namespace('SmartFran.Seed.JS.ko').jQuery = function() {
   //custom binding to initialize a jQuery UI dialog
   ko.bindingHandlers.jqDialog = {
     init: function(element, valueAccessor) {
@@ -59,17 +40,14 @@
   };
   
   //custom binding handler for datepicker
-  
-  //Calcula rango de años a mostrar cuando option 'changeYear:true'
-  function getDateRange() {
-    var d = new Date();
-    var dateRange = '';
-    dateRange = (d.getFullYear() - 100) + ':' + (d.getFullYear() + 10);
-    return dateRange;
-  }
-
   ko.bindingHandlers.datepicker = {
     init: function(element, valueAccessor, allBindingsAccessor) {
+      //Calcula rango de años a mostrar cuando option 'changeYear:true'
+      function getDateRange() {
+        var d = new Date();
+        var dateRange = (d.getFullYear() - 100) + ':' + (d.getFullYear() + 10);
+        return dateRange;
+      }
       var options = allBindingsAccessor().datepickerOptions;
       options.monthNames = options.monthNames || ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
       options.monthNamesShort = options.monthNamesShort || ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
