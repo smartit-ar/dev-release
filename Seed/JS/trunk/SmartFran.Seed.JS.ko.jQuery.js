@@ -59,11 +59,22 @@
   };
   
   //custom binding handler for datepicker
+  
+  //Calcula rango de años a mostrar cuando option 'changeYear:true'
+  function getDateRange() {
+    var d = new Date();
+    var dateRange = '';
+    dateRange = (d.getFullYear() - 100) + ':' + (d.getFullYear() + 10);
+    return dateRange;
+  }
+
   ko.bindingHandlers.datepicker = {
     init: function(element, valueAccessor, allBindingsAccessor) {
       var options = allBindingsAccessor().datepickerOptions;
       options.monthNames = options.monthNames || ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+      options.monthNamesShort = options.monthNamesShort || ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
       options.dateFormat = options.dateFormat || 'dd/mm/yy';
+      options.yearRange = options.yearRange || getDateRange();
 
       $(element)
         .datepicker(options)
