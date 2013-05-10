@@ -2,9 +2,7 @@
 /// <reference path="~/Scripts/_jQuery/jquery-vsdoc.js" />
 /// <reference path="~/Scripts/_KoGrid/KoGrid.js" />
 
-var Seed = namespace('SmartFran.Seed.JS');
-
-Seed.PagedData = function (params) {
+namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
   var self = this;
   
   params = params || {};
@@ -37,7 +35,7 @@ Seed.PagedData = function (params) {
     if (self._getFilterInfo) {
       filterInfo = self._getFilterInfo(self.filter());
     }
-    Seed.ViewModel.asyncCallToModel({
+    Seed.ko.ViewModel.asyncCallToModel({
       loadingModal: true,
       url: self._url,
       data: { PageIndex: pageIndex, PageSize: pageSize, SortInfo: sortInfo, FilterInfo: filterInfo },
