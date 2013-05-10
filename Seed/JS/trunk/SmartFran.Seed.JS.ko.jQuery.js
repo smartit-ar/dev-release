@@ -64,6 +64,8 @@
           }
         });
       }
+    },
+    update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
     }
   };
 
