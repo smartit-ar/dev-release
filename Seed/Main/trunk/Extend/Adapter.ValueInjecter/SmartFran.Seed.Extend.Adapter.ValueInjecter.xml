@@ -133,6 +133,23 @@
             The target result.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.Mapper.Map``2(``0)">
+            <summary>
+            create a new target and map source on it.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <typeparam name="TSource">
+            Source type.
+            </typeparam>
+            <typeparam name="TTarget">
+            Target type.
+            </typeparam>
+            <returns>
+            The target result.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.Adapter.ValueInjecter.Extend.Adapter.ValueInjecter.AutoMapperSim.Mapper.Map``1(System.Object)">
             <summary>
             create a new target and map source on it.
