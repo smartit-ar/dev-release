@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>SmartFran.Seed.NLayer.Core.Data.EntityFramework</name>
+        <name>SmartFran.Seed.NLayer.Extend.Data.EntityFramework</name>
     </assembly>
     <members>
         <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration">
