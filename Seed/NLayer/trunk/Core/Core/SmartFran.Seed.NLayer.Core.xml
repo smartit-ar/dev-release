@@ -26,40 +26,6 @@
             The list.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Application.EntityDtoCustomKey`1">
-            <summary>
-            Base class for entities
-            </summary>
-            <typeparam name="T">
-            Candidate key type
-            </typeparam>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Application.EntityDtoBase">
-            <summary>
-            Base class for entities
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Application.EntityDtoCustomKey`1.CustomKey">
-            <summary>
-            The candidate key.
-            </summary>
-            <returns>
-            The <see cref="!:T"/>.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.NLayer.Application.EntityDto`1">
-            <summary>
-            Base class for entities
-            </summary>
-            <typeparam name="T">
-            Type of identity.
-            </typeparam>
-        </member>
-        <member name="P:SmartFran.Seed.NLayer.Application.EntityDto`1.Id">
-            <summary>
-            Gets or sets the id.
-            </summary>
-        </member>
         <member name="T:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods">
             <summary>
             Entities projections
@@ -99,7 +65,7 @@
             Projected collection
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.ToEntity``1(SmartFran.Seed.NLayer.Application.EntityDtoBase,SmartFran.Seed.Adapter.AdaptMode)">
+        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.ToEntity``1(System.Object,SmartFran.Seed.Adapter.AdaptMode)">
             <summary>
             The adapter to.
             </summary>
@@ -116,7 +82,7 @@
             The TEntity.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.ToEntity``1(System.Collections.Generic.IEnumerable{SmartFran.Seed.NLayer.Application.EntityDtoBase},SmartFran.Seed.Adapter.AdaptMode)">
+        <member name="M:SmartFran.Seed.NLayer.Application.ProjectionsExtensionMethods.ToEntity``1(System.Collections.Generic.ICollection{System.Object},SmartFran.Seed.Adapter.AdaptMode)">
             <summary>
             Adater Dto to Entity
             </summary>
@@ -255,7 +221,7 @@
             Fault detail type.
             </typeparam>
             <returns>
-            The <see cref="!:TFaultDetail"/>.
+            The fault exception.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.InitializeFields(SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail)">
@@ -822,7 +788,7 @@
             Full reload.
             </param>
             <returns>
-            The <see cref="!:TEntity"/>.
+            The entity.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Modify(`0)">

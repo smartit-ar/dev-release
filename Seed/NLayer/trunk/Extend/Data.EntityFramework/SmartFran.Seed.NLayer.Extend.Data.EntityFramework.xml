@@ -299,7 +299,7 @@
             Entity type.
             </typeparam>
             <returns>
-            The <see cref="!:TEntity"/>.
+            The entity.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand(System.String,System.Object[])">
@@ -537,7 +537,7 @@
             Full reload.
             </param>
             <returns>
-            The <see cref="!:TEntity"/>.
+            The entity.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.TrackEntity(`0)">
