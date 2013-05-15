@@ -1,5 +1,4 @@
 ﻿/// <reference path="~/Scripts/_Knockout/knockout.js" />
-/// <reference path="~/Scripts/_jQuery/jquery-vsdoc.js" />
 /// <reference path="~/Scripts/_KoGrid/KoGrid.js" />
 
 namespace('SmartFran.Seed.JS.ko').ViewModel = {
@@ -34,7 +33,7 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
   },
   catchException: function (exception, errorCallback) {
     if (this._errorMessageCall) {
-      this._errorMessageCall(exception.Message + ' (' + exception.ExceptionType + ')');
+      this._errorMessageCall(exception.Message);
     }
     if (errorCallback) {
       errorCallback(exception);
