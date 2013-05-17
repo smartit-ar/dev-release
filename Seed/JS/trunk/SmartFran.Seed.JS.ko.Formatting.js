@@ -1,8 +1,4 @@
-﻿/// <reference path="~/Scripts/_Knockout/knockout.js" />
-/// <reference path="~/Scripts/_jQuery/jquery-vsdoc.js" />
-/// <reference path="~/Scripts/_KoGrid/KoGrid.js" />
-
-(namespace('SmartFran.Seed.JS.ko').Formatting = function () {
+﻿(namespace('SmartFran.Seed.JS.ko').Formatting = function () {
   ko.subscribable.fn.formattedMoney = function () {
     function formatMoney(value) {
       var toks = value.toFixed(2).replace('-', '').split('.');
