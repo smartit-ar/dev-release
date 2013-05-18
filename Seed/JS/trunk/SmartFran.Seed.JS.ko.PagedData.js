@@ -1,5 +1,4 @@
 ﻿/// <reference path="~/Scripts/_Knockout/knockout.js" />
-/// <reference path="~/Scripts/_jQuery/jquery-vsdoc.js" />
 /// <reference path="~/Scripts/_KoGrid/KoGrid.js" />
 
 namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {

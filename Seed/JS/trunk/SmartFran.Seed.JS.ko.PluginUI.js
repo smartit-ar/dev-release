@@ -1,5 +1,27 @@
 ﻿(namespace('SmartFran.Seed.JS.ko').PluginUI = function () {
-  ko.bindingHandlers.dialog = {
+  ko.bindingHandlers.jqInputMasked = {
+    init: function (element, valueAccessor, allBindingsAccessor) {
+      var observable = valueAccessor();
+      if (allBindingsAccessor().mask) {
+        $(element).inputmask(mask);
+      } else {
+        if (typeof observable.assignMask == "function") {
+          ko.utils.registerEventHandler(element, 'focus', function() {
+            observable.assignMask($(element));
+          });
+        }
+      }
+      ko.utils.registerEventHandler(element, 'focusout', function () {
+        observable($(element).val());
+      });
+    },
+    update: function (element, valueAccessor) {
+      var value = ko.utils.unwrapObservable(valueAccessor());
+      $(element).val(value);
+    }
+  };
+  
+  ko.bindingHandlers.jqDialog = {
     init: function (element, valueAccessor, allBindingsAccessor) {
       var options = ko.utils.unwrapObservable(valueAccessor()) || {};
       ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
@@ -12,7 +34,7 @@
     }
   };
 
-  ko.bindingHandlers.openDialog = {
+  ko.bindingHandlers.jqOpenDialog = {
     update: function (element, valueAccessor) {
       var value = ko.utils.unwrapObservable(valueAccessor());
       if (value) {
@@ -23,7 +45,7 @@
     }
   };
 
-  ko.bindingHandlers.spinner = {
+  ko.bindingHandlers.jqSpinner = {
     init: function (element, valueAccessor, allBindingsAccessor) {
       var options = allBindingsAccessor().spinnerOptions || {};
       $(element).spinner(options);
@@ -45,7 +67,7 @@
     }
   };
 
-  ko.bindingHandlers.button = {
+  ko.bindingHandlers.jqButton = {
     init: function (element, valueAccessor) {
       var options = ko.utils.unwrapObservable(valueAccessor()) || {};
       ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
@@ -55,7 +77,7 @@
     }
   };
 
-  ko.bindingHandlers.datepicker = {
+  ko.bindingHandlers.jqDatePicker = {
     init: function (element, valueAccessor, allBindingsAccessor) {
       function getDateRange() {
         var d = new Date();
