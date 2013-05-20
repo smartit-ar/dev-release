@@ -68,6 +68,12 @@
       prepareMask();
     };
     
+    self.masked.noMask = function () {
+      mask = 'remove';
+      unmask = '';
+      prepareMask();
+    };
+    
     return self;
   };
 })();

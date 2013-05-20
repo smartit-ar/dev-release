@@ -35,6 +35,12 @@
       unmask = params.unmask || '';
       type = params.type || 'generic';
     };
+    
+    self.masked.noMask = function () {
+      mask = '';
+      unmask = '';
+      type = 'generic';
+    };
 
     function getMaskValue(value) {
       if (type == 'number') {
