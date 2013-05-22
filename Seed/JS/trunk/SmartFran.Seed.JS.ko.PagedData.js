@@ -16,6 +16,7 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
   self.selected = ko.observableArray([]);
 
   self._getSortInfo = params.getSortInfo;
+  self._getParamInfo = params.getParamInfo;
   self._getFilterInfo = params.getFilterInfo;
   self._url = params.url;
   self._newItem = params.newItem;
@@ -26,18 +27,31 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
     if (!pageIndex || !pageSize) {
       return;
     }
+
     var sortInfo = null;
-    var filterInfo = null;
     if (self._getSortInfo) {
       sortInfo = self._getSortInfo(self.sort());
     }
+
+    var filterInfo = null;
     if (self._getFilterInfo) {
       filterInfo = self._getFilterInfo(self.filter());
     }
+
+    var paramInfo = null;
+    if (self._getParamInfo) {
+      paramInfo = self._getParamInfo();
+    }
+
+    var data = { queryInfo: { PageIndex: pageIndex, PageSize: pageSize, SortInfo: sortInfo, FilterInfo: filterInfo } };
+    if (typeof paramInfo == "object") {
+      $.extend(data, paramInfo);
+    }
+    
     Seed.ko.ViewModel.asyncCallToModel({
       loadingModal: true,
       url: self._url,
-      data: { PageIndex: pageIndex, PageSize: pageSize, SortInfo: sortInfo, FilterInfo: filterInfo },
+      data: data,
       success: function (result) {
         self.totalItems(result.TotalItems);
 

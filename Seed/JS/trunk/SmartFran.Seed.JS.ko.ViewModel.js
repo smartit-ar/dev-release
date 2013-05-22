@@ -55,7 +55,6 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
         try {
           params.success(result);
         } catch (ex) {
-
         }
         self.loadingCall(false);
       },
@@ -64,6 +63,7 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
           var exception = $.parseJSON(result.responseText);
           self.catchException(exception, params.error);
         } catch (ex) {
+          self.catchException({ Message: result.responseText }, params.error);
         }
         self.loadingCall(false);
       }

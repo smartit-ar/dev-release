@@ -6,7 +6,7 @@
         $(element).dialog("destroy");
       });
       options.close = function () {
-        allBindingsAccessor().openDialog(false);
+        allBindingsAccessor().jqOpenDialog(false);
       };
       $(element).dialog(options);
     }
