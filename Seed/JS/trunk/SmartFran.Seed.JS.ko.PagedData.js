@@ -45,7 +45,7 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
 
     var data = { queryInfo: { PageIndex: pageIndex, PageSize: pageSize, SortInfo: sortInfo, FilterInfo: filterInfo } };
     if (typeof paramInfo == "object") {
-      $.extend(data, paramInfo);
+      //$.extend(data, paramInfo);
     }
     
     Seed.ko.ViewModel.asyncCallToModel({
