@@ -69,7 +69,7 @@
       $(element)
         .datepicker(options)
         .bind("change", function () {
-          ko.bindingHandlers.datepicker.updateValue(element, valueAccessor, allBindingsAccessor);
+          ko.bindingHandlers.jqDatePicker.updateValue(element, valueAccessor, allBindingsAccessor);
         });
       ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
         $(element).datepicker("destroy");
