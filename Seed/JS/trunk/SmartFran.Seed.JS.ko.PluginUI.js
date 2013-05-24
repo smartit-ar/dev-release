@@ -1,4 +1,6 @@
-﻿(namespace('SmartFran.Seed.JS.ko').PluginUI = function () {
+﻿var Seed = namespace('SmartFran.Seed.JS');
+
+(namespace('SmartFran.Seed.JS.ko').PluginUI = function () {
   ko.bindingHandlers.jqInputMasked = {
     init: function (element, valueAccessor, allBindingsAccessor) {
       var observable = valueAccessor();
@@ -88,8 +90,9 @@
     updateValue: function (element, valueAccessor, allBindingsAccessor) {
       var observable = valueAccessor();
       var dateValue = $(element).datepicker("getDate");
+
       if (ko.isWriteableObservable(observable)) {
-        observable(dateValue);
+        observable(Seed.Utility.Date.dateTimeToJson(dateValue));
         return;
       }
       if (allBindingsAccessor()._ko_property_writers) {

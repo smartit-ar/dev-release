@@ -17,6 +17,10 @@
     }
 
     function getMaskValue(value) {
+      var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
+      if (regJsonDate.exec(value) != null) {
+        return moment(value).format(mask);
+      }
       prepareMask();
       input.val(value);
       return input.val();
