@@ -492,6 +492,11 @@
             Dependency mapper factory
             </summary>
         </member>
+        <member name="F:SmartFran.Seed.Dependency.DiContainerFactory.container">
+            <summary>
+            The container.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.SetProvider(SmartFran.Seed.Dependency.IDiContainerProvider)">
             <summary>
             Set the current type dependency mapper factory
@@ -500,7 +505,7 @@
             The di Container Provider.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.CreateDiContainer">
+        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.DiContainer">
             <summary>
             The create di container.
             </summary>
