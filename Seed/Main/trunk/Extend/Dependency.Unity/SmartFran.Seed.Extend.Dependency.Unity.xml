@@ -14,7 +14,7 @@
             The unity container.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.#ctor(Microsoft.Practices.Unity.UnityContainer)">
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.#ctor(Microsoft.Practices.Unity.IUnityContainer)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDiContainer"/> class. 
             </summary>
@@ -72,19 +72,44 @@
             The <see cref="T:System.Boolean"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.BeginScope">
+            <summary>
+            The begin scope.
+            </summary>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.GetService(System.Type)">
+            <summary>
+            The get service.
+            </summary>
+            <param name="serviceType">
+            The service type.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.GetServices(System.Type)">
+            <summary>
+            The get services.
+            </summary>
+            <param name="serviceType">
+            The service type.
+            </param>
+            <returns>
+            The services.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.Dispose">
+            <summary>
+            The dispose.
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider">
             <summary>
             ValueInjecter type adapter implementation
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.unityContainer">
-            <summary>
-            The unity container.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider"/> class.
             </summary>
         </member>
         <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.Create">
@@ -92,7 +117,7 @@
             The create.
             </summary>
             <returns>
-            The SmartFran.Seed.Adapter.ITypeAdapter.
+            The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
             </returns>
         </member>
     </members>
