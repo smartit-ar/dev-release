@@ -21,12 +21,7 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
   self._url = params.url;
   self._newItem = params.newItem;
   
-  function onGetPage() {
-    var pageIndex = self.pageIndex();
-    var pageSize = self.pageSize();
-    var sort = self.sort();
-    var filter = self.filter();
-
+  function getPage(pageIndex, pageSize, sort, filter) {
     if (!pageIndex || !pageSize) {
       return;
     }
@@ -73,10 +68,12 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
   //Start: Public method
   self.activate = function () {
     ko.computed(function() {
-      onGetPage();
+      var pageIndex = self.pageIndex();
+      var pageSize = self.pageSize();
+      var sort = self.sort();
+      var filter = self.filter();
+      getPage(pageIndex, pageSize, sort, filter);
     });
-    
-    onGetPage();
   };
   //End: Public method
 };
