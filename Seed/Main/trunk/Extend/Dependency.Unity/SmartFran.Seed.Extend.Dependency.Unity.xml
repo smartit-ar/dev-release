@@ -116,6 +116,20 @@
             The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.RegisterInstance``1(``0)">
+            <summary>
+            The register instance.
+            </summary>
+            <param name="instance">
+            The instance.
+            </param>
+            <typeparam name="TInterface">
+            Interface type.
+            </typeparam>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.RegisterType(System.Type)">
             <summary>
             The register type.
