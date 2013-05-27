@@ -24,18 +24,21 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
   function onGetPage() {
     var pageIndex = self.pageIndex();
     var pageSize = self.pageSize();
+    var sort = self.sort();
+    var filter = self.filter();
+
     if (!pageIndex || !pageSize) {
       return;
     }
 
     var sortInfo = null;
     if (self._getSortInfo) {
-      sortInfo = self._getSortInfo(self.sort());
+      sortInfo = self._getSortInfo(sort);
     }
 
     var filterInfo = null;
     if (self._getFilterInfo) {
-      filterInfo = self._getFilterInfo(self.filter());
+      filterInfo = self._getFilterInfo(filter);
     }
 
     var paramInfo = null;
@@ -66,12 +69,13 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
       }
     });
   };
+  
   //Start: Public method
   self.activate = function () {
-    self.pageIndex.subscribe(onGetPage);
-    self.pageSize.subscribe(onGetPage);
-    self.sort.subscribe(onGetPage);
-    self.filter.subscribe(onGetPage);
+    ko.computed(function() {
+      onGetPage();
+    });
+    
     onGetPage();
   };
   //End: Public method
