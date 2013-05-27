@@ -482,6 +482,31 @@
             The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Dependency.IDiContainer.RegisterInstance(System.Type,System.Object)">
+            <summary>
+            The register instance.
+            </summary>
+            <param name="t">
+            The t.
+            </param>
+            <param name="instance">
+            The instance.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.IDiContainer.RegisterType(System.Type)">
+            <summary>
+            The register type.
+            </summary>
+            <param name="t">
+            The t.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Dependency.DiContainerFactory">
             <summary>
             Type dependency mapper factory.
