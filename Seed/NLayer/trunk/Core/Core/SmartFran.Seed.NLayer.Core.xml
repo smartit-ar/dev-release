@@ -610,11 +610,6 @@
             Base class for entities
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.EntityAutoInc.GenerateNewIdentity">
-            <summary>
-            The generate new identity.
-            </summary>
-        </member>
         <member name="T:SmartFran.Seed.NLayer.ExceptionHandling.Helper.NestedExceptionInfoGenerator">
             <summary>
             The nested exception info generator.
