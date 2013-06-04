@@ -44,7 +44,7 @@
             The candidate key.
             </summary>
             <returns>
-            The <see cref="!:T"/>.
+            The key type T.
             </returns>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Application.EntityDto`1">
@@ -817,7 +817,7 @@
             Full reload.
             </param>
             <returns>
-            The <see cref="!:TEntity"/>.
+            The entity.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Modify(`0)">
