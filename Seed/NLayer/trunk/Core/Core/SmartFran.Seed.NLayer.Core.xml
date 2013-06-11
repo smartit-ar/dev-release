@@ -292,7 +292,7 @@
             The code.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.#ctor(System.Collections.Generic.IEnumerable{SmartFran.Seed.Validator.InvalidItem},System.Exception)">
+        <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException.#ctor(System.Collections.Generic.ICollection{SmartFran.Seed.Validator.InvalidItem},System.Exception)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.ExceptionHandling.BusinessRulesException"/> class.
             </summary>
