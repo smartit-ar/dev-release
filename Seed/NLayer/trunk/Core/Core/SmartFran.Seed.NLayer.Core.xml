@@ -12,20 +12,6 @@
             Channel type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Application.ApplicationClientBase`1.CastToList``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            The cast to list.
-            </summary>
-            <param name="source">
-            The source.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-            <returns>
-            The list.
-            </returns>
-        </member>
         <member name="T:SmartFran.Seed.NLayer.Application.EntityDtoCustomKey`1">
             <summary>
             Base class for entities
