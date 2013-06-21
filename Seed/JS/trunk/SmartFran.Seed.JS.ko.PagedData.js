@@ -75,5 +75,17 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
       getPage(pageIndex, pageSize, sort, filter);
     });
   };
+  self.reset = function() {
+    if (self.pageIndex() != 1)
+    {
+      self.pageIndex(1);
+      return;
+    }
+    var pageIndex = self.pageIndex();
+    var pageSize = self.pageSize();
+    var sort = self.sort();
+    var filter = self.filter();
+    getPage(pageIndex, pageSize, sort, filter);
+  };
   //End: Public method
 };
