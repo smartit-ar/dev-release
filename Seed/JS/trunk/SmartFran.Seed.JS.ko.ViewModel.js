@@ -42,15 +42,18 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
   asyncCallToModel: function (params) {
     var self = this;
     this.loadingCall(true, params.loadingModal);
-    params.type = params.type || 'post';
+    var type = params.type || 'post';
+    var contentType = params.contentType == null || params.contentType == undefined ? 'application/json' : params.contentType;
+    var processData = params.processData == null || params.processData == undefined || params.processData;
     var data = params.data;
-    if (params.type.toLowerCase() == 'post') {
+    if ((type.toLowerCase() == 'post') && (typeof contentType == "string") && (contentType.toLowerCase().indexOf('application/json') != -1)) {
       data = JSON.stringify(data);
     }
     $.ajax(params.url, {
       data: data,
-      type: params.type,
-      contentType: "application/json",
+      type: type,
+      contentType: contentType,
+      processData: processData,
       success: function (result) {
         try {
           params.success(result);
