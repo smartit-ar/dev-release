@@ -32,6 +32,9 @@
       var anio = fecha.getFullYear();
       document.write(anio);
     },
+    dateTimeToDotNetTicks: function(date) {
+      return (date.getTime() * 10000) + 621355968000000000;
+    },
     dateTimeToJson: function (date) {
       if (typeof date == "string" && this.isJsonDateTime(date)) {
         return date;
