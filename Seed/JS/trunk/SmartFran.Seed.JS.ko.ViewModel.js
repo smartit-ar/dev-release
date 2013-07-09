@@ -75,13 +75,13 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
   },
   submitGet: function (params) {
     var url = params.url;
-    var data = params.data;
+    var data = params.data || {};
     var separator = '?';
-    if ($.isArray(data)) {
-      data.forEach(function(elem) {
-        url = url + separator + elem.name.toString() + '=' + escape(elem.value.toString());
+    if (typeof data == "object") {
+      for (var prop in data) {
+        url += separator + prop + '=' + escape(data[prop].toString());
         separator = '&';
-      });
+      } 
     }
     window.location.href = url;
     return;
@@ -89,14 +89,14 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
   submitPost: function (params) {
     var form = document.createElement("form");
     var url = params.url;
-    var data = params.data;
-    if ($.isArray(data)) {
-      data.forEach(function (elem) {
+    var data = params.data || {};
+    if (typeof data == "object") {
+      for (var prop in data) {
         var opt = document.createElement("textarea");
-        opt.name = elem.name.toString();
-        opt.value = elem.value.toString();
+        opt.name = prop;
+        opt.value = data[prop].toString();
         form.appendChild(opt);
-      });
+      }
     }
     form.action = url;
     form.method = "POST";
