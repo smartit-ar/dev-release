@@ -58,7 +58,7 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
         try {
           params.success(result);
         } catch (ex) {
-          console.log(ex.Message);
+          console.log('Error: ' + ex.message);
         }
         self.loadingCall(false);
       },
