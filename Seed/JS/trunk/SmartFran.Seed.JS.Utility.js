@@ -1,5 +1,12 @@
 ﻿namespace('SmartFran.Seed.JS').Utility = {
   Date: {
+    ageToCertainDate: function (birthDate, certainDate) {
+      var intCertainDate = Seed.Utility.Date.jsonToDateTime(certainDate);
+      var intBirthDate = Seed.Utility.Date.jsonToDateTime(birthDate);
+      var dif = (intCertainDate - intBirthDate);
+      var age = Math.floor(dif / 31557600000);
+      return age;
+    },
     writeSpLargeDate: function () {
       var fecha = new Date();
       var mes = fecha.getMonth();
@@ -32,7 +39,7 @@
       var anio = fecha.getFullYear();
       document.write(anio);
     },
-    dateTimeToDotNetTicks: function(date) {
+    dateTimeToDotNetTicks: function (date) {
       return (date.getTime() * 10000) + 621355968000000000;
     },
     dateTimeToJson: function (date) {
@@ -46,13 +53,13 @@
     },
     jsonToDateTime: function (date) {
       if (typeof date != "string") {
-          return date;
+        return date;
       }
       return new Date(parseInt(date.substr(6)));
     },
-    isJsonDateTime: function(date) {
+    isJsonDateTime: function (date) {
       var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
       return regJsonDate.exec(date) != null;
     }
- }
+  }
 };
