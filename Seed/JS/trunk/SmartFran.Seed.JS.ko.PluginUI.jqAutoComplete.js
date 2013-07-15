@@ -130,6 +130,11 @@
         //update the element with the value that should be shown in the input
         $(element).val(modelLabel);
       }
+      else {
+        if (typeof valueProp == "object" && valueProp[inputValueProp]){
+          $(element).val(unwrap(valueProp[inputValueProp]));
+        }
+      }
     }
   };
 })();
