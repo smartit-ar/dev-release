@@ -131,7 +131,7 @@
         $(element).val(modelLabel);
       }
       else {
-        if (typeof valueProp == "object" && valueProp[inputValueProp]){
+        if (typeof valueProp == "object" && inputValueProp && valueProp[inputValueProp]) {
           $(element).val(unwrap(valueProp[inputValueProp]));
         }
       }
