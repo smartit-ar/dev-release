@@ -71,8 +71,15 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
       var pageIndex = self.pageIndex();
       var pageSize = self.pageSize();
       var sort = self.sort();
-      var filter = self.filter();
+      var filter = self.filter.peek();
       getPage(pageIndex, pageSize, sort, filter);
+    });
+    self.filter.subscribe(function(value) {
+      if (self.pageIndex() > 1) {
+        self.pageIndex(1);
+      } else {
+        getPage(1, self.pageSize(), self.sort(), value);
+      }
     });
   };
   self.reset = function() {

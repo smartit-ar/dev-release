@@ -133,6 +133,8 @@
       else {
         if (valueProp && inputValueProp && typeof valueProp == "object" && valueProp[inputValueProp]) {
           $(element).val(unwrap(valueProp[inputValueProp]));
+        } else {
+          $(element).val('');
         }
       }
     }
