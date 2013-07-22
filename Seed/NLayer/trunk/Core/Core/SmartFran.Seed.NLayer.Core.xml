@@ -12,6 +12,11 @@
             Channel type.
             </typeparam>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Application.ApplicationClientBase`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Application.ApplicationClientBase`1"/> class.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Application.ApplicationClientBase`1.#ctor(System.ServiceModel.Description.ServiceEndpoint)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Application.ApplicationClientBase`1"/> class.
