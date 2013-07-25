@@ -60,6 +60,10 @@
     isJsonDateTime: function (date) {
       var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
       return regJsonDate.exec(date) != null;
+    },
+    getNowWithoutTime: function () {
+      var dt = new Date();
+      return new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
     }
   }
 };
