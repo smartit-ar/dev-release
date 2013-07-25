@@ -61,9 +61,11 @@
       var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
       return regJsonDate.exec(date) != null;
     },
+    getDateWithoutTime: function (date) {
+      return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    },
     getNowWithoutTime: function () {
-      var dt = new Date();
-      return new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
+      return this.getDateWithoutTime(new Date());
     }
-  }
+}
 };
