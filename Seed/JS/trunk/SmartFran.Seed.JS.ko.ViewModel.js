@@ -63,11 +63,15 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
         self.loadingCall(false);
       },
       error: function (result) {
-        try {
-          var exception = $.parseJSON(result.responseText);
-          self.catchException(exception, params.error);
-        } catch (ex) {
-          self.catchException({ Message: result.responseText }, params.error);
+        if ((typeof result.responseText == "string") && (result.responseText.length > 0)) {
+          try {
+            var exception = $.parseJSON(result.responseText);
+            self.catchException(exception, params.error);
+          } catch (ex) {
+            self.catchException({ Message: result.responseText }, params.error);
+          }
+        } else {
+          self.catchException({ Message: 'Se presento una falla en el sistema, posiblemente en la conexión al sistema central. Reintente y si el problema persiste comuniquelo a sistema.' }, params.error);
         }
         self.loadingCall(false);
       }
@@ -81,7 +85,7 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
       for (var prop in data) {
         url += separator + prop + '=' + escape(data[prop].toString());
         separator = '&';
-      } 
+      }
     }
     window.location.href = url;
     return;
