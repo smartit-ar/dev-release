@@ -66,6 +66,10 @@
     },
     getNowWithoutTime: function () {
       return this.getDateWithoutTime(new Date());
+    },
+    getDateFirstDayOfCurrentMonthWithoutTime: function () {
+      var date = new Date();
+      return new Date(date.getFullYear(), date.getMonth(), 1);
     }
 }
 };
