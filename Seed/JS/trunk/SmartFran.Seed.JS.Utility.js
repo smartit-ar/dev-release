@@ -58,8 +58,10 @@
       return new Date(parseInt(date.substr(6)));
     },
     isJsonDateTime: function (date) {
-      var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
+      var regJsonDate = new RegExp(/Date\(([^)]+)\)/);
       return regJsonDate.exec(date) != null;
+      //var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
+      //return regJsonDate.exec(date) != null;
     },
     getDateWithoutTime: function (date) {
       return new Date(date.getFullYear(), date.getMonth(), date.getDate());
