@@ -254,7 +254,7 @@
             Fault detail type.
             </typeparam>
             <returns>
-            The <see cref="!:TFaultDetail"/>.
+            The fault detail.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceException.InitializeFields(SmartFran.Seed.NLayer.ExceptionHandling.DistributedServiceFaultDetail)">
@@ -958,7 +958,7 @@
             Result type
             </typeparam>
             <returns>
-            The <see cref="!:TResult"/>.
+            The result.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Max``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
@@ -972,7 +972,7 @@
             Result type
             </typeparam>
             <returns>
-            The <see cref="!:TResult"/>.
+            The result.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Average(System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">

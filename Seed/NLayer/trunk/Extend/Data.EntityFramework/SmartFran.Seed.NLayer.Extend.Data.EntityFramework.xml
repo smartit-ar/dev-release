@@ -663,7 +663,7 @@
             Result type
             </typeparam>
             <returns>
-            The <see cref="!:TResult"/>.
+            The result.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Max``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
@@ -677,7 +677,7 @@
             Result type
             </typeparam>
             <returns>
-            The <see cref="!:TResult"/>.
+            The result.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Average(System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">
