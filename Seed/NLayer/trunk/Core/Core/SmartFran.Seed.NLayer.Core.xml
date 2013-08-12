@@ -769,6 +769,17 @@
             </summary>
             <param name="item">Item to add to repository</param>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Exists(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The count.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The if exists.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Exists(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             The count.
@@ -845,12 +856,23 @@
             <param name="id">Entity key value</param>
             <returns>The entity.</returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.GetFirst(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             The get.
             </summary>
             <param name="selector">
             The selector.
+            </param>
+            <returns>
+            The entity.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.GetFirst(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The get.
+            </summary>
+            <param name="specification">
+            The specification.
             </param>
             <returns>
             The entity.
@@ -866,6 +888,17 @@
             <summary>
             The count.
             </summary>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Count(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The count.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
             <returns>
             The System.Int32.
             </returns>
@@ -1019,12 +1052,37 @@
             The <see cref="T:System.Single"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Query(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The all matching.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
             <summary>
             The query.
             </summary>
             <param name="orderBy">
             The order By.
+            </param>
+            <returns>
+            IEnumerable of entities.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The query.
+            </summary>
+            <param name="orderBy">
+            The order By.
+            </param>
+            <param name="specification">
+            The specification.
             </param>
             <returns>
             IEnumerable of entities.
@@ -1083,6 +1141,26 @@
             </param>
             <param name="selector">
             The where expression.
+            </param>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageSize">
+            The page Size.
+            </param>
+            <param name="orderBy">
+            The order By.
+            </param>
+            <param name="whereExpression">
+            The where specification expression.
             </param>
             <returns>
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
