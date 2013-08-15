@@ -10,13 +10,20 @@
     var unmask = initParams.unmask || '';
 
     function prepareMask() {
-      if (!input) {
+      if (!input) {        
         input = $("<input type='text'>");
-      }
-      input.inputmask(mask);
+      }            
+      if (mask == 'currency') {
+        input.inputmask('$ 999.999.999,99', { numericInput: true, radixPoint: "," });
+      } else {
+        input.inputmask(mask);
+      }      
     }
 
     function getMaskValue(value) {
+      if (mask == 'currency') {        
+        return formatToCurrency(value);
+      }      
       var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
       if (regJsonDate.exec(value) != null) {
         return moment(value).format(mask);
@@ -25,6 +32,22 @@
       input.val(value);
       return input.val();
     }
+    
+    function formatToCurrency(value) {
+      if (value == null) {
+        return null;
+      }
+      var str = value.toString();
+      var dec = str.split('.');
+      if ((dec.length == 2) && (dec[1].length == 1)) {
+        dec[1] = dec[1] + '0';
+        return '$' + dec[0] + '.' + dec[1];
+      }
+      if (dec[0] == '') {
+        dec[0] = '0';
+      }
+      return '$' + dec[0] + '.00';
+    };
 
     function getUnmaskValue(value) {
       if (unmask) {
