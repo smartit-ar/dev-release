@@ -89,7 +89,7 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
     var separator = '?';
     if (typeof data == "object") {
       for (var prop in data) {
-        url += separator + prop + '=' + escape(data[prop].toString());
+        url += separator + prop + '=' + escape(data[prop] ? data[prop].toString() : '');
         separator = '&';
       }
     }
@@ -104,7 +104,7 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
       for (var prop in data) {
         var opt = document.createElement("textarea");
         opt.name = prop;
-        opt.value = data[prop].toString();
+        opt.value = data[prop] ? data[prop].toString() : '';
         form.appendChild(opt);
       }
     }
