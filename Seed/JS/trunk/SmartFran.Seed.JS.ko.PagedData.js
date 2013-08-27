@@ -16,7 +16,7 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
 
   self.list = ko.observableArray([]);
   self.pageIndex = ko.observable(1);
-  self.pageSize = ko.observable(params.pageSize || 50);
+  self.pageSize = ko.observable(params.pageSize || 10);
   self.sort = ko.observable();
   self.filter = ko.observable();
   self.totalItems = ko.observable(0);
