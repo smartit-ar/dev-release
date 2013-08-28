@@ -19,12 +19,11 @@
   //                     jqAutoSourceValue: 'id'" />
   //
   ko.bindingHandlers.jqAutoComplete = {
-    init: function (element, valueAccessor, allBindingsAccessor) {
+    init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
       var options = valueAccessor() || {},
           allBindings = allBindingsAccessor(),
           unwrap = ko.utils.unwrapObservable,
           modelValue = allBindings.jqAutoValue,
-          modelLabel = allBindings.jqAutoLabel,
           source = allBindings.jqAutoSource,
           query = allBindings.jqAutoQuery,
           valueProp = allBindings.jqAutoSourceValue,
@@ -32,44 +31,29 @@
           labelProp = allBindings.jqAutoSourceLabel || inputValueProp;
 
       //function that is shared by both select and change event handlers
-
-      function writeValueToModel(valueToWrite, labelToWrite) {
+      function writeValueToModel(valueToWrite) {
         if (ko.isWriteableObservable(modelValue)) {
           modelValue(valueToWrite);
-        } else {
-          //write to non-observable
-          if (allBindings['_ko_property_writers'] && allBindings['_ko_property_writers']['jqAutoValue']) {
+        } else {  //write to non-observable
+          if (allBindings['_ko_property_writers'] && allBindings['_ko_property_writers']['jqAutoValue'])
             allBindings['_ko_property_writers']['jqAutoValue'](valueToWrite);
-          }
-        }
-        if (ko.isWriteableObservable(modelLabel)) {
-          modelLabel(labelToWrite);
-        } else {
-          //write to non-observable
-          if (allBindings['_ko_property_writers'] && allBindings['_ko_property_writers']['jqAutoLabel']) {
-            allBindings['_ko_property_writers']['jqAutoLabel'](valueToWrite);
-          }
         }
       }
 
       //on a selection write the proper value to the model
       options.select = function (event, ui) {
-        if (ui.item) {
-          writeValueToModel(ui.item.actualValue, ui.item.value);
-        } else {
-          writeValueToModel(null, null);
-        }
+        writeValueToModel(ui.item ? ui.item.actualValue : null);
       };
 
       //on a change, make sure that it is a valid value or clear out the model value
-      options.change = function() {
+      options.change = function(event, ui) {
         var currentValue = $(element).val();
         var matchingItem = ko.utils.arrayFirst(unwrap(source), function(item) {
           return unwrap(item[inputValueProp]) === currentValue;
         });
 
         if (!matchingItem) {
-          writeValueToModel(null, null);
+          writeValueToModel(null);
         }
       };
 
@@ -77,24 +61,19 @@
       var currentResponse = null;
 
       //handle the choices being updated in a DO, to decouple value updates from source (options) updates
-      var mappedSource = ko.computed({
+      var mappedSource = ko.dependentObservable({
         read: function () {
           var mapped = ko.utils.arrayMap(unwrap(source), function (item) {
             var result = {};
-
-            //show in pop-up choices
-            result.label = labelProp ? unwrap(item[labelProp]) : unwrap(item).toString();
-            //show in input box
-            result.value = inputValueProp ? unwrap(item[inputValueProp]) : unwrap(item).toString();
-            //store in model
-            result.actualValue = valueProp ? unwrap(item[valueProp]) : item;
-
+            result.label = labelProp ? unwrap(item[labelProp]) : unwrap(item).toString();  //show in pop-up choices
+            result.value = inputValueProp ? unwrap(item[inputValueProp]) : unwrap(item).toString();  //show in input box
+            result.actualValue = valueProp ? unwrap(item[valueProp]) : item;  //store in model
             return result;
           });
           return mapped;
         },
         write: function (newValue) {
-          source(newValue); //update the source observableArray, so our mapped value (above) is correct
+          source(newValue);  //update the source observableArray, so our mapped value (above) is correct
           if (currentResponse) {
             currentResponse(mappedSource());
           }
@@ -115,28 +94,28 @@
         options.source = mappedSource();
       }
 
+
       //initialize autocomplete
       $(element).autocomplete(options);
     },
-    update: function (element, valueAccessor, allBindingsAccessor) {
+    update: function (element, valueAccessor, allBindingsAccessor, viewModel) {
       //update value based on a model change
       var allBindings = allBindingsAccessor(),
           unwrap = ko.utils.unwrapObservable,
-          modelLabel = unwrap(allBindings.jqAutoLabel),
+          modelValue = unwrap(allBindings.jqAutoValue) || '',
           valueProp = allBindings.jqAutoSourceValue,
           inputValueProp = allBindings.jqAutoSourceInputValue || valueProp;
 
-      if (modelLabel && valueProp && inputValueProp !== valueProp) {
-        //update the element with the value that should be shown in the input
-        $(element).val(modelLabel);
+      //if we are writing a different property to the input than we are writing to the model, then locate the object
+      if (valueProp && inputValueProp !== valueProp) {
+        var source = unwrap(allBindings.jqAutoSource) || [];
+        modelValue = ko.utils.arrayFirst(source, function (item) {
+          return unwrap(item[valueProp]) === modelValue;
+        }) || {};
       }
-      else {
-        if (valueProp && inputValueProp && typeof valueProp == "object" && valueProp[inputValueProp]) {
-          $(element).val(unwrap(valueProp[inputValueProp]));
-        } else {
-          $(element).val('');
-        }
-      }
+
+      //update the element with the value that should be shown in the input
+      $(element).val(modelValue && inputValueProp !== valueProp ? unwrap(modelValue[inputValueProp]) : modelValue.toString());
     }
   };
 })();
