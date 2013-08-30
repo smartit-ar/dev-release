@@ -72,6 +72,21 @@
     getDateFirstDayOfCurrentMonthWithoutTime: function () {
       var date = new Date();
       return new Date(date.getFullYear(), date.getMonth(), 1);
+    },
+    getDateLastDayOfCurrentMonthWithoutTime: function () {
+      var date = new Date();
+      
+      function getLastDay(month, year) {
+        month = parseInt(month);
+        year = parseInt(year);
+        switch (month) {
+          case 1: case 3: case 5: case 7: case 8: case 10: case 12: return 31;
+          case 2: return (year % 4 == 0) ? 29 : 28;
+        }
+        return 30;
+      };
+
+      return new Date(date.getFullYear(), date.getMonth(), getLastDay(date.getMonth(), date.getFullYear()));
     }
-}
+  }
 };
