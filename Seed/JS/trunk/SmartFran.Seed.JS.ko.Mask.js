@@ -72,9 +72,7 @@
       write: function (value) {
         var val = self.peek();
         var unmaskVal = getUnmaskValue(value);
-        if (val == unmaskVal) {
-          self.notifySubscribers(unmaskVal);
-        } else {
+        if (val != unmaskVal) {
           self(unmaskVal);
         };
       },
