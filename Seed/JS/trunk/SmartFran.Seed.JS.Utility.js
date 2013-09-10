@@ -51,6 +51,15 @@
       }
       return "/Date(" + date + ")/";
     },
+    dateTimeUtcToJson: function (date) {
+      if (typeof date == "string" && this.isJsonDateTime(date)) {
+        return date;
+      }
+      if (typeof date != "number") {
+        date = Date.parse(date);
+      }
+      return "/Date(" + (parseInt(date) + ((new Date()).getTimezoneOffset() * 60000)) + ")/";
+    },
     jsonToDateTime: function (date) {
       if (typeof date != "string") {
         return date;
@@ -60,8 +69,8 @@
     isJsonDateTime: function (date) {
       var regJsonDate = new RegExp(/Date\(([^)]+)\)/);
       return regJsonDate.exec(date) != null;
-      //var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
-      //return regJsonDate.exec(date) != null;
+      ////var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
+      ////return regJsonDate.exec(date) != null;
     },
     getDateWithoutTime: function (date) {
       return new Date(date.getFullYear(), date.getMonth(), date.getDate());
