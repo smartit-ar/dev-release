@@ -65,7 +65,6 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
       },
       error: function (result) {
         if (result.status == 401) {
-          //self.catchException({ Message: 'No tiene acceso a esta opción del sistema, o su session ha finalizado.<br />Por favor, Ingrese nuevamente al sistema.' }, params.error);
           self.submitGet({ url: "/Support/Account/Login", data: { ReturnUrl: location.pathname, Unauthorized: true } });
         }
         else {
@@ -77,7 +76,7 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
               self.catchException({ Message: result.responseText }, params.error);
             }
           } else {
-            self.catchException({ Message: 'Se presento una falla en el sistema, posiblemente en la conexión al sistema central. Reintente y si el problema persiste comuniquelo a sistema.' }, params.error);
+            self.catchException({ Message: 'Se presentó una falla en la ejecución del sistema. Reintente y si el problema persiste comuníquelo al soporte del sistema.' }, params.error);
           }
         }
         self.loadingCall(false);
