@@ -90,6 +90,7 @@
     updateValue: function (element, valueAccessor, allBindingsAccessor) {
       var observable = valueAccessor();
       var dateValue = $(element).datepicker("getDate");
+      $(element.nextElementSibling).focus();
 
       if (ko.isWriteableObservable(observable)) {
         observable(Seed.Utility.Date.dateTimeToJson(dateValue));
