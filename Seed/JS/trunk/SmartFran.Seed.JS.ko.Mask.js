@@ -14,7 +14,7 @@
         input = $("<input type='text'>");
       }            
       if (mask == 'currency') {
-        input.inputmask('$ 999.999.999,99', { numericInput: true, radixPoint: "," });
+        input.inputmask('$ 999,999,999.99', { numericInput: true });
       } else {
         input.inputmask(mask);
       }      
@@ -37,16 +37,17 @@
       if (value == null) {
         return null;
       }
-      var str = value.toString();
-      var dec = str.split('.');
-      if ((dec.length == 2) && (dec[1].length == 1)) {
-        dec[1] = dec[1] + '0';
-        return '$' + dec[0] + '.' + dec[1];
+      var part = value.toString().split('.');
+      var dec = '00';
+      var inte = '0';
+      if (part.length == 2) {
+        inte = part[0];
+        dec = (part[1] + '00').substr(0, 2);  
       }
-      if (dec[0] == '') {
-        dec[0] = '0';
+      if (part.length == 1) {
+        inte = part[0];
       }
-      return '$' + dec[0] + '.00';
+      return '$' + inte + '.' + dec;
     };
 
     function getUnmaskValue(value) {
