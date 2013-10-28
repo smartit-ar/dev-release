@@ -24,7 +24,9 @@
       if (mask == 'currency') {        
         return formatToCurrency(value);
       }      
-      var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
+      
+      //var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
+      var regJsonDate = new RegExp("^/Date\\((-?\\d+)\\)/$"); //reconoce bien fechas anteriores a 1970
       if (regJsonDate.exec(value) != null) {
         return moment(value).format(mask);
       }
