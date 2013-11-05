@@ -115,7 +115,18 @@
         return 30;
       };
 
-      return new Date(date.getFullYear(), date.getMonth(), getLastDay(date.getMonth(), date.getFullYear()));
+      return new Date(date.getFullYear(), date.getMonth() - 1, getLastDay(date.getMonth(), date.getFullYear()));
+    },    
+    totalDaysCalculator: function(since, to) {
+      var datediff = Seed.Utility.Date.jsonToDateTime(to) - Seed.Utility.Date.jsonToDateTime(since);
+      if (Math.ceil(datediff / 86400000) == 0) {
+        return 1;
+      }
+      return Math.ceil(datediff / 86400000);
+    },
+    totalSelectedDaysCalculator: function (since, to) {
+      var datediff = Seed.Utility.Date.jsonToDateTime(to) - Seed.Utility.Date.jsonToDateTime(since);
+      return Math.ceil(datediff / 86400000) + 1;
     }
   }
 };
