@@ -23,9 +23,11 @@
       var dias = new Array('DOM', 'LUN', 'MAR', 'MIE', 'JUE', 'VIE', 'SAB');
       document.write(dias[diaSemana]);
     },
-    writeSpShortMonth: function () {
-      var fecha = new Date();
-      var mes = fecha.getMonth();
+    writeSpShortMonth: function (mes) {
+      if (mes == null) {
+        var fecha = new Date();
+        mes = fecha.getMonth();
+      }
       var meses = new Array('ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC');
       document.write(meses[mes]);
     },
@@ -34,9 +36,11 @@
       var diaMes = fecha.getDate();
       document.write(diaMes);
     },
-    writeDateYear: function () {
-      var fecha = new Date();
-      var anio = fecha.getFullYear();
+    writeDateYear: function (anio) {
+      if (anio == null) {
+        var fecha = new Date();
+        anio = fecha.getFullYear();
+      }
       document.write(anio);
     },
     dateTimeToDotNetTicks: function (date) {
