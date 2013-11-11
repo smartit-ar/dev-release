@@ -7,8 +7,8 @@
       var age = Math.floor(dif / 31557600000);
       return age;
     },
-    writeSpLargeDate: function () {
-      var fecha = new Date();
+    writeSpLargeDate: function (date) {
+      var fecha = date != null ? date : new Date;
       var mes = fecha.getMonth();
       var diaMes = fecha.getDate();
       var diaSemana = fecha.getDay();
