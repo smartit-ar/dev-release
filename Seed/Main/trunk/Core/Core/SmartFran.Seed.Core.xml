@@ -323,7 +323,7 @@
             Return the values.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Cryptography.Hash0">
+        <member name="T:SmartFran.Seed.Cryptography.Hash00">
             <summary>
             The cryptography.
             </summary>
@@ -331,11 +331,6 @@
         <member name="T:SmartFran.Seed.Cryptography.HashGenerator">
             <summary>
             The cryptography.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Cryptography.HashGenerator.LinkChar">
-            <summary>
-            The link char.
             </summary>
         </member>
         <member name="M:SmartFran.Seed.Cryptography.HashGenerator.GetHashId(System.String)">
@@ -407,22 +402,33 @@
             The <see cref="T:System.Exception"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.GetHashWithCrc(System.Int32)">
+            <summary>
+            The get hash with crc.
+            </summary>
+            <param name="hashId">
+            The hash id.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
         <member name="P:SmartFran.Seed.Cryptography.HashGenerator.Id">
             <summary>
             Gets or sets the id.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Cryptography.Hash0.FillChar">
+        <member name="F:SmartFran.Seed.Cryptography.Hash00.FillChar">
             <summary>
             The fill char.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.Hash0.#ctor">
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Cryptography.Hash0"/> class.
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Cryptography.Hash00"/> class.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.Hash0.Generate(System.String,System.String)">
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.Generate(System.String,System.String)">
             <summary>
             The get crypto key.
             </summary>
@@ -436,7 +442,7 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.Hash0.GetMergedKeys(System.String,System.String)">
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.GetMergedKeys(System.String,System.String)">
             <summary>
             The get merged user name and password.
             </summary>
