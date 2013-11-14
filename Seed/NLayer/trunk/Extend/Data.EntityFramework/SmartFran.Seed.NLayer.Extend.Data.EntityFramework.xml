@@ -280,7 +280,7 @@
             Entity type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.Reload``1(``0,System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.Reload``1(``0@,System.Boolean)">
             <summary>
             The reload.
             </summary>
@@ -293,9 +293,6 @@
             <typeparam name="TEntity">
             Entity type.
             </typeparam>
-            <returns>
-            The Entity.
-            </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand(System.String,System.Object[])">
             <summary>
@@ -521,7 +518,7 @@
             The item Id.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Reload(`0,System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Reload(`0@,System.Boolean)">
             <summary>
             The reload entity.
             </summary>
@@ -531,9 +528,6 @@
             <param name="full">
             Full reload.
             </param>
-            <returns>
-            The result.
-            </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.TrackEntity(`0)">
             <summary>
