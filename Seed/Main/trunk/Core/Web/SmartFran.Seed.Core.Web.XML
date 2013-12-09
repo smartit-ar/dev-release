@@ -17,5 +17,13 @@
             The filter context.
             </param>
         </member>
+        <member name="M:SmartFran.Seed.Diagnostics.ThrowJsonException.Logg(System.Exception)">
+            <summary>
+            The logg.
+            </summary>
+            <param name="ex">
+            The ex.
+            </param>
+        </member>
     </members>
 </doc>
