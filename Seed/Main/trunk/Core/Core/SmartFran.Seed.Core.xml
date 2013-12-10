@@ -837,7 +837,7 @@
             The create logger.
             </summary>
             <returns>
-            The SmartFran.Seed.Logging.ILogger.
+            The <see cref="T:SmartFran.Seed.Logging.ILogger"/>.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.Logging.LoggerFactory.CreateLogger(System.String)">
