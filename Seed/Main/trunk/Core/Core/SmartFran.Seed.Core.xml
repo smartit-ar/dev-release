@@ -795,14 +795,6 @@
             Base contract for adapter factory
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Logging.ILoggerProvider.Create">
-            <summary>
-            Create a type adater
-            </summary>
-            <returns>
-            The created ILogger
-            </returns>
-        </member>
         <member name="M:SmartFran.Seed.Logging.ILoggerProvider.Create(System.String)">
             <summary>
             Create a type adater
@@ -824,6 +816,11 @@
             Logging factory
             </summary>
         </member>
+        <member name="F:SmartFran.Seed.Logging.LoggerFactory.defaultLoggerName">
+            <summary>
+            The default logger name.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.Logging.LoggerFactory.SetProvider(SmartFran.Seed.Logging.ILoggerProvider)">
             <summary>
             Set the  log factory to use
@@ -831,14 +828,6 @@
             <param name="loggerProvider">
             The logger Provider.
             </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.LoggerFactory.CreateLogger">
-            <summary>
-            The create logger.
-            </summary>
-            <returns>
-            The <see cref="T:SmartFran.Seed.Logging.ILogger"/>.
-            </returns>
         </member>
         <member name="M:SmartFran.Seed.Logging.LoggerFactory.CreateLogger(System.String)">
             <summary>
@@ -850,6 +839,11 @@
             <returns>
             The SmartFran.Seed.Logging.ILogger.
             </returns>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LoggerFactory.DefaultLoggerName">
+            <summary>
+            Gets or sets the default logger name.
+            </summary>
         </member>
         <member name="T:SmartFran.Seed.Helper.MemberHelper">
             <summary>
