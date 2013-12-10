@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.Extend.Logging.TraceSource</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger">
+            <summary>
+            Implementation of contract ILogger
+            using System.Diagnostics API.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.source">
+            <summary>
+            Trace source.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger"/> class. 
+            </summary>
+            <param name="nameSource">
+            The name Source.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.LogInfo(System.String,System.Object[])">
+            <summary>
+            Log info.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.LogWarning(System.String,System.Object[])">
+            <summary>
+            Log warning.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.LogError(System.String,System.Object[])">
+            <summary>
+            Log error message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.LogError(System.String,System.Exception,System.Object[])">
+            <summary>
+            Log error message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="exception">
+            The exception.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.LogError(System.Exception)">
+            <summary>
+            Error message.
+            </summary>
+            <param name="exception">
+            The exception.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Debug(System.String,System.Object[])">
+            <summary>
+            Debug message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Debug(System.String,System.Exception,System.Object[])">
+            <summary>
+            Debug message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="exception">
+            The exception.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Debug(System.Exception)">
+            <summary>
+            Debug message.
+            </summary>
+            <param name="exception">
+            The exception.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Debug(System.Object)">
+            <summary>
+            Debug message.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Fatal(System.String,System.Object[])">
+            <summary>
+            Fatal message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Fatal(System.String,System.Exception,System.Object[])">
+            <summary>
+            Fatal message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="exception">
+            The exception.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Fatal(System.Exception)">
+            <summary>
+            Fatal message.
+            </summary>
+            <param name="exception">
+            The exception.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.TraceInternal(System.Diagnostics.TraceEventType,System.String)">
+            <summary>
+            Trace internal message in configured listeners
+            </summary>
+            <param name="eventType">Event type to trace</param>
+            <param name="message">Message of event</param>
+        </member>
+        <member name="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider">
+            <summary>
+            Logger provider implementation
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider.DefaultLoggerName">
+            <summary>
+            The default logger name.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider.Create">
+            <summary>
+            The create.
+            </summary>
+            <returns>
+            The SmartFran.Seed.Logging.ILogger.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider.Create(System.String)">
+            <summary>
+            The create.
+            </summary>
+            <param name="loggerName">
+            The logger Name.
+            </param>
+            <returns>
+            The SmartFran.Seed.Logging.ILogger.
+            </returns>
+            <exception cref="T:System.Exception">
+            SourceName is null
+            </exception>
+        </member>
+    </members>
+</doc>
