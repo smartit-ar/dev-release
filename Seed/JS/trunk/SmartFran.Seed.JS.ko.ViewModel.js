@@ -76,7 +76,7 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
               self.catchException({ Message: result.responseText }, params.error);
             }
           } else {
-            self.catchException({ Message: 'Se presentó una falla en la ejecución del sistema. Reintente y si el problema persiste comuníquelo al soporte del sistema.' }, params.error);
+            self.catchException({ Message: 'Se presentó una condición de falla. Por favor, rentente y si se repite el inconveniente comuníquelo al soporte técnico del sistema.' }, params.error);
           }
         }
         self.loadingCall(false);
