@@ -707,28 +707,37 @@
             </remarks>
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Logging.ILogger.Info(System.String)">
+        <member name="M:SmartFran.Seed.Logging.ILogger.Info(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             Log message information 
             </summary>
             <param name="message">
             The information message to write
             </param>
+            <param name="data">
+            The data.
+            </param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.ILogger.Warning(System.String)">
+        <member name="M:SmartFran.Seed.Logging.ILogger.Warning(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             Log warning message
             </summary>
             <param name="message">
             The warning message to write
             </param>
+            <param name="data">
+            The data.
+            </param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.ILogger.Error(System.String)">
+        <member name="M:SmartFran.Seed.Logging.ILogger.Error(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             Log error message
             </summary>
             <param name="message">
             The error message to write
+            </param>
+            <param name="data">
+            The data.
             </param>
         </member>
         <member name="T:SmartFran.Seed.Logging.ILoggerProvider">

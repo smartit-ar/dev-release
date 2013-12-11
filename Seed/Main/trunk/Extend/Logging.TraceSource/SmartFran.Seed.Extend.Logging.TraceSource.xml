@@ -23,36 +23,66 @@
             The name Source.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Info(System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Info(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             Log info.
             </summary>
             <param name="message">
             The message.
             </param>
+            <param name="data">
+            The data.
+            </param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Warning(System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Warning(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             Log warning.
             </summary>
             <param name="message">
             The message.
             </param>
+            <param name="data">
+            The data.
+            </param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Error(System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Error(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             Log error message.
             </summary>
             <param name="message">
             The message.
             </param>
+            <param name="data">
+            The data.
+            </param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.TraceInternal(System.Diagnostics.TraceEventType,System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.ComposeMessage(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The compose message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.TraceInternal(System.Diagnostics.TraceEventType,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             Trace internal message in configured listeners
             </summary>
-            <param name="eventType">Event type to trace</param>
-            <param name="message">Message of event</param>
+            <param name="eventType">
+            Event type to trace
+            </param>
+            <param name="message">
+            Message of event
+            </param>
+            <param name="data">
+            The data.
+            </param>
         </member>
         <member name="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider">
             <summary>
