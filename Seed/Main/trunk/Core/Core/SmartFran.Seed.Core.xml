@@ -740,6 +740,28 @@
             The data.
             </param>
         </member>
+        <member name="M:SmartFran.Seed.Logging.ILogger.Critical(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The critical.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.ILogger.Verbose(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The verbose.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
         <member name="T:SmartFran.Seed.Logging.ILoggerProvider">
             <summary>
             Base contract for adapter factory
