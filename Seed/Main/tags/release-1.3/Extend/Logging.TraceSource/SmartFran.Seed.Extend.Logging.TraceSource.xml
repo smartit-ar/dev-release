@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.Extend.Logging.TraceSource</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.Logging.TraceSource.CircularTraceListener">
+            <summary>
+            The circular trace listener.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.FileQuotaAttribute">
+            <summary>
+            The file quota attribute.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.DefaultMaxQuota">
+            <summary>
+            The default max quota.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.DefaultTraceFile">
+            <summary>
+            The default trace file.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.stream">
+            <summary>
+            The m_stream.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.maxQuotaInitialized">
+            <summary>
+            The max quota initialized.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.CircularTraceListener"/> class.
+            </summary>
+            <param name="file">
+            The file.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.CircularTraceListener"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)">
+            <summary>
+            The trace data.
+            </summary>
+            <param name="eventCache">
+            The event cache.
+            </param>
+            <param name="source">
+            The source.
+            </param>
+            <param name="eventType">
+            The event type.
+            </param>
+            <param name="id">
+            The id.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32)">
+            <summary>
+            The trace event.
+            </summary>
+            <param name="eventCache">
+            The event cache.
+            </param>
+            <param name="source">
+            The source.
+            </param>
+            <param name="eventType">
+            The event type.
+            </param>
+            <param name="id">
+            The id.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])">
+            <summary>
+            The trace data.
+            </summary>
+            <param name="eventCache">
+            The event cache.
+            </param>
+            <param name="source">
+            The source.
+            </param>
+            <param name="eventType">
+            The event type.
+            </param>
+            <param name="id">
+            The id.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])">
+            <summary>
+            The trace event.
+            </summary>
+            <param name="eventCache">
+            The event cache.
+            </param>
+            <param name="source">
+            The source.
+            </param>
+            <param name="eventType">
+            The event type.
+            </param>
+            <param name="id">
+            The id.
+            </param>
+            <param name="format">
+            The format.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)">
+            <summary>
+            The trace event.
+            </summary>
+            <param name="eventCache">
+            The event cache.
+            </param>
+            <param name="source">
+            The source.
+            </param>
+            <param name="eventType">
+            The event type.
+            </param>
+            <param name="id">
+            The id.
+            </param>
+            <param name="message">
+            The message.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceTransfer(System.Diagnostics.TraceEventCache,System.String,System.Int32,System.String,System.Guid)">
+            <summary>
+            The trace transfer.
+            </summary>
+            <param name="eventCache">
+            The event cache.
+            </param>
+            <param name="source">
+            The source.
+            </param>
+            <param name="id">
+            The id.
+            </param>
+            <param name="message">
+            The message.
+            </param>
+            <param name="relatedActivityId">
+            The related activity id.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.GetSupportedAttributes">
+            <summary>
+            The get supported attributes.
+            </summary>
+            <returns>
+            The supported attributes.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.DetermineOverQuota">
+            <summary>
+            The determine over quota.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.MaxQuotaSize">
+            <summary>
+            Gets the max quota size.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream">
+            <summary>
+            The circular stream.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.fileStream">
+            <summary>
+            The file stream.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.filePath">
+            <summary>
+            The file path.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.dataWritten">
+            <summary>
+            The data written.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.currentFile">
+            <summary>
+            The current file.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream"/> class.
+            </summary>
+            <param name="fileName">
+            The file name.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Flush">
+            <summary>
+            The flush.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            The seek.
+            </summary>
+            <param name="offset">
+            The offset.
+            </param>
+            <param name="origin">
+            The origin.
+            </param>
+            <returns>
+            The <see cref="T:System.Int64"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.SetLength(System.Int64)">
+            <summary>
+            The set length.
+            </summary>
+            <param name="value">
+            The value.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.SwitchFiles">
+            <summary>
+            The switch files.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            The write.
+            </summary>
+            <param name="buffer">
+            The buffer.
+            </param>
+            <param name="offset">
+            The offset.
+            </param>
+            <param name="count">
+            The count.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            The read.
+            </summary>
+            <param name="buffer">
+            The buffer.
+            </param>
+            <param name="offset">
+            The offset.
+            </param>
+            <param name="count">
+            The count.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Close">
+            <summary>
+            The close.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.MaxQuotaSize">
+            <summary>
+            Gets or sets the max quota size.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.CanRead">
+            <summary>
+            Gets a value indicating whether can read.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.CanSeek">
+            <summary>
+            Gets a value indicating whether can seek.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Length">
+            <summary>
+            Gets the length.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Position">
+            <summary>
+            Gets or sets the position.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.CanWrite">
+            <summary>
+            Gets a value indicating whether can write.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.IsOverQuota">
+            <summary>
+            Gets a value indicating whether is over quota.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger">
+            <summary>
+            Implementation of contract ILogger
+            using System.Diagnostics API.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.source">
+            <summary>
+            Trace source.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger"/> class. 
+            </summary>
+            <param name="nameSource">
+            The name Source.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Info(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Log info.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Warning(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Log warning.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Error(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Log error message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Critical(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The critical.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Verbose(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The verbose.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.ComposeMessage(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The compose message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.TraceInternal(System.Diagnostics.TraceEventType,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Trace internal message in configured listeners
+            </summary>
+            <param name="eventType">
+            Event type to trace
+            </param>
+            <param name="message">
+            Message of event
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider">
+            <summary>
+            Logger provider implementation
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider.Create(System.String)">
+            <summary>
+            The create.
+            </summary>
+            <param name="loggerName">
+            The logger Name.
+            </param>
+            <returns>
+            The SmartFran.Seed.Logging.ILogger.
+            </returns>
+            <exception cref="T:System.Exception">
+            SourceName is null
+            </exception>
+        </member>
+    </members>
+</doc>
