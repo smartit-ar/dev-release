@@ -3,8 +3,28 @@
     ageToCertainDate: function (birthDate, certainDate) {
       var intCertainDate = Seed.Utility.Date.jsonToDateTime(certainDate);
       var intBirthDate = Seed.Utility.Date.jsonToDateTime(birthDate);
-      var dif = (intCertainDate - intBirthDate);
-      var age = Math.floor(dif / 31557600000);
+
+      //var age = Math.abs(Math.floor((intCertainDate - intBirthDate) / 31557600000));
+      var difAnio = intCertainDate.getFullYear() - intBirthDate.getFullYear();
+      var age = -1; // Error que representa edad negativa. Fecha Nacim posterior a fecha de referencia p/calculo edad
+      if (difAnio == 0) {
+        age = intCertainDate.getMonth() > intBirthDate.getMonth()
+                ? 0                                                       // age = 0 ; Edad = meses o días (bebé)
+                : intCertainDate.getMonth() == intBirthDate.getMonth()
+                    ? intCertainDate.getDate() >= intBirthDate.getDate()
+                        ? 0
+                        : age
+                    : age;
+      }
+      if (difAnio > 0) {
+        age = intCertainDate.getMonth() > intBirthDate.getMonth()
+                ? difAnio
+                : intCertainDate.getMonth() < intBirthDate.getMonth()
+                    ? difAnio - 1
+                    : intCertainDate.getDate() >= intBirthDate.getDate()
+                        ? difAnio
+                        : difAnio - 1;
+      } 
       return age;
     },
     writeSpLargeDate: function (date) {
