@@ -4,398 +4,74 @@
         <name>SmartFran.Seed.Extend.Logging.TraceSource</name>
     </assembly>
     <members>
-        <member name="T:SmartFran.Seed.Logging.TraceSource.CircularTraceListener">
-            <summary>
-            The circular trace listener.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.FileQuotaAttribute">
-            <summary>
-            The file quota attribute.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.DefaultMaxQuota">
-            <summary>
-            The default max quota.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.DefaultTraceFile">
-            <summary>
-            The default trace file.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.stream">
-            <summary>
-            The m_stream.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.maxQuotaInitialized">
-            <summary>
-            The max quota initialized.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.CircularTraceListener"/> class.
-            </summary>
-            <param name="file">
-            The file.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.CircularTraceListener"/> class.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)">
-            <summary>
-            The trace data.
-            </summary>
-            <param name="eventCache">
-            The event cache.
-            </param>
-            <param name="source">
-            The source.
-            </param>
-            <param name="eventType">
-            The event type.
-            </param>
-            <param name="id">
-            The id.
-            </param>
-            <param name="data">
-            The data.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32)">
-            <summary>
-            The trace event.
-            </summary>
-            <param name="eventCache">
-            The event cache.
-            </param>
-            <param name="source">
-            The source.
-            </param>
-            <param name="eventType">
-            The event type.
-            </param>
-            <param name="id">
-            The id.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])">
-            <summary>
-            The trace data.
-            </summary>
-            <param name="eventCache">
-            The event cache.
-            </param>
-            <param name="source">
-            The source.
-            </param>
-            <param name="eventType">
-            The event type.
-            </param>
-            <param name="id">
-            The id.
-            </param>
-            <param name="data">
-            The data.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])">
-            <summary>
-            The trace event.
-            </summary>
-            <param name="eventCache">
-            The event cache.
-            </param>
-            <param name="source">
-            The source.
-            </param>
-            <param name="eventType">
-            The event type.
-            </param>
-            <param name="id">
-            The id.
-            </param>
-            <param name="format">
-            The format.
-            </param>
-            <param name="args">
-            The args.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)">
-            <summary>
-            The trace event.
-            </summary>
-            <param name="eventCache">
-            The event cache.
-            </param>
-            <param name="source">
-            The source.
-            </param>
-            <param name="eventType">
-            The event type.
-            </param>
-            <param name="id">
-            The id.
-            </param>
-            <param name="message">
-            The message.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.TraceTransfer(System.Diagnostics.TraceEventCache,System.String,System.Int32,System.String,System.Guid)">
-            <summary>
-            The trace transfer.
-            </summary>
-            <param name="eventCache">
-            The event cache.
-            </param>
-            <param name="source">
-            The source.
-            </param>
-            <param name="id">
-            The id.
-            </param>
-            <param name="message">
-            The message.
-            </param>
-            <param name="relatedActivityId">
-            The related activity id.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.GetSupportedAttributes">
-            <summary>
-            The get supported attributes.
-            </summary>
-            <returns>
-            The supported attributes.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.DetermineOverQuota">
-            <summary>
-            The determine over quota.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.MaxQuotaSize">
-            <summary>
-            Gets the max quota size.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream">
-            <summary>
-            The circular stream.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.fileStream">
-            <summary>
-            The file stream.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.filePath">
-            <summary>
-            The file path.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.dataWritten">
-            <summary>
-            The data written.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.currentFile">
-            <summary>
-            The current file.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream"/> class.
-            </summary>
-            <param name="fileName">
-            The file name.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Flush">
-            <summary>
-            The flush.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Seek(System.Int64,System.IO.SeekOrigin)">
-            <summary>
-            The seek.
-            </summary>
-            <param name="offset">
-            The offset.
-            </param>
-            <param name="origin">
-            The origin.
-            </param>
-            <returns>
-            The <see cref="T:System.Int64"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.SetLength(System.Int64)">
-            <summary>
-            The set length.
-            </summary>
-            <param name="value">
-            The value.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.SwitchFiles">
-            <summary>
-            The switch files.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Write(System.Byte[],System.Int32,System.Int32)">
-            <summary>
-            The write.
-            </summary>
-            <param name="buffer">
-            The buffer.
-            </param>
-            <param name="offset">
-            The offset.
-            </param>
-            <param name="count">
-            The count.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Read(System.Byte[],System.Int32,System.Int32)">
-            <summary>
-            The read.
-            </summary>
-            <param name="buffer">
-            The buffer.
-            </param>
-            <param name="offset">
-            The offset.
-            </param>
-            <param name="count">
-            The count.
-            </param>
-            <returns>
-            The <see cref="T:System.Int32"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Close">
-            <summary>
-            The close.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.MaxQuotaSize">
-            <summary>
-            Gets or sets the max quota size.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.CanRead">
-            <summary>
-            Gets a value indicating whether can read.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.CanSeek">
-            <summary>
-            Gets a value indicating whether can seek.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Length">
-            <summary>
-            Gets the length.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.Position">
-            <summary>
-            Gets or sets the position.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.CanWrite">
-            <summary>
-            Gets a value indicating whether can write.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.CircularTraceListener.CircularStream.IsOverQuota">
-            <summary>
-            Gets a value indicating whether is over quota.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener">
+        <member name="T:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener">
             <summary>
             An extended XmlWriterTraceListener that starts a new file after a configured trace file size. Trace files will be numbered with a four character number suffix.
-            <example>
-                <code>
-                    <sharedListeners>
-                        <add type="MarcW.Tools.Diagnostics.RollingXmlWriterTraceListener, MarcW.Tools" name="System.ServiceModel.XmlTrace.Listener" traceOutputOptions="None" initializeData="C:\Logs\MyTraceFileName.svclog" MaxTraceFileSize="1048576" />
-                    </sharedListeners>
-                </code>
-            </example>
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.LogFileNumberCaptureName">
+        <member name="F:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.LogFileNumberCaptureName">
             <summary>
             This is the named capture group to find the numeric suffix of a trace file
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.logfileSuffixExpression">
+        <member name="F:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.logfileSuffixExpression">
             <summary>
             This expression is used to find the number of a trace file in its file name by searching for an underscore (_), a
-            numeric expression with any repetitions and a dot (that marks the beginning of the file extension). The named 
+            numeric expression with any repetitions. The named 
             capture group named by the constant &quot;LogFileNumberCaptureName&quot; will contain the number.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.basicTraceFileName">
+        <member name="F:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.basicTraceFileName">
             <summary>
             The basic trace file name as it is configured in configuration file's system.diagnostics section. However, this
             class will append a numeric suffix to the file name (respecting the original file extension).
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.attributesLoaded">
+        <member name="F:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.attributesLoaded">
             <summary>
             This field will be used to remember whether or not we have loaded the custom attributes from the config yet. The 
             initial value is, of course, false.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.currentFileSuffixNumber">
+        <member name="F:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.currentFileSuffixNumber">
             <summary>
             The current numeric suffix for trace file names
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.maxTraceFileSize">
+        <member name="F:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.maxTraceFileSize">
             <summary>
             The size in bytes of a trace file before a new file is started. The default value is 128 Mbytes
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.#ctor(System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.#ctor(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener"/> class by specifying the trace file
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener"/> class by specifying the trace file
             name.
             </summary>
             <param name="filename">The trace file name.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.#ctor(System.String,System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.#ctor(System.String,System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener"/> class by specifying the trace file
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener"/> class by specifying the trace file
             name and the name of the new instance.
             </summary>
             <param name="filename">The trace file name.</param>
             <param name="name">The name of the new instance.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.Fail(System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.Fail(System.String)">
             <summary>
             Emits an error message to the listener.
             </summary>
             <param name="message">A message to emit.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.Fail(System.String,System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.Fail(System.String,System.String)">
             <summary>
             Emits an error message and a detailed message to the listener.
             </summary>
             <param name="message">The error message to write.</param>
             <param name="detailMessage">The detailed error message to append to the error message.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)">
             <summary>
             Writes trace information, a data object, and event information to the file or stream.
             </summary>
@@ -405,7 +81,7 @@
             <param name="id">A numeric identifier for the event.</param>
             <param name="data">A data object to emit.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])">
             <summary>
             Writes trace information, data objects, and event information to the file or stream.
             </summary>
@@ -415,7 +91,7 @@
             <param name="id">A numeric identifier for the event.</param>
             <param name="data">An array of data objects to emit.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32)">
             <summary>
             Writes trace and event information to the listener specific output.
             </summary>
@@ -428,7 +104,7 @@
                 <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode"/>
             </PermissionSet>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)">
             <summary>
             Writes trace information, a message, and event information to the file or stream.
             </summary>
@@ -438,7 +114,7 @@
             <param name="id">A numeric identifier for the event.</param>
             <param name="message">The message to write.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])">
             <summary>
             Writes trace information, a formatted message, and event information to the file or stream.
             </summary>
@@ -449,7 +125,7 @@
             <param name="format">A format string that contains zero or more format items that correspond to objects in the <paramref name="args"/> array.</param>
             <param name="args">An object array containing zero or more objects to format.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.TraceTransfer(System.Diagnostics.TraceEventCache,System.String,System.Int32,System.String,System.Guid)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.TraceTransfer(System.Diagnostics.TraceEventCache,System.String,System.Int32,System.String,System.Guid)">
             <summary>
             Writes trace information including the identity of a related activity, a message, and event information to the file or stream.
             </summary>
@@ -459,59 +135,59 @@
             <param name="message">A trace message to write.</param>
             <param name="relatedActivityId">A <see cref="T:System.Guid"/> structure that identifies a related activity.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.Write(System.Object)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.Write(System.Object)">
             <summary>
             Writes the value of the object's <see cref="M:System.Object.ToString"/> method to the listener.
             </summary>
             <param name="o">An <see cref="T:System.Object"/> whose fully qualified class name you want to write.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.Write(System.Object,System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.Write(System.Object,System.String)">
             <summary>
             Writes a category name and the value of the object's <see cref="M:System.Object.ToString"/> method to the listener.
             </summary>
             <param name="o">An <see cref="T:System.Object"/> whose fully qualified class name you want to write.</param>
             <param name="category">A category name used to organize the output.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.Write(System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.Write(System.String)">
             <summary>
             Writes a verbatim message without any additional context information to the file or stream.
             </summary>
             <param name="message">The message to write.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.Write(System.String,System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.Write(System.String,System.String)">
             <summary>
             Writes a category name and a message to the listener.
             </summary>
             <param name="message">A message to write.</param>
             <param name="category">A category name used to organize the output.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.WriteLine(System.Object)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.WriteLine(System.Object)">
             <summary>
             Writes the value of the object's <see cref="M:System.Object.ToString"/> method to the listener.
             </summary>
             <param name="o">An <see cref="T:System.Object"/> whose fully qualified class name you want to write.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.WriteLine(System.Object,System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.WriteLine(System.Object,System.String)">
             <summary>
             Writes a category name and the value of the object's <see cref="M:System.Object.ToString"/> method to the listener.
             </summary>
             <param name="o">An <see cref="T:System.Object"/> whose fully qualified class name you want to write.</param>
             <param name="category">A category name used to organize the output.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.WriteLine(System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.WriteLine(System.String)">
             <summary>
             Writes a verbatim message without any additional context information followed by the current line terminator to the file or stream.
             </summary>
             <param name="message">The message to write.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.WriteLine(System.String,System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.WriteLine(System.String,System.String)">
             <summary>
             Writes a category name and a message to the listener, followed by a line terminator.
             </summary>
             <param name="message">A message to write.</param>
             <param name="category">A category name used to organize the output.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.GetSupportedAttributes">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.GetSupportedAttributes">
             <summary>
             Gets the custom attributes supported by the trace listener.
             </summary>
@@ -519,19 +195,19 @@
             A string array naming the custom attributes supported by the trace listener, or null if there are no custom attributes.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.StartNewTraceFile">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.StartNewTraceFile">
             <summary>
             Causes the writer to start a new trace file with an increased number in the file names suffix
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.GetTraceFileNumber">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.GetTraceFileNumber">
             <summary>
             Gets the trace file number by checking whether similar trace files are already existant. The method will find the latest trace 
             file and return its number.
             </summary>
             <returns>The number of the latest trace file</returns>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.LoadAttributes">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.LoadAttributes">
             <summary>
             Reads the custom attributes' values from the configuration file. We call this method the first time the attributes
             are accessed.
@@ -539,19 +215,19 @@
             from the configuration file.</remarks>
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.CurrentTraceFileName">
+        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.CurrentTraceFileName">
             <summary>
             Gets the name of the current trace file. It is combined from the configured trace file plus an increasing number
             </summary>
             <value>The name of the current trace file.</value>
         </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.MaxTraceFileSize">
+        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.MaxTraceFileSize">
             <summary>
             Gets or sets the maximum size of the trace file.
             </summary>
             <value>The maximum size of the trace file.</value>
         </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.RollingXmlWriterTraceListener.IsRollingConditionReached">
+        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.IsRollingConditionReached">
             <summary>
             Gets a value indicating whether the condition to roll over the trace file is reached.
             </summary>
