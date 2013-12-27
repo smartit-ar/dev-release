@@ -704,12 +704,23 @@
             Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogProcess"/> class.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Logging.LogProcess.#ctor(System.String)">
+        <member name="M:SmartFran.Seed.Logging.LogProcess.#ctor(System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogProcess"/> class.
+            </summary>
+            <param name="activityId">
+            The activity Id.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LogProcess.#ctor(System.String,System.Nullable{System.Guid})">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogProcess"/> class.
             </summary>
             <param name="message">
             The message.
+            </param>
+            <param name="activityId">
+            The activity Id.
             </param>
         </member>
         <member name="P:SmartFran.Seed.Logging.LogProcess.BeginOn">
@@ -725,6 +736,11 @@
         <member name="P:SmartFran.Seed.Logging.LogProcess.Message">
             <summary>
             Gets or sets the message.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogProcess.ActivityId">
+            <summary>
+            Gets or sets the activity id.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.Logging.ILogger">
