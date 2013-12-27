@@ -297,6 +297,25 @@
             The <see cref="T:SmartFran.Seed.Logging.LogProcess"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.BeginActivity(System.String)">
+            <summary>
+            The begin activity.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <returns>
+            The <see cref="T:System.Guid"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.EndActivity(SmartFran.Seed.Logging.LogActivity)">
+            <summary>
+            The end activity.
+            </summary>
+            <param name="activity">
+            The activity.
+            </param>
+        </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.EndProcess(SmartFran.Seed.Logging.LogProcess,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             The end process.

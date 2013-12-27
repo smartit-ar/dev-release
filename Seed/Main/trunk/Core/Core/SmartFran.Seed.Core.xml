@@ -694,6 +694,39 @@
             </summary>
             <returns>The created ITypeAdapter</returns>
         </member>
+        <member name="T:SmartFran.Seed.Logging.LogActivity">
+            <summary>
+            The log activity.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LogActivity.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogActivity"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LogActivity.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogActivity"/> class.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogActivity.BeginOn">
+            <summary>
+            Gets or sets the begin on.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogActivity.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogActivity.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.Logging.LogProcess">
             <summary>
             The log activity.
@@ -817,6 +850,25 @@
             </param>
             <param name="data">
             The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.ILogger.BeginActivity(System.String)">
+            <summary>
+            The begin activity.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Logging.LogActivity"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.ILogger.EndActivity(SmartFran.Seed.Logging.LogActivity)">
+            <summary>
+            The end activity.
+            </summary>
+            <param name="activity">
+            The activity.
             </param>
         </member>
         <member name="M:SmartFran.Seed.Logging.ILogger.BeginProcess(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
