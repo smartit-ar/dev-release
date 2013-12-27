@@ -749,8 +749,8 @@
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogProcess"/> class.
             </summary>
-            <param name="message">
-            The message.
+            <param name="name">
+            The name.
             </param>
             <param name="activityId">
             The activity Id.
@@ -766,7 +766,7 @@
             Gets or sets the id.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.Logging.LogProcess.Message">
+        <member name="P:SmartFran.Seed.Logging.LogProcess.Name">
             <summary>
             Gets or sets the message.
             </summary>
