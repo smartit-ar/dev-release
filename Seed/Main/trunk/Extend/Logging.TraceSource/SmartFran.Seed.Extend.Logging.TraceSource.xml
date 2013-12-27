@@ -38,9 +38,9 @@
             The current numeric suffix for trace file names
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.maxTraceFileSize">
+        <member name="F:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.maxTraceFileSizeKb">
             <summary>
-            The size in bytes of a trace file before a new file is started. The default value is 128 Mbytes
+            The size in KBytes of a trace file before a new file is started. The default value is 128 Mbytes
             </summary>
         </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.#ctor(System.String)">
@@ -221,7 +221,7 @@
             </summary>
             <value>The name of the current trace file.</value>
         </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.MaxTraceFileSize">
+        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.MaxTraceFileSizeKb">
             <summary>
             Gets or sets the maximum size of the trace file.
             </summary>
@@ -260,6 +260,31 @@
             </summary>
             <param name="message">
             The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.BeginProcess(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The begin process.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Logging.LogProcess"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.EndProcess(SmartFran.Seed.Logging.LogProcess,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The end process.
+            </summary>
+            <param name="process">
+            The process.
             </param>
             <param name="data">
             The data.

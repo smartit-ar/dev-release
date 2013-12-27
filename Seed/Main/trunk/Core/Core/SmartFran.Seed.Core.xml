@@ -694,6 +694,39 @@
             </summary>
             <returns>The created ITypeAdapter</returns>
         </member>
+        <member name="T:SmartFran.Seed.Logging.LogProcess">
+            <summary>
+            The log activity.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LogProcess.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogProcess"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LogProcess.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogProcess"/> class.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogProcess.BeginOn">
+            <summary>
+            Gets or sets the begin on.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogProcess.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogProcess.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.Logging.ILogger">
             <summary>
             Common contract for trace instrumentation. You 
@@ -757,6 +790,31 @@
             </summary>
             <param name="message">
             The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.ILogger.BeginProcess(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The begin.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Logging.LogProcess"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.ILogger.EndProcess(SmartFran.Seed.Logging.LogProcess,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The end.
+            </summary>
+            <param name="process">
+            The process.
             </param>
             <param name="data">
             The data.
