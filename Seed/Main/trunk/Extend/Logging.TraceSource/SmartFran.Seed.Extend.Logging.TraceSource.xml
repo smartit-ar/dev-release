@@ -241,6 +241,16 @@
             using System.Diagnostics API.
             </summary>
         </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.SyncRoot">
+            <summary>
+            The sync root.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.eventCounter">
+            <summary>
+            The logger.
+            </summary>
+        </member>
         <member name="F:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.source">
             <summary>
             Trace source.
@@ -354,6 +364,14 @@
             </param>
             <returns>
             The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.IncEvent">
+            <summary>
+            The inc event.
+            </summary>
+            <returns>
+            The <see cref="T:System.Int32"/>.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.TraceInternal(System.Diagnostics.TraceEventType,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
