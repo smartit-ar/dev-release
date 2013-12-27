@@ -254,6 +254,14 @@
             The name Source.
             </param>
         </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.GetName">
+            <summary>
+            The get name.
+            </summary>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Info(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             Log info.
@@ -365,6 +373,16 @@
         <member name="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider">
             <summary>
             Logger provider implementation
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider.SyncRoot">
+            <summary>
+            The sync root.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider.logger">
+            <summary>
+            The logger.
             </summary>
         </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLoggerProvider.Create(System.String)">
