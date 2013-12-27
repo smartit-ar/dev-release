@@ -287,33 +287,39 @@
             <summary>
             The begin process.
             </summary>
-            <param name="message">
-            The message.
+            <param name="name">
+            The name.
             </param>
-            <param name="data">
-            The data.
+            <param name="args">
+            The args.
             </param>
             <returns>
             The <see cref="T:SmartFran.Seed.Logging.LogProcess"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.BeginActivity(System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.BeginActivity(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             The begin activity.
             </summary>
             <param name="name">
             The name.
             </param>
+            <param name="args">
+            The args.
+            </param>
             <returns>
             The <see cref="T:System.Guid"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.EndActivity(SmartFran.Seed.Logging.LogActivity)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.EndActivity(SmartFran.Seed.Logging.LogActivity,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             The end activity.
             </summary>
             <param name="activity">
             The activity.
+            </param>
+            <param name="data">
+            The data.
             </param>
         </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.EndProcess(SmartFran.Seed.Logging.LogProcess,System.Collections.Generic.IDictionary{System.String,System.String})">
@@ -401,7 +407,7 @@
             Event type to trace
             </param>
             <param name="message">
-            Message of event
+            name of event
             </param>
             <param name="data">
             The data.
