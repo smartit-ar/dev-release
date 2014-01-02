@@ -152,5 +152,23 @@
       var datediff = Seed.Utility.Date.jsonToDateTime(to) - Seed.Utility.Date.jsonToDateTime(since);
       return Math.ceil(datediff / 86400000) + 1;
     }
+  },
+  
+  Number: {
+    getStringMaskedIntegerNumber: function (number) {
+      
+
+        var stringNumber = '' + number;
+
+        var amount = stringNumber.split("").reverse();
+
+        var output = "";
+        for (var i = 0; i <= amount.length - 1; i++) {
+          output = amount[i] + output;
+          if ((i + 1) % 3 == 0 && (amount.length - 1) !== i) output = '.' + output;
+        }
+        return output;
+      }
+    
   }
 };
