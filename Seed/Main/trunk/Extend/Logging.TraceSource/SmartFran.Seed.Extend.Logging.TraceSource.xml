@@ -38,7 +38,7 @@
             The current numeric suffix for trace file names
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.maxTraceFileSizeKb">
+        <member name="F:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.maxTraceFileSize">
             <summary>
             The size in KBytes of a trace file before a new file is started. The default value is 128 Mbytes
             </summary>
@@ -244,7 +244,7 @@
             </summary>
             <value>The name of the current trace file.</value>
         </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.MaxTraceFileSizeKb">
+        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.MaxTraceFileSize">
             <summary>
             Gets or sets the maximum size of the trace file.
             </summary>
