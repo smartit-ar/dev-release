@@ -195,7 +195,7 @@
             A string array naming the custom attributes supported by the trace listener, or null if there are no custom attributes.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.InitFile(System.String)">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.InitFileInfo(System.String)">
             <summary>
             The init file.
             </summary>
