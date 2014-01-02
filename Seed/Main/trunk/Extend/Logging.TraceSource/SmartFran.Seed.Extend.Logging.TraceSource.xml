@@ -195,9 +195,32 @@
             A string array naming the custom attributes supported by the trace listener, or null if there are no custom attributes.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.InitFile(System.String)">
+            <summary>
+            The init file.
+            </summary>
+            <param name="filename">
+            The filename.
+            </param>
+        </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.StartNewTraceFile">
             <summary>
             Causes the writer to start a new trace file with an increased number in the file names suffix
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.CheckTraceFile">
+            <summary>
+            The reopen file.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.CloseFile">
+            <summary>
+            The close file.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.OpenActualFile">
+            <summary>
+            The open file.
             </summary>
         </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.GetTraceFileNumber">
@@ -234,6 +257,11 @@
             <value>
                 <c>true</c> if the condition to roll over the trace file is reached; otherwise, <c>false</c>.
             </value>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.IsOpenFile">
+            <summary>
+            Gets a value indicating whether is open file.
+            </summary>
         </member>
         <member name="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger">
             <summary>
