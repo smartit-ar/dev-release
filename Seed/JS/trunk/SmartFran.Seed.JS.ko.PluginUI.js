@@ -8,7 +8,7 @@
         $(element).inputmask(mask);
       } else {
         if (typeof observable.assignMask == "function") {
-          ko.utils.registerEventHandler(element, 'focus', function() {
+          ko.utils.registerEventHandler(element, 'focus', function () {
             observable.assignMask($(element));
           });
         }
@@ -56,28 +56,31 @@
   };
 
   ko.bindingHandlers.jqDatePicker = {
-    init: function (element, valueAccessor, allBindingsAccessor) {
+    init: function(element, valueAccessor, allBindingsAccessor) {
+
       function getDateRange() {
         var d = new Date();
         var dateRange = (d.getFullYear() - 100) + ':' + (d.getFullYear() + 10);
         return dateRange;
       }
+
       var options = allBindingsAccessor().datepickerOptions;
       options.monthNames = options.monthNames || ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
       options.monthNamesShort = options.monthNamesShort || ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
       options.dateFormat = options.dateFormat || 'dd/mm/yy';
       options.yearRange = options.yearRange || getDateRange();
+      options.nextFocus = options.nextFocus || element;
 
       $(element)
         .datepicker(options)
-        .bind("change", function () {
+        .bind("change", function() {
           ko.bindingHandlers.jqDatePicker.updateValue(element, valueAccessor, allBindingsAccessor);
         });
-      ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
+      ko.utils.domNodeDisposal.addDisposeCallback(element, function() {
         $(element).datepicker("destroy");
       });
     },
-    update: function (element, valueAccessor) {
+    update: function(element, valueAccessor) {
       var value = ko.utils.unwrapObservable(valueAccessor());
       if (typeof value === "string" && value.indexOf('/Date(') === 0) {
         value = new Date(parseInt(value.replace(/\/Date\((.*?)\)\//gi, "$1")));
@@ -87,10 +90,11 @@
         $(element).datepicker("setDate", value);
       }
     },
-    updateValue: function (element, valueAccessor, allBindingsAccessor) {
+    updateValue: function(element, valueAccessor, allBindingsAccessor) {
       var observable = valueAccessor();
       var dateValue = $(element).datepicker("getDate");
-      $(element.nextElementSibling).focus();
+
+      $(allBindingsAccessor().datepickerOptions.nextFocus).focus();
 
       if (ko.isWriteableObservable(observable)) {
         observable(Seed.Utility.Date.dateTimeToJson(dateValue));
