@@ -1,10 +1,12 @@
 ﻿namespace('SmartFran.Seed.JS').Utility = {
   Date: {
     ageToCertainDate: function (birthDate, certainDate) {
-      var intCertainDate = Seed.Utility.Date.jsonToDateTime(certainDate);
-      var intBirthDate = Seed.Utility.Date.jsonToDateTime(birthDate);
+      if ((birthDate == null || birthDate == 'undefined') || (certainDate == null || certainDate == 'undefined')) {
+        return null;
+      }
 
-      //var age = Math.abs(Math.floor((intCertainDate - intBirthDate) / 31557600000));
+      var intCertainDate = Seed.Utility.Date.jsonToDateTime(certainDate);
+      var intBirthDate = Seed.Utility.Date.jsonToDateTime(birthDate);      
       var difAnio = intCertainDate.getFullYear() - intBirthDate.getFullYear();
       var age = -1; // Error que representa edad negativa. Fecha Nacim posterior a fecha de referencia p/calculo edad
       if (difAnio == 0) {
@@ -64,9 +66,17 @@
       document.write(anio);
     },
     dateTimeToDotNetTicks: function (date) {
+      if (date == null || date == 'undefined') {
+        return null;
+      }
+      
       return (date.getTime() * 10000) + 621355968000000000;
     },
     dateTimeToJson: function (date) {
+      if (date == null || date == 'undefined') {
+        return null;
+      }
+
       if (typeof date == "string" && this.isJsonDateTime(date)) {
         return date;
       }
@@ -76,6 +86,10 @@
       return "/Date(" + date + ")/";
     },
     dateTimeUtcToJson: function (date) {
+      if (date == null || date == 'undefined') {
+        return null;
+      }
+      
       if (typeof date == "string" && this.isJsonDateTime(date)) {
         return date;
       }
@@ -85,18 +99,28 @@
       return "/Date(" + (parseInt(date) + ((new Date()).getTimezoneOffset() * 60000)) + ")/";
     },
     jsonToDateTime: function (date) {
+      if (date == null || date == 'undefined') {
+        return null;
+      }
+      
       if (typeof date != "string") {
         return date;
       }
       return new Date(parseInt(date.substr(6)));
     },
     isJsonDateTime: function (date) {
+      if (date == null || date == 'undefined') {
+        return null;
+      }
+      
       var regJsonDate = new RegExp(/Date\(([^)]+)\)/);
       return regJsonDate.exec(date) != null;
-      ////var regJsonDate = new RegExp(/^\/Date\((\d+)(?:-(\d+))?\)\/$/);
-      ////return regJsonDate.exec(date) != null;
     },
     getDateWithoutTime: function (date) {
+      if (date == null || date == 'undefined') {
+        return null;
+      }
+      
       return new Date(date.getFullYear(), date.getMonth(), date.getDate());
     },
     getNowWithoutTime: function () {
@@ -141,7 +165,11 @@
 
       return new Date(date.getFullYear(), date.getMonth() - 1, getLastDay(date.getMonth(), date.getFullYear()));
     },    
-    totalDaysCalculator: function(since, to) {
+    totalDaysCalculator: function (since, to) {
+      if ((since == null || since == 'undefined') || (to == null || to == 'undefined')) {
+        return null;
+      }
+
       var datediff = Seed.Utility.Date.jsonToDateTime(to) - Seed.Utility.Date.jsonToDateTime(since);
       if (Math.ceil(datediff / 86400000) == 0) {
         return 1;
@@ -149,26 +177,28 @@
       return Math.ceil(datediff / 86400000);
     },
     totalSelectedDaysCalculator: function (since, to) {
+      if ((since == null || since == 'undefined') || (to == null || to == 'undefined')) {
+        return null;
+      }
+      
       var datediff = Seed.Utility.Date.jsonToDateTime(to) - Seed.Utility.Date.jsonToDateTime(since);
       return Math.ceil(datediff / 86400000) + 1;
     }
-  },
-  
+  },  
   Number: {
     getStringMaskedIntegerNumber: function (number) {
-      
-
-        var stringNumber = '' + number;
-
-        var amount = stringNumber.split("").reverse();
-
-        var output = "";
-        for (var i = 0; i <= amount.length - 1; i++) {
-          output = amount[i] + output;
-          if ((i + 1) % 3 == 0 && (amount.length - 1) !== i) output = '.' + output;
-        }
-        return output;
+      if (number == null || number == 'undefined') {
+        return null;
       }
-    
+
+      var stringNumber = '' + number;
+      var amount = stringNumber.split("").reverse();
+      var output = "";
+      for (var i = 0; i <= amount.length - 1; i++) {
+        output = amount[i] + output;
+        if ((i + 1) % 3 == 0 && (amount.length - 1) !== i) output = '.' + output;
+      }
+      return output;
+    }    
   }
 };
