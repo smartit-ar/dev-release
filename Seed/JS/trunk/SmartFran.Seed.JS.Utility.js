@@ -6,7 +6,7 @@
       }
 
       var intCertainDate = Seed.Utility.Date.jsonToDateTime(certainDate);
-      var intBirthDate = Seed.Utility.Date.jsonToDateTime(birthDate);      
+      var intBirthDate = Seed.Utility.Date.jsonToDateTime(birthDate);
       var difAnio = intCertainDate.getFullYear() - intBirthDate.getFullYear();
       var age = -1; // Error que representa edad negativa. Fecha Nacim posterior a fecha de referencia p/calculo edad
       if (difAnio == 0) {
@@ -26,7 +26,7 @@
                     : intCertainDate.getDate() >= intBirthDate.getDate()
                         ? difAnio
                         : difAnio - 1;
-      } 
+      }
       return age;
     },
     writeSpLargeDate: function (date) {
@@ -69,7 +69,7 @@
       if (date == null || date == 'undefined') {
         return null;
       }
-      
+
       return (date.getTime() * 10000) + 621355968000000000;
     },
     dateTimeToJson: function (date) {
@@ -89,7 +89,7 @@
       if (date == null || date == 'undefined') {
         return null;
       }
-      
+
       if (typeof date == "string" && this.isJsonDateTime(date)) {
         return date;
       }
@@ -102,7 +102,7 @@
       if (date == null || date == 'undefined') {
         return null;
       }
-      
+
       if (typeof date != "string") {
         return date;
       }
@@ -112,7 +112,7 @@
       if (date == null || date == 'undefined') {
         return null;
       }
-      
+
       var regJsonDate = new RegExp(/Date\(([^)]+)\)/);
       return regJsonDate.exec(date) != null;
     },
@@ -120,7 +120,7 @@
       if (date == null || date == 'undefined') {
         return null;
       }
-      
+
       return new Date(date.getFullYear(), date.getMonth(), date.getDate());
     },
     getNowWithoutTime: function () {
@@ -132,7 +132,7 @@
     },
     getDateLastDayOfCurrentMonthWithoutTime: function () {
       var date = new Date();
-      
+
       function getLastDay(month, year) {
         month = parseInt(month);
         year = parseInt(year);
@@ -153,7 +153,7 @@
     getDateLastDayOfLastMonthWithoutTime: function () {
       var date = new Date();
 
-      function getLastDay(month, year) {        
+      function getLastDay(month, year) {
         year = month == 0 ? parseInt(year) - 1 : parseInt(year);
         month = parseInt(month) - 1;
         switch (month) {
@@ -164,7 +164,7 @@
       };
 
       return new Date(date.getFullYear(), date.getMonth() - 1, getLastDay(date.getMonth(), date.getFullYear()));
-    },    
+    },
     totalDaysCalculator: function (since, to) {
       if ((since == null || since == 'undefined') || (to == null || to == 'undefined')) {
         return null;
@@ -180,11 +180,11 @@
       if ((since == null || since == 'undefined') || (to == null || to == 'undefined')) {
         return null;
       }
-      
+
       var datediff = Seed.Utility.Date.jsonToDateTime(to) - Seed.Utility.Date.jsonToDateTime(since);
       return Math.ceil(datediff / 86400000) + 1;
     }
-  },  
+  },
   Number: {
     getStringMaskedIntegerNumber: function (number) {
       if (number == null || number == 'undefined') {
@@ -199,6 +199,25 @@
         if ((i + 1) % 3 == 0 && (amount.length - 1) !== i) output = '.' + output;
       }
       return output;
-    }    
+    }
+  },
+  Html: {
+    encodeTilde: function (str) {
+      str = str.replace(/á/g, '&aacute;');
+      str = str.replace(/é/g, '&eacute;');
+      str = str.replace(/í/g, '&iacute;');
+      str = str.replace(/ó/g, '&oacute;');
+      str = str.replace(/ú/g, '&uacute;');
+
+      str = str.replace(/Á/g, '&Aacute;');
+      str = str.replace(/É/g, '&Eacute;');
+      str = str.replace(/Í/g, '&Iacute;');
+      str = str.replace(/Ó/g, '&Oacute;');
+      str = str.replace(/Ú/g, '&Uacute;');
+
+      str = str.replace(/ñ/g, '&ntilde;');
+      str = str.replace(/Ñ/g, '&Ntilde;');
+      return str;
+    }
   }
 };
