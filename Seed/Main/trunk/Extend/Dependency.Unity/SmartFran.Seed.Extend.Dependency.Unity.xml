@@ -4,6 +4,65 @@
         <name>SmartFran.Seed.Extend.Dependency.Unity</name>
     </assembly>
     <members>
+        <member name="T:SmartFran.Seed.Dependency.Unity.InstanceItems">
+            <summary>
+            The instance items.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Dependency.Unity.InstanceItems.items">
+            <summary>
+            The items.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.InstanceItems.Find(System.Object)">
+            <summary>
+            The find.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.InstanceItems.Set(System.Object,System.Object)">
+            <summary>
+            The set.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.InstanceItems.Remove(System.Object)">
+            <summary>
+            The remove.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.InstanceItems.CleanUp(System.Object,System.EventArgs)">
+            <summary>
+            The clean up.
+            </summary>
+            <param name="sender">
+            The sender.
+            </param>
+            <param name="e">
+            The e.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.InstanceItems.Hook(System.ServiceModel.InstanceContext)">
+            <summary>
+            The hook.
+            </summary>
+            <param name="instanceContext">
+            The instance context.
+            </param>
+        </member>
         <member name="T:SmartFran.Seed.Dependency.Unity.UnityDiContainer">
             <summary>
             Dependency mapper based on Unity framework.
@@ -190,6 +249,89 @@
             <returns>
             The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
             </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension">
+            <summary>
+            The wcf instance extension.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension.items">
+            <summary>
+            The items.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension.GetExtensionFrom(System.ServiceModel.InstanceContext)">
+            <summary>
+            The get extension from.
+            </summary>
+            <param name="instanceContext">
+            The instance context.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension.Attach(System.ServiceModel.InstanceContext)">
+            <summary>
+            The attach.
+            </summary>
+            <param name="owner">
+            The owner.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension.Detach(System.ServiceModel.InstanceContext)">
+            <summary>
+            The detach.
+            </summary>
+            <param name="owner">
+            The owner.
+            </param>
+        </member>
+        <member name="P:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension.Current">
+            <summary>
+            Gets the current.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension.Items">
+            <summary>
+            Gets the items.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.Dependency.Unity.WcfInstanceLifeTimeManager">
+            <summary>
+            The wcf instance life time manager.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Dependency.Unity.WcfInstanceLifeTimeManager.key">
+            <summary>
+            The key.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.WcfInstanceLifeTimeManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.WcfInstanceLifeTimeManager"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.WcfInstanceLifeTimeManager.GetValue">
+            <summary>
+            The get value.
+            </summary>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.WcfInstanceLifeTimeManager.SetValue(System.Object)">
+            <summary>
+            The set value.
+            </summary>
+            <param name="newValue">
+            The new value.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.WcfInstanceLifeTimeManager.RemoveValue">
+            <summary>
+            The remove value.
+            </summary>
         </member>
     </members>
 </doc>
