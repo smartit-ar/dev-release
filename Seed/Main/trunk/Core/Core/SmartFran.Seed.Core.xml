@@ -380,6 +380,28 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.Encode(System.String)">
+            <summary>
+            The encode.
+            </summary>
+            <param name="text">
+            The text.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.Decode(System.String)">
+            <summary>
+            The decode.
+            </summary>
+            <param name="encoded">
+            The encoded.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.Cryptography.HashGenerator.Generate(System.String,System.String)">
             <summary>
             The get merged user name and password.
@@ -389,6 +411,28 @@
             </param>
             <param name="secondKey">
             The second key.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.GenerateEncoded(System.String)">
+            <summary>
+            The generate encoded.
+            </summary>
+            <param name="text">
+            The text.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.GenerateDecoded(System.String)">
+            <summary>
+            The generate decoded.
+            </summary>
+            <param name="encoded">
+            The encoded.
             </param>
             <returns>
             The <see cref="T:System.String"/>.
@@ -437,6 +481,28 @@
             </param>
             <param name="secondKey">
             The second Key.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.GenerateEncoded(System.String)">
+            <summary>
+            The generate encoded.
+            </summary>
+            <param name="text">
+            The text.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.GenerateDecoded(System.String)">
+            <summary>
+            The generate decoded.
+            </summary>
+            <param name="encoded">
+            The encoded.
             </param>
             <returns>
             The <see cref="T:System.String"/>.
@@ -501,6 +567,34 @@
             </param>
             <returns>
             The id.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.Encode(System.String,System.Int32)">
+            <summary>
+            The encode.
+            </summary>
+            <param name="text">
+            The text.
+            </param>
+            <param name="hashId">
+            The hash id.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.Decode(System.String,System.Int32)">
+            <summary>
+            The decode.
+            </summary>
+            <param name="encoded">
+            The encoded.
+            </param>
+            <param name="hashId">
+            The hash id.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
             </returns>
         </member>
         <member name="T:SmartFran.Seed.Dependency.IDiContainer">
