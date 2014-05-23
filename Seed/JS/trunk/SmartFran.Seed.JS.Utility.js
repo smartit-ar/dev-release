@@ -199,6 +199,22 @@
         if ((i + 1) % 3 == 0 && (amount.length - 1) !== i) output = '.' + output;
       }
       return output;
+    },
+    getStringMaskedDoubleNumber: function (number) {
+      if (number == null || number == 'undefined') {
+        return null;
+      }
+
+      var stringNumberArray = number.toFixed(2).toString().replace(".", ",").split(",");      
+      
+      var amount = stringNumberArray[0].split("").reverse();
+      var output = "";
+      for (var i = 0; i <= amount.length - 1; i++) {
+        output = amount[i] + output;
+        if ((i + 1) % 3 == 0 && (amount.length - 1) !== i) output = '.' + output;
+      }
+      
+      return output + "," + stringNumberArray[1];
     }
   },
   Html: {
