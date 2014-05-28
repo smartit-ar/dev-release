@@ -65,7 +65,7 @@ namespace('SmartFran.Seed.JS.ko').ViewModel = {
       },
       error: function (result) {
         if (result.status == 401) {
-          self.submitGet({ url: "/Support/Account/Login", data: { ReturnUrl: location.pathname, Unauthorized: true } });
+          self.submitGet({ url: "/Account/Login", data: { ReturnUrl: location.pathname, Unauthorized: true } });
         }
         else {
           if ((typeof result.responseText == "string") && (result.responseText.length > 0)) {
