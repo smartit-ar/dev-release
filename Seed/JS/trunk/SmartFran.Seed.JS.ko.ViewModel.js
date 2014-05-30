@@ -1,7 +1,4 @@
-﻿/// <reference path="~/Scripts/_Knockout/knockout.js" />
-/// <reference path="~/Scripts/_KoGrid/KoGrid.js" />
-
-namespace('SmartFran.Seed.JS.ko').ViewModel = {
+﻿namespace('SmartFran.Seed.JS.ko').ViewModel = {
   _errorMessageCall: null,
   _loadingCall: null,
   _countLoading: 0,

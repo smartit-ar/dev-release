@@ -5,20 +5,27 @@
       ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
         $(element).dialog("destroy");
       });
+
       options.close = function () {
         allBindingsAccessor().jqOpenDialog(false);
       };
-      $(element).dialog(options);
+
+      setTimeout(function () {
+        $(element).dialog(options);
+      }, 0);
     }
   };
 
   ko.bindingHandlers.jqOpenDialog = {
     update: function (element, valueAccessor) {
       var value = ko.utils.unwrapObservable(valueAccessor());
-      if (value) {
-        $(element).dialog("open");
-      } else {
-        $(element).dialog("close");
+      var instance = $.data(element, "ui-dialog");
+      if (instance) {
+        if (value) {
+          $(element).dialog("open");
+        } else {
+          $(element).dialog("close");
+        }
       }
     }
   };
