@@ -103,6 +103,20 @@
             The <see cref="T:System.Object"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.Resolve(System.Type,System.String)">
+            <summary>
+            The resolve.
+            </summary>
+            <param name="typeService">
+            The type service.
+            </param>
+            <param name="configName">
+            The config name.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.Resolve``1(System.String)">
             <summary>
             The resolve.
@@ -134,6 +148,20 @@
             </summary>
             <param name="typeService">
             The type Service.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.IsRegistered(System.Type,System.String)">
+            <summary>
+            The is registered.
+            </summary>
+            <param name="typeService">
+            The type service.
+            </param>
+            <param name="configName">
+            The config name.
             </param>
             <returns>
             The <see cref="T:System.Boolean"/>.
