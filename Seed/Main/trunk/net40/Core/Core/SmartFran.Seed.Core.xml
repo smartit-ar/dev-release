@@ -323,12 +323,12 @@
             Return the values.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Captcha.IEvalCaptcha">
+        <member name="T:SmartFran.Seed.Captcha.ICaptcha">
             <summary>
             The EvalCaptcha interface.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Captcha.IEvalCaptcha.IsValid(System.Collections.Generic.Dictionary{System.String,System.String})">
+        <member name="M:SmartFran.Seed.Captcha.ICaptcha.IsValid(System.Collections.Generic.Dictionary{System.String,System.String})">
             <summary>
             The is valid.
             </summary>
@@ -339,12 +339,12 @@
             The <see cref="T:System.Boolean"/>.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Captcha.IEvalCaptchaProvider">
+        <member name="T:SmartFran.Seed.Captcha.ICaptchaProvider">
             <summary>
             Base contract for adapter factory
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Captcha.IEvalCaptchaProvider.Create">
+        <member name="M:SmartFran.Seed.Captcha.ICaptchaProvider.Create">
             <summary>
             Create a type adater
             </summary>
@@ -352,25 +352,25 @@
             The created ILogger
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Captcha.EvalCaptchaFactory">
+        <member name="T:SmartFran.Seed.Captcha.CaptchaFactory">
             <summary>
             Log Factory
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Captcha.EvalCaptchaFactory.provider">
+        <member name="F:SmartFran.Seed.Captcha.CaptchaFactory.provider">
             <summary>
             Logging factory
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Captcha.EvalCaptchaFactory.SetProvider(SmartFran.Seed.Captcha.IEvalCaptchaProvider)">
+        <member name="M:SmartFran.Seed.Captcha.CaptchaFactory.SetProvider(SmartFran.Seed.Captcha.ICaptchaProvider)">
             <summary>
             Set the  log factory to use
             </summary>
-            <param name="evalCaptchaProvider">
+            <param name="captchaProvider">
             The eval Captcha Provider.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Captcha.EvalCaptchaFactory.CreateEvalCaptcha">
+        <member name="M:SmartFran.Seed.Captcha.CaptchaFactory.CreateEvalCaptcha">
             <summary>
             The create logger.
             </summary>
