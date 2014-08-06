@@ -370,12 +370,12 @@
             The eval Captcha Provider.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Captcha.CaptchaFactory.CreateEvalCaptcha">
+        <member name="M:SmartFran.Seed.Captcha.CaptchaFactory.CreateCaptcha">
             <summary>
-            The create logger.
+            The create captcha.
             </summary>
             <returns>
-            The SmartFran.Seed.Logging.ILogger.
+            The <see cref="T:SmartFran.Seed.Captcha.ICaptcha"/>.
             </returns>
         </member>
         <member name="T:SmartFran.Seed.Cryptography.Hash00">
