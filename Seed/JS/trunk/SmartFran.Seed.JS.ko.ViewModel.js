@@ -29,11 +29,15 @@
     }
   },
   catchException: function (exception, errorCallback) {
-    if (this._errorMessageCall) {
-      this._errorMessageCall(exception.Message);
-    }
-    if (errorCallback) {
-      errorCallback(exception);
+    if (exception){
+      if (typeof errorCallback == "function") {
+        if (!errorCallback(exception) && (typeof exception.Message == "string") && (exception.Message.length > 0)) {
+          this._errorMessageCall(exception.Message);
+        }
+      }
+      else if (typeof this._errorMessageCall == "function" && (typeof exception.Message == "string") && (exception.Message.length > 0)) {
+        this._errorMessageCall(exception.Message);
+      }
     }
   },
   asyncCallToModel: function (params) {
@@ -74,7 +78,6 @@
             }
           } else {
             throw 'Se presentó una condición de falla.';
-            // self.catchException({ Message: 'Se presentó una condición de falla. Por favor, reintente y si se repite el inconveniente comuníquelo al soporte técnico del sistema.' }, params.error);
           }
         }
         self.loadingCall(false);
