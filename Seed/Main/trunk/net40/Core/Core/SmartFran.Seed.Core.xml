@@ -323,6 +323,61 @@
             Return the values.
             </returns>
         </member>
+        <member name="T:SmartFran.Seed.Captcha.IEvalCaptcha">
+            <summary>
+            The EvalCaptcha interface.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Captcha.IEvalCaptcha.IsValid(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            The is valid.
+            </summary>
+            <param name="values">
+            The values.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Captcha.IEvalCaptchaProvider">
+            <summary>
+            Base contract for adapter factory
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Captcha.IEvalCaptchaProvider.Create">
+            <summary>
+            Create a type adater
+            </summary>
+            <returns>
+            The created ILogger
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Captcha.EvalCaptchaFactory">
+            <summary>
+            Log Factory
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Captcha.EvalCaptchaFactory.provider">
+            <summary>
+            Logging factory
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Captcha.EvalCaptchaFactory.SetProvider(SmartFran.Seed.Captcha.IEvalCaptchaProvider)">
+            <summary>
+            Set the  log factory to use
+            </summary>
+            <param name="evalCaptchaProvider">
+            The eval Captcha Provider.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Captcha.EvalCaptchaFactory.CreateEvalCaptcha">
+            <summary>
+            The create logger.
+            </summary>
+            <returns>
+            The SmartFran.Seed.Logging.ILogger.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Cryptography.Hash00">
             <summary>
             The cryptography.
