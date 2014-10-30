@@ -871,6 +871,55 @@
             </summary>
             <returns>The created ITypeAdapter</returns>
         </member>
+        <member name="T:SmartFran.Seed.Logging.LogMethod">
+            <summary>
+            The log activity.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LogMethod.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogMethod"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LogMethod.#ctor(System.Reflection.MethodBase,System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{System.Guid})">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogMethod"/> class. 
+            </summary>
+            <param name="method">
+            The method.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+            <param name="activityId">
+            The activity Id.
+            </param>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogMethod.BeginOn">
+            <summary>
+            Gets or sets the begin on.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogMethod.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogMethod.Name">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogMethod.ActivityId">
+            <summary>
+            Gets or sets the activity id.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogMethod.Args">
+            <summary>
+            Gets or sets the args.
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.Logging.LogActivity">
             <summary>
             The log activity.
@@ -1082,6 +1131,31 @@
             </summary>
             <param name="process">
             The process.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.ILogger.BeginMethod(System.Reflection.MethodBase,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The begin method.
+            </summary>
+            <param name="method">
+            The method.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Logging.LogMethod"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.ILogger.EndMethod(SmartFran.Seed.Logging.LogMethod,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The end method.
+            </summary>
+            <param name="logMethod">
+            The log method.
             </param>
             <param name="data">
             The data.
