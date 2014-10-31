@@ -430,14 +430,6 @@
             The data.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.IncEvent">
-            <summary>
-            The inc event.
-            </summary>
-            <returns>
-            The <see cref="T:System.Int32"/>.
-            </returns>
-        </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.ComposeMessage(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
             <summary>
             The compose message.
@@ -450,6 +442,14 @@
             </param>
             <returns>
             The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.IncEvent">
+            <summary>
+            The inc event.
+            </summary>
+            <returns>
+            The <see cref="T:System.Int32"/>.
             </returns>
         </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.TraceInternal(System.Diagnostics.TraceEventType,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
