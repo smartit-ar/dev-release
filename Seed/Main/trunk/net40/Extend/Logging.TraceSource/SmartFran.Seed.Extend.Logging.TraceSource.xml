@@ -430,7 +430,7 @@
             The data.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.ComposeMessage(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.ComposeMessage(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             The compose message.
             </summary>
@@ -455,7 +455,7 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.TraceInternal(System.Diagnostics.TraceEventType,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.TraceInternal(System.Diagnostics.TraceEventType,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             Trace internal message in configured listeners
             </summary>
