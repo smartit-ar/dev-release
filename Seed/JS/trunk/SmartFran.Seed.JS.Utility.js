@@ -215,6 +215,15 @@
       }
       
       return output + "," + stringNumberArray[1];
+    },
+    addZeros: function (str, len) {
+      if (typeof str === 'number' || Number(str)) {
+        str = str.toString();
+        return (len - str.length > 0) ? new Array(len + 1 - str.length).join('0') + str : str;
+      } else {
+        for (var i = 0, spl = str.split(' ') ; i < spl.length; spl[i] = (Number(spl[i]) && spl[i].length < len) ? addZeros(spl[i], len) : spl[i], str = (i == spl.length - 1) ? spl.join(' ') : str, i++);
+        return str;
+      }
     }
   },
   Html: {
