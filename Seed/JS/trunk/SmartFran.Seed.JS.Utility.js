@@ -183,6 +183,13 @@
 
       var datediff = Seed.Utility.Date.jsonToDateTime(to) - Seed.Utility.Date.jsonToDateTime(since);
       return Math.ceil(datediff / 86400000) + 1;
+    },    
+    getTodayPlusDays: function (days) {
+      if ((days == 'undefined') || (days == null) || (typeof days !== 'number')) {
+        days = 0;
+      }
+      
+      return new Date().setDate(new Date().getDate() + days);      
     }
   },
   Number: {

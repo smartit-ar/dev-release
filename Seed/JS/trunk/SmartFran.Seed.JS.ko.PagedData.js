@@ -11,7 +11,8 @@ if (window.kg) {
 
 namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
   var self = this;
-
+  var filterControl = null;
+  
   params = params || {};
 
   self.list = ko.observableArray([]);
@@ -25,7 +26,7 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
 
   self._getSortInfo = params.getSortInfo;
   self._getParamInfo = params.getParamInfo;
-  self._getFilterInfo = params.getFilterInfo;
+  self._getFilterInfo = params.getFilterInfo;  
   self._url = params.url;
   self._newItem = params.newItem;
 
@@ -40,8 +41,11 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
     }
 
     var filterInfo = null;
-    if (self._getFilterInfo) {
+    if (self._getFilterInfo) {      
       filterInfo = self._getFilterInfo(filter);
+      if (filterControl == null) {
+        filterControl = self._getFilterInfo(filter);
+      }
     }
 
     var paramInfo = null;
@@ -52,6 +56,18 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
     var data = { PageIndex: pageIndex, PageSize: pageSize, SortInfo: sortInfo, FilterInfo: filterInfo };
     if (typeof paramInfo == "object") {
       $.extend(data, paramInfo);
+    }
+    
+    if ((filterInfo != null) && (filterControl.spec != filterInfo.spec)) {
+      filterControl = filterInfo;      
+      self.pageIndex(1);
+      getPage(self.pageIndex(), self.pageSize(), self.sort(), filterInfo.value);
+      return;
+    } else if ((filterInfo == null) && (filterControl != '')) {
+      filterControl = '';
+      self.pageIndex(1);
+      getPage(self.pageIndex(), self.pageSize(), self.sort(), filterInfo);
+      return;
     }
 
     Seed.ko.ViewModel.asyncCallToModel({
@@ -82,7 +98,7 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
       var filter = self.filter.peek();
       getPage(pageIndex, pageSize, sort, filter);
     });
-    self.filter.subscribe(function (value) {
+    self.filter.subscribe(function (value) {      
       if (self.pageIndex() > 1) {
         self.pageIndex(1);
       } else {
