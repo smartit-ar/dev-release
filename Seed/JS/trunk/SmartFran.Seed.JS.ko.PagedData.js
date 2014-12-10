@@ -15,6 +15,7 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
   
   params = params || {};
 
+
   self.list = ko.observableArray([]);
   self.pageIndex = ko.observable(1);
   self.pageSize = ko.observable(params.pageSize || 10);
@@ -24,12 +25,13 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
   self.activeFilter = ko.observable();
   self.selected = ko.observableArray([]);
 
+  self._resetPageOnFilter = params.resetPageOnFilter == null ? true : params.resetPageOnFilter;
   self._getSortInfo = params.getSortInfo;
   self._getParamInfo = params.getParamInfo;
   self._getFilterInfo = params.getFilterInfo;  
   self._url = params.url;
   self._newItem = params.newItem;
-
+  
   function getPage(pageIndex, pageSize, sort, filter) {
     if (!pageIndex || !pageSize) {
       return;
@@ -58,18 +60,20 @@ namespace('SmartFran.Seed.JS.ko').PagedData = function (params) {
       $.extend(data, paramInfo);
     }
     
-    if ((filterInfo != null) && (filterControl.spec != filterInfo.spec)) {
-      filterControl = filterInfo;      
-      self.pageIndex(1);
-      getPage(self.pageIndex(), self.pageSize(), self.sort(), filterInfo.value);
-      return;
-    } else if ((filterInfo == null) && (filterControl != '')) {
-      filterControl = '';
-      self.pageIndex(1);
-      getPage(self.pageIndex(), self.pageSize(), self.sort(), filterInfo);
-      return;
+    if (self._resetPageOnFilter) {
+      if ((filterInfo != null) && (filterControl.spec != filterInfo.spec)) {
+        filterControl = filterInfo;
+        self.pageIndex(1);
+        getPage(self.pageIndex(), self.pageSize(), self.sort(), filterInfo.value);
+        return;
+      } else if ((filterInfo == null) && (filterControl != '')) {
+        filterControl = '';
+        self.pageIndex(1);
+        getPage(self.pageIndex(), self.pageSize(), self.sort(), filterInfo);
+        return;
+      }
     }
-
+    
     Seed.ko.ViewModel.asyncCallToModel({
       loadingModal: true,
       url: self._url,
