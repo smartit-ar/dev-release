@@ -1,4 +1,12 @@
-﻿namespace('SmartFran.Seed.JS').Utility = {
+﻿String.prototype.toCamelCase = function () {
+  var str = this.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+  return str.trim();
+};
+String.prototype.capitalizeFirstLetter = function () {
+  var str = this.charAt(0).toUpperCase() + this.substring(1);
+  return str.trim();
+}
+namespace('SmartFran.Seed.JS').Utility = {
   Date: {
     ageToCertainDate: function (birthDate, certainDate) {
       if ((birthDate == null || birthDate == 'undefined') || (certainDate == null || certainDate == 'undefined')) {
