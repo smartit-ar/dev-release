@@ -1,0 +1,1139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.NLayer.Extend.Data.EntityFramework</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughEmbeddedResource">
+            <summary>
+            The ef sql pass through embedded resource.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough">
+            <summary>
+            The result 001.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.sql">
+            <summary>
+            The sql.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.LoadSql(System.Object[])">
+            <summary>
+            The load sql.
+            </summary>
+            <param name="args">
+            The args.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Sql">
+            <summary>
+            Gets the sql.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughEmbeddedResource.LoadSql(System.Object[])">
+            <summary>
+            Gets the sql.
+            </summary>
+            <param name="args">
+            The args.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration">
+            <summary>
+            The ef migration.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations">
+            <summary>
+            The EfDataInitializations interface.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.CreateIndexEx``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.CreateIndexEx``1(System.String[],System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="fields">
+            The fields.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.CreateIndexEx(System.String,System.String[],System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="tableName">
+            The table Name.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.DropIndexEx``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.DropIndexEx``1(System.String[])">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="fields">
+            The fields.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.DropIndexEx(System.String,System.String[])">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="tableName">
+            The table Name.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.IEfDataInitializations.DropAllIndexesEx">
+            <summary>
+            The drop all indexes.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration.CreateIndexEx``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration.CreateIndexEx``1(System.String[],System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="fields">
+            The fields.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration.CreateIndexEx(System.String,System.String[],System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="tableName">
+            The table Name.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration.DropIndexEx``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration.DropIndexEx``1(System.String[])">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="fields">
+            The fields.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration.DropIndexEx(System.String,System.String[])">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="tableName">
+            The table Name.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration.DropAllIndexesEx">
+            <summary>
+            The drop all indexes.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration.CreateIndexEx(System.String,System.String,System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="table">
+            The table.
+            </param>
+            <param name="field">
+            The field.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigration.DropIndexEx(System.String,System.String)">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="table">
+            The table.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigrateDatabaseToLatestVersion`2">
+            <summary>
+            Migration database.
+            </summary>
+            <typeparam name="TContext">
+            Context type.
+            </typeparam>
+            <typeparam name="TDbMigrationsConfiguration">
+            Type of DbConfiguration
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfMigrateDatabaseToLatestVersion`2.Configure">
+            <summary>
+            The configure.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase">
+            <summary>
+            The base context.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.SetCurrentValues``1(``0,``0)">
+            <summary>
+            The apply current values.
+            If it is not attached, attach original and set current values.
+            </summary>
+            <param name="original">
+            The original.
+            </param>
+            <param name="current">
+            The current.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.Attach``1(``0)">
+            <summary>
+            The attach.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.Detach``1(``0)">
+            <summary>
+            The Deattach.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.CreateSet``1">
+            <summary>
+            The create set.
+            </summary>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The System.Data.Entity.DbSet`1[TEntity -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.SetModified``1(``0)">
+            <summary>
+            The set modified.
+            This operation also attach item in object state manager.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.Reload``1(``0@,System.Boolean)">
+            <summary>
+            The reload.
+            </summary>
+            <param name="entity">
+            The entity.
+            </param>
+            <param name="full">
+            Full reload.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand(System.String,System.Object[])">
+            <summary>
+            The execute command.
+            </summary>
+            <param name="sqlCommand">
+            The sql command.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(System.String,System.Object[])">
+            <summary>
+            The execute query.
+            </summary>
+            <param name="sqlQuery">
+            The sql query.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Object[])">
+            <summary>
+            The execute query.
+            </summary>
+            <param name="sqlPassThrough">
+            The sql Pass Through.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The entities.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``2(System.Object[])">
+            <summary>
+            The execute query.
+            </summary>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <typeparam name="TSqlPassThrough">
+            Sql pass through.
+            </typeparam>
+            <returns>
+            The entities.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ApplyChanges(System.Boolean)">
+            <summary>
+            The commit.
+            </summary>
+            <param name="rollbackIfFail">
+            The rollback If Fail.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.RevertChanges">
+            <summary>
+            The rollback changes.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.GetView``2">
+            <summary>
+            The get view.
+            </summary>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <typeparam name="TKey">
+            Type Key
+            </typeparam>
+            <returns>
+            The DataView.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.CreateIndexEx``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.CreateIndexEx``1(System.String[],System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="fields">
+            The fields.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.CreateIndexEx(System.String,System.String[],System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="tableName">
+            The table Name.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.DropIndexEx``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.DropIndexEx``1(System.String[])">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="fields">
+            The fields.
+            </param>
+            <typeparam name="TModel">
+            Entity type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.DropIndexEx(System.String,System.String[])">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="tableName">
+            The table Name.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.DropAllIndexesEx">
+            <summary>
+            The drop all indexes.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.CreateIndexEx(System.String,System.String,System.Boolean)">
+            <summary>
+            The create index.
+            </summary>
+            <param name="table">
+            The table.
+            </param>
+            <param name="field">
+            The field.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.DropIndexEx(System.String,System.String)">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="table">
+            The table.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDevelopmentDropCreateDatabaseIfModelChanges`1">
+            <summary>
+            The ef development drop create database if model changes.
+            </summary>
+            <typeparam name="TContext">
+            Context type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDevelopmentDropCreateDatabaseIfModelChanges`1.Configure">
+            <summary>
+            The configure.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2">
+            <summary>
+            EfDataView base class
+            </summary>
+            <typeparam name="TEntity">
+            The type of underlying entity in this repository
+            </typeparam>
+            <typeparam name="T">
+            Type of identity.
+            </typeparam>
+        </member>
+        <member name="F:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.context">
+            <summary>
+            The unit of work.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.#ctor(SmartFran.Seed.NLayer.Data.IDataContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2"/> class. 
+            </summary>
+            <param name="context">
+            Associated Unit Of Work
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Add(`0)">
+            <summary>
+            The add.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Remove(`0)">
+            <summary>
+            The remove.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Remove(`1)">
+            <summary>
+            The remove.
+            </summary>
+            <param name="itemId">
+            The item Id.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Reload(`0@,System.Boolean)">
+            <summary>
+            The reload entity.
+            </summary>
+            <param name="entity">
+            The entity.
+            </param>
+            <param name="full">
+            Full reload.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.TrackEntity(`0)">
+            <summary>
+            The track item.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.NoTrackEntity(`0)">
+            <summary>
+            No track item.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Modify(`0)">
+            <summary>
+            The modify.
+            </summary>
+            <param name="item">
+            The item.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Get(`1)">
+            <summary>
+            The get.
+            </summary>
+            <param name="id">
+            The id.
+            </param>
+            <returns>
+            The TEntity.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.GetFirst(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The get.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <returns>
+            The entity.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.GetFirst(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The get.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The entity.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.GetAll">
+            <summary>
+            The get all.
+            </summary>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Count">
+            <summary>
+            The count.
+            </summary>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Count(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The count.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Sum(System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">
+            <summary>
+            The sum.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Sum(System.Linq.Expressions.Expression{System.Func{`0,System.Decimal}})">
+            <summary>
+            The sum.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <returns>
+            The <see cref="T:System.Decimal"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Sum(System.Linq.Expressions.Expression{System.Func{`0,System.Double}})">
+            <summary>
+            The sum.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <returns>
+            The <see cref="T:System.Double"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Sum(System.Linq.Expressions.Expression{System.Func{`0,System.Int64}})">
+            <summary>
+            The sum.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <returns>
+            The <see cref="T:System.Int64"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Sum(System.Linq.Expressions.Expression{System.Func{`0,System.Single}})">
+            <summary>
+            The sum.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <returns>
+            The <see cref="T:System.Single"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Min``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            The min.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <typeparam name="TResult">
+            Result type
+            </typeparam>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Max``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            The max.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <typeparam name="TResult">
+            Result type
+            </typeparam>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Average(System.Linq.Expressions.Expression{System.Func{`0,System.Int32}})">
+            <summary>
+            The average.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <returns>
+            The result.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Average(System.Linq.Expressions.Expression{System.Func{`0,System.Decimal}})">
+            <summary>
+            The average.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <returns>
+            The <see cref="T:System.Decimal"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Average(System.Linq.Expressions.Expression{System.Func{`0,System.Double}})">
+            <summary>
+            The average.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <returns>
+            The <see cref="T:System.Double"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Average(System.Linq.Expressions.Expression{System.Func{`0,System.Int64}})">
+            <summary>
+            The average.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <returns>
+            The <see cref="T:System.Int64"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Average(System.Linq.Expressions.Expression{System.Func{`0,System.Single}})">
+            <summary>
+            The average.
+            </summary>
+            <param name="selector">
+            The selector.
+            </param>
+            <returns>
+            The <see cref="T:System.Single"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Exists(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The count.
+            </summary>
+            <param name="selector">
+            The where Expression.
+            </param>
+            <returns>
+            The System.Int32.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Exists(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The count.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The count.
+            </summary>
+            <param name="selector">
+            The where expression.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The all matching.
+            </summary>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page Index.
+            </param>
+            <param name="pageSize">
+            The page Size.
+            </param>
+            <param name="orderBy">
+            The order By.
+            </param>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
+            <summary>
+            The query.
+            </summary>
+            <param name="orderBy">
+            The order by.
+            </param>
+            <returns>
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],SmartFran.Seed.NLayer.Domain.Specification.ISpecification{`0})">
+            <summary>
+            The query.
+            </summary>
+            <param name="orderBy">
+            The order by.
+            </param>
+            <param name="specification">
+            The specification.
+            </param>
+            <returns>
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The query.
+            </summary>
+            <param name="orderBy">
+            The order by.
+            </param>
+            <param name="selector">
+            The where expression.
+            </param>
+            <returns>
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The query.
+            </summary>
+            <param name="selector">
+            The where expression.
+            </param>
+            <returns>
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[])">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageSize">
+            The page size.
+            </param>
+            <param name="orderBy">
+            The order by.
+            </param>
+            <returns>
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Query(System.Int32,System.Int32,SmartFran.Seed.NLayer.Data.Ordering.IOrderByExpression{`0}[],System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            The query.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageSize">
+            The page size.
+            </param>
+            <param name="orderBy">
+            The order by.
+            </param>
+            <param name="selector">
+            The where expression.
+            </param>
+            <returns>
+            The <see>
+                  <cref>IEnumerable</cref>
+                </see> .
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.Merge(`0,`0)">
+            <summary>
+            The merge.
+            </summary>
+            <param name="persisted">
+            The persisted.
+            </param>
+            <param name="current">
+            The current.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.GetSet">
+            <summary>
+            The get set.
+            </summary>
+            <returns>
+            The System.Data.Entity.IDbSet`1[TEntity -&gt; TEntity].
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.SkipTo(System.Int32,System.Int32)">
+            <summary>
+            The skip to.
+            </summary>
+            <param name="pageIndex">
+            The page index.
+            </param>
+            <param name="pageSize">
+            The page count.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotAddNullEntity">
+            <summary>
+              Looks up a localized string similar to Cannot add null entity into {0} repository.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotModifyNullEntity">
+            <summary>
+              Looks up a localized string similar to Cannot modify null item into {0} repository.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotRemoveNullEntity">
+            <summary>
+              Looks up a localized string similar to Cannot remove null entity into {0} repository.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.CannotTrackNullEntity">
+            <summary>
+              Looks up a localized string similar to Cannot track null item into {0} repository.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.ContextNotIsEfContextBase">
+            <summary>
+              Looks up a localized string similar to The IDataContext must be an EfContextBase implementation..
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.Resources.Messages.OrderByCantBeNull">
+            <summary>
+              Looks up a localized string similar to OrderBy can&apos;t be null..
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.Helper.SqlExHelper">
+            <summary>
+            The sql helper.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.NLayer.Data.EntityFramework.Helper.SqlExHelper.PrefixIndex">
+            <summary>
+            The prefix index.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Helper.SqlExHelper.DropAndCreateIndex(System.String,System.String,System.Boolean)">
+            <summary>
+            The drop and create index.
+            </summary>
+            <param name="table">
+            The table.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+            <param name="unique">
+            The unique.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Helper.SqlExHelper.DropIndex(System.String,System.String)">
+            <summary>
+            The drop index.
+            </summary>
+            <param name="table">
+            The table.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Helper.SqlExHelper.DropAllIndexes(System.String)">
+            <summary>
+            The drop all index.
+            </summary>
+            <param name="prefix">
+            The prefix.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Helper.SqlExHelper.GetIndexName(System.String,System.String)">
+            <summary>
+            The get index name.
+            </summary>
+            <param name="table">
+            The table.
+            </param>
+            <param name="fields">
+            The fields.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+    </members>
+</doc>
