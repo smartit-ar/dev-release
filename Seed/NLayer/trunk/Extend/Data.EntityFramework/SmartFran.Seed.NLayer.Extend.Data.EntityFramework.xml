@@ -14,7 +14,7 @@
             The result 001.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.sqlTemplate">
+        <member name="F:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.sql">
             <summary>
             The sql.
             </summary>
@@ -30,7 +30,7 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.SqlTemplate">
+        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Sql">
             <summary>
             Gets the sql.
             </summary>
@@ -367,7 +367,7 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough,System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Object[])">
             <summary>
             The execute query.
             </summary>
@@ -379,6 +379,23 @@
             </param>
             <typeparam name="TEntity">
             Entity type.
+            </typeparam>
+            <returns>
+            The entities.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``2(System.Object[])">
+            <summary>
+            The execute query.
+            </summary>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <typeparam name="TSqlPassThrough">
+            Sql pass through.
             </typeparam>
             <returns>
             The entities.
