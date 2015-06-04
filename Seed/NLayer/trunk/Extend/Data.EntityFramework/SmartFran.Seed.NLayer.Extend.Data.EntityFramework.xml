@@ -4,7 +4,7 @@
         <name>SmartFran.Seed.NLayer.Extend.Data.EntityFramework</name>
     </assembly>
     <members>
-        <member name="T:SmartFran.Solution.SmartLoyalty.Domain.Query.EfSqlPassThroughEmbeddedResource">
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughEmbeddedResource">
             <summary>
             The ef sql pass through embedded resource.
             </summary>
@@ -35,7 +35,7 @@
             Gets the sql.
             </summary>
         </member>
-        <member name="M:SmartFran.Solution.SmartLoyalty.Domain.Query.EfSqlPassThroughEmbeddedResource.LoadSql(System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughEmbeddedResource.LoadSql(System.Object[])">
             <summary>
             Gets the sql.
             </summary>
