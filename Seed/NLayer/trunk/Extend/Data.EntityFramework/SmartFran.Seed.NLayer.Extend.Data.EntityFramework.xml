@@ -367,18 +367,18 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``2(System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough,System.Object[])">
             <summary>
             The execute query.
             </summary>
+            <param name="sqlPassThrough">
+            The sql Pass Through.
+            </param>
             <param name="parameters">
             The parameters.
             </param>
             <typeparam name="TEntity">
             Entity type.
-            </typeparam>
-            <typeparam name="TSqlPassThrough">
-            Sql passthrough.
             </typeparam>
             <returns>
             The entities.
