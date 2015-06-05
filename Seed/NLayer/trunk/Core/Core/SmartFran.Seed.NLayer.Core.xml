@@ -64,10 +64,33 @@
             The result 001.
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.ISqlPassThrough.Sql">
+        <member name="M:SmartFran.Seed.NLayer.Data.ISqlPassThrough.Sql(System.Object[])">
             <summary>
             Gets the sql.
             </summary>
+            <param name="sqlArgs">
+            The args.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.ISqlPassThrough.Execute``1(SmartFran.Seed.NLayer.Data.IDataContext,System.Object[])">
+            <summary>
+            The execute.
+            </summary>
+            <param name="context">
+            The context.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The entities.
+            </returns>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Data.IDataInitializer">
             <summary>

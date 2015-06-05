@@ -14,32 +14,75 @@
             The result 001.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.sql">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Sql(System.Object[])">
             <summary>
-            The sql.
+            Get the sql.
             </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.LoadSql(System.Object[])">
-            <summary>
-            The load sql.
-            </summary>
-            <param name="args">
+            <param name="sqlArgs">
             The args.
             </param>
             <returns>
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="P:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Sql">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Execute``1(SmartFran.Seed.NLayer.Data.IDataContext,System.Object[])">
             <summary>
-            Gets the sql.
+            The execute.
             </summary>
+            <param name="context">
+            The context.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The entities.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.LoadSql(System.Object[])">
+            <summary>
+            The load sql.
+            </summary>
+            <param name="loadArgs">
+            The args.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughEmbeddedResource.Sql(System.Object[])">
+            <summary>
+            The sql.
+            </summary>
+            <param name="sqlArgs">
+            The sql args.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughEmbeddedResource.LoadSqlEmbeddedResource(System.String,System.String)">
+            <summary>
+            The load sql embedded resource.
+            </summary>
+            <param name="customKey">
+            The custom key.
+            </param>
+            <param name="resourceFullName">
+            The resource full name.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughEmbeddedResource.LoadSql(System.Object[])">
             <summary>
             Gets the sql.
             </summary>
-            <param name="args">
+            <param name="loadArgs">
             The args.
             </param>
             <returns>
