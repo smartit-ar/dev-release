@@ -1122,7 +1122,7 @@
             The prefix index.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Helper.SqlExHelper.DropAndCreateIndex(System.String,System.String,System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Helper.SqlExHelper.DropAndCreateIndex(System.String,System.String,System.Boolean,System.String)">
             <summary>
             The drop and create index.
             </summary>
@@ -1135,11 +1135,14 @@
             <param name="unique">
             The unique.
             </param>
+            <param name="schema">
+            The schema.
+            </param>
             <returns>
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Helper.SqlExHelper.DropIndex(System.String,System.String)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.Helper.SqlExHelper.DropIndex(System.String,System.String,System.String)">
             <summary>
             The drop index.
             </summary>
@@ -1148,6 +1151,9 @@
             </param>
             <param name="fields">
             The fields.
+            </param>
+            <param name="schema">
+            The schema.
             </param>
             <returns>
             The <see cref="T:System.String"/>.
