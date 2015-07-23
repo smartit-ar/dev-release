@@ -1396,6 +1396,20 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Helper.MemberHelper.Name``1(System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            The name.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <typeparam name="T">
+            Parameter type.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Resources.Activator.Messages">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
