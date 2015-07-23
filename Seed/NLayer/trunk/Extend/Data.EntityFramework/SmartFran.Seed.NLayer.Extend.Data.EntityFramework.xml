@@ -295,7 +295,7 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.GetIndexName``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.GetIndexName``1(System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{``0,System.Object}}})">
             <summary>
             The get index name.
             </summary>
