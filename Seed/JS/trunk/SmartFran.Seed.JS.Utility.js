@@ -1,4 +1,10 @@
-﻿String.prototype.toCamelCase = function () {
+﻿Array.prototype.max = function () {
+  return Math.max.apply(null, this);
+};
+Array.prototype.min = function () {
+  return Math.min.apply(null, this);
+};
+String.prototype.toCamelCase = function () {
   var str = this.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
   return str.trim();
 };
@@ -60,6 +66,15 @@ namespace('SmartFran.Seed.JS').Utility = {
       }
       var meses = new Array('ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC');
       document.write(meses[mes]);
+      return meses[mes];
+    },
+    getShortMonth: function (mes) {
+      if (mes == null) {
+        var fecha = new Date();
+        mes = fecha.getMonth();
+      }
+      var meses = new Array('ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC');
+      return meses[mes];
     },
     writeDateMonthDay: function () {
       var fecha = new Date();
