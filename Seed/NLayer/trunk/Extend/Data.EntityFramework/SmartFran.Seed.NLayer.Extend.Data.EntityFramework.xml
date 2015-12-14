@@ -64,7 +64,7 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughContentFile.LoadSqlContent(System.String,System.String,System.String)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughContentFile.LoadSqlContentFile(System.String,System.String,System.String)">
             <summary>
             The load sql content resource.
             </summary>
