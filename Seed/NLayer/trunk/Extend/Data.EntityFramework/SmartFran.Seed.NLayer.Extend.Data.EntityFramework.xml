@@ -4,7 +4,7 @@
         <name>SmartFran.Seed.NLayer.Extend.Data.EntityFramework</name>
     </assembly>
     <members>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughContentResource">
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughContentFile">
             <summary>
             The ef sql pass through content resource.
             </summary>
@@ -53,7 +53,7 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughContentResource.Sql(System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughContentFile.Sql(System.Object[])">
             <summary>
             The sql.
             </summary>
@@ -64,24 +64,24 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughContentResource.LoadSqlContentResource(System.String,System.String,System.String)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughContentFile.LoadSqlContent(System.String,System.String,System.String)">
             <summary>
             The load sql content resource.
             </summary>
             <param name="contentPath">
             The content Path.
             </param>
+            <param name="sqlFileName">
+            Resource name.
+            </param>
             <param name="customKey">
             The custom key.
-            </param>
-            <param name="resourceName">
-            Resource name.
             </param>
             <returns>
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughContentResource.LoadSql(System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughContentFile.LoadSql(System.Object[])">
             <summary>
             Gets the sql.
             </summary>
@@ -112,11 +112,11 @@
             <summary>
             The load sql embedded resource.
             </summary>
-            <param name="customKey">
-            The custom key.
-            </param>
             <param name="resourceFullName">
             The resource full name.
+            </param>
+            <param name="customKey">
+            The custom key.
             </param>
             <returns>
             The <see cref="T:System.String"/>.
