@@ -171,7 +171,7 @@ namespace('SmartFran.Seed.JS').Utility = {
     getDateFirstDayOfLastMonthWithoutTime: function () {
       var date = new Date();
       var year = date.getMonth() == 0 ? date.getFullYear() - 1 : date.getFullYear();
-      return new Date(year, date.getMonth() - 1, 1);
+      return date.getMonth() == 0 ? new Date(date.getFullYear(), date.getMonth() - 1, 1) : new Date(year, date.getMonth() - 1, 1);
     },
     getDateLastDayOfLastMonthWithoutTime: function () {
       var date = new Date();
@@ -180,12 +180,11 @@ namespace('SmartFran.Seed.JS').Utility = {
         year = month == 0 ? parseInt(year) - 1 : parseInt(year);
         month = parseInt(month) - 1;
         switch (month) {
-          case 0: case 2: case 4: case 6: case 7: case 9: case 11: return 31;
+          case-1: case 0: case 2: case 4: case 6: case 7: case 9: case 11: return 31;
           case 1: return (year % 4 == 0) ? 29 : 28;
         }
         return 30;
       };
-
       return new Date(date.getFullYear(), date.getMonth() - 1, getLastDay(date.getMonth(), date.getFullYear()));
     },
     totalDaysCalculator: function (since, to) {
