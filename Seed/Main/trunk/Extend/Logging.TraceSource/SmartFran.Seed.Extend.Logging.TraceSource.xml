@@ -408,6 +408,17 @@
             The data.
             </param>
         </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Error(System.Exception,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            The error.
+            </summary>
+            <param name="ex">
+            The ex.
+            </param>
+            <param name="data">
+            The data.
+            </param>
+        </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.Critical(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             The critical.
@@ -429,6 +440,23 @@
             <param name="data">
             The data.
             </param>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.ComposeErrorMessage(System.Exception,System.Int32,System.String)">
+            <summary>
+            The compose error message.
+            </summary>
+            <param name="ex">
+            The ex.
+            </param>
+            <param name="level">
+            The level.
+            </param>
+            <param name="parentString">
+            The parent string.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
         </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger.ComposeMessage(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
