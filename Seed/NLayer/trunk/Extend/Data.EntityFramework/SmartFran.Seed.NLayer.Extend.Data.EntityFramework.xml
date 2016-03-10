@@ -247,6 +247,34 @@
             The System.Int32.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Object[])">
+            <summary>
+            The execute command.
+            </summary>
+            <param name="sqlPassThrough">
+            The sql pass through.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand``1(System.Object[])">
+            <summary>
+            The execute command.
+            </summary>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="TSqlPassThrough">
+            Sql pass through.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(System.String,System.Object[])">
             <summary>
             The execute query.
