@@ -105,7 +105,7 @@
       for (var prop in data) {
         var opt = document.createElement("textarea");
         opt.name = prop;
-        opt.value = data[prop] ? data[prop].toString() : '';
+        opt.value = (data[prop] == undefined) || (data[prop] == null) ? "" : data[prop].toString();
         form.appendChild(opt);
       }
     }
