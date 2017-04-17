@@ -278,7 +278,10 @@ namespace('SmartFran.Seed.JS').Utility = {
       if (place === "top") {
         $("html, body").animate({ scrollTop: $("html").offset().top }, 1500);
       } else {
-        $("html, body").animate({ scrollTop: $(place).offset().top }, 1500);
+        if ($("body").width() <= 750)
+          $("html, body").animate({ scrollTop: ($(place).offset().top - 300) }, 1500);
+        else
+            $("html, body").animate({ scrollTop: ($(place).offset().top - 200) }, 1500);
       }
     }
   }
