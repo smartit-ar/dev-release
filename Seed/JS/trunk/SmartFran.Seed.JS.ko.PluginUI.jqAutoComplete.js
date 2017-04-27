@@ -7,6 +7,7 @@
   //jqAutoSourceValue -- the property to use for the value
   //jqAutoSourceLabel -- the property that should be displayed in the possible choices
   //jqAutoSourceInputValue -- the property that should be displayed in the input box
+  //jqAutoSelect -- function executed on click in option
   //
   // Example:
   //   <input data-bind="jqAutoComplete: {},
@@ -16,7 +17,8 @@
   //                     jqAutoLabel: personName,
   //                     jqAutoSourceLabel: 'displayName',
   //                     jqAutoSourceInputValue: 'name',
-  //                     jqAutoSourceValue: 'id'" />
+  //                     jqAutoSourceValue: 'id',
+  //                     jqAutoSelect: onSelectfunction" />
   //
   ko.bindingHandlers.jqAutoComplete = {
     init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
@@ -28,7 +30,8 @@
           query = allBindings.jqAutoQuery,
           valueProp = allBindings.jqAutoSourceValue,
           inputValueProp = allBindings.jqAutoSourceInputValue || valueProp,
-          labelProp = allBindings.jqAutoSourceLabel || inputValueProp;
+          labelProp = allBindings.jqAutoSourceLabel || inputValueProp,
+          onSelect = allBindings.jqAutoSelect;
 
       //function that is shared by both select and change event handlers
       function writeValueToModel(valueToWrite) {
@@ -42,7 +45,10 @@
 
       //on a selection write the proper value to the model
       options.select = function (event, ui) {
-        writeValueToModel(ui.item ? ui.item.actualValue : null);
+          writeValueToModel(ui.item ? ui.item.actualValue : null);
+          if (onSelect && typeof onSelect === 'function') {
+              onSelect();
+          } 
       };
 
       //on a change, make sure that it is a valid value or clear out the model value
