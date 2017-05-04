@@ -62,7 +62,7 @@
           writeValueToModel(null);
         }
       };
-
+        
       //hold the autocomplete current response
       var currentResponse = null;
 
@@ -121,7 +121,9 @@
       }
 
       //update the element with the value that should be shown in the input
-      $(element).val(modelValue && inputValueProp !== valueProp ? unwrap(modelValue[inputValueProp]) : modelValue.toString());
+      if (inputValueProp !== valueProp && typeof unwrap(modelValue[inputValueProp]) != 'undefined') {
+          $(element).val(unwrap(modelValue[inputValueProp]));
+      }
     }
   };
 })();
