@@ -383,9 +383,118 @@
             The cryptography.
             </summary>
         </member>
+        <member name="F:SmartFran.Seed.Cryptography.Hash00.FillChar">
+            <summary>
+            The fill char.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Cryptography.Hash00.Random">
+            <summary>
+            The random.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Cryptography.Hash00"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.Generate(System.String,System.String)">
+            <summary>
+            The get crypto key.
+            </summary>
+            <param name="firstKey">
+            The first Key.
+            </param>
+            <param name="secondKey">
+            The second Key.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.GenerateEncoded(System.String)">
+            <summary>
+            The generate encoded.
+            </summary>
+            <param name="text">
+            The text.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.GenerateEncoded(System.String,System.String)">
+            <summary>
+            The generate encoded.
+            </summary>
+            <param name="text">
+            The text.
+            </param>
+            <param name="phrase">
+            The phrase.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.GenerateDecoded(System.String)">
+            <summary>
+            The generate decoded.
+            </summary>
+            <param name="encoded">
+            The encoded.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.GenerateDecoded(System.String,System.String)">
+            <summary>
+            The generate decoded.
+            </summary>
+            <param name="encoded">
+            The encoded.
+            </param>
+            <param name="phrase">
+            The phrase.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.GetMergedKeys(System.String,System.String)">
+            <summary>
+            The get merged user name and password.
+            </summary>
+            <param name="firstKey">
+            The user password.
+            </param>
+            <param name="secondKey">
+            The user name.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash00.ComputeHash(System.String)">
+            <summary>
+            The compute hash.
+            </summary>
+            <param name="phrase">
+            The phrase.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Cryptography.HashGenerator">
             <summary>
             The cryptography.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Cryptography.HashGenerator.Id">
+            <summary>
+            Gets or sets the id.
             </summary>
         </member>
         <member name="M:SmartFran.Seed.Cryptography.HashGenerator.GetHashId(System.String)">
@@ -566,115 +675,6 @@
             </param>
             <returns>
             The <see cref="T:System.Int32"/>.
-            </returns>
-        </member>
-        <member name="P:SmartFran.Seed.Cryptography.HashGenerator.Id">
-            <summary>
-            Gets or sets the id.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Cryptography.Hash00.FillChar">
-            <summary>
-            The fill char.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Cryptography.Hash00.Random">
-            <summary>
-            The random.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Cryptography.Hash00.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Cryptography.Hash00"/> class.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Cryptography.Hash00.Generate(System.String,System.String)">
-            <summary>
-            The get crypto key.
-            </summary>
-            <param name="firstKey">
-            The first Key.
-            </param>
-            <param name="secondKey">
-            The second Key.
-            </param>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Cryptography.Hash00.GenerateEncoded(System.String)">
-            <summary>
-            The generate encoded.
-            </summary>
-            <param name="text">
-            The text.
-            </param>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Cryptography.Hash00.GenerateEncoded(System.String,System.String)">
-            <summary>
-            The generate encoded.
-            </summary>
-            <param name="text">
-            The text.
-            </param>
-            <param name="phrase">
-            The phrase.
-            </param>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Cryptography.Hash00.GenerateDecoded(System.String)">
-            <summary>
-            The generate decoded.
-            </summary>
-            <param name="encoded">
-            The encoded.
-            </param>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Cryptography.Hash00.GenerateDecoded(System.String,System.String)">
-            <summary>
-            The generate decoded.
-            </summary>
-            <param name="encoded">
-            The encoded.
-            </param>
-            <param name="phrase">
-            The phrase.
-            </param>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Cryptography.Hash00.GetMergedKeys(System.String,System.String)">
-            <summary>
-            The get merged user name and password.
-            </summary>
-            <param name="firstKey">
-            The user password.
-            </param>
-            <param name="secondKey">
-            The user name.
-            </param>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Cryptography.Hash00.ComputeHash(System.String)">
-            <summary>
-            The compute hash.
-            </summary>
-            <param name="phrase">
-            The phrase.
-            </param>
-            <returns>
-            The <see cref="T:System.String"/>.
             </returns>
         </member>
         <member name="T:SmartFran.Seed.Cryptography.Crypto">
@@ -1350,6 +1350,11 @@
             The default logger name.
             </summary>
         </member>
+        <member name="P:SmartFran.Seed.Logging.LoggerFactory.DefaultLoggerName">
+            <summary>
+            Gets or sets the default logger name.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.Logging.LoggerFactory.SetProvider(SmartFran.Seed.Logging.ILoggerProvider)">
             <summary>
             Set the  log factory to use
@@ -1368,11 +1373,6 @@
             <returns>
             The SmartFran.Seed.Logging.ILogger.
             </returns>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LoggerFactory.DefaultLoggerName">
-            <summary>
-            Gets or sets the default logger name.
-            </summary>
         </member>
         <member name="T:SmartFran.Seed.Helper.MemberHelper">
             <summary>
@@ -1514,14 +1514,6 @@
             The inner exception.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.ToString">
-            <summary>
-            Creates and returns a string representation of the current exception.
-            </summary>
-            <returns>
-            A string representation of the current exception.
-            </returns>
-        </member>
         <member name="P:SmartFran.Seed.ExceptionHandling.AppException.IssueId">
             <summary>
             Gets or sets the issue id.
@@ -1531,6 +1523,44 @@
             <summary>
             Gets or sets the code.
             </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ExceptionHandling.AppException.ToString">
+            <summary>
+            Creates and returns a string representation of the current exception.
+            </summary>
+            <returns>
+            A string representation of the current exception.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Serialize.EnumSerializer">
+            <summary>
+            The enum serializer.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Serialize.EnumSerializer.Serialize(System.Enum[])">
+            <summary>
+            The enum array to string.
+            </summary>
+            <param name="data">
+            The data.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Serialize.EnumSerializer.Deserialize``1(System.String)">
+            <summary>
+            The string to enum array.
+            </summary>
+            <typeparam name="TEnumType">
+            Enum type.
+            </typeparam>
+            <param name="stringData">
+            The data string.
+            </param>
+            <returns>
+            The enum array.
+            </returns>
         </member>
         <member name="T:SmartFran.Seed.Serialize.ISerializer">
             <summary>
@@ -1726,14 +1756,6 @@
             The object ref.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Validator.InvalidItem.SetObjectReference(System.Object)">
-            <summary>
-            The set object reference.
-            </summary>
-            <param name="objectRef">
-            The object ref.
-            </param>
-        </member>
         <member name="P:SmartFran.Seed.Validator.InvalidItem.Code">
             <summary>
             Gets or sets the code.
@@ -1748,6 +1770,14 @@
             <summary>
             Gets or sets the item type.
             </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Validator.InvalidItem.SetObjectReference(System.Object)">
+            <summary>
+            The set object reference.
+            </summary>
+            <param name="objectRef">
+            The object ref.
+            </param>
         </member>
     </members>
 </doc>

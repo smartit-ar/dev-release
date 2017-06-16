@@ -288,6 +288,16 @@
             The items.
             </summary>
         </member>
+        <member name="P:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension.Current">
+            <summary>
+            Gets the current.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension.Items">
+            <summary>
+            Gets the items.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension.GetExtensionFrom(System.ServiceModel.InstanceContext)">
             <summary>
             The get extension from.
@@ -314,16 +324,6 @@
             <param name="owner">
             The owner.
             </param>
-        </member>
-        <member name="P:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension.Current">
-            <summary>
-            Gets the current.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Dependency.Unity.WcfInstanceExtension.Items">
-            <summary>
-            Gets the items.
-            </summary>
         </member>
         <member name="T:SmartFran.Seed.Dependency.Unity.WcfInstanceLifeTimeManager">
             <summary>

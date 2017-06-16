@@ -58,6 +58,31 @@
             <param name="filename">The trace file name.</param>
             <param name="name">The name of the new instance.</param>
         </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.CurrentTraceFileName">
+            <summary>
+            Gets the name of the current trace file. It is combined from the configured trace file plus an increasing number
+            </summary>
+            <value>The name of the current trace file.</value>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.MaxTraceFileSizeKb">
+            <summary>
+            Gets or sets the maximum size of the trace file.
+            </summary>
+            <value>The maximum size of the trace file.</value>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.IsRollingConditionReached">
+            <summary>
+            Gets a value indicating whether the condition to roll over the trace file is reached.
+            </summary>
+            <value>
+                <c>true</c> if the condition to roll over the trace file is reached; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.IsOpenFile">
+            <summary>
+            Gets a value indicating whether is open file.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.Fail(System.String)">
             <summary>
             Emits an error message to the listener.
@@ -236,31 +261,6 @@
             are accessed.
             <remarks>We do not do this when the listener is constructed becausethe attributes will not yet have been read 
             from the configuration file.</remarks>
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.CurrentTraceFileName">
-            <summary>
-            Gets the name of the current trace file. It is combined from the configured trace file plus an increasing number
-            </summary>
-            <value>The name of the current trace file.</value>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.MaxTraceFileSizeKb">
-            <summary>
-            Gets or sets the maximum size of the trace file.
-            </summary>
-            <value>The maximum size of the trace file.</value>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.IsRollingConditionReached">
-            <summary>
-            Gets a value indicating whether the condition to roll over the trace file is reached.
-            </summary>
-            <value>
-                <c>true</c> if the condition to roll over the trace file is reached; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.TraceSource.SegmentedXmlTraceListener.IsOpenFile">
-            <summary>
-            Gets a value indicating whether is open file.
             </summary>
         </member>
         <member name="T:SmartFran.Seed.Logging.TraceSource.TraceSourceLogger">

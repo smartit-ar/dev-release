@@ -9,6 +9,11 @@
             The re captcha eval captcha.
             </summary>
         </member>
+        <member name="P:SmartFran.Seed.Captcha.ReCaptchaV2.ReCaptchaV2.Success">
+            <summary>
+            Gets or sets a value indicating whether success.
+            </summary>
+        </member>
         <member name="M:SmartFran.Seed.Captcha.ReCaptchaV2.ReCaptchaV2.IsValid(System.Collections.Generic.Dictionary{System.String,System.String})">
             <summary>
             The is valid captcha.
@@ -22,11 +27,6 @@
             <returns>
             The <see cref="T:System.Boolean"/>.
             </returns>
-        </member>
-        <member name="P:SmartFran.Seed.Captcha.ReCaptchaV2.ReCaptchaV2.Success">
-            <summary>
-            Gets or sets a value indicating whether success.
-            </summary>
         </member>
         <member name="T:SmartFran.Seed.Captcha.ReCaptchaV2.ReCaptchaV2Provider">
             <summary>
