@@ -1,4 +1,16 @@
-﻿(namespace('SmartFran.Seed.JS.ko').Extend = function() {
+﻿(namespace('SmartFran.Seed.JS.ko').Extend = function () {
+    ko.extenders.numericThousandSeparator = function (target, separator) {
+        var result = ko.dependentObservable({
+            read: function () {
+                return target().toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+            },
+            write: target
+        });
+
+        result.raw = target;
+        return result;
+    }
+
   ko.observableArray.fn.subscribeArrayChanged = function (addCallback, deleteCallback) {
     var previousValue = undefined;
     this.subscribe(function (prev) {
