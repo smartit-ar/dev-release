@@ -1,4 +1,4 @@
-﻿namespace('SmartFran.Seed.JS.ko').DateViewModel = function (params) {
+﻿namespace('SmartFran.Seed.JS').DateViewModel = function (params) {
   var self = this;
 
 
