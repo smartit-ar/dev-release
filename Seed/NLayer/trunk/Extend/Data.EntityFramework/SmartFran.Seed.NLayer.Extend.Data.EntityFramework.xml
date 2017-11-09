@@ -9,50 +9,6 @@
             The ef sql pass through content resource.
             </summary>
         </member>
-        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough">
-            <summary>
-            The result 001.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Sql(System.Object[])">
-            <summary>
-            Get the sql.
-            </summary>
-            <param name="sqlArgs">
-            The args.
-            </param>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Execute``1(SmartFran.Seed.NLayer.Data.IDataContext,System.Object[])">
-            <summary>
-            The execute.
-            </summary>
-            <param name="context">
-            The context.
-            </param>
-            <param name="parameters">
-            The parameters.
-            </param>
-            <typeparam name="TEntity">
-            Entity type.
-            </typeparam>
-            <returns>
-            The entities.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.LoadSql(System.Object[])">
-            <summary>
-            The load sql.
-            </summary>
-            <param name="loadArgs">
-            The args.
-            </param>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThroughContentFile.Sql(System.Object[])">
             <summary>
             The sql.
@@ -367,6 +323,14 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.GenerateIndexName``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Genera nombre de indices
+            </summary>
+            <typeparam name="TModel">Entidad</typeparam>
+            <param name="expression">Campos identificadores</param>
+            <returns>Nombre del indice</returns>
+        </member>
         <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDevelopmentDropCreateDatabaseIfModelChanges`1">
             <summary>
             The ef development drop create database if model changes.
@@ -379,6 +343,50 @@
             <summary>
             The configure.
             </summary>
+        </member>
+        <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough">
+            <summary>
+            The result 001.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Sql(System.Object[])">
+            <summary>
+            Get the sql.
+            </summary>
+            <param name="sqlArgs">
+            The args.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Execute``1(SmartFran.Seed.NLayer.Data.IDataContext,System.Object[])">
+            <summary>
+            The execute.
+            </summary>
+            <param name="context">
+            The context.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <typeparam name="TEntity">
+            Entity type.
+            </typeparam>
+            <returns>
+            The entities.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.LoadSql(System.Object[])">
+            <summary>
+            The load sql.
+            </summary>
+            <param name="loadArgs">
+            The args.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2">
             <summary>
