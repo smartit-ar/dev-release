@@ -42,6 +42,8 @@
   },
   asyncCallToModel: function (params) {
     var self = this;
+    if (typeof(this._errorMessageCall) == "function") this._errorMessageCall("");
+
     this.loadingCall(true, params.loadingModal);
     var type = params.type || 'post';
     var contentType = params.contentType == null || params.contentType == undefined ? 'application/json' : params.contentType;
