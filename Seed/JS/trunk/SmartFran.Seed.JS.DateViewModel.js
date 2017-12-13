@@ -23,7 +23,7 @@
   self.selectedMonth = ko.observable(params && params.date ? moment(params.date).month() : moment().month());
   self.selectedDay = ko.observable(params && params.date ? moment(params.date).date() : moment().date());
 
-  for (let i = 1900; i <= moment().year(); i++) {
+  for (var i = 1900; i <= moment().year(); i++) {
     self.years.push(i);
   }
 
@@ -45,7 +45,7 @@
     var selectedDay = self.selectedDay();
     self.days.removeAll();
     var daysInMonth = moment(year.toString() + (month + 1).toString(), "YYYYMM").daysInMonth();
-    for (let i = 1; i <= daysInMonth; i++) {
+    for (var i = 1; i <= daysInMonth; i++) {
       self.days.push(i);
     }
     self.selectedDay(selectedDay);
