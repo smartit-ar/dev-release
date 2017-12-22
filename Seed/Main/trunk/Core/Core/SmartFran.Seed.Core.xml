@@ -797,6 +797,115 @@
             The <see cref="T:SmartFran.Seed.Cryptography.HashGenerator"/>.
             </returns>
         </member>
+        <member name="T:SmartFran.Seed.Cryptography.Hash01">
+            <summary>
+            The cryptography.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Cryptography.Hash01.FillChar">
+            <summary>
+            The fill char.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Cryptography.Hash01.Random">
+            <summary>
+            The random.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash01.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Cryptography.Hash01"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash01.Generate(System.String,System.String)">
+            <summary>
+            The get crypto key.
+            </summary>
+            <param name="firstKey">
+            The first Key.
+            </param>
+            <param name="secondKey">
+            The second Key.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash01.GenerateEncoded(System.String)">
+            <summary>
+            The generate encoded.
+            </summary>
+            <param name="text">
+            The text.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash01.GenerateEncoded(System.String,System.String)">
+            <summary>
+            The generate encoded.
+            </summary>
+            <param name="text">
+            The text.
+            </param>
+            <param name="phrase">
+            The phrase.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash01.GenerateDecoded(System.String)">
+            <summary>
+            The generate decoded.
+            </summary>
+            <param name="encoded">
+            The encoded.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash01.GenerateDecoded(System.String,System.String)">
+            <summary>
+            The generate decoded.
+            </summary>
+            <param name="encoded">
+            The encoded.
+            </param>
+            <param name="phrase">
+            The phrase.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash01.GetMergedKeys(System.String,System.String)">
+            <summary>
+            The get merged user name and password.
+            </summary>
+            <param name="firstKey">
+            The user password.
+            </param>
+            <param name="secondKey">
+            The user name.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Hash01.ComputeHash(System.String)">
+            <summary>
+            The compute hash.
+            </summary>
+            <param name="phrase">
+            The phrase.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Dependency.IDiContainer">
             <summary>
             Base contract for dependency mapper
