@@ -51,7 +51,7 @@
         </member>
         <member name="P:SmartFran.Seed.Resource.ThrowJsonExceptionDefaultErrorMessage">
             <summary>
-              Looks up a localized string similar to Se presentó una condición de falla. Por favor, rentente y si se repite el inconveniente comuníquelo al soporte técnico del sistema..
+              Looks up a localized string similar to Se presentó una condición de falla. Por favor, reintente y si se repite el inconveniente comuníquelo al soporte técnico del sistema..
             </summary>
         </member>
     </members>
