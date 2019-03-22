@@ -335,17 +335,17 @@
             <summary>
             Add massive list of entities.
             </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="list"></param>
-            <returns></returns>
+            <typeparam name="TEntity">Entity type.</typeparam>
+            <param name="list">The list to remove.</param>
+            <returns>Removed list.</returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.RemoveRange``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             Remove massive list of entities.
             </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="list"></param>
-            <returns></returns>
+            <typeparam name="TEntity">Entity type.</typeparam>
+            <param name="list">The list to remove.</param>
+            <returns>Removed list.</returns>
         </member>
         <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDevelopmentDropCreateDatabaseIfModelChanges`1">
             <summary>

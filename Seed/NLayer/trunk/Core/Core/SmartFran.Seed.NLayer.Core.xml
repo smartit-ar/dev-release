@@ -279,6 +279,22 @@
             The DataView.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.IDataContext.AddRange``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Add massive list of entities.
+            </summary>
+            <typeparam name="TEntity">Entity type.</typeparam>
+            <param name="list">Listo to added.</param>
+            <returns>Added list.</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.IDataContext.RemoveRange``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Remove massive list of entities.
+            </summary>
+            <typeparam name="TEntity">Entity type.</typeparam>
+            <param name="list">List to remove.</param>
+            <returns>List removed.</returns>
+        </member>
         <member name="T:SmartFran.Seed.NLayer.Data.Ordering.OrderByGenerator">
             <summary>
             The order by generator.
