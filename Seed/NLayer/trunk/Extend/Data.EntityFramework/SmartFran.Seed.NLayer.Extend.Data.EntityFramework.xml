@@ -331,6 +331,22 @@
             <param name="expression">Campos identificadores</param>
             <returns>Nombre del indice</returns>
         </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.AddRange``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Add massive list of entities.
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.RemoveRange``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Remove massive list of entities.
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
         <member name="T:SmartFran.Seed.NLayer.Data.EntityFramework.EfDevelopmentDropCreateDatabaseIfModelChanges`1">
             <summary>
             The ef development drop create database if model changes.
