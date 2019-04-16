@@ -378,6 +378,27 @@
             The <see cref="T:SmartFran.Seed.Captcha.ICaptcha"/>.
             </returns>
         </member>
+        <member name="T:SmartFran.Seed.Cryptography.CryptoJS">
+            <summary>
+            The cryptography.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.CryptoJS.Encode(System.String,System.String)">
+            <summary>
+            Encrypt CryptoJs.
+            </summary>
+            <param name="value">Text value.</param>
+            <param name="pass">Pass value.</param>
+            <returns>Encrypted value.</returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.CryptoJS.Decode(System.String,System.String)">
+            <summary>
+            Decrypt CryptoJs.
+            </summary>
+            <param name="value">Encrypt value.</param>
+            <param name="pass">Pass value.</param>
+            <returns>Text value.</returns>
+        </member>
         <member name="T:SmartFran.Seed.Cryptography.Hash00">
             <summary>
             The cryptography.
