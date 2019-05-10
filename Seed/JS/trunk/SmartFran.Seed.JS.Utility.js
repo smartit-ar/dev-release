@@ -25,21 +25,21 @@ namespace('SmartFran.Seed.JS').Utility = {
       var age = -1; // Error que representa edad negativa. Fecha Nacim posterior a fecha de referencia p/calculo edad
       if (difAnio == 0) {
         age = intCertainDate.getMonth() > intBirthDate.getMonth()
-                ? 0                                                       // age = 0 ; Edad = meses o días (bebé)
-                : intCertainDate.getMonth() == intBirthDate.getMonth()
-                    ? intCertainDate.getDate() >= intBirthDate.getDate()
-                        ? 0
-                        : age
-                    : age;
+          ? 0                                                       // age = 0 ; Edad = meses o días (bebé)
+          : intCertainDate.getMonth() == intBirthDate.getMonth()
+            ? intCertainDate.getDate() >= intBirthDate.getDate()
+              ? 0
+              : age
+            : age;
       }
       if (difAnio > 0) {
         age = intCertainDate.getMonth() > intBirthDate.getMonth()
-                ? difAnio
-                : intCertainDate.getMonth() < intBirthDate.getMonth()
-                    ? difAnio - 1
-                    : intCertainDate.getDate() >= intBirthDate.getDate()
-                        ? difAnio
-                        : difAnio - 1;
+          ? difAnio
+          : intCertainDate.getMonth() < intBirthDate.getMonth()
+            ? difAnio - 1
+            : intCertainDate.getDate() >= intBirthDate.getDate()
+              ? difAnio
+              : difAnio - 1;
       }
       return age;
     },
@@ -129,7 +129,12 @@ namespace('SmartFran.Seed.JS').Utility = {
       if (typeof date != "string") {
         return date;
       }
-      return new Date(parseInt(date.substr(6)));
+
+      if (typeof date === "string" && date.startsWith("/Date(")) {
+        return new Date(parseInt(date.substr(6)));
+      }
+
+      return new Date(date);
     },
     isJsonDateTime: function (date) {
       if (date == null || date == 'undefined') {
@@ -180,7 +185,7 @@ namespace('SmartFran.Seed.JS').Utility = {
         year = month == 0 ? parseInt(year) - 1 : parseInt(year);
         month = parseInt(month) - 1;
         switch (month) {
-          case-1: case 0: case 2: case 4: case 6: case 7: case 9: case 11: return 31;
+          case -1: case 0: case 2: case 4: case 6: case 7: case 9: case 11: return 31;
           case 1: return (year % 4 == 0) ? 29 : 28;
         }
         return 30;
@@ -205,13 +210,13 @@ namespace('SmartFran.Seed.JS').Utility = {
 
       var datediff = Seed.Utility.Date.jsonToDateTime(to) - Seed.Utility.Date.jsonToDateTime(since);
       return Math.ceil(datediff / 86400000) + 1;
-    },    
+    },
     getTodayPlusDays: function (days) {
       if ((days == 'undefined') || (days == null) || (typeof days !== 'number')) {
         days = 0;
       }
-      
-      return new Date().setDate(new Date().getDate() + days);      
+
+      return new Date().setDate(new Date().getDate() + days);
     }
   },
   Number: {
@@ -234,15 +239,15 @@ namespace('SmartFran.Seed.JS').Utility = {
         return null;
       }
 
-      var stringNumberArray = number.toFixed(2).toString().replace(".", ",").split(",");      
-      
+      var stringNumberArray = number.toFixed(2).toString().replace(".", ",").split(",");
+
       var amount = stringNumberArray[0].split("").reverse();
       var output = "";
       for (var i = 0; i <= amount.length - 1; i++) {
         output = amount[i] + output;
         if ((i + 1) % 3 == 0 && (amount.length - 1) !== i) output = '.' + output;
       }
-      
+
       return output + "," + stringNumberArray[1];
     },
     addZeros: function (str, len) {
@@ -250,7 +255,7 @@ namespace('SmartFran.Seed.JS').Utility = {
         str = str.toString();
         return (len - str.length > 0) ? new Array(len + 1 - str.length).join('0') + str : str;
       } else {
-        for (var i = 0, spl = str.split(' ') ; i < spl.length; spl[i] = (Number(spl[i]) && spl[i].length < len) ? addZeros(spl[i], len) : spl[i], str = (i == spl.length - 1) ? spl.join(' ') : str, i++);
+        for (var i = 0, spl = str.split(' '); i < spl.length; spl[i] = (Number(spl[i]) && spl[i].length < len) ? addZeros(spl[i], len) : spl[i], str = (i == spl.length - 1) ? spl.join(' ') : str, i++);
         return str;
       }
     }

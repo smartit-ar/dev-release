@@ -82,9 +82,6 @@
     },
     update: function(element, valueAccessor) {
       var value = ko.utils.unwrapObservable(valueAccessor());
-      if (typeof value === "string" && value.indexOf('/Date(') === 0) {
-        value = new Date(parseInt(value.replace(/\/Date\((.*?)\)\//gi, "$1")));
-      }
       var currentDate = $(element).datepicker("getDate");
       if (value && value - currentDate !== 0) {
         $(element).datepicker("setDate", value);
@@ -97,7 +94,7 @@
       $(allBindingsAccessor().datepickerOptions.nextFocus).focus();
 
       if (ko.isWriteableObservable(observable)) {
-        observable(Seed.Utility.Date.dateTimeToJson(dateValue));
+        observable(dateValue);
         return;
       }
       if (allBindingsAccessor()._ko_property_writers) {
