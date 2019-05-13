@@ -30,6 +30,10 @@
         dateEval = new RegExp("^/Date\\((-?\\d+)\\)/$").exec(dateEval);
       }
 
+      if (dateEval !== null && Object.prototype.toString.call(dateEval) === "[object String]") {
+        dateEval = new Date(dateEval);
+      }
+
       if (dateEval !== null && Object.prototype.toString.call(dateEval) === "[object Date]") {
         return moment(dateEval).format(mask);
       }
