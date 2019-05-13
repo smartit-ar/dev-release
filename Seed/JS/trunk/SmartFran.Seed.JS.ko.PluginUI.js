@@ -82,8 +82,11 @@
     },
     update: function(element, valueAccessor) {
       var value = ko.utils.unwrapObservable(valueAccessor());
+      if (typeof value === "string" && value.startsWith("/Date(")) {
+        value = new Date(parseInt(value.substr(6)));
+      }
       var currentDate = $(element).datepicker("getDate");
-      if (value && value - currentDate !== 0) {
+      if (value && (value - currentDate !== 0)) {
         $(element).datepicker("setDate", value);
       }
     },
