@@ -27,10 +27,10 @@
 
       var dateEval = value;
       if (typeof dateEval === "string" && dateEval.startsWith("/Date(")) {
-        dateEval = new RegExp("^/Date\\((-?\\d+)\\)/$").exec(dateEval);
+        dateEval = new Date(parseInt(dateEval.substr(6)));
       }
 
-      if (dateEval !== null && Object.prototype.toString.call(dateEval) === "[object String]") {
+      if (typeof dateEval === "string") {
         dateEval = new Date(dateEval);
       }
 

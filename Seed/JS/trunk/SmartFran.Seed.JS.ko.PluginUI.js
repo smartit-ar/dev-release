@@ -1,6 +1,6 @@
-﻿var Seed = namespace('SmartFran.Seed.JS');
+﻿var Seed = namespace("SmartFran.Seed.JS");
 
-(namespace('SmartFran.Seed.JS.ko').PluginUI = function () {
+(namespace("SmartFran.Seed.JS.ko").PluginUI = function () {
   ko.bindingHandlers.jqInputMasked = {
     init: function (element, valueAccessor, allBindingsAccessor) {
       var observable = valueAccessor();
@@ -8,19 +8,19 @@
         $(element).inputmask(mask);
       } else {
         if (typeof observable.assignMask == "function") {
-          ko.utils.registerEventHandler(element, 'focus', function () {
+          ko.utils.registerEventHandler(element, "focus", function () {
             observable.assignMask($(element));
           });
         }
       }
-      ko.utils.registerEventHandler(element, 'focusout', function () {
+      ko.utils.registerEventHandler(element, "focusout", function () {
         observable($(element).val());
       });
     },
     update: function (element, valueAccessor) {
       var value = ko.utils.unwrapObservable(valueAccessor());
       $(element).val(value);
-    }
+    },
   };
 
   ko.bindingHandlers.jqSpinner = {
@@ -42,7 +42,7 @@
       if (value !== current) {
         $(element).spinner("value", value);
       }
-    }
+    },
   };
 
   ko.bindingHandlers.jqButton = {
@@ -52,7 +52,7 @@
         $(element).button("destroy");
       });
       $(element).button(options);
-    }
+    },
   };
 
   ko.bindingHandlers.jqDatePicker = {
@@ -60,14 +60,14 @@
 
       function getDateRange() {
         var d = new Date();
-        var dateRange = (d.getFullYear() - 100) + ':' + (d.getFullYear() + 10);
+        var dateRange = (d.getFullYear() - 100) + ":" + (d.getFullYear() + 10);
         return dateRange;
       }
 
       var options = allBindingsAccessor().datepickerOptions;
-      options.monthNames = options.monthNames || ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-      options.monthNamesShort = options.monthNamesShort || ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
-      options.dateFormat = options.dateFormat || 'dd/mm/yy';
+      options.monthNames = options.monthNames || ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+      options.monthNamesShort = options.monthNamesShort || ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+      options.dateFormat = options.dateFormat || "dd/mm/yy";
       options.yearRange = options.yearRange || getDateRange();
       options.nextFocus = options.nextFocus || element;
 
@@ -100,6 +100,6 @@
       if (allBindingsAccessor()._ko_property_writers) {
         allBindingsAccessor()._ko_property_writers.datepicker(dateValue);
       }
-    }
+    },
   };
 })();
