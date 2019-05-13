@@ -230,7 +230,7 @@ namespace("SmartFran.Seed.JS").Utility = {
         return null;
       }
 
-      var result = date;
+      var result = new Date(date);
       if (part.toLowerCase().substr(0, 3) == "day") {
         result = new Date(date.setDate(date.getDate() + offset));
       }
