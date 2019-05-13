@@ -232,25 +232,25 @@ namespace("SmartFran.Seed.JS").Utility = {
 
       var result = new Date(date);
       if (part.toLowerCase().substr(0, 3) == "day") {
-        result = new Date(date.setDate(date.getDate() + offset));
+        result = new Date(result.setDate(result.getDate() + offset));
       }
       else if (part.toLowerCase().substr(0, 4) == "week") {
-        result = new Date(date.setDate(date.getDate() + (offset * 7)));
+        result = new Date(result.setDate(result.getDate() + (offset * 7)));
       }
       else if (part.toLowerCase().substr(0, 4) == "hour") {
-        result = new Date(date.setHours(date.getHours() + offset));
+        result = new Date(result.setHours(result.getHours() + offset));
       }
       else if (part.toLowerCase().substr(0, 3) == "min") {
-        result = new Date(date.setMinutes(date.getMinutes() + offset));
+        result = new Date(result.setMinutes(result.getMinutes() + offset));
       }
       else if (part.toLowerCase().substr(0, 3) == "sec") {
-        result = new Date(date.setSeconds(date.getSeconds() + offset));
+        result = new Date(result.setSeconds(result.getSeconds() + offset));
       }
       else if (part.toLowerCase().substr(0, 5) == "month") {
-        result = new Date(date.setMonth(date.getMonth() + offset));
+        result = new Date(result.setMonth(result.getMonth() + offset));
       }
       else if (part.toLowerCase().substr(0, 4) == "year") {
-        result = new Date(date.setFullYear(date.getFullYear() + offset));
+        result = new Date(result.setFullYear(result.getFullYear() + offset));
       }
 
       return result;
