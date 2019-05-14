@@ -31,10 +31,26 @@
       }
 
       if (typeof dateEval === "string") {
-        dateEval = new Date(dateEval);
+        try {
+          dateEval = new Date(dateEval);
+        }
+        catch (error) {
+          dateEva = null;
+        }
       }
 
-      if (dateEval !== null && Object.prototype.toString.call(dateEval) === "[object Date]") {
+      if (typeof dateEval === "string") {
+        try {
+          dateEval = new Date(dateEval);
+        }
+        catch (error) {
+          dateEval = null;
+        }
+      }
+
+      if (dateEval !== null
+        && Object.prototype.toString.call(dateEval) === "[object Date]"
+        && !isNaN(dateEval.getTime())) {
         return moment(dateEval).format(mask);
       }
 
