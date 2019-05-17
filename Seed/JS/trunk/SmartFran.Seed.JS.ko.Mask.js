@@ -21,7 +21,7 @@
     }
 
     function getMaskValue(value) {
-      if (mask === "currency") {
+      if (value && (mask === "currency")) {
         return formatToCurrency(value);
       }
 
@@ -60,9 +60,6 @@
     }
 
     function formatToCurrency(value) {
-      if (value === null) {
-        return null;
-      }
       var part = value.toString().split(".");
       var dec = "00";
       var inte = "0";
