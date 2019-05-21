@@ -14,7 +14,7 @@
         input = $("<input type='text'>");
       }
       if (mask === "currency") {
-        input.inputmask({ alias: "currency" });
+        input.inputmask({ alias: "currency", });
       } else {
         input.inputmask(mask);
       }
@@ -59,20 +59,6 @@
       return input.val();
     }
 
-    //function formatToCurrency(value) {
-    //  var part = value.toString().split(".");
-    //  var dec = "00";
-    //  var inte = "0";
-    //  if (part.length === 2) {
-    //    inte = part[0];
-    //    dec = (part[1] + "00").substr(0, 2);
-    //  }
-    //  if (part.length === 1) {
-    //    inte = part[0];
-    //  }
-    //  return "$" + inte + "." + dec;
-    //};
-
     function getUnmaskValue(value) {
       if (unmask) {
         return value.replace(unmask, "");
@@ -86,8 +72,6 @@
       }
       return result;
     }
-
-    // prepareMask();
 
     self.masked = ko.computed({
       read: function () {
