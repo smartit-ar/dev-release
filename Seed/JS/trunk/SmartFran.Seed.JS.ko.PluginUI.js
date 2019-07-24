@@ -56,7 +56,7 @@
   };
 
   ko.bindingHandlers.jqDatePicker = {
-    init: function(element, valueAccessor, allBindingsAccessor) {
+    init: function (element, valueAccessor, allBindingsAccessor) {
 
       function getDateRange() {
         var d = new Date();
@@ -73,14 +73,14 @@
 
       $(element)
         .datepicker(options)
-        .bind("change", function() {
+        .bind("change", function () {
           ko.bindingHandlers.jqDatePicker.updateValue(element, valueAccessor, allBindingsAccessor);
         });
-      ko.utils.domNodeDisposal.addDisposeCallback(element, function() {
+      ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
         $(element).datepicker("destroy");
       });
     },
-    update: function(element, valueAccessor) {
+    update: function (element, valueAccessor) {
       var value = ko.utils.unwrapObservable(valueAccessor());
       if (typeof value === "string" && value.startsWith("/Date(")) {
         value = new Date(parseInt(value.substr(6)));
@@ -90,7 +90,8 @@
         $(element).datepicker("setDate", value);
       }
     },
-    updateValue: function(element, valueAccessor, allBindingsAccessor) {
+
+    updateValue: function (element, valueAccessor, allBindingsAccessor) {
       var observable = valueAccessor();
       var dateValue = $(element).datepicker("getDate");
 
@@ -105,4 +106,19 @@
       }
     },
   };
+
+  ko.bindingHandlers.jqDatepickerMinDate = {
+    update: function (element, valueAccessor) {
+      var value = ko.utils.unwrapObservable(valueAccessor()),
+        current = $(element).datepicker("option", "minDate", value);
+    },
+  };
+
+  ko.bindingHandlers.jqDatepickerMaxDate = {
+    update: function (element, valueAccessor) {
+      var value = ko.utils.unwrapObservable(valueAccessor()),
+        current = $(element).datepicker("option", "maxDate", value);
+    },
+  };
+
 })();
