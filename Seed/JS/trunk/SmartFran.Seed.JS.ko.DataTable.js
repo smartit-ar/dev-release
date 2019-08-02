@@ -5,19 +5,17 @@
 
     ko.unwrap(binding.data);
 
-    if (binding.options.paging) {
-      binding.data.subscribe(function (changes) {
-        var table = $(element).closest("table").DataTable();
-        ko.bindingHandlers.koDataTable.page = table.page();
-        table.destroy();
-      }, null, "arrayChange");
-    }
+    binding.data.subscribe(function (changes) {
+      var table = $(element).closest("table").DataTable();
+      ko.bindingHandlers.koDataTable.page = table.page();
+      table.destroy();
+    }, null, "arrayChange");
 
     var nodes = Array.prototype.slice.call(element.childNodes, 0);
     ko.utils.arrayForEach(nodes, function (node) {
       if (node && node.nodeType !== 1) {
         node.parentNode.removeChild(node);
-      } 
+      }
     });
 
     return ko.bindingHandlers.foreach.init(element, valueAccessor, allBindingsAccessor, viewModel, bindingContext);
