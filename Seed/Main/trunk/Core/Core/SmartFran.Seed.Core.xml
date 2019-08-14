@@ -399,6 +399,16 @@
             <param name="pass">Pass value.</param>
             <returns>Text value.</returns>
         </member>
+        <member name="T:SmartFran.Seed.Cryptography.CryptoOptions">
+            <summary>
+            Crypto options.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Cryptography.CryptoOptions.NotIncludeHashInfo">
+            <summary>
+            Not include HashCRC in text.
+            </summary>
+        </member>
         <member name="T:SmartFran.Seed.Cryptography.Hash00">
             <summary>
             The cryptography.
@@ -505,6 +515,14 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.GetDefaultException">
+            <summary>
+            The get default exception.
+            </summary>
+            <returns>
+            The <see cref="T:System.Exception"/>.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.Cryptography.HashGenerator.GetHash(System.String)">
             <summary>
             The get hash.
@@ -591,23 +609,9 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.Generate(System.String,System.String)">
-            <summary>
-            The get crypto key.
-            </summary>
-            <param name="firstKey">
-            The first Key.
-            </param>
-            <param name="secondKey">
-            The second Key.
-            </param>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
         <member name="M:SmartFran.Seed.Cryptography.HashGenerator.GetMergedKeys(System.String,System.String)">
             <summary>
-            The get merged user name and password.
+            The get merged firstkey and secondkey.
             </summary>
             <param name="firstKey">
             The user password.
@@ -641,23 +645,18 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.GetDefaultException">
+        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.Generate(System.String,System.String)">
             <summary>
-            The get default exception.
+            The get crypto key.
             </summary>
-            <returns>
-            The <see cref="T:System.Exception"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.GetHashWithCrc(System.Int32)">
-            <summary>
-            The get hash with crc.
-            </summary>
-            <param name="hashId">
-            The hash id.
+            <param name="firstKey">
+            The first Key.
+            </param>
+            <param name="secondKey">
+            The second Key.
             </param>
             <returns>
-            The <see cref="T:System.Int32"/>.
+            The <see cref="T:System.String"/>.
             </returns>
         </member>
         <member name="T:SmartFran.Seed.Cryptography.Crypto">
@@ -665,7 +664,7 @@
             The cryptography.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.Crypto.GetHash(System.String,System.Int32)">
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.GetHash(System.String,System.Int32,SmartFran.Seed.Cryptography.CryptoOptions[])">
             <summary>
             The get hash.
             </summary>
@@ -675,11 +674,14 @@
             <param name="hashId">
             The hash Id.
             </param>
+            <param name="options">
+            Crypto options.
+            </param>
             <returns>
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.Crypto.GetHash(System.String,System.String,System.Int32)">
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.GetHash(System.String,System.String,System.Int32,SmartFran.Seed.Cryptography.CryptoOptions[])">
             <summary>
             The get hash.
             </summary>
@@ -691,6 +693,9 @@
             </param>
             <param name="hashId">
             The hash id.
+            </param>
+            <param name="options">
+            Crypto options.
             </param>
             <returns>
             The <see cref="T:System.String"/>.
@@ -707,7 +712,7 @@
             The id.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.Crypto.Encode(System.String,System.Int32)">
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.Encode(System.String,System.Int32,SmartFran.Seed.Cryptography.CryptoOptions[])">
             <summary>
             The encode.
             </summary>
@@ -717,11 +722,14 @@
             <param name="hashId">
             The hash id.
             </param>
+            <param name="options">
+            Crypto options.
+            </param>
             <returns>
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.Crypto.Encode(System.String,System.String,System.Int32)">
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.Encode(System.String,System.String,System.Int32,SmartFran.Seed.Cryptography.CryptoOptions[])">
             <summary>
             The encode.
             </summary>
@@ -734,11 +742,14 @@
             <param name="hashId">
             The hash id.
             </param>
+            <param name="options">
+            Crypto options.
+            </param>
             <returns>
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.Crypto.Decode(System.String,System.Int32)">
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.Decode(System.String,System.Int32,SmartFran.Seed.Cryptography.CryptoOptions[])">
             <summary>
             The decode.
             </summary>
@@ -748,11 +759,14 @@
             <param name="hashId">
             The hash id.
             </param>
+            <param name="options">
+            Crypto options.
+            </param>
             <returns>
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.Crypto.Decode(System.String,System.String,System.Int32)">
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.Decode(System.String,System.String,System.Int32,SmartFran.Seed.Cryptography.CryptoOptions[])">
             <summary>
             The decode.
             </summary>
@@ -764,6 +778,9 @@
             </param>
             <param name="hashId">
             The hash id.
+            </param>
+            <param name="options">
+            Crypto options.
             </param>
             <returns>
             The <see cref="T:System.String"/>.
@@ -778,6 +795,17 @@
             </param>
             <returns>
             The <see cref="T:SmartFran.Seed.Cryptography.HashGenerator"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.GetHashWithCrc(System.Int32)">
+            <summary>
+            The get hash with crc.
+            </summary>
+            <param name="hashId">
+            The hash id.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
             </returns>
         </member>
         <member name="T:SmartFran.Seed.Cryptography.Hash01">
