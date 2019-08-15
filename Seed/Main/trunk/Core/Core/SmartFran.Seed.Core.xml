@@ -681,6 +681,43 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.GetHash(System.String,System.Int32)">
+            <summary>
+            The get hash.
+            </summary>
+            <param name="firstKey">
+            The first Key.
+            </param>
+            <param name="hashId">
+            The hash Id.
+            </param>
+            <param name="options">
+            Crypto options.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.GetHash(System.String,System.String,System.Int32)">
+            <summary>
+            The get hash.
+            </summary>
+            <param name="firstKey">
+            The first key.
+            </param>
+            <param name="secondKey">
+            The second key.
+            </param>
+            <param name="hashId">
+            The hash id.
+            </param>
+            <param name="options">
+            Crypto options.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
         <member name="M:SmartFran.Seed.Cryptography.Crypto.GetHash(System.String,System.String,System.Int32,SmartFran.Seed.Cryptography.CryptoOptions[])">
             <summary>
             The get hash.
