@@ -691,9 +691,6 @@
             <param name="hashId">
             The hash Id.
             </param>
-            <param name="options">
-            Crypto options.
-            </param>
             <returns>
             The <see cref="T:System.String"/>.
             </returns>
@@ -710,9 +707,6 @@
             </param>
             <param name="hashId">
             The hash id.
-            </param>
-            <param name="options">
-            Crypto options.
             </param>
             <returns>
             The <see cref="T:System.String"/>.
