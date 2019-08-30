@@ -901,16 +901,23 @@
             The item Id.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Reload(`0@,System.Boolean)">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Reload(`0)">
             <summary>
             The reload.
             </summary>
             <param name="entity">
             The entity.
             </param>
-            <param name="full">
-            Full reload.
+            <returns>Entry.</returns>
+        </member>
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.FullReload(`0)">
+            <summary>
+            The reload.
+            </summary>
+            <param name="entity">
+            The entity.
             </param>
+            <returns>Entry.</returns>
         </member>
         <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.Modify(`0)">
             <summary>
