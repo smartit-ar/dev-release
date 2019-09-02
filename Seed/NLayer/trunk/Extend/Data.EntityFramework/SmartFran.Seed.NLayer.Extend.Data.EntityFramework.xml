@@ -186,12 +186,12 @@
             Entity type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.FullReload``1(``0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.FullReload``1(``0@)">
             <summary>
             The reload.
             </summary>
-            <param name="entity">
-            The entity.
+            <param name="value">
+            The entity value.
             </param>
             <typeparam name="TEntity">
             Entity type.
@@ -468,11 +468,11 @@
             The entity.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.FullReload(`0)">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfDataView`2.FullReload(`0@)">
             <summary>
             The reload entity.
             </summary>
-            <param name="entity">
+            <param name="value">
             The entity.
             </param>
         </member>

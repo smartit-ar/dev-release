@@ -910,7 +910,7 @@
             </param>
             <returns>Entry.</returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.FullReload(`0)">
+        <member name="M:SmartFran.Seed.NLayer.Domain.IDataView`2.FullReload(`0@)">
             <summary>
             The reload.
             </summary>
