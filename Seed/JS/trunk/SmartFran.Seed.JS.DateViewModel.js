@@ -4,18 +4,18 @@
 
   self.years = ko.observableArray([]);
   self.months = ko.observableArray([
-    { Code: 0, Name: "Ene" },
-    { Code: 1, Name: "Feb" },
-    { Code: 2, Name: "Mar" },
-    { Code: 3, Name: "Abr" },
-    { Code: 4, Name: "May" },
-    { Code: 5, Name: "Jun" },
-    { Code: 6, Name: "Jul" },
-    { Code: 7, Name: "Ago" },
-    { Code: 8, Name: "Sep" },
-    { Code: 9, Name: "Oct" },
-    { Code: 10, Name: "Nov" },
-    { Code: 11, Name: "Dic" }
+    { Code: 0, Name: "Ene", },
+    { Code: 1, Name: "Feb", },
+    { Code: 2, Name: "Mar", },
+    { Code: 3, Name: "Abr", },
+    { Code: 4, Name: "May", },
+    { Code: 5, Name: "Jun", },
+    { Code: 6, Name: "Jul", },
+    { Code: 7, Name: "Ago", },
+    { Code: 8, Name: "Sep", },
+    { Code: 9, Name: "Oct", },
+    { Code: 10, Name: "Nov", },
+    { Code: 11, Name: "Dic", }
   ]);
   self.days = ko.observableArray([]);
 
