@@ -143,6 +143,10 @@
     // Override
   };
 
+  self.vm_OnAfterBinding = function () {
+    // Override
+  };
+
   self.vm_InitValidations = function () {
     // Override
   };
@@ -155,8 +159,13 @@
     };
   };
 
+  self._afterBinding = function () {
+    self.vm_OnAfterBinding(self);
+  };
+
   document.addEventListener("DOMContentLoaded", function (event) {
     self._load();
     ko.applyBindings(self, document.body);
+    self._afterBinding();
   });
 };
