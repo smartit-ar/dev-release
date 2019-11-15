@@ -134,11 +134,6 @@
     return "Se presentó una condición de falla.";
   };
 
-  self.vm_GetUrlToLogin = function () {
-    // Override
-    return "/Account/Login";
-  };
-
   self.vm_OnLoad = function () {
     // Override
   };
