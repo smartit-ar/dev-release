@@ -158,7 +158,7 @@
     self.vm_OnAfterBinding(self);
   };
 
-  self.ajaxObject = function (params) {
+  self.ajaxObjectProcessResults = function (params) {
     var type = params.type || "GET";
     var dataType = params.dataType == null || params.dataType == undefined ? "json" : params.contentType;
     var processData = params.processData == null || params.processData == undefined || params.processData;
@@ -172,6 +172,40 @@
       dataType: dataType,
       data: data,
       processResults: processData,
+      error: function (result) {
+        if (result.status == 401) {
+          self.submitGet({ url: vm_GetUrlToLogin(), data: { ReturnUrl: location.pathname, Unauthorized: true, }, });
+        }
+        else {
+          if ((typeof result.responseText == "string") && (result.responseText.length > 0)) {
+            try {
+              var exception = $.parseJSON(result.responseText);
+              self.catchException(exception, params.error);
+            } catch (ex) {
+              self.catchException({ Message: result.responseText, }, params.error);
+            }
+          } else {
+            throw vm_GetDefaultExceptionMessage();
+          }
+        }
+      },
+    };
+  };
+
+  self.ajaxObjectDataFilter = function (params) {
+    var type = params.type || "GET";
+    var dataType = params.dataType == null || params.dataType == undefined ? "json" : params.contentType;
+    var dataFilter = params.dataFilter == null || params.dataFilter == undefined || params.dataFilter;
+    var data = params.data;
+    if ((type.toLowerCase() == "post") && (typeof contentType == "string") && (contentType.toLowerCase().indexOf("application/json") != -1)) {
+      data = JSON.stringify(data);
+    }
+    return {
+      url: params.url,
+      type: type,
+      dataType: dataType,
+      data: data,
+      dataFilter: dataFilter,
       error: function (result) {
         if (result.status == 401) {
           self.submitGet({ url: vm_GetUrlToLogin(), data: { ReturnUrl: location.pathname, Unauthorized: true, }, });
