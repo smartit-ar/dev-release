@@ -1424,11 +1424,6 @@
             Logging factory
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Logging.LoggerFactory.defaultLoggerName">
-            <summary>
-            The default logger name.
-            </summary>
-        </member>
         <member name="P:SmartFran.Seed.Logging.LoggerFactory.DefaultLoggerName">
             <summary>
             Gets or sets the default logger name.
