@@ -180,7 +180,7 @@
             <param name="code">code param.</param>
             <returns>Task object.</returns>
         </member>
-        <member name="M:SmartFran.Business.Schedule.Service.Task.TaskProcessFactory.InitializeTasks">
+        <member name="M:SmartFran.Business.Schedule.Service.Task.TaskProcessFactory.GetTask(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:SmartFran.Business.Schedule.Service.Task.TaskProcessFactory"/> class.
             </summary>
