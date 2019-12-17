@@ -173,6 +173,9 @@
       data: data,
       processResults: processData,
       error: function (result) {
+        if (result.statusText == "abort") {
+          return;
+        }
         if (result.status == 401) {
           self.submitGet({ url: vm_GetUrlToLogin(), data: { ReturnUrl: location.pathname, Unauthorized: true, }, });
         }
@@ -185,7 +188,7 @@
               self.catchException({ Message: result.responseText, }, params.error);
             }
           } else {
-            throw vm_GetDefaultExceptionMessage();
+            throw self.vm_GetDefaultExceptionMessage();
           }
         }
       },
@@ -219,7 +222,7 @@
               self.catchException({ Message: result.responseText, }, params.error);
             }
           } else {
-            throw vm_GetDefaultExceptionMessage();
+            throw self.vm_GetDefaultExceptionMessage();
           }
         }
       },
