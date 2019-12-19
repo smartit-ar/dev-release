@@ -1,0 +1,430 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Business.Mailing.Core.Application</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService">
+            <summary>
+            The mailing application service.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.MailingCtx">
+            <summary>
+            Gets or sets the smart loyalty ctx.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.AddContact(SmartFran.Business.Mailing.Service.MailingContext.MailContactDto)">
+            <summary>
+            The add contact.
+            </summary>
+            <param name="contact">
+            The contact.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailContactDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.UpdateContact(SmartFran.Business.Mailing.Service.MailingContext.MailContactDto)">
+            <summary>
+            The update contact.
+            </summary>
+            <param name="contact">
+            The contact.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailContactDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.AddContactList(System.Collections.Generic.ICollection{SmartFran.Business.Mailing.Service.MailingContext.MailContactDto})">
+            <summary>
+            The add contact list.
+            </summary>
+            <param name="contacts">
+            The contacts.
+            </param>
+            <returns>
+            The <see>
+                <cref>ICollection</cref>
+              </see>
+              .
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.UpdateContactList(System.Collections.Generic.ICollection{SmartFran.Business.Mailing.Service.MailingContext.MailContactDto})">
+            <summary>
+            The update contact list.
+            </summary>
+            <param name="contacts">
+            The contacts.
+            </param>
+            <returns>
+            The <see>
+                <cref>ICollection</cref>
+              </see>
+              .
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.AddMailMessage(SmartFran.Business.Mailing.Service.MailingContext.MailMessageDto)">
+            <summary>
+            The add mail message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailMessageDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.UpdateMailMessage(SmartFran.Business.Mailing.Service.MailingContext.MailMessageDto)">
+            <summary>
+            The update mail message.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailMessageDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.AddMailDelivery(SmartFran.Business.Mailing.Service.MailingContext.MailDeliveryDto)">
+            <summary>
+            The add mail delivery.
+            </summary>
+            <param name="delivery">
+            The delivery.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailDeliveryDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.UpdateMailDelivery(SmartFran.Business.Mailing.Service.MailingContext.MailDeliveryDto)">
+            <summary>
+            The update mail delivery.
+            </summary>
+            <param name="delivery">
+            The delivery.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailDeliveryDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.GetContact(System.Int32)">
+            <summary>
+            The get contact.
+            </summary>
+            <param name="id">
+            The id.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailContactDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.GetContactList(System.String)">
+            <summary>
+            Obtener lista de contactos.
+            </summary>
+            <param name="query">
+            Query sql para obtener contactos.
+            </param>
+            <returns>
+            Lista de <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailContactDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.GetMailMessage(System.Int32)">
+            <summary>
+            Obtener mensaje de mail.
+            </summary>
+            <param name="id">
+            Id de mensaje de mail.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailMessageDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.GetMailDelivery(System.Int32)">
+            <summary>
+            Obtener un delivery de mail.
+            </summary>
+            <param name="id">
+            Id de delivery de mail.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailDeliveryDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.GetMailCampaign(System.Int32)">
+            <summary>
+            Obtener una campaña de mail.
+            </summary>
+            <param name="id">
+            Id de campaña de mail.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailCampaignDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.GetPendingMailDeliveries">
+            <summary>
+            Obtener deliveries pendientes.
+            </summary>
+            <returns>
+            Lista de <see cref="T:SmartFran.Business.Mailing.Domain.MailingContext.MailDelivery"/> que estan pendientes de envio.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.CreateMailCampaign(SmartFran.Business.Mailing.Service.MailingContext.MailMessageDto,System.Collections.Generic.ICollection{SmartFran.Business.Mailing.Service.MailingContext.MailContactDto},System.DateTimeOffset)">
+            <summary>
+            Crear campaña de mail.
+            </summary>
+            <param name="message">
+            El mensaje de mail.
+            </param>
+            <param name="contacts">
+            Listado de contactos.
+            </param>
+            <param name="planned">
+            Fecha planificada de envio.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailCampaignDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.CreateMailCampaign(System.Int32,System.Collections.Generic.ICollection{SmartFran.Business.Mailing.Service.MailingContext.MailContactDto},System.DateTimeOffset)">
+            <summary>
+            Crear campaña de mail.
+            </summary>
+            <param name="messageId">
+            Id de mensaje.
+            </param>
+            <param name="contacts">
+            Lista de contactos.
+            </param>
+            <param name="planned">
+            Fecha planificada de envio.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailCampaignDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.AddDeliveriesToMailCampaign(System.Int32,System.Collections.Generic.ICollection{SmartFran.Business.Mailing.Service.MailingContext.MailContactDto})">
+            <summary>
+            Agregar envios a campaña de mail.
+            </summary>
+            <param name="campaignId">
+            Id de campaña de mail.
+            </param>
+            <param name="contacts">
+            Lista de contactos.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailCampaignDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendPendingCampaign(System.Int32,SmartFran.Business.Mailing.Service.MailingContext.IMailingSenderApplicationService)">
+            <summary>
+            Enviar campaña de mail pendiente.
+            </summary>
+            <param name="id">
+            Id de campaña de mail.
+            </param>
+            <param name="sender">
+            Servicio de envio de correo.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailCampaignDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendPendingCampaigns(SmartFran.Business.Mailing.Service.MailingContext.IMailingSenderApplicationService)">
+            <summary>
+            Enviar campañas de mail pendiente.
+            </summary>
+            <param name="sender">
+            Servicio de envio de mail.
+            </param>
+            <returns>
+            Listado de <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailCampaignDto"/> que se enviaron.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendPendingDeliveries(SmartFran.Business.Mailing.Service.MailingContext.IMailingSenderApplicationService)">
+            <summary>
+            Enviar envios pendientes.
+            </summary>
+            <param name="sender">
+            Servicio de envio de correos.
+            </param>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.DeactivateCampaign(System.Int32)">
+            <summary>
+            Desactivar campaña de mails.
+            </summary>
+            <param name="campaignId">
+            Id de campaña de mails.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailCampaignDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.GetContactListForApp(System.String)">
+            <summary>
+            Obtener lista de contactos para una app.
+            </summary>
+            <param name="appCode">
+            Codigo de aplicacion.
+            </param>
+            <returns>
+            Lista de contactos <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailContactDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendDeliveries(SmartFran.Business.Mailing.Service.MailingContext.IMailingSenderApplicationService,SmartFran.Business.Mailing.Domain.MailingContext.MailingService,System.Collections.Generic.List{SmartFran.Business.Mailing.Domain.MailingContext.MailDelivery})">
+            <summary>
+            Enviar envios.
+            </summary>
+            <param name="sender">
+            Servicio de envio de correos.
+            </param>
+            <param name="svc">
+            Instancia de <see cref="T:SmartFran.Business.Mailing.Domain.MailingContext.MailingService"/>.
+            </param>
+            <param name="pendingDeliveries">
+            Lista de envios.
+            </param>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.ReplaceBodyAttributes(SmartFran.Business.Mailing.Domain.MailingContext.MailDelivery,System.String)">
+            <summary>
+            Atributos a reemplazar en cuerpo html de mail.
+            </summary>
+            <param name="delivery">
+            El envio a realizar.
+            </param>
+            <param name="htmlBody">
+            Cuerpo del mail en html con atributos a reemplazar.
+            </param>
+            <returns>
+            Cuerpo del mail en html para envio.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.ReplaceSubjectAttributes(SmartFran.Business.Mailing.Domain.MailingContext.MailDelivery,System.String)">
+            <summary>
+            Reemplazar Atributos en asunto.
+            </summary>
+            <param name="delivery">
+            El delivery.
+            </param>
+            <param name="subject">
+            El asunto.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.GetContext">
+            <summary>
+            Obtener contexto.
+            </summary>
+            <returns>
+            <see cref="T:SmartFran.Seed.NLayer.Data.IDataContext"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService">
+            <summary>
+            Servicio de envio de correos mediante smtp.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.defaultEmailTo">
+            <summary>
+            Direccion de correo de destinatario por defecto.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.defaultEmailFrom">
+            <summary>
+            correo del Remitente.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.smtp">
+            <summary>
+            Smtp service.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.Initialize(System.String,System.String,System.String,System.Int32,System.Boolean,System.String,System.String)">
+            <summary>
+            Initialize MailSender object.
+            </summary>
+            <param name="defaultEmailTo">
+            Destinatario por defecto.
+            </param>
+            <param name="defaultEmailFrom">
+            Remitente por defecto.
+            </param>
+            <param name="smtpServerHost">
+            Host de server smtp.
+            </param>
+            <param name="smtpMailPort">
+            Puerto stmp.
+            </param>
+            <param name="enableSsl">
+            Activar ssl.
+            </param>
+            <param name="smtpUser">
+            Usuario Smtp.
+            </param>
+            <param name="smtpPassword">
+            Password smtp.
+            </param>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.SendHtmlEmail(System.String,System.String,System.Collections.Generic.ICollection{System.String},System.String,System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.Net.Mail.LinkedResource},System.String)">
+            <summary>
+            Envia un correo.
+            </summary>
+            <param name="subject">
+            El asunto.
+            </param>
+            <param name="htmlBody">
+            Cuerpo html del correo.
+            </param>
+            <param name="to">
+            El Destinatario.
+            </param>
+            <param name="from">from param.</param>
+            <param name="cc">
+            Destinatario secundario.
+            </param>
+            <param name="bcc">
+            Destinatario oculto.
+            </param>
+            <param name="resources">
+            Recursos linkeados.
+            </param>
+            <param name="plainBody">
+            Cuerpo sin formato.
+            </param>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.SendPlainEmail(System.String,System.String,System.Collections.Generic.ICollection{System.String},System.String,System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.Net.Mail.LinkedResource})">
+            <summary>
+            Envia un correo.
+            </summary>
+            <param name="subject">
+            El asunto.
+            </param>
+            <param name="body">
+            Cuerpo del correo.
+            </param>
+            <param name="to">
+            El Destinatario.
+            </param>
+            <param name="from">from param.</param>
+            <param name="cc">
+            Destinatario secundario.
+            </param>
+            <param name="bcc">
+            Destinatario oculto.
+            </param>
+            <param name="resources">
+            Recursos linkeados.
+            </param>
+        </member>
+    </members>
+</doc>

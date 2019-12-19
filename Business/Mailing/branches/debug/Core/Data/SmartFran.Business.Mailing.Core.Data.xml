@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Business.Mailing.Core.Data</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Business.Mailing.Data.Context.MailingContextCoreInitializer">
+            <summary>
+            The configuration.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Data.Context.MailingContextCoreInitializer.Seed(SmartFran.Business.Mailing.Data.Context.MailingContext)">
+            <summary>
+            The seed.
+            </summary>
+            <param name="context">
+            The context.
+            </param>
+        </member>
+        <member name="T:SmartFran.Business.Mailing.Data.Context.MailingContext">
+            <summary>
+            The billing context.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Business.Mailing.Data.Context.MailingContext.MailContact">
+            <summary>
+            Gets or sets the mail contact.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Business.Mailing.Data.Context.MailingContext.MailMessage">
+            <summary>
+            Gets or sets the mail message.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Business.Mailing.Data.Context.MailingContext.MailDelivery">
+            <summary>
+            Gets or sets the mail delivery.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Business.Mailing.Data.Context.MailingContext.MailDeliveryLog">
+            <summary>
+            Gets or sets the mail delivery log.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Business.Mailing.Data.Context.MailingContext.MailCampaign">
+            <summary>
+            Gets or sets the mail campaign.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Data.Context.MailingContext.OnModelCreating(System.Data.Entity.DbModelBuilder)">
+            <summary>
+            The on model creating.
+            </summary>
+            <param name="modelBuilder">
+            The model builder.
+            </param>
+        </member>
+        <member name="T:SmartFran.Business.Mailing.Data.Migrations.MailingMigration">
+            <summary>
+            The Mailing migration initializer.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Business.Mailing.Migrations.InitialCreate">
+            <summary>
+            The initial create.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Migrations.InitialCreate.Up">
+            <summary>
+            The up.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Migrations.InitialCreate.Down">
+            <summary>
+            The down.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Business.Mailing.Migrations.IndexMailContact">
+            <summary>
+            Migration. 
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Migrations.IndexMailContact.Up">
+            <summary>
+            Up migration.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Migrations.IndexMailContact.Down">
+            <summary>
+            Downgrade.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Business.Mailing.Migrations.Configuration">
+            <summary>
+            The configuration.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Migrations.Configuration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Business.Mailing.Migrations.Configuration"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Mailing.Migrations.Configuration.Seed(SmartFran.Business.Mailing.Data.Context.MailingContext)">
+            <summary>
+            The seed.
+            </summary>
+            <param name="context">
+            The context.
+            </param>
+        </member>
+    </members>
+</doc>
