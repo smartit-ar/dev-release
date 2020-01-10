@@ -378,6 +378,82 @@
             The <see cref="T:SmartFran.Seed.Captcha.ICaptcha"/>.
             </returns>
         </member>
+        <member name="T:SmartFran.Seed.Comm.MailSender">
+            <summary>
+            Servicio de envio de correos mediante smtp.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Comm.MailSender.defaultEmailTo">
+            <summary>
+            Direccion de correo de destinatario por defecto.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Comm.MailSender.defaultEmailFrom">
+            <summary>
+            correo del Remitente.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Comm.MailSender.smtp">
+            <summary>
+            Smtp service.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Comm.MailSender.#ctor(System.String,System.String,System.String,System.Int32,System.Boolean,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Comm.MailSender"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Comm.MailSender.SendHtmlEmail(System.String,System.String,System.Collections.Generic.ICollection{System.String},System.String,System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.Net.Mail.LinkedResource},System.String)">
+            <summary>
+            Envia un correo.
+            </summary>
+            <param name="subject">
+            El asunto.
+            </param>
+            <param name="htmlBody">
+            Cuerpo html del correo.
+            </param>
+            <param name="to">
+            El Destinatario.
+            </param>
+            <param name="from">from param.</param>
+            <param name="cc">
+            Destinatario secundario.
+            </param>
+            <param name="bcc">
+            Destinatario oculto.
+            </param>
+            <param name="resources">
+            Recursos linkeados.
+            </param>
+            <param name="plainBody">
+            Cuerpo sin formato.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Comm.MailSender.SendPlainEmail(System.String,System.String,System.Collections.Generic.ICollection{System.String},System.String,System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.Net.Mail.LinkedResource})">
+            <summary>
+            Envia un correo.
+            </summary>
+            <param name="subject">
+            El asunto.
+            </param>
+            <param name="body">
+            Cuerpo del correo.
+            </param>
+            <param name="to">
+            El Destinatario.
+            </param>
+            <param name="from">from param.</param>
+            <param name="cc">
+            Destinatario secundario.
+            </param>
+            <param name="bcc">
+            Destinatario oculto.
+            </param>
+            <param name="resources">
+            Recursos linkeados.
+            </param>
+        </member>
         <member name="T:SmartFran.Seed.Cryptography.CryptoJS">
             <summary>
             The cryptography.
