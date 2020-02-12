@@ -197,7 +197,7 @@
             Entity type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand(System.String,System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommandWithTimeout(System.String,System.Int32,System.Object[])">
             <summary>
             The execute command.
             </summary>
@@ -212,7 +212,7 @@
             The System.Int32.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommandWithTimeout(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Int32,System.Object[])">
             <summary>
             The execute command.
             </summary>
@@ -227,7 +227,7 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand``1(System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommandWithTimeout``1(System.Int32,System.Object[])">
             <summary>
             The execute command.
             </summary>
@@ -242,7 +242,7 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(System.String,System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQueryWithTimeout``1(System.String,System.Int32,System.Object[])">
             <summary>
             The execute query.
             </summary>
@@ -260,7 +260,7 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQueryWithTimeout``1(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Int32,System.Object[])">
             <summary>
             The execute query.
             </summary>
@@ -278,7 +278,7 @@
             The entities.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``2(System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQueryWithTimeout``2(System.Int32,System.Object[])">
             <summary>
             The execute query.
             </summary>
@@ -390,7 +390,7 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Execute``1(SmartFran.Seed.NLayer.Data.IDataContext,System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.ExecuteWithTimeout``1(SmartFran.Seed.NLayer.Data.IDataContext,System.Int32,System.Object[])">
             <summary>
             The execute.
             </summary>

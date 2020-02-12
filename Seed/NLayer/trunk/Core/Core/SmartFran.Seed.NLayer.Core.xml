@@ -75,7 +75,7 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.ISqlPassThrough.Execute``1(SmartFran.Seed.NLayer.Data.IDataContext,System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.ISqlPassThrough.Execute``1(SmartFran.Seed.NLayer.Data.IDataContext,System.Object[])">
             <summary>
             The execute.
             </summary>
@@ -108,7 +108,7 @@
             Base contract for support 'dialect specific queries'.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteQuery``1(System.String,System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteQuery``1(System.String,System.Object[])">
             <summary>
             Execute specific query with underliying persistence store.
             </summary>
@@ -119,20 +119,18 @@
             SELECT idCustomer,Name FROM dbo.[Customers] WHERE idCustomer > {0}
             </example>
             </param>
-            <param name="commandTimeout"></param>
             <param name="parameters">A vector of parameters values.</param>
             <returns>
             Enumerable results.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteQuery``1(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteQuery``1(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Object[])">
             <summary>
             The execute query.
             </summary>
             <param name="sqlPassThrough">
             The sql pass through.
             </param>
-            <param name="commandTimeout"></param>
             <param name="parameters">
             The parameters.
             </param>
@@ -143,7 +141,7 @@
             The entities.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteQuery``2(System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteQuery``2(System.Object[])">
             <summary>
             The execute query.
             </summary>
@@ -161,7 +159,7 @@
             The entities.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteCommand(System.String,System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteCommand(System.String,System.Object[])">
             <summary>
             Execute arbitrary command into underliying persistence store.
             </summary>
@@ -174,7 +172,7 @@
             <param name="parameters">A vector of parameters values.</param>
             <returns>The number of affected records.</returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteCommand(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteCommand(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Object[])">
             <summary>
             The execute command.
             </summary>
@@ -188,7 +186,7 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteCommand``1(System.Nullable{System.Int32},System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.ISql.ExecuteCommand``1(System.Object[])">
             <summary>
             The execute command.
             </summary>
