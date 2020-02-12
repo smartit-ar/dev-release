@@ -197,13 +197,14 @@
             Entity type.
             </typeparam>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand(System.String,System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand(System.String,System.Nullable{System.Int32},System.Object[])">
             <summary>
             The execute command.
             </summary>
             <param name="sqlCommand">
             The sql command.
             </param>
+            <param name="commandTimeout"></param>
             <param name="parameters">
             The parameters.
             </param>
@@ -211,13 +212,14 @@
             The System.Int32.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Nullable{System.Int32},System.Object[])">
             <summary>
             The execute command.
             </summary>
             <param name="sqlPassThrough">
             The sql pass through.
             </param>
+            <param name="commandTimeout"></param>
             <param name="parameters">
             The parameters.
             </param>
@@ -225,10 +227,11 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand``1(System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteCommand``1(System.Nullable{System.Int32},System.Object[])">
             <summary>
             The execute command.
             </summary>
+            <param name="commandTimeout"></param>
             <param name="parameters">
             The parameters.
             </param>
@@ -239,13 +242,14 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(System.String,System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(System.String,System.Nullable{System.Int32},System.Object[])">
             <summary>
             The execute query.
             </summary>
             <param name="sqlQuery">
             The sql query.
             </param>
+            <param name="commandTimeout"></param>
             <param name="parameters">
             The parameters.
             </param>
@@ -256,13 +260,14 @@
             The System.Collections.Generic.IEnumerable`1[T -&gt; TEntity].
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``1(SmartFran.Seed.NLayer.Data.ISqlPassThrough,System.Nullable{System.Int32},System.Object[])">
             <summary>
             The execute query.
             </summary>
             <param name="sqlPassThrough">
             The sql Pass Through.
             </param>
+            <param name="commandTimeout"></param>
             <param name="parameters">
             The parameters.
             </param>
@@ -273,10 +278,11 @@
             The entities.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``2(System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfContextBase.ExecuteQuery``2(System.Nullable{System.Int32},System.Object[])">
             <summary>
             The execute query.
             </summary>
+            <param name="commandTimeout"></param>
             <param name="parameters">
             The parameters.
             </param>
@@ -384,13 +390,14 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Execute``1(SmartFran.Seed.NLayer.Data.IDataContext,System.Object[])">
+        <member name="M:SmartFran.Seed.NLayer.Data.EntityFramework.EfSqlPassThrough.Execute``1(SmartFran.Seed.NLayer.Data.IDataContext,System.Nullable{System.Int32},System.Object[])">
             <summary>
             The execute.
             </summary>
             <param name="context">
             The context.
             </param>
+            <param name="commandTimeout"></param>
             <param name="parameters">
             The parameters.
             </param>
