@@ -260,16 +260,6 @@
             The unity di container provider.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.unityContainer">
-            <summary>
-            The unity container.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider"/> class.
-            </summary>
-        </member>
         <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.Create">
             <summary>
             The create.

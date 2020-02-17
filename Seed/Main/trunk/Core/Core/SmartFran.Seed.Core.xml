@@ -1139,7 +1139,7 @@
             Dependency mapper factory
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Dependency.DiContainerFactory.container">
+        <member name="F:SmartFran.Seed.Dependency.DiContainerFactory.rootContainer">
             <summary>
             The container.
             </summary>
@@ -1152,7 +1152,7 @@
             The di Container Provider.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.DiContainer">
+        <member name="P:SmartFran.Seed.Dependency.DiContainerFactory.RootContainer">
             <summary>
             The create di container.
             </summary>
