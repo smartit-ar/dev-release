@@ -1134,23 +1134,14 @@
             Type dependency mapper factory.
             </summary>
         </member>
-        <member name="F:SmartFran.Seed.Dependency.DiContainerFactory.provider">
-            <summary>
-            Dependency mapper factory
-            </summary>
-        </member>
-        <member name="F:SmartFran.Seed.Dependency.DiContainerFactory.rootContainer">
-            <summary>
-            The container.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.SetProvider(SmartFran.Seed.Dependency.IDiContainerProvider)">
+        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.Initialize(SmartFran.Seed.Dependency.IDiContainerProvider,System.String)">
             <summary>
             Set the current type dependency mapper factory
             </summary>
             <param name="containerProvider">
             The di Container Provider.
             </param>
+            <param name="configureName">Configuration name.</param>
         </member>
         <member name="P:SmartFran.Seed.Dependency.DiContainerFactory.RootContainer">
             <summary>
@@ -1160,12 +1151,19 @@
             The SmartFran.Seed.Dependency.IDiContainer.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Dependency.DiContainerFactory.Create(System.String)">
+            <summary>
+            Create container.
+            </summary>
+            <param name="configureName">Config name.</param>
+            <returns></returns>
+        </member>
         <member name="T:SmartFran.Seed.Dependency.IDiContainerProvider">
             <summary>
             The DiContainerProvider interface.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Dependency.IDiContainerProvider.Create">
+        <member name="M:SmartFran.Seed.Dependency.IDiContainerProvider.Create(System.String)">
             <summary>
             The create.
             </summary>
@@ -1500,20 +1498,26 @@
             Logging factory
             </summary>
         </member>
-        <member name="P:SmartFran.Seed.Logging.LoggerFactory.DefaultLoggerName">
+        <member name="F:SmartFran.Seed.Logging.LoggerFactory.defaultLoggerName">
             <summary>
             Gets or sets the default logger name.
             </summary>
         </member>
-        <member name="M:SmartFran.Seed.Logging.LoggerFactory.SetProvider(SmartFran.Seed.Logging.ILoggerProvider)">
+        <member name="P:SmartFran.Seed.Logging.LoggerFactory.MainLogger">
+            <summary>
+            Gets MainLogger property.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LoggerFactory.Initialize(SmartFran.Seed.Logging.ILoggerProvider,System.String)">
             <summary>
             Set the  log factory to use
             </summary>
             <param name="loggerProvider">
             The logger Provider.
             </param>
+            <param name="configLogger">Config logger.</param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.LoggerFactory.CreateLogger(System.String)">
+        <member name="M:SmartFran.Seed.Logging.LoggerFactory.Create(System.String)">
             <summary>
             The create logger.
             </summary>
