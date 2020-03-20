@@ -35,6 +35,14 @@
               </see> de tareas a ejecutar.
             </returns>
         </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.GetNextExecutableTasks">
+            <summary>
+            The get executable tasks.
+            </summary>
+            <returns>
+            The task.
+            </returns>
+        </member>
         <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.TaskExecuted(System.Int32)">
             <summary>
             Metodo que sirve para actualizar el estado de una tarea, indicando que ya fue ejecutada.
@@ -165,25 +173,8 @@
             <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.TaskDto"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.RunSchedule(System.Action{System.String,System.Boolean})">
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.RunSchedule(System.Action{System.String,System.Exception})">
             <inheritdoc/>
-        </member>
-        <member name="T:SmartFran.Business.Schedule.Service.Task.TaskProcessFactory">
-            <summary>
-            The gift assigned service.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Business.Schedule.Service.Task.TaskProcessFactory.GetInstance(System.String)">
-            <summary>
-            Create instances.
-            </summary>
-            <param name="code">code param.</param>
-            <returns>Task object.</returns>
-        </member>
-        <member name="M:SmartFran.Business.Schedule.Service.Task.TaskProcessFactory.GetTask(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Business.Schedule.Service.Task.TaskProcessFactory"/> class.
-            </summary>
         </member>
     </members>
 </doc>
