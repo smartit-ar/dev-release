@@ -229,6 +229,13 @@
     };
   };
 
+  self.getParameterByName = function (params) {
+    params = params.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + params + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  };
+
   document.addEventListener("DOMContentLoaded", function (event) {
     self._load();
     ko.applyBindings(self, document.body);
