@@ -43,6 +43,12 @@ namespace("SmartFran.Seed.JS").Utility = {
       }
       return age;
     },
+    //De los minutos que recibe, calcula las horas que representan
+    getHoursOfVigency: function (validMinutes) {
+      var hours = FormatInteger(Math.floor(validMinutes / 60), 2);
+      var minutes = FormatInteger(validMinutes % 60, 2);
+      return (hours + ":" + minutes);
+    },
     writeSpLargeDate: function (date) {
       var fecha = date != null ? date : new Date;
       var mes = fecha.getMonth();
@@ -308,6 +314,10 @@ namespace("SmartFran.Seed.JS").Utility = {
       }
       return output;
     },
+    //Formatea el largo del entero
+    formatInteger: function (num, length) {
+      return (num / Math.pow(10, length)).toFixed(length).substr(2);
+    },  
     getStringMaskedDoubleNumber: function (number) {
       if (number == null || number == "undefined") {
         return null;
