@@ -45,8 +45,8 @@ namespace("SmartFran.Seed.JS").Utility = {
     },
     //De los minutos que recibe, calcula las horas que representan
     getHoursOfVigency: function (validMinutes) {
-      var hours = FormatInteger(Math.floor(validMinutes / 60), 2);
-      var minutes = FormatInteger(validMinutes % 60, 2);
+      var hours = Seed.Utility.Number.formatInteger(Math.floor(validMinutes / 60), 2);
+      var minutes = Seed.Utility.Number.formatInteger(validMinutes % 60, 2);
       return (hours + ":" + minutes);
     },
     writeSpLargeDate: function (date) {
