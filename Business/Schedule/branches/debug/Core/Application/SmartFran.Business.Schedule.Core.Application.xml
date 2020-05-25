@@ -54,6 +54,9 @@
             <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.TaskDto"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.StepExecuted(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
         <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.DeactivateTask(System.Int32,System.String)">
             <summary>
             Desactiva una tarea, agregandole una nota de desactivacion y la fecha.
@@ -79,10 +82,13 @@
             <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.TaskDto"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.TaskFailed(System.Int32,System.String)">
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.StepFailed(System.Int32,System.Int32,System.String)">
             <summary>
             Metodo que sirve para actualizar el estado de una tarea, indicando que fue ejecutada y fallo.
             </summary>
+            <param name="stepId">
+            Step Id.
+            </param>
             <param name="taskId">
             Task Id.
             </param>
