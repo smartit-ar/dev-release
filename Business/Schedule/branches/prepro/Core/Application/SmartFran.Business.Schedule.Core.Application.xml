@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Business.Schedule.Core.Application</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService">
+            <summary>
+            The schedule application service.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.ScheduleCtx">
+            <summary>
+            Gets or sets the schedule ctx.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.AddJob(SmartFran.Business.Schedule.Service.ScheduleContext.IJob)">
+            <summary>
+            Agregar un job.
+            </summary>
+            <param name="job">
+            Job dto.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.JobDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.GetExecutableTasks">
+            <summary>
+            Busca tareas que esten pendientes de ejecucion.
+            </summary>
+            <returns>
+            Una <see>
+                <cref>List</cref>
+              </see> de tareas a ejecutar.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.GetNextExecutableTasks">
+            <summary>
+            The get executable tasks.
+            </summary>
+            <returns>
+            The task.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.TaskExecuted(System.Int32)">
+            <summary>
+            Metodo que sirve para actualizar el estado de una tarea, indicando que ya fue ejecutada.
+            </summary>
+            <param name="taskId">
+            Id de Task.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.TaskDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.StepExecuted(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.DeactivateTask(System.Int32,System.String)">
+            <summary>
+            Desactiva una tarea, agregandole una nota de desactivacion y la fecha.
+            </summary>
+            <param name="taskId">
+            Task Id.
+            </param>
+            <param name="note">
+            Nota de desactivacion.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.TaskDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.TaskStarted(System.Int32)">
+            <summary>
+            Metodo que sirve para actualizar el estado de una tarea, indicando que se inicio la ejecucion.
+            </summary>
+            <param name="taskId">
+            Task Id.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.TaskDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.StepFailed(System.Int32,System.Int32,System.String)">
+            <summary>
+            Metodo que sirve para actualizar el estado de una tarea, indicando que fue ejecutada y fallo.
+            </summary>
+            <param name="stepId">
+            Step Id.
+            </param>
+            <param name="taskId">
+            Task Id.
+            </param>
+            <param name="data">
+            String que almacena informacion extra para detallar la falla.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.TaskDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.SetNextExecution(SmartFran.Business.Schedule.Service.ScheduleContext.ITask)">
+            <summary>
+            Calcula la proxima ejecucion para la tarea especificada y la guarda en la base de datos.
+            </summary>
+            <param name="task">
+            Task dto.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.TaskDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.GetStep(System.Int32)">
+            <summary>
+            Obtiene un Step mediante el Id especificado.
+            </summary>
+            <param name="stepId">
+            Step Id.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.StepDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.GetJob(System.Int32)">
+            <summary>
+            Obtiene un Job mediante el Id especificado.
+            </summary>
+            <param name="jobId">
+            Job Id.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.JobDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.DisableJob(System.Int32)">
+            <summary>
+            Desactiva un Job, especificado por Id. Desactiva todas las TimeTables incluidas en el Job.
+            </summary>
+            <param name="jobId">
+            Job Id.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.JobDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.ReactivateJob(SmartFran.Business.Schedule.Service.ScheduleContext.IJob)">
+            <summary>
+            Reactiva un Job, Reprogramando las tareas que habian sido creadas para ese job.
+            </summary>
+            <param name="jobDto">
+            Job Dto.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.JobDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.EstimateNextExecution(System.DateTimeOffset,SmartFran.Business.Schedule.Service.ScheduleContext.ITimeTable)">
+            <summary>
+            Estima la fecha de la proxima ejecucion pára un TimeTable.
+            </summary>
+            <param name="fromDate">
+            Fecha desde.
+            </param>
+            <param name="prog">
+            <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.JobDto"/> que representa la programacion.
+            </param>
+            <returns>
+            The datetime.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.UpdateTask(SmartFran.Business.Schedule.Service.ScheduleContext.ITask)">
+            <summary>
+            Permite modificar una tarea.
+            </summary>
+            <param name="task">
+            Task dto.
+            </param>
+            <returns>
+            <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.TaskDto"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.RunSchedule(System.Action{System.String,System.String},System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
