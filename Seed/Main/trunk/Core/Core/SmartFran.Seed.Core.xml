@@ -1171,6 +1171,65 @@
             The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
             </returns>
         </member>
+        <member name="T:SmartFran.Seed.Helper.ExceptionHelper">
+            <summary>
+            The set property helper.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Helper.ExceptionHelper.AsText(System.Exception)">
+            <summary>
+            Convert to text an exception.
+            </summary>
+            <param name="ex">Exception.</param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartFran.Seed.Helper.MemberHelper">
+            <summary>
+            The set property helper.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Helper.MemberHelper.Name``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            The property name.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <typeparam name="T">
+            The type.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Helper.MemberHelper.Name``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            The name.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <typeparam name="T">
+            The type.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Helper.MemberHelper.Name``1(System.Linq.Expressions.LambdaExpression)">
+            <summary>
+            The name.
+            </summary>
+            <param name="expression">
+            The expression.
+            </param>
+            <typeparam name="T">
+            Parameter type.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
         <member name="T:SmartFran.Seed.Logging.LogMethod">
             <summary>
             The log activity.
@@ -1526,53 +1585,6 @@
             </param>
             <returns>
             The SmartFran.Seed.Logging.ILogger.
-            </returns>
-        </member>
-        <member name="T:SmartFran.Seed.Helper.MemberHelper">
-            <summary>
-            The set property helper.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Helper.MemberHelper.Name``1(System.Linq.Expressions.Expression{System.Func{``0}})">
-            <summary>
-            The property name.
-            </summary>
-            <param name="expression">
-            The expression.
-            </param>
-            <typeparam name="T">
-            The type.
-            </typeparam>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Helper.MemberHelper.Name``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
-            <summary>
-            The name.
-            </summary>
-            <param name="expression">
-            The expression.
-            </param>
-            <typeparam name="T">
-            The type.
-            </typeparam>
-            <returns>
-            The <see cref="T:System.String"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Helper.MemberHelper.Name``1(System.Linq.Expressions.LambdaExpression)">
-            <summary>
-            The name.
-            </summary>
-            <param name="expression">
-            The expression.
-            </param>
-            <typeparam name="T">
-            Parameter type.
-            </typeparam>
-            <returns>
-            The <see cref="T:System.String"/>.
             </returns>
         </member>
         <member name="T:SmartFran.Seed.Resources.Activator.Messages">
