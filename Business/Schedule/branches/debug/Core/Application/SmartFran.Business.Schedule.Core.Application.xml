@@ -179,7 +179,7 @@
             <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.TaskDto"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.RunSchedule(System.Action{System.String,System.String},System.Int32,System.Int32)">
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.RunSchedule(System.Action{System.String,System.Exception},System.Int32,System.Int32)">
             <inheritdoc/>
         </member>
     </members>
