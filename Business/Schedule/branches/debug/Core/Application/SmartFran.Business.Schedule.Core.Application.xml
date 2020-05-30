@@ -110,6 +110,15 @@
             <see cref="T:SmartFran.Business.Schedule.Service.ScheduleContext.TaskDto"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.AddTaskEvent(System.Int32,System.Nullable{System.Int32},System.String,System.String)">
+            <summary>
+            Add new TaskEvent.
+            </summary>
+            <param name="taskId">Task id.</param>
+            <param name="stepId">Step id.</param>
+            <param name="eventTypeCode">Event type.</param>
+            <param name="data">Data.</param>
+        </member>
         <member name="M:SmartFran.Business.Schedule.Service.ScheduleContext.ScheduleApplicationService.GetStep(System.Int32)">
             <summary>
             Obtiene un Step mediante el Id especificado.
