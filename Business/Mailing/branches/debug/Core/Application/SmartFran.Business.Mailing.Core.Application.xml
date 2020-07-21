@@ -219,7 +219,7 @@
             <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailCampaignDto"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendPendingCampaign(System.Int32,SmartFran.Business.Mailing.Service.MailingContext.IMailingSenderApplicationService)">
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendPendingCampaign(System.Int32,SmartFran.Seed.Comm.IMailSender)">
             <summary>
             Enviar campaña de mail pendiente.
             </summary>
@@ -233,7 +233,7 @@
             <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailCampaignDto"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendPendingCampaigns(SmartFran.Business.Mailing.Service.MailingContext.IMailingSenderApplicationService)">
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendPendingCampaigns(SmartFran.Seed.Comm.IMailSender)">
             <summary>
             Enviar campañas de mail pendiente.
             </summary>
@@ -244,7 +244,7 @@
             Listado de <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailCampaignDto"/> que se enviaron.
             </returns>
         </member>
-        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendPendingDeliveries(SmartFran.Business.Mailing.Service.MailingContext.IMailingSenderApplicationService)">
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendPendingDeliveries(SmartFran.Seed.Comm.IMailSender)">
             <summary>
             Enviar envios pendientes.
             </summary>
@@ -274,7 +274,7 @@
             Lista de contactos <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailContactDto"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendDeliveries(SmartFran.Business.Mailing.Service.MailingContext.IMailingSenderApplicationService,SmartFran.Business.Mailing.Domain.MailingContext.MailingService,System.Collections.Generic.List{SmartFran.Business.Mailing.Domain.MailingContext.MailDelivery})">
+        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingApplicationService.SendDeliveries(SmartFran.Seed.Comm.IMailSender,SmartFran.Business.Mailing.Domain.MailingContext.MailingService,System.Collections.Generic.List{SmartFran.Business.Mailing.Domain.MailingContext.MailDelivery})">
             <summary>
             Enviar envios.
             </summary>
@@ -323,108 +323,6 @@
             <returns>
             <see cref="T:SmartFran.Seed.NLayer.Data.IDataContext"/>.
             </returns>
-        </member>
-        <member name="T:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService">
-            <summary>
-            Servicio de envio de correos mediante smtp.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.defaultEmailTo">
-            <summary>
-            Direccion de correo de destinatario por defecto.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.defaultEmailFrom">
-            <summary>
-            correo del Remitente.
-            </summary>
-        </member>
-        <member name="F:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.smtp">
-            <summary>
-            Smtp service.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService"/> class.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.Initialize(System.String,System.String,System.String,System.Int32,System.Boolean,System.String,System.String)">
-            <summary>
-            Initialize MailSender object.
-            </summary>
-            <param name="defaultEmailTo">
-            Destinatario por defecto.
-            </param>
-            <param name="defaultEmailFrom">
-            Remitente por defecto.
-            </param>
-            <param name="smtpServerHost">
-            Host de server smtp.
-            </param>
-            <param name="smtpMailPort">
-            Puerto stmp.
-            </param>
-            <param name="enableSsl">
-            Activar ssl.
-            </param>
-            <param name="smtpUser">
-            Usuario Smtp.
-            </param>
-            <param name="smtpPassword">
-            Password smtp.
-            </param>
-        </member>
-        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.SendHtmlEmail(System.String,System.String,System.Collections.Generic.ICollection{System.String},System.String,System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.Net.Mail.LinkedResource},System.String)">
-            <summary>
-            Envia un correo.
-            </summary>
-            <param name="subject">
-            El asunto.
-            </param>
-            <param name="htmlBody">
-            Cuerpo html del correo.
-            </param>
-            <param name="to">
-            El Destinatario.
-            </param>
-            <param name="from">from param.</param>
-            <param name="cc">
-            Destinatario secundario.
-            </param>
-            <param name="bcc">
-            Destinatario oculto.
-            </param>
-            <param name="resources">
-            Recursos linkeados.
-            </param>
-            <param name="plainBody">
-            Cuerpo sin formato.
-            </param>
-        </member>
-        <member name="M:SmartFran.Business.Mailing.Service.MailingContext.MailingSenderApplicationService.SendPlainEmail(System.String,System.String,System.Collections.Generic.ICollection{System.String},System.String,System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.Net.Mail.LinkedResource})">
-            <summary>
-            Envia un correo.
-            </summary>
-            <param name="subject">
-            El asunto.
-            </param>
-            <param name="body">
-            Cuerpo del correo.
-            </param>
-            <param name="to">
-            El Destinatario.
-            </param>
-            <param name="from">from param.</param>
-            <param name="cc">
-            Destinatario secundario.
-            </param>
-            <param name="bcc">
-            Destinatario oculto.
-            </param>
-            <param name="resources">
-            Recursos linkeados.
-            </param>
         </member>
     </members>
 </doc>
