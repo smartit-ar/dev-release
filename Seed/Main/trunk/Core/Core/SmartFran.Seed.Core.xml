@@ -1230,145 +1230,6 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="T:SmartFran.Seed.Logging.LogMethod">
-            <summary>
-            The log activity.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.LogMethod.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogMethod"/> class.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.LogMethod.#ctor(System.Reflection.MethodBase,System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{System.Guid})">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogMethod"/> class. 
-            </summary>
-            <param name="method">
-            The method.
-            </param>
-            <param name="args">
-            The args.
-            </param>
-            <param name="activityId">
-            The activity Id.
-            </param>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogMethod.BeginOn">
-            <summary>
-            Gets or sets the begin on.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogMethod.Id">
-            <summary>
-            Gets or sets the id.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogMethod.Name">
-            <summary>
-            Gets or sets the message.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogMethod.ActivityId">
-            <summary>
-            Gets or sets the activity id.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogMethod.Args">
-            <summary>
-            Gets or sets the args.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.Logging.LogActivity">
-            <summary>
-            The log activity.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.LogActivity.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogActivity"/> class.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.LogActivity.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogActivity"/> class.
-            </summary>
-            <param name="name">
-            The name.
-            </param>
-            <param name="args">
-            The args.
-            </param>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogActivity.BeginOn">
-            <summary>
-            Gets or sets the begin on.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogActivity.Id">
-            <summary>
-            Gets or sets the id.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogActivity.Name">
-            <summary>
-            Gets or sets the name.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogActivity.Args">
-            <summary>
-            Gets or sets the args.
-            </summary>
-        </member>
-        <member name="T:SmartFran.Seed.Logging.LogProcess">
-            <summary>
-            The log activity.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.LogProcess.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogProcess"/> class.
-            </summary>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.LogProcess.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Nullable{System.Guid})">
-            <summary>
-            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogProcess"/> class.
-            </summary>
-            <param name="name">
-            The name.
-            </param>
-            <param name="args">
-            The args.
-            </param>
-            <param name="activityId">
-            The activity Id.
-            </param>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogProcess.BeginOn">
-            <summary>
-            Gets or sets the begin on.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogProcess.Id">
-            <summary>
-            Gets or sets the id.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogProcess.Name">
-            <summary>
-            Gets or sets the message.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogProcess.ActivityId">
-            <summary>
-            Gets or sets the activity id.
-            </summary>
-        </member>
-        <member name="P:SmartFran.Seed.Logging.LogProcess.Args">
-            <summary>
-            Gets or sets the args.
-            </summary>
-        </member>
         <member name="T:SmartFran.Seed.Logging.ILogger">
             <summary>
             Common contract for trace instrumentation. You 
@@ -1456,32 +1317,7 @@
             The data.
             </param>
         </member>
-        <member name="M:SmartFran.Seed.Logging.ILogger.BeginActivity(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
-            <summary>
-            The begin activity.
-            </summary>
-            <param name="name">
-            The name.
-            </param>
-            <param name="args">
-            The args.
-            </param>
-            <returns>
-            The <see cref="T:SmartFran.Seed.Logging.LogActivity"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.ILogger.EndActivity(SmartFran.Seed.Logging.LogActivity,System.Collections.Generic.IDictionary{System.String,System.String})">
-            <summary>
-            The end activity.
-            </summary>
-            <param name="activity">
-            The activity.
-            </param>
-            <param name="data">
-            The data.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.ILogger.BeginProcess(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+        <member name="M:SmartFran.Seed.Logging.ILogger.BeginProcess(System.String,System.Collections.Generic.IDictionary{System.String,System.String},SmartFran.Seed.Logging.LogProcess)">
             <summary>
             The begin.
             </summary>
@@ -1501,31 +1337,6 @@
             </summary>
             <param name="process">
             The process.
-            </param>
-            <param name="data">
-            The data.
-            </param>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.ILogger.BeginMethod(System.Reflection.MethodBase,System.Collections.Generic.IDictionary{System.String,System.String})">
-            <summary>
-            The begin method.
-            </summary>
-            <param name="method">
-            The method.
-            </param>
-            <param name="args">
-            The args.
-            </param>
-            <returns>
-            The <see cref="T:SmartFran.Seed.Logging.LogMethod"/>.
-            </returns>
-        </member>
-        <member name="M:SmartFran.Seed.Logging.ILogger.EndMethod(SmartFran.Seed.Logging.LogMethod,System.Collections.Generic.IDictionary{System.String,System.String})">
-            <summary>
-            The end method.
-            </summary>
-            <param name="logMethod">
-            The log method.
             </param>
             <param name="data">
             The data.
@@ -1586,6 +1397,65 @@
             <returns>
             The SmartFran.Seed.Logging.ILogger.
             </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Logging.LogProcess">
+            <summary>
+            The log activity.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LogProcess.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogProcess"/> class.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Logging.LogProcess.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String},SmartFran.Seed.Logging.LogProcess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Logging.LogProcess"/> class.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="args">
+            The args.
+            </param>
+            <param name="parent">
+            The activity parent.
+            </param>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogProcess.BeginOn">
+            <summary>
+            Gets the begin on.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogProcess.Id">
+            <summary>
+            Gets the id.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogProcess.Name">
+            <summary>
+            Gets the message.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogProcess.Parent">
+            <summary>
+            Gets the activity id.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogProcess.EndOn">
+            <summary>
+            Gets or sets EndOn time.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogProcess.Args">
+            <summary>
+            Gets or sets the args.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Logging.LogProcess.Lap">
+            <summary>
+            Gets Lap time.
+            </summary>
         </member>
         <member name="T:SmartFran.Seed.Resources.Activator.Messages">
             <summary>
