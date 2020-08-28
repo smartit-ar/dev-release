@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.Extend.Dependency.Unity</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.Dependency.Unity.InstanceItems">
+            <summary>
+            The instance items.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Dependency.Unity.InstanceItems.items">
+            <summary>
+            The items.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.InstanceItems.Find(System.Object)">
+            <summary>
+            The find.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.InstanceItems.Set(System.Object,System.Object)">
+            <summary>
+            The set.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.InstanceItems.Remove(System.Object)">
+            <summary>
+            The remove.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.InstanceItems.CleanUp(System.Object,System.EventArgs)">
+            <summary>
+            The clean up.
+            </summary>
+            <param name="sender">
+            The sender.
+            </param>
+            <param name="e">
+            The e.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.InstanceItems.Hook(System.ServiceModel.InstanceContext)">
+            <summary>
+            The hook.
+            </summary>
+            <param name="instanceContext">
+            The instance context.
+            </param>
+        </member>
+        <member name="T:SmartFran.Seed.Dependency.Unity.UnityDiContainer">
+            <summary>
+            Dependency mapper based on Unity framework.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.Dependency.Unity.UnityDiContainer.unityContainer">
+            <summary>
+            The unity container.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.#ctor(Unity.IUnityContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.Dependency.Unity.UnityDiContainer"/> class. 
+            </summary>
+            <param name="unityContainer">
+            The unity Container.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.Resolve``1">
+            <summary>
+            Resolve an instance of the default requested type from the container. 
+            </summary>
+            <typeparam name="TSearchedType">
+            System.Type of object to get from the container.
+            </typeparam>
+            <returns>
+            The retrieved object.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.Resolve(System.Type)">
+            <summary>
+            The resolve.
+            </summary>
+            <param name="typeService">
+            The type service.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.Resolve(System.Type,System.String)">
+            <summary>
+            The resolve.
+            </summary>
+            <param name="typeService">
+            The type service.
+            </param>
+            <param name="configName">
+            The config name.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.Resolve``1(System.String)">
+            <summary>
+            The resolve.
+            </summary>
+            <param name="configName">
+            The config name.
+            </param>
+            <typeparam name="TSearchedType">
+            System.Type of object to get from the container.
+            </typeparam>
+            <returns>
+            The instance.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.IsRegistered``1">
+            <summary>
+            The is registered.
+            </summary>
+            <typeparam name="TSearchedType">
+            The type.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.IsRegistered(System.Type)">
+            <summary>
+            The is registered.
+            </summary>
+            <param name="typeService">
+            The type Service.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.IsRegistered(System.Type,System.String)">
+            <summary>
+            The is registered.
+            </summary>
+            <param name="typeService">
+            The type service.
+            </param>
+            <param name="configName">
+            The config name.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.IsRegistered``1(System.String)">
+            <summary>
+            The is registered.
+            </summary>
+            <param name="configName">
+            The config name.
+            </param>
+            <typeparam name="TSearchedType">
+            the type.
+            </typeparam>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.BeginScope">
+            <summary>
+            The begin scope.
+            </summary>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.RegisterInstance(System.Type,System.Object)">
+            <summary>
+            The register instance.
+            </summary>
+            <param name="t">
+            The t.
+            </param>
+            <param name="instance">
+            The instance.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.RegisterInstance``1(``0)">
+            <summary>
+            The register instance.
+            </summary>
+            <param name="instance">
+            The instance.
+            </param>
+            <typeparam name="TInterface">
+            Interface type.
+            </typeparam>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.RegisterType(System.Type)">
+            <summary>
+            The register type.
+            </summary>
+            <param name="t">
+            The t.
+            </param>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.ResolveAll(System.Type)">
+            <summary>
+            The get services.
+            </summary>
+            <param name="serviceType">
+            The service type.
+            </param>
+            <returns>
+            The services.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.ResolveAll``1">
+            <summary>
+            The resolve all.
+            </summary>
+            <typeparam name="T">
+            type to search.
+            </typeparam>
+            <returns>
+            The resolved.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainer.Dispose">
+            <summary>
+            The dispose.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider">
+            <summary>
+            The unity di container provider.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Dependency.Unity.UnityDiContainerProvider.Create(System.String)">
+            <summary>
+            The create.
+            </summary>
+            <returns>
+            The <see cref="T:SmartFran.Seed.Dependency.IDiContainer"/>.
+            </returns>
+        </member>
+    </members>
+</doc>
