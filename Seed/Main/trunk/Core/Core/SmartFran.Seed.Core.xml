@@ -607,7 +607,7 @@
             The <see cref="T:System.Exception"/>.
             </returns>
         </member>
-        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.GetHash(System.String)">
+        <member name="M:SmartFran.Seed.Cryptography.HashGenerator.ComputeHash(System.String)">
             <summary>
             The compute hash.
             </summary>
@@ -650,6 +650,17 @@
             <summary>
             The cryptography.
             </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.ComputeHash(System.String)">
+            <summary>
+            The get hash.
+            </summary>
+            <param name="text">
+            The first key.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
         </member>
         <member name="M:SmartFran.Seed.Cryptography.Crypto.GetHash(System.String)">
             <summary>
