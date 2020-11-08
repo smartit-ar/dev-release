@@ -662,6 +662,21 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
+        <member name="M:SmartFran.Seed.Cryptography.Crypto.GetHash(System.String,System.String)">
+            <summary>
+            The get hash. OBSOLETE.
+            Por compatibilidad con dos parametros.
+            </summary>
+            <param name="firstKey">
+            The first key.
+            </param>
+            <param name="secondKey">
+            The second key.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:SmartFran.Seed.Cryptography.Crypto.Encode(System.String,System.String,System.Int32)" -->
         <member name="M:SmartFran.Seed.Cryptography.Crypto.Decode(System.String,System.String,System.Int32)">
             <summary>
