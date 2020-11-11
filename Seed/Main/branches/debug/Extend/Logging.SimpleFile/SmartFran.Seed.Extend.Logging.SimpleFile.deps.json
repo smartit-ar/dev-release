@@ -7,14 +7,14 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "SmartFran.Seed.Extend.Logging.SimpleFile/1.0.0": {
+      "SmartFran.Seed.Extend.Logging.SimpleFile/3.0.0": {
         "dependencies": {
-          "Core": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.6",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.6",
           "Microsoft.Extensions.Options": "3.1.6",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.3",
+          "SmartFran.Seed.Main": "3.0.0",
           "StyleCop.Analyzers": "1.1.118"
         },
         "runtime": {
@@ -133,15 +133,15 @@
           }
         }
       },
-      "Core/1.0.0": {
+      "SmartFran.Seed.Main/3.0.0": {
         "runtime": {
-          "SmartFran.Seed.Core.dll": {}
+          "SmartFran.Seed.Main.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "SmartFran.Seed.Extend.Logging.SimpleFile/1.0.0": {
+    "SmartFran.Seed.Extend.Logging.SimpleFile/3.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -244,7 +244,7 @@
       "path": "system.runtime.compilerservices.unsafe/4.7.1",
       "hashPath": "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
     },
-    "Core/1.0.0": {
+    "SmartFran.Seed.Main/3.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
