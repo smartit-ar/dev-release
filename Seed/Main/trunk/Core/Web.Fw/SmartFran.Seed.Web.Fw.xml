@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>SmartFran.Seed.Core.Web.Fw</name>
+        <name>SmartFran.Seed.Web.Fw</name>
     </assembly>
     <members>
         <member name="T:SmartFran.Seed.Diagnostics.ThrowJsonException">
