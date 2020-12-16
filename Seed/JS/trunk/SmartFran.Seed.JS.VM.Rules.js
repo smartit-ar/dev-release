@@ -25,3 +25,15 @@ ko.validation.rules["isMoreThanOrEqual"] = {
   },
   message: "Debe seleccionar un valor mayor o igual al valor 'desde' seleccionado.",
 };
+
+ko.validation.rules["onlyIntegerNumber"] = {
+  validator: function (inputValor) {
+    if (inputValor != null && inputValor != "") {
+      if (inputValor.match(^\d * $) == null) {
+        return false;
+      }
+    }
+    return true;
+  },
+  message: "Solo puede ingresar números enteros.",
+};
