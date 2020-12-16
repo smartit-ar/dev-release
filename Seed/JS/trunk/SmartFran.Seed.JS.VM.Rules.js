@@ -28,10 +28,8 @@ ko.validation.rules["isMoreThanOrEqual"] = {
 
 ko.validation.rules["onlyIntegerNumber"] = {
   validator: function (inputValor) {
-    if (inputValor != null && inputValor != "") {
-      if (inputValor.match(^\d * $) == null) {
-        return false;
-      }
+    if (inputValor != null && inputValor != "" && inputValor.match(/^\d*$/) == null) {
+      return false;
     }
     return true;
   },
