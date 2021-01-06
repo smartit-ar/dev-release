@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.Extend.Validator.EntityFramework.Fw</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.Validator.EntityFramework.EntityFrameworkValidatorProvider">
+            <summary>
+            Data Annotations based entity validator provider
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Validator.EntityFramework.EntityFrameworkValidatorProvider.Create">
+            <summary>
+            Create a entity validator
+            </summary>
+            <returns>Entity validator</returns>
+        </member>
+        <member name="T:SmartFran.Seed.Validator.EntityFramework.EntityFrameworkValidator">
+            <summary>
+            Validator based on Data Annotations. 
+            This validator use IValidatableObject interface and
+            ValidationAttribute ( hierachy of this) for
+            perform validation
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Validator.EntityFramework.EntityFrameworkValidator.ReportFromDataException(System.Data.DataException)">
+            <summary>
+            The report from data exception.
+            </summary>
+            <param name="ex">
+            The ex.
+            </param>
+            <returns>
+            The report.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.Validator.EntityFramework.Resources.Messages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Validator.EntityFramework.Resources.Messages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Validator.EntityFramework.Resources.Messages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.Validator.EntityFramework.Resources.Messages.UpdateException">
+            <summary>
+              Looks up a localized string similar to Falló la actualizacion de datos..
+            </summary>
+        </member>
+    </members>
+</doc>

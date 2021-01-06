@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.Wpf.Fw</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.ViewModel.Behavior.IValidationExceptionHandler">
+            <summary>
+            A simple interface which must be supported by the ViewMode classes using the 
+            ValidationExceptionBehavior.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Behavior.IValidationExceptionHandler.ValidationExceptionsChanged(System.Int32)">
+            <summary>
+            The validation exceptions changed.
+            </summary>
+            <param name="count">
+            The count.
+            </param>
+        </member>
+        <member name="T:SmartFran.Seed.ViewModel.Behavior.ValidationExceptionBehavior">
+            <summary>
+            A simple behavior that can transfer the number of validation error with exceptions
+            to a ViewModel which supports the INotifyValidationException interface
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.ViewModel.Behavior.ValidationExceptionBehavior.validationExceptionCount">
+            <summary>
+            The validation exception count.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Behavior.ValidationExceptionBehavior.OnAttached">
+            <summary>
+            The on attached.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Behavior.ValidationExceptionBehavior.OnValidationError(System.Object,System.Windows.Controls.ValidationErrorEventArgs)">
+            <summary>
+            The on validation error.
+            </summary>
+            <param name="sender">
+            The sender.
+            </param>
+            <param name="e">
+            The e.
+            </param>
+        </member>
+        <member name="T:SmartFran.Seed.ViewModel.Command.RelayCommand">
+            <summary>
+            A command whose sole purpose is to relay its functionality to other
+            objects by invoking delegates. The default return value for the CanExecute
+            method is 'true'.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.ViewModel.Command.RelayCommand.execute">
+            <summary>
+            The execute.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.ViewModel.Command.RelayCommand.canExecute">
+            <summary>
+            The can execute.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Command.RelayCommand.#ctor(System.Action,System.Func{System.Boolean})">
+            <summary>
+            Initializes a new instance of the RelayCommand class
+            </summary>
+            <param name="execute">The execution logic.</param>
+            <param name="canExecute">The execution status logic.</param>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Command.RelayCommand.#ctor(System.Action)">
+            <summary>
+            Initializes a new instance of the RelayCommand class
+            </summary>
+            <param name="execute">The execution logic.</param>
+        </member>
+        <member name="E:SmartFran.Seed.ViewModel.Command.RelayCommand.CanExecuteChanged">
+            <summary>
+            The can execute changed.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Command.RelayCommand.Execute(System.Object)">
+            <summary>
+            The execute.
+            </summary>
+            <param name="parameter">
+            The parameter.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Command.RelayCommand.CanExecute(System.Object)">
+            <summary>
+            The can execute.
+            </summary>
+            <param name="parameter">
+            The parameter.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.ViewModel.Command.RelayCommand`1">
+            <summary>
+            The relay command.
+            </summary>
+            <typeparam name="T">
+            Command type.
+            </typeparam>
+        </member>
+        <member name="F:SmartFran.Seed.ViewModel.Command.RelayCommand`1.execute">
+            <summary>
+            The execute.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.ViewModel.Command.RelayCommand`1.canExecute">
+            <summary>
+            The can execute.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Command.RelayCommand`1.#ctor(System.Action{`0})">
+            <summary>
+            Initializes a new instance of the RelayCommand class
+            </summary>
+            <param name="execute">The execution logic.</param>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Command.RelayCommand`1.#ctor(System.Action{`0},System.Predicate{`0})">
+            <summary>
+            Initializes a new instance of the RelayCommand class
+            </summary>
+            <param name="execute">The execution logic.</param>
+            <param name="canExecute">The execution status logic.</param>
+        </member>
+        <member name="E:SmartFran.Seed.ViewModel.Command.RelayCommand`1.CanExecuteChanged">
+            <summary>
+            The can execute changed.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Command.RelayCommand`1.Execute(System.Object)">
+            <summary>
+            The execute.
+            </summary>
+            <param name="parameter">
+            The parameter.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Command.RelayCommand`1.CanExecute(System.Object)">
+            <summary>
+            The can execute.
+            </summary>
+            <param name="parameter">
+            The parameter.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
+        </member>
+        <member name="T:SmartFran.Seed.ViewModel.Observable.ObservableBase">
+            <summary>
+            Base class for all ViewModel classes in the application. Provides support for 
+            property changes notification.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ObservableBase.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:SmartFran.Seed.ViewModel.Observable.ObservableBase"/> class. 
+            Useful for ensuring that ViewModel objects are properly garbage collected.
+            </summary>
+        </member>
+        <member name="E:SmartFran.Seed.ViewModel.Observable.ObservableBase.PropertyChanged">
+            <summary>
+            Raised when a property on this object has a new value.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.ViewModel.Observable.ObservableBase.IsInDesignerMode">
+            <summary>
+            Gets a value indicating whether is in designer mode.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ObservableBase.Dispose">
+            <summary>
+            Invoked when this object is being removed from the application
+            and will be subject to garbage collection.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ObservableBase.SetProperty``1(``0@,``0,System.String)">
+            <summary>
+            The set property.
+            </summary>
+            <param name="field">
+            The field.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="name">
+            The name.
+            </param>
+            <typeparam name="T">
+            Property type.
+            </typeparam>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ObservableBase.NotifyPropertyChanged(System.String)">
+            <summary>
+            The notify property changed.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ObservableBase.OnPropertyChangedCompleted(System.String)">
+            <summary>
+            The property changed completed.
+            </summary>
+            <param name="propertyName">
+            The property name.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ObservableBase.OnDispose">
+            <summary>
+            Child classes can override this method to perform 
+            clean-up logic, such as removing event handlers.
+            </summary>
+        </member>
+        <member name="T:SmartFran.Seed.ViewModel.Observable.ValidatableBase">
+            <summary>
+            A base classe for ViewModel classes which supports validation using IDataErrorInfo interface. Properties must defines
+            validation rules by using validation attributes defined in System.ComponentModel.DataAnnotations.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.ViewModel.Observable.ValidatableBase.propertyGetters">
+            <summary>
+            The property getters.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.ViewModel.Observable.ValidatableBase.validators">
+            <summary>
+            The validators.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.ViewModel.Observable.ValidatableBase.isValid">
+            <summary>
+            The is valid.
+            </summary>
+        </member>
+        <member name="F:SmartFran.Seed.ViewModel.Observable.ValidatableBase.validationExceptionCount">
+            <summary>
+            The validation exception count.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ValidatableBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SmartFran.Seed.ViewModel.Observable.ValidatableBase"/> class.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.ViewModel.Observable.ValidatableBase.Error">
+            <summary>
+            Gets an error message indicating what is wrong with this object.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.ViewModel.Observable.ValidatableBase.IsValid">
+            <summary>
+            Gets or sets a value indicating whether the form is valid in its current state. 
+            If all properties wich validation are valid, this property returns true.
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.ViewModel.Observable.ValidatableBase.ValidPropertiesCount">
+            <summary>
+            Gets the number of properties which have a validation attribute and are currently valid
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.ViewModel.Observable.ValidatableBase.TotalPropertiesWithValidationCount">
+            <summary>
+            Gets the number of properties which have a validation attribute
+            </summary>
+        </member>
+        <member name="P:SmartFran.Seed.ViewModel.Observable.ValidatableBase.Item(System.String)">
+            <summary>
+            Gets the error message for the property with the given name.
+            </summary>
+            <param name="propertyName">Name of the property</param>
+            <returns>Error message.</returns>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ValidatableBase.ValidationExceptionsChanged(System.Int32)">
+            <summary>
+            The validation exceptions changed.
+            </summary>
+            <param name="count">
+            The count.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ValidatableBase.OnPropertyChangedCompleted(System.String)">
+            <summary>
+            The on property changed completed.
+            </summary>
+            <param name="propertyName">
+            The property name.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ValidatableBase.GetValidations(System.Reflection.PropertyInfo)">
+            <summary>
+            The get validations.
+            </summary>
+            <param name="property">
+            The property.
+            </param>
+            <returns>
+            The ValidationAttribute array.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ValidatableBase.GetValueGetter(System.Reflection.PropertyInfo)">
+            <summary>
+            The get value getter.
+            </summary>
+            <param name="property">
+            The property.
+            </param>
+            <returns>
+            The function for get value.
+            </returns>
+        </member>
+        <member name="M:SmartFran.Seed.ViewModel.Observable.ValidatableBase.EvalIsValid(System.String)">
+            <summary>
+            The eval is valid.
+            </summary>
+            <param name="propertyName">
+            The property name.
+            </param>
+        </member>
+    </members>
+</doc>
