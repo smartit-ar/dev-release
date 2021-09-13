@@ -11,7 +11,7 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "SmartFran.Seed.Main": "3.0.0",
-          "System.ComponentModel.DataAnnotations": "4.0.0.0"
+          "System.ComponentModel.Annotations": "5.0.0"
         },
         "runtime": {
           "SmartFran.Seed.Extend.Validator.DataAnnotations.dll": {}
@@ -23,33 +23,17 @@
           "Microsoft.NETCore.Platforms": "1.1.0"
         }
       },
+      "System.ComponentModel.Annotations/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.ComponentModel.Annotations.dll": {
+            "assemblyVersion": "4.2.1.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
       "SmartFran.Seed.Main/3.0.0": {
         "runtime": {
           "SmartFran.Seed.Main.dll": {}
-        }
-      },
-      "System.ComponentModel.DataAnnotations/4.0.0.0": {
-        "runtime": {
-          "System.ComponentModel.DataAnnotations.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.1590.0"
-          }
-        }
-      },
-      "System.Configuration/4.0.0.0": {
-        "runtime": {
-          "System.Configuration.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.1590.0"
-          }
-        }
-      },
-      "System.Security/4.0.0.0": {
-        "runtime": {
-          "System.Security.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.1590.0"
-          }
         }
       }
     }
@@ -74,23 +58,15 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
+    "System.ComponentModel.Annotations/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+      "path": "system.componentmodel.annotations/5.0.0",
+      "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
     "SmartFran.Seed.Main/3.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.ComponentModel.DataAnnotations/4.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Configuration/4.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Security/4.0.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }
