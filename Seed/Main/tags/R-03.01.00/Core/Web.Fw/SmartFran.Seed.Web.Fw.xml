@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartFran.Seed.Web.Fw</name>
+    </assembly>
+    <members>
+        <member name="T:SmartFran.Seed.Diagnostics.ThrowJsonException">
+            <summary>
+            The json exception filter attribute.
+            </summary>
+        </member>
+        <member name="M:SmartFran.Seed.Diagnostics.ThrowJsonException.OnException(System.Web.Mvc.ExceptionContext)">
+            <summary>
+            The on exception.
+            </summary>
+            <param name="filterContext">
+            The filter context.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Diagnostics.ThrowJsonException.Logg(System.Web.Mvc.ExceptionContext)">
+            <summary>
+            The logg.
+            </summary>
+            <param name="ex">
+            The ex.
+            </param>
+        </member>
+        <member name="M:SmartFran.Seed.Diagnostics.ThrowJsonException.GetDefaultErrorMessage">
+            <summary>
+            The get default error message.
+            </summary>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+    </members>
+</doc>
