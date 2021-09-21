@@ -113,12 +113,8 @@
   ko.validation.rules["isValidEmail"] = {
     validator: function (val, params) {
       params[0] = "El formato del email no es válido. - Su email tiene caracteres especiales no permitidos para la registración en nuestra página.";
-      var re = /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/i;
+      var re = /^[A-Za-z0-9](((([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*))|((([\.]?[a-zA-Z0-9\-\_]+)*)@(hotmail|outlook)))\.([A-Za-z]{2,})$/i;
       if (re.test(val) != true) {
-        var reHotmail = /^[A-Za-z0-9](((\.|_*|\-*|\.-*|-*\.|_*\.|\._*)[a-zA-Z0-9]+)*)@(hotmail\.com|outlook\.com|outlook\.es)$/;
-        if (reHotmail.test(val)) {
-          return true;
-        }
         var re2 = /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9\u00E1\u00E9\u00ED\u00F3\u00FA\u00F1\u00FC]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/i;
         if (re2.test(val) == true) {
           params[0] = params[0].split("-")[1];
