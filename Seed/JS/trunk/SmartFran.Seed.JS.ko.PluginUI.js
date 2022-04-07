@@ -70,8 +70,17 @@
       options.dateFormat = options.dateFormat || "dd/mm/yy";
       options.yearRange = options.yearRange || getDateRange();
       options.nextFocus = options.nextFocus || element;
+      options.beforeShow = options.beforeShow || function (textbox, instance) {
+        $("#wrapper").scroll(function () {
+          calendar.datepicker("hide")
+        })
+      }
+      options.onClose = options.onClose || function (textbox, inst) {
+        $(inst.input).blur()
+        $("#wrapper").unbind("scroll")
+      }
 
-      $(element)
+      var calendar = $(element)
         .datepicker(options)
         .bind("change", function () {
           ko.bindingHandlers.jqDatePicker.updateValue(element, valueAccessor, allBindingsAccessor);
