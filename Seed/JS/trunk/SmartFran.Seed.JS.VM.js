@@ -236,9 +236,11 @@
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   };
 
-  document.addEventListener("DOMContentLoaded", function (event) {
-    self._load();
-    ko.applyBindings(self, document.body);
-    self._afterBinding();
-  });
+  if (!self.ignoreApplyBindings) {
+    document.addEventListener("DOMContentLoaded", function (event) {
+      self._load();
+      ko.applyBindings(self, document.body);
+      self._afterBinding();
+    });
+  }
 };
